@@ -167,7 +167,7 @@ onMounted(() => {
 
 @media (width >= 960px) {
   .content {
-    width: 73vw;
+    width: calc(100vw - 280px);
   }
 
   .sidemenu {
