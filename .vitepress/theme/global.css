@@ -1,0 +1,206 @@
+html {
+  --bg-main: #F5F6F7;
+  --bg-sec: #E9ECF0;
+  --bg-code: #414657;
+  --bg-table: #EBEFF5;
+  --link: #2077DD;
+  --link-hover: #135EB5;
+  --separator: #DADBEA;
+  --text: #505660;
+  --text-comment: #AAACAE;
+  --text-comment-hover: #72767B;
+  --text-green: #1CA673;
+  --text-magenta: #BB2BE6;
+  --text-magenta-hover: #9911C2;
+  --text-yellow: #D78E32;
+  --text-yellow-hover: #A05F0F;
+}
+
+html.dark {
+  --bg-main: #404552;
+  --bg-sec: #383C4A;
+  --bg-code: #383C4A;
+  --bg-table: #3B404D;
+  --link: #5294e2;
+  --link-hover: #80A5EA;
+  --separator: #4B5162;
+  --text: #CDD1DC;
+  --text-comment: #7B8192;
+  --text-comment-hover: #8B91A2;
+  --text-green: #1EB77E;
+  --text-magenta: #C678DD;
+  --text-magenta-hover: #DC98DC;
+  --text-yellow: #D39E5B;
+  --text-yellow-hover: #E3B37B;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  line-height: 1.37;
+  color: var(--text);
+  background-color: var(--bg-main);
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 36px;
+  font-weight: bold;
+  border-bottom: solid 1px var(--separator);
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+a {
+  text-decoration: none;
+}
+
+a[href] {
+  color: var(--link);
+}
+
+a[href]:hover {
+  color: var(--link-hover);
+}
+
+.header-anchor::before {
+  position: absolute;
+  content: '#';
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+h2:hover .header-anchor::before,
+h3:hover .header-anchor::before,
+h4:hover .header-anchor::before,
+h5:hover .header-anchor::before,
+h6:hover .header-anchor::before {
+  opacity: 1;
+}
+
+h2:focus-visible,
+h3:focus-visible,
+h4:focus-visible,
+h5:focus-visible,
+h6:focus-visible {
+  outline: unset;
+}
+
+table {
+  display: block;
+  max-width: fit-content;
+  margin: 12px 8px;
+  overflow-x: auto;
+  border-spacing: 0;
+  border: solid 2px var(--separator);
+  border-radius: 8px;
+}
+
+table > thead > tr > th {
+  padding: 7px 12px;
+  background-color: var(--bg-table);
+  border-bottom: solid 1px var(--separator);
+}
+
+table > tbody > tr > td {
+  padding: 7px 12px;
+}
+
+table > tbody > tr:nth-child(even) > td {
+  background-color: var(--bg-table);
+}
+
+code {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 13px;
+}
+
+:not(pre) > code {
+  padding: 2px;
+  color: var(--text-magenta);
+}
+
+div[class*="language-"] {
+  position: relative;
+  margin: 12px 8px;
+  overflow: hidden;
+  background-color: var(--bg-code);
+  border: solid 2px var(--separator);
+  border-radius: 8px;
+}
+
+div[class*="language-"] span.lang {
+  display: none;
+}
+
+div[class*="language-"] button.copy {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 80px;
+  padding: 5px;
+  color: var(--text);
+  cursor: pointer;
+  background-color: var(--bg-main);
+  border: solid 1px var(--separator);
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+div[class*="language-"]:hover button.copy {
+  opacity: 1;
+}
+
+div[class*="language-"] button.copy:hover {
+  color: var(--link);
+  border: solid 1px var(--link);
+}
+
+div[class*="language-"] button.copy::before {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: var(--fa-font-solid);
+  content: '\f328';
+}
+
+div[class*="language-"] button.copy::after {
+  padding-left: 4px;
+  content: 'Copy';
+}
+
+div[class*="language-"] button.copy.copied {
+  color: var(--text-green);
+}
+
+div[class*="language-"] button.copy.copied:hover {
+  border: solid 1px var(--text-green);
+}
+
+div[class*="language-"] button.copy.copied::before {
+  content: '\f00c';
+}
+
+div[class*="language-"] button.copy.copied::after {
+  padding-left: 4px;
+  content: 'Copied!';
+}
+
+div[class*="language-"] pre {
+  padding: 16px 0;
+  margin: 0;
+  overflow-y: auto;
+}
+
+div[class*="language-"] span.line {
+  margin: 0 16px;
+}

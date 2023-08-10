@@ -1,0 +1,65 @@
+---
+title: Mpv
+man: mpv
+ref: https://wiki.archlinux.org/title/Mpv
+---
+
+## Shortcuts
+
+For some shortcuts,
+extra configuration must be added to `~/.config/mpv/input.conf`.
+
+| Shortcut | Description | Extra configuration |
+| --- | --- | --- |
+| `>` | Next file in a playlist | - |
+| `<` | Previous file in a playlist | - |
+| `9` | Reduce volume | - |
+| `0` | Increase volume | - |
+| `s` | Shuffle | `s cycle shuffle` |
+| `l` | Loop playlist | `l cycle-values loop-playlist yes no` |
+| `#` | Next audio track | - |
+
+## Settings
+
+Copy the default configuration files.
+
+```shell
+cp -r /usr/share/doc/mpv ~/.config
+```
+
+### Tips
+
+Load high quality OpenGL options:
+
+```ini
+profile=gpu-hq
+scale=ewa_lanczossharp
+cscale=ewa_lanczossharp
+```
+
+Display timestamps with milliseconds in the OSC:
+
+```ini
+script-opts=osc-timems=yes
+```
+
+## Custom OSC
+
+- [uosc](https://github.com/tomasklaen/uosc)
+- [modern](https://github.com/maoiscat/mpv-osc-modern)
+- [tethys](https://github.com/Zren/mpv-osc-tethys)
+
+## Subtitles
+
+- [Reference](https://cweiske.de/tagebuch/embedded-lyrics.htm#lyrics)
+
+Supported formats:
+[LRC](https://en.wikipedia.org/wiki/LRC_(file_format)), SRT, VTT, ASS
+
+### LRC
+
+Formatting is very important (cannot use 3 digits for milisseconds).
+
+```txt
+[mm:ss.xx] Text to be shown
+```
