@@ -20,22 +20,6 @@ const dec = parseFloat('3.1416');
 const bool = Boolean(0);  // !!0 - true for empty lists and objects!
 ```
 
-#### Timers
-
-Run once after a while:
-
-```js
-let timeoutId = setTimeout(callback, timeInMs);
-clearTimeout(timeoutId);
-```
-
-Run repeatedly:
-
-```js
-let intervalId = setInterval(callback, timeInMs);
-clearInterval(intervalId);
-```
-
 ## Flow control
 
 ### Condition
