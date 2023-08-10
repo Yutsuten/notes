@@ -19,7 +19,10 @@ onMounted(() => {
       <i class="fa-solid fa-house-chimney"></i>
       Home
     </h1>
-    <p>Welcome to Mateus Etto's notes.</p>
+    <p>
+      Welcome to Mateus Etto's notes, a personal knowledge base mainly with programming and Linux
+      tools information.
+    </p>
     <p>
       There are currently {{ notes.length - 1 }} notes. The last update was at {{ lastUpdated }}.
     </p>
