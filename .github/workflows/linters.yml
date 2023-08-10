@@ -5,6 +5,7 @@ on:
 jobs:
   eslint:
     runs-on: ubuntu-latest
+    name: ESLint
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -20,6 +21,7 @@ jobs:
         run: pnpm run eslint
   stylelint:
     runs-on: ubuntu-latest
+    name: Stylelint
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -31,5 +33,5 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm install
-      - name: Lint with stylelint
+      - name: Lint with Stylelint
         run: pnpm run stylelint
