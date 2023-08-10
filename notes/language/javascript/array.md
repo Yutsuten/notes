@@ -13,10 +13,17 @@ arr = Array(size).fill(value);
 
 ## Methods
 
+| Method | Description |
+| --- | --- |
+| `Array.prototype.slice()` | Returns a shallow copy of a portion of an array. `[start; end]` (end not included) |
+
+Examples:
+
 ```js
 arr.push(element1, ..., elementN)
 arr.pop()    // last element
 arr.shift()  // first element
+arr.slice(2, 5)  // Same as arr[2:5] in python
 arr.splice(startIndex, deleteCount)
 arr.indexOf(element)
 arr.join(',')
