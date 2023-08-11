@@ -132,20 +132,20 @@ onMounted(() => {
   margin-left: 30px;
 }
 
-.sidemenu div.search {
+.sidemenu .search {
   position: relative;
   margin-top: 20px;
   margin-right: 30px;
   margin-bottom: 14px;
 }
 
-.sidemenu div.search label {
+.sidemenu .search label {
   position: absolute;
   top: 7px;
   left: 9px;
 }
 
-.sidemenu div.search input {
+.sidemenu .search input {
   width: 180px;
   padding: 6px 6px 6px 30px;
   font-size: 14px;
@@ -155,13 +155,13 @@ onMounted(() => {
   border-radius: 2px;
 }
 
-.sidemenu div.search input:focus {
+.sidemenu .search input:focus {
   border: solid 2px var(--link);
   outline: unset;
   box-shadow: 0 0 3px var(--link);
 }
 
-.sidemenu div.search input::placeholder {
+.sidemenu .search input::placeholder {
   color: var(--text-comment-hover);
   opacity: 1;
 }
@@ -173,33 +173,37 @@ onMounted(() => {
   overflow-y: auto;
 }
 
-.sidemenu .index div.entry a {
+.sidemenu .index .entry a {
   display: block;
   padding: 1px 0;
 }
 
-.sidemenu .index div.entry a:focus {
+.sidemenu .index .entry:hover {
+  background-color: var(--bg-table);
+}
+
+.sidemenu .index .entry:focus {
   color: var(--link-hover);
 }
 
-.sidemenu .index div.entry.depth0 :not(a[href]) {
+.sidemenu .index .entry.depth0 :not(a[href]) {
   margin-top: 3px;
   font-size: 1.6em;
 }
 
-.sidemenu .index div.entry.depth1 :not(a[href]) {
+.sidemenu .index .entry.depth1 :not(a[href]) {
   font-size: 1.4em;
 }
 
-a.sidemenuside .index div.entry.depth2 :not(a[href]) {
+.sidemenu .index .entry.depth2 :not(a[href]) {
   font-size: 1.2em;
 }
 
-.sidemenu .index div.entry.active {
+.sidemenu .index .entry.active {
   background-color: var(--bg-main);
 }
 
-.sidemenu .index div.entry.active a[href] {
+.sidemenu .index .entry.active a[href] {
   font-weight: bold;
 }
 </style>
