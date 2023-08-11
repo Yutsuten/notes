@@ -16,9 +16,10 @@ import TopBarButton from './components/TopBarButton.vue';
 import { useData } from 'vitepress';
 
 const { page } = useData();
+const FULL_HD_WIDTH = 1920;
 
 const activeComponent = ref('');
-const screenWidth = ref(0);
+const screenWidth = ref(FULL_HD_WIDTH);
 
 function updateScreenWidth() {
   screenWidth.value = window.innerWidth;
