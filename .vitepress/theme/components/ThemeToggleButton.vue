@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue';
+import { onBeforeMount, onMounted, ref, watch } from 'vue';
 
 const APPEARANCE_KEY = 'vitepress-theme-appearance';
 const MOUNT_ENABLE_ANIMATION_DELAY = 50;
@@ -7,10 +7,6 @@ const MOUNT_ENABLE_ANIMATION_DELAY = 50;
 const useDark = ref(true);
 const preferDark = ref(true);
 const mounted = ref(false);
-
-window.matchMedia('(prefers-color-scheme: dark)').onchange = (event) => {
-  preferDark.value = event.matches;
-};
 
 watch([useDark, preferDark], ([newUseDark, newPreferDark]) => {
   if (newUseDark) {
@@ -20,6 +16,12 @@ watch([useDark, preferDark], ([newUseDark, newPreferDark]) => {
     document.documentElement.classList.remove('dark');
     localStorage.setItem(APPEARANCE_KEY, newPreferDark ? 'light' : 'auto');
   }
+});
+
+onBeforeMount(() => {
+  window.matchMedia('(prefers-color-scheme: dark)').onchange = (event) => {
+    preferDark.value = event.matches;
+  };
 });
 
 onMounted(() => {

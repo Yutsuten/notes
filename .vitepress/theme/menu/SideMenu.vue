@@ -10,16 +10,7 @@ const { page, site } = useData();
 const search = ref('');
 const indexElement = ref<HTMLDivElement | null>(null);
 const searchElement = ref<HTMLInputElement | null>(null);
-const searchUrl = computed(() => {
-  const url = new URL(window.location.href);
-  const cleanedSearch = search.value.trim().replace(/\s+/gu, ' ');
-  if (cleanedSearch) {
-    url.searchParams.set('search', cleanedSearch);
-  } else {
-    url.searchParams.delete('search');
-  }
-  return url;
-});
+const searchUrl = ref('');
 const notes = computed(() => generateNotesIndex(search.value, site.value.base));
 
 function isActive(url?: string) {
@@ -29,11 +20,19 @@ function isActive(url?: string) {
   return `${url}.md` === `${site.value.base}${page.value.relativePath}`;
 }
 
-watch(searchUrl, (newSearchUrl) => {
-  window.history.replaceState(null, '', newSearchUrl.href);
-});
-
 onMounted(() => {
+  watch(search, (newSearch) => {
+    const url = new URL(window.location.href);
+    const cleanedSearch = newSearch.trim().replace(/\s+/gu, ' ');
+    if (cleanedSearch) {
+      url.searchParams.set('search', cleanedSearch);
+    } else {
+      url.searchParams.delete('search');
+    }
+    window.history.replaceState(null, '', url.href);
+    searchUrl.value = url.search;
+  });
+
   const searchParam = new URL(window.location.href).searchParams.get('search');
   search.value = searchParam ?? '';
 
@@ -99,7 +98,7 @@ onMounted(() => {
               :class="['entry', 'depth' + note.depth, { active: isActive(note.url) }]"
             >
               <a
-                :href="note.url ? note.url + searchUrl.search : undefined"
+                :href="note.url ? note.url + searchUrl : undefined"
                 :style="{ paddingLeft: 12 * note.depth + 'px' }"
                 @click="note.url ? $emit('jump') : null"
               >
