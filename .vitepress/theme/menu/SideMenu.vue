@@ -182,8 +182,9 @@ onMounted(() => {
   background-color: var(--bg-table);
 }
 
-.sidemenu .index .entry:focus {
+.sidemenu .index .entry a:focus {
   color: var(--link-hover);
+  background-color: var(--bg-table);
 }
 
 .sidemenu .index .entry.depth0 :not(a[href]) {
