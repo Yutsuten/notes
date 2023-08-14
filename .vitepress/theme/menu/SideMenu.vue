@@ -199,11 +199,8 @@ onMounted(() => {
   font-size: 1.2em;
 }
 
-.sidemenu .index .entry.active {
-  background-color: var(--bg-main);
-}
-
 .sidemenu .index .entry.active a[href] {
   font-weight: bold;
+  background-color: var(--bg-main);
 }
 </style>
