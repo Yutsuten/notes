@@ -4,7 +4,19 @@ man: pacman
 ref: https://wiki.archlinux.org/title/Mirrors
 ---
 
-## Parallel downloads
+## Usage
+
+| Command | Description |
+| --- | --- |
+| `pacman -Syu` | Update all packages |
+| `pacman -S package` | Install new package |
+| `pacman -Rs package` | Remove a package. Add `-c` for cascade, `-u` for group of packages |
+| `pacman -Qtdq \| pacman -Rns -` | Remove orphaned packages |
+| `pacman -Qet` | List all packages explicitly installed and not required as dependencies |
+
+## Configuration
+
+### Parallel downloads
 
 Edit `/etc/pacman.conf`:
 
@@ -12,7 +24,7 @@ Edit `/etc/pacman.conf`:
 ParallelDownloads = 10
 ```
 
-## Mirrors
+### Update mirrors
 
 [Mirror List Generator](https://archlinux.org/mirrorlist)
 
@@ -24,3 +36,16 @@ curl -s "https://archlinux.org/mirrorlist/?country=CN&country=JP&country=TW&prot
   sed -e 's/^#Server/Server/' -e '/^#/d' | \
   rankmirrors -
 ```
+
+## AUR
+
+```shell
+makepkg -sicr
+```
+
+| Option | Description |
+| --- | --- |
+| `-s` | Syncronize and install dependencies with pacman |
+| `-i` | Install |
+| `-c` | Clean build files |
+| `-r` | Remove dependencies installed by `-s` |
