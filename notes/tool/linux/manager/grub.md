@@ -1,14 +1,65 @@
 ---
 title: Grub
-ref: https://askubuntu.com/questions/1155064/grub2-create-2nd-boot-entry-with-different-kernel-command-line-options-in-grub
+ref: https://wiki.archlinux.org/title/GRUB
 ---
 
 ## Update configuration
 
-Run this command as `root`:
+Configuration file is at `etc/default/grub`.
+
+After changes, apply with:
 
 ```shell
 grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+## Hibernation
+
+Get UUID of the SWAP device.
+
+```shell
+sudo blkid
+```
+
+Edit `/etc/default/grub`.
+
+```ini
+GRUB_CMDLINE_LINUX_DEFAULT="audit=0 loglevel=3 quiet resume=UUID=69ea3ff3-1d78-4c72-8b42-b643415503d3"
+```
+
+Regenerate the `grub.cfg`.
+
+```shell
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+Edit `/etc/mkinitcpio.conf`.
+
+```ini
+HOOKS=(base udev autodetect modconf block filesystems keyboard resume fsck)
+```
+
+Regenerate the initramfs.
+
+```shell
+sudo mkinitcpio -p linux
+```
+
+### Performance improvements
+
+Increase hibernation size for speed.
+Edit `/usr/lib/tmpfiles.d/`:
+
+```txt
+#Type   Path                     Mode   UID     GID     Age     Argument
+w       /sys/power/image_size    -      -       -       -       6612792115
+```
+
+Reduce swappiness to prioritize memory.
+Edit `/etc/sysctl.d/99-swappiness.conf`:
+
+```ini
+vm.swappiness=10
 ```
 
 ## Extra entry with custom option
