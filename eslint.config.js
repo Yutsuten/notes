@@ -32,7 +32,7 @@ export default [
       ],
       'markdownlint/md033': [
         'error', {
-          allowed_elements: ['span'],
+          allowed_elements: ['br', 'span'],
         },
       ],
     },
