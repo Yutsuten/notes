@@ -9,40 +9,42 @@ ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Ob
 let arr = [2, 3, 5];
 arr.length;
 arr = Array(size).fill(value);
+Array.isArray(myvar)
+let empty = Array.isArray(myvar) && myvar.length
+```
+
+Generating an array from an array-like object:
+
+```js
+arr = Array.from(arrayLikeObject);
 ```
 
 ## Methods
 
 | Method | Description |
 | --- | --- |
-| `Array.prototype.slice()` | Returns a shallow copy of a portion of an array. `[start; end]` (end not included) |
+| `arr.indexOf(element)` | Returns the element's index, or `-1` if not present. |
+| `arr.includes(element)` | Returns `true` if the element exists, `false` otherwise. |
+| `arr.join(',')` | Concatenates all elements using the separator and returns a string. |
+| `arr.push(element1, ...)` | Append elements to an array. |
+| `arr.pop()` | Removes the last element and return it. |
+| `arr.shift()` | Removes the first element and return it. |
+| `arr.slice()` | Returns a shallow copy of a portion of an array. `[start; end]` (end not included) |
+| `arr.splice(startIndex, deleteCount, item1, ...)` | Changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. |
+| `arr1.concat(arr2)` | Creates a new array with `arr1` and `arr2` elements merged. |
 
-Examples:
+Example:
 
 ```js
-arr.push(element1, ..., elementN)
-arr.pop()    // last element
-arr.shift()  // first element
 arr.slice(2, 5)  // Same as arr[2:5] in python
-arr.splice(startIndex, deleteCount)
-arr.indexOf(element)
-arr.join(',')
-arr.includes(element)
-arr1.concat(arr2)  // does not modify arr1 and arr2
+```
 
+### With callback
+
+```js
 arr.map(n => n * 2)
 arr.reduce((accumulator, current) => accumulator + current, initialValue)
 arr.forEach((currentValue, index, array) => doSomething())
 arr.find(element => element > 4)  // first found element
 arr.filter(element => element > 4)  // array that satisfies the condition
-
-Array.isArray(myvar)
-```
-
-## Example
-
-Check if the array has elements:
-
-```js
-if (Array.isArray(myvar) && myvar.length) {}
 ```

@@ -27,20 +27,12 @@ for (let key in obj) {}
 | `Object.values(obj)` | Return an array of values. |
 | `Object.entries(obj)` | Return an array of key-value pairs. |
 
+### Looping object keys
+
 ```js
 Object.entries(object1).forEach(([key, value]) => {
   console.log(`${key}: ${value}`);
 })
-```
-
-## Techniques
-
-### Looping object keys
-
-```js
-for (let key in obj) {
-  if (Object.prototype.hasOwnProperty.call(obj, key)) {}
-}
 
 Object.keys(obj).forEach(function (key) {})
 ```
