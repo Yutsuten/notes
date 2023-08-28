@@ -22,4 +22,4 @@ ssh-copy-id user@servername
 Copy the contents of `~/.ssh/id_rsa.pub` from your *local machine*,
 and append to the last line of the `~/.ssh/authorized_keys` of the remote server.
 
-For windows machines, the SSH folder is in `%USERPROFILE%\.ssh`.
+For Windows machines, see [this note](/tool/windows/ssh).

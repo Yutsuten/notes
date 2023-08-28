@@ -28,8 +28,8 @@ The path of the configuration file is different if your user have Administrative
 
 | User | Path |
 | --- | --- |
-| Standard | `C:\Users\username\.ssh\authorized_keys` |
-| Admin | `C:\ProgramData\ssh\administrators_authorized_keys` |
+| Standard | `%USERPROFILE%\.ssh\authorized_keys` |
+| Admin | `%PROGRAMDATA%\ssh\administrators_authorized_keys` |
 
 1. Create the file if it already not exists;
 2. Append the public key into it;
