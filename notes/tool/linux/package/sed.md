@@ -18,13 +18,16 @@ sed OPTIONS INPUTFILE
 
 ## Examples
 
-### Edit file in place
+### Edit file
 
 ```shell
 sed -i 's/pattern/result/g' myfile     # Replace
+sed -i 's/.*/\u&/' myfile              # Capitalize
+sed -i '0,/pattern/s//result/' myfile  # Replace once
 sed -i '/pattern/a new text' myfile    # Add after
+sed -i '0,/pattern/a new text' myfile  # Add after once
 sed -i '/pattern/i new text' myfile    # Add before
-sed -i '0,/pattern/s//result/' myfile  # Replace first occurrence only
+sed -i '0,/pattern/i new text' myfile  # Add before once
 sed -i '/pattern/d'                    # Delete single line
 sed -i '/start_pattern/,/end_pattern/d'                  # Delete lines between two patterns (inclusive)
 sed -i '/start_pattern/,/end_pattern/{/end_pattern/!d}'  # Delete lines between two patterns (exclude)
