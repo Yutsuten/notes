@@ -5,24 +5,23 @@ ref: https://vuejs.org/tutorial/#step-6
 
 ## Single-File Component (SFC)
 
-Using `v-if` `v-else-if` and `v-else` we can create branches of the rendering condition.
+Using `v-if`, `v-else-if` and `v-else` we can create branches of the rendering condition.
 
-Example of variable `awesome` to be used to conditionally render an element,
-and a function `toggle` that toggles the variable:
+```vue
+<script setup lang="ts">
+import { ref } from 'vue';
+const score = ref(10);
+</script>
+```
 
 ```vue
 <script>
 export default {
   data() {
     return {
-      awesome: true
+      score: 10;
     }
   },
-  methods: {
-    toggle() {
-      this.awesome = !this.awesome
-    }
-  }
 }
 </script>
 ```
@@ -31,8 +30,8 @@ Create the elements that will rendered depending on `awesome` value:
 
 ```vue
 <template>
-  <button @click="toggle">toggle</button>
-  <h1 v-if="awesome">Vue is awesome!</h1>
-  <h1 v-else>Oh no 😢</h1>
+  <h1 v-if="score < 5">Reproved!</h1>
+  <h1 v-else-if="score < 8">Not bad</h1>
+  <h1 v-else>Excelent!</h1>
 </template>
 ```
