@@ -3,9 +3,9 @@ title: Package manager
 ref: https://dev.to/equiman/npm-vs-yarn-vs-pnpm-commands-cheatsheet-3el8
 ---
 
-## Command comparison
+## Management
 
-### Package management
+### Package
 
 | | npm | yarn | pnpm |
 | --- | --- | --- | --- |
@@ -16,7 +16,7 @@ ref: https://dev.to/equiman/npm-vs-yarn-vs-pnpm-commands-cheatsheet-3el8
 | Uninstall package | `npm uninstall <package> [--global]` | `yarn [global] remove <package>` | `pnpm remove <package> [--global]` |
 | Update package | `npm update [<package>] [--global]` | `yarn [global] upgrade [<package>] [--latest]` | `pnpm update [<package>] [--latest] [--global]` |
 
-### Project management
+### Project
 
 | | npm | yarn | pnpm |
 | --- | --- | --- | --- |
@@ -25,3 +25,9 @@ ref: https://dev.to/equiman/npm-vs-yarn-vs-pnpm-commands-cheatsheet-3el8
 | Create bundle | `npm build` | `yarn build` | `pnpm build` |
 | Global bin directory | PREFIX + `/bin` | `yarn global bin` | ? |
 | Global package directory | `npm config set prefix ~/.npm` | `yarn global dir` | ? |
+
+### Other
+
+| | npm | yarn | pnpm |
+| --- | --- | --- | --- |
+| Run remotely | `npx` | `yarn dlx` | `pnpm dlx` |
