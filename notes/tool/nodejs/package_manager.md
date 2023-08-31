@@ -31,3 +31,17 @@ ref: https://dev.to/equiman/npm-vs-yarn-vs-pnpm-commands-cheatsheet-3el8
 | | npm | yarn | pnpm |
 | --- | --- | --- | --- |
 | Run remotely | `npx` | `yarn dlx` | `pnpm dlx` |
+
+## Pnpm
+
+Override version of package/dependency (add to `package.json`):
+
+```json
+{
+  "pnpm": {
+    "overrides": {
+      "package": "version"
+    }
+  }
+}
+```
