@@ -42,6 +42,7 @@ title: Properties
   border-radius: 3px;
   box-shadow: 0 0 0 #000;
   outline: unset;
+  opacity: 0.5;
 }
 ```
 
@@ -62,6 +63,7 @@ title: Properties
 ```css
 .text-formatting {
   text-align: justify;
+  text-justify: inter-word;
   text-indent: 1.5rem;
 }
 ```

@@ -80,11 +80,11 @@ onMounted(() => {
 }
 
 .theme-toggle-label .fa-moon {
-  color: #f1c40f;
+  color: #F1C40F;
 }
 
 .theme-toggle-label .fa-sun {
-  color: #f39c12;
+  color: #F39C12;
 }
 
 .theme-toggle-ball {
