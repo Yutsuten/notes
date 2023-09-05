@@ -41,6 +41,15 @@ typeof n === 'number'
 Array.isArray(a)
 ```
 
+### Type from dict
+
+Useful if you have an object and want to create a type from its keys.
+
+```ts
+const point = { x: 10, y: 20 };
+type CoordXY = keyof typeof point;  // CoordXP = 'x' | 'y'
+```
+
 ### Usage
 
 For variables:
@@ -109,6 +118,14 @@ const user: User = {
 };
 ```
 
+If the key can be a whole type, use:
+
+```ts
+interface Parameters {
+  [key: string]: any;
+}
+```
+
 Generic types (like `Array`):
 
 ```ts
@@ -135,6 +152,14 @@ export type { User };
 import type { User } from '../types/user';
 ```
 
+## Operators
+
+Non-null assertion operator: `!`
+
+```ts
+stringOrNull!.toLowerCase();
+```
+
 ## Typings
 
 - [Reference](https://stackoverflow.com/questions/40382842/cant-import-css-scss-modules-typescript-says-cannot-find-module)
@@ -152,3 +177,16 @@ To solve this, create a file `typings.d.ts` containing:
 ```js
 declare module '*.module.css';
 ```
+
+## Tips
+
+### Object.keys
+
+`Object.keys()` return value by default is `any`.
+To change it to its keys instead, use:
+
+```ts
+(Object.keys(mydict) as Array<keyof typeof mydict>).filter(key => ...);
+```
+
+`key` will have the type of `keyof typeof mydict`.
