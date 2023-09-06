@@ -30,3 +30,11 @@ Removes leading and trailing whitespace.
 ```fish
 set trimmed_variable (string trim $variable)
 ```
+
+### Match
+
+Match using regex (similar to grep).
+
+```fish
+string match -qr 'ERROR|CRITICAL'
+```
