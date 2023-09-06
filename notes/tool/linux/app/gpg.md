@@ -58,11 +58,12 @@ gpg OPTIONS FILE
 | `--gen-revoke FILE` | Generate a revocation certificate. |
 | `--send-keys KEYID` | Export keys to a keyserver. |
 | `--recv-keys KEYID` | Import keys from a keyserver. |
+| `--search-keys NAME` | Search the keyserver for the given names. |
 
 ### Key management
 
 ```shell
-gpg --edit-key NAME
+gpg --edit-key IDENTIFIER
 list    # Listing keys
 key 0   # Select key (0 is master)
 trust   # Trust a key
@@ -73,19 +74,56 @@ expire  # Change expire date
 save    # Save changes
 ```
 
+### Generate ECC master key
+
+```shell
+gpg --expert --full-generate-key
+# (9) ECC and ECC
+# (1) Curve 25519
+```
+
+Optionally generate sign key:
+
+```shell
+gpg --expert --edit-key IDENTIFIER
+addkey
+# (10) ECC (sign only)
+# (1) Curve 25519
+save
+```
+
+### Update user info
+
+Add new user info with:
+
+```shell
+gpg --edit-key IDENTIFIER
+adduid
+save
+```
+
+Optionally revoke the old user:
+
+```shell
+gpg --edit-key IDENTIFIER
+uid N
+revuid
+save
+```
+
 ## Advanced
 
-### Remove only private master key
+Remove only private master key:
 
 ```shell
 ## Find master key keygrip
-gpg --with-keygrip --list-key YOURMASTERKEYID
+gpg --with-keygrip --list-key MASTERKEYID
 
 ## Securely delete it from .gnupg folder
 rm -P $HOME/.gnupg/private-keys-v1.d/KEYGRIP.key
 ```
 
-### Always ask for password
+Always ask for password:
 
 ```shell
 ## Create/edit file ~/.gnupg/gpg-agent.conf

@@ -2,13 +2,17 @@
 title: Gpg
 ---
 
+## Configure signing key
+
+Get the sign key ID (short is ok):
+
 ```shell
-## Register key to git
-git config --global user.signingkey 3AA5C34371567BD2
+gpg -K --keyid-format short
+```
 
-## Add this to .bashrc
-export GPG_TTY=$(tty)
+Then configure git to use it:
 
-## Sign commits by default
+```shell
+git config --global user.signingkey '09DCF863'
 git config --global commit.gpgsign true
 ```
