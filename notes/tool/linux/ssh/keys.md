@@ -3,18 +3,16 @@ title: Keys
 ref: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 ---
 
-### Manage SSH keys
+## Generate keys
+
+The public key will be generated at `~/.ssh/id_ed25519.pub`.
 
 ```shell
-## Add key
-ssh-keygen -t rsa -b 4096 -C "email@example.com"
-
-## Public key
-cat ~/.ssh/id_rsa.pub | xclip -sel clip
+ssh-keygen -t ed25519 -a 100 -C 'your_email@example.com'
 ```
 
-The key must have `400` permissions or it will not work.
+Private key's file must have permission of `400` or it will not work.
 
 ```shell
-chmod 400 ~/.ssh/id_rsa
+chmod 400 ~/.ssh/id_ed25519
 ```
