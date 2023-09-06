@@ -11,31 +11,44 @@ title: Variable
 | `$@` | All Arguments. |
 | `$1` | Argument 1 (usable: 0-9). |
 
+## String
+
+```shell
+myvar="value"
+```
+
 ## Array
+
+Creation:
 
 ```shell
 names=('My name' 'Your name' 'Their name')
 read -ra state < <(echo '1 2 3')  # From output
 ```
 
-## Usage
-
-Single value:
+Access elements:
 
 ```shell
-MYVAR="value"
+echo "${names[@]}"  # All elements
+echo "${names[1]}"  # Index (start from 0)
 ```
 
-Array:
+Length:
 
 ```shell
-length=${#names[@]}
-me=${names[0]}
+echo "${#names[@]}"
 ```
 
-### Remove trailing character
+## Advanced syntax
 
-Remove trailing slash:
+To lower case:
+
+```shell
+name="Sora"
+echo "${name,,}"
+```
+
+Remove trailing character (slash):
 
 ```shell
 SOME_DIR="some_dir/"

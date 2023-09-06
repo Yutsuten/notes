@@ -41,6 +41,7 @@ test expression
 [[ '04:00' != '12:00' ]]
 [[ '04:00' < '12:00' ]]
 [[ '04:00' > '12:00' ]]
+[[ "${answer}" == [yY] ]]  # y or Y
 [[ -z "${MYVAR}" ]]  # Length is zero?
 [[ -n "${MYVAR}" ]]  # Length is non-zero?
 ```
