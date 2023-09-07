@@ -79,6 +79,12 @@ Check group GID:
 id -g GROUPNAME
 ```
 
+Delete group:
+
+```shell
+groupdel GROUPNAME
+```
+
 ### Giving admin privileges
 
 Run `visudo` and edit the desired privileges:

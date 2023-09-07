@@ -20,6 +20,7 @@ grep OPTIONS PATTERN FILE
 | `-f` `--file` | Obtain patterns, one per line, from the given file. Use `-` for stdin. |
 | `-E` `--extended-regexp` | Interpret PATTERN as extended regular expressions. |
 | `-F` `--fixed-strings` | Interpret PATTERN as fixed strings. |
+| `-m` `--max-count` | Stop reading a file after NUM matching lines. |
 | `-P` `--perl-regexp` | Interpret patterns as Perl-compatible regular expressions (PCREs). |
 | `-q` `--quiet` `--silent` | Do not write anything to STDOUT. Useful when only status code matters. |
 | `--exclude` | Exclude FILEs |

@@ -1,7 +1,7 @@
 ---
 title: Samba
 ref: https://wiki.archlinux.org/title/Samba
-man: samba
+man: smb.conf
 arch: samba
 ---
 
@@ -29,6 +29,13 @@ Edit `/etc/samba/smb.conf` and check if there are no errors using the command `t
    path = /home/mateus
    valid users = mateus
    read only = no
+```
+
+Prevent creating executable files:
+
+```ini
+[global]
+   create mask = 0644
 ```
 
 Start and enable `smb.service`, and add an password to your user:

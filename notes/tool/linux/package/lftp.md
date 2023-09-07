@@ -90,3 +90,9 @@ Download musics from [www.vipvgm.net](https://www.vipvgm.net/):
 ```shell
 mirror -erP 100 -I '*.m4a' --exclude-glob-from exclude.txt --only-missing --delete-excluded 'https://www.vipvgm.net/mu/'
 ```
+
+Sync files to Android:
+
+```shell
+mirror --reverse --parallel=10 --ignore-time --delete --no-perms --verbose ~/Music/ /Music
+```

@@ -43,9 +43,12 @@ If a video has, for example, two audio streams,
 you may want to add a language and a title to be shown in players.
 
 ```shell
--metadata:g title='Video Title' \
--metadata:s:1 language=jpn -metadata:s:1 title='First Audio Title' \
--metadata:s:2 language=mul -metadata:s:2 title='Second Audio Title' \
+ffmpeg -i without_metadata.mp3 \
+  -metadata:g title='Video Title' \
+  -metadata:g creation_time='2023-08-06 10:00:00' \
+  -metadata:s:1 language=jpn -metadata:s:1 title='First Audio Title' \
+  -metadata:s:2 language=mul -metadata:s:2 title='Second Audio Title' \
+  with_metadata.mkv
 ```
 
 ## Cover

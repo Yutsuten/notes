@@ -33,11 +33,8 @@ COMMAND OPTION PATH
 | Command | Description |
 | --- | --- |
 | `ls` `buffers` | List current opened buffers. |
-| `args` | List arguments. |
 | `b` | Open buffer. Buffer number or file name can be used. |
 | `bn` `bp` | Next or previous buffer. |
-| `n` `N` | Next or previous argument. |
-| `argu` | Jump to argument NUM, defaults to current. |
 | `bd` | Delete buffer. Buffer number or file name can be used. |
 
 ### Tips

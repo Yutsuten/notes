@@ -1,5 +1,6 @@
 ---
-title: Routing
+title: Views
+ref: https://flask.palletsprojects.com/en/2.3.x/api/#incoming-request-data
 ---
 
 ## Request
@@ -17,19 +18,21 @@ from flask import request
 URL arguments (usually on GET requests):
 
 ```python
-value = request.args['arg_name']
+request.args.get('arg_name')
+request.args.getlist('status')
 ```
 
 Form parameters (usually on POST requests):
 
 ```python
-value = request.form['param_name']
+request.form.get('param_name')
 ```
 
 JSON data (usually on POST, PUT or Ajax requests):
 
 ```python
-data = request.get_json()
+request.get_json()
+request.json.get('arg_name')
 ```
 
 ## Response

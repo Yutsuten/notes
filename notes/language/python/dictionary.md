@@ -30,14 +30,24 @@ Better than creating a list ang getting only the first element.
 first_key = next(iter(my_dict))
 ```
 
-### Copy
+### Clear empty values
 
 ```python
-## Shallow
+cleared = {key: value for key, value in errors.items() if value}
+```
+
+### Copy
+
+Shallow
+
+```python
 dict(my_dict)
 my_dict.copy()
+```
 
-## Deep
+Deep
+
+```python
 import copy
 copy.deepcopy(my_dict)
 ```

@@ -41,3 +41,9 @@ Move files using filenames written in a file.
 ```shell
 xargs -rI % mv "All/%" . < ~/move.txt
 ```
+
+Check if musics in playlist exist.
+
+```shell
+xargs -d '\n' file < playlist.m3u8 | grep 'cannot open'
+```

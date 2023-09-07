@@ -28,6 +28,12 @@ Synchronize from/to remote.
 rsync 'remote:~/code/*.py' ~/code
 ```
 
+Synchronize to Android (MTP).
+
+```shell
+rsync --recursive --inplace --size-only --delete --omit-dir-times --no-perms --verbose ~/local/ /android/mtp/
+```
+
 Specifying the directories and files to be moved.
 (Include folders, then specific files and directories,
 finally exclude everything else.

@@ -16,6 +16,7 @@ find LOCATION OPTIONS
 | `-name` | Base of file name to be matched. |
 | `-iname` | Like `-name`, but the match is case insensitive. |
 | `-type` | File type to be matched. `d` for directory, `f` for file, `l` for symbolic link. |
+| `-mtime` | If `-N` last edited less than N days, if `+N` last edited more than N days. |
 | `-empty` | File is empty and is either a regular file or a directory. |
 | `-o` `-or` | Logical OR. |
 | `-not` `!` | Negates the next condition. |
@@ -30,7 +31,7 @@ find LOCATION OPTIONS
 Find files by name:
 
 ```shell
-find . -name "*.js"
+find . -name '*.js'
 ```
 
 Find and delete empty directories:

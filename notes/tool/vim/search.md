@@ -50,7 +50,7 @@ On the find part,
 the syntax is the same as described on the search section.
 
 On the replace part,
-the meaning of some patterns change so be careful.
+the meaning of some patterns change:
 
 | Pattern | Description |
 | --- | --- |
@@ -59,9 +59,29 @@ the meaning of some patterns change so be careful.
 | `\0` | The whole match. |
 | `\1` | From 1 to 9, the Nth match. |
 
-```viml
+```vim
 :s/before/after/g       "Current line"
-:%s/before/after/g      "Every file"
+:%s/before/after/g      "All lines"
 :'<,'>s/before/after/g  "Only selection"
 :%s/\v(\w+)/ \1 /g      "Captured group \1"
+```
+
+If the search/replace pattern contains a lot of slashes, use `#` as a separator:
+
+```viml
+:s#usrbin#/usr/bin#g
+```
+
+## Find & Delete
+
+Delete lines that start with a space:
+
+```vim
+:g/^\s.*$/d _
+```
+
+Delete empty lines:
+
+```vim
+:g/^$/d _
 ```
