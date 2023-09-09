@@ -3,6 +3,12 @@ title: Grub
 ref: https://wiki.archlinux.org/title/GRUB
 ---
 
+## Install
+
+```shell
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+```
+
 ## Update configuration
 
 Configuration file is at `etc/default/grub`.
