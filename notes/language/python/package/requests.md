@@ -27,8 +27,8 @@ data = {
 }
 
 requests.get(url, params=params, headers=headers)
-requests.post(url, headers=headers, data=data)
-requests.put(url, headers=headers, data=data)
+requests.post(url, headers=headers, data=data, json={})
+requests.put(url, headers=headers, data=data, json={})
 requests.delete(url, headers=headers)
 ```
 
