@@ -23,6 +23,7 @@ like `text.method()`.
 | `isdigit()` | Return `True` if it only has numbers. |
 | `isalnum()` | Return `True` if it has letters or numbers. |
 | `startswith('prefix')` | Return `True` if string starts with the prefix, otherwise return `False`. |
+| `endswith('prefix')` | Return `True` if string ends with the suffix, otherwise return `False`. |
 | `replace('pattern', repl, count=0)` | Return a replaced copy of the string. (For regex use `re` package). |
 | `split(' ')` | Return a list splitted by a delimiter string. |
 | `splitlines()` | Return a list splitted by line breaks. |
