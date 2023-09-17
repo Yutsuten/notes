@@ -34,6 +34,12 @@ Synchronize to Android (MTP).
 rsync --recursive --inplace --size-only --delete --omit-dir-times --no-perms --verbose ~/local/ /android/mtp/
 ```
 
+Ignore hidden folders:
+
+```shell
+rsync --exclude='.*/' SRC DEST
+```
+
 Specifying the directories and files to be moved.
 (Include folders, then specific files and directories,
 finally exclude everything else.
