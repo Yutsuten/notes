@@ -1,5 +1,6 @@
 ---
 title: Element
+ref: https://stackoverflow.com/questions/4781077/html5-best-practices-section-header-aside-article-elements/
 ---
 
 ## Container
@@ -22,6 +23,12 @@ title: Element
 <i></i>
 <u></u>
 <a href="javascript:void(0)">Link</a>
+```
+
+## Image
+
+```html
+<img alt="image" src="image.png" />
 ```
 
 ## Empty

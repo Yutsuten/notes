@@ -175,3 +175,17 @@ Change placeholder color
   opacity: 1;
 }
 ```
+
+### Image
+
+Avatar (resize, crop, center):
+
+```css
+img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 15px;
+}
+```
