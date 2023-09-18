@@ -17,6 +17,8 @@ os.environ.get('HOME')
 
 ### Local files
 
+*Note:* For path manipulations, prefer using [pathlib](/language/python/package/pathlib).
+
 | Method | Description |
 | --- | --- |
 | `os.listdir(path)` | List a directory. |
