@@ -32,3 +32,18 @@ Start process with nice level of 5:
 ```shell
 nice -n 5 command
 ```
+
+Start process with nice level of -5 (and still run it as a user):
+
+```fish
+sudo -E nice -n -5 sudo -Eu (whoami) command
+```
+
+## Changing the limit
+
+If you do not want to use sudo everytime, edit `/etc/security/limits.conf`:
+
+```ini
+#<domain>      <type>  <item>         <value>
+myuser          -       nice           -5
+```
