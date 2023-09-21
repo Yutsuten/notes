@@ -26,13 +26,20 @@ tsc --noEmit
 - Dict: `Record<Type1, Type2>`
 - Set: -
 - Symbol: `symbol` [[1]](https://javascript.info/symbol)
-- Function: `function`
+- Function: `Function`
 - Empty: `null` `undefined` `void` (function which returns `undefined` or has no return value)
 - Unset: `unknown` (someone must declare its type)
 - Never: `never`
 - Union: `|`
 - Class: -
 - Final: -
+
+Async functions don't have a primitive type.
+Declare one with:
+
+```ts
+type AsyncFunction = () => Promise<any>;
+```
 
 To check the type, use `typeof`:
 
