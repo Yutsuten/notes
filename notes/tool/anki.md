@@ -38,7 +38,7 @@ ln -s /usr/lib/qt/plugins/platforminputcontexts/libfcitx5platforminputcontextplu
 ### Qt6
 
 ```shell
-ln -s /usr/lib/qt/plugins/platforminputcontexts/libfcitx5platforminputcontextplugin.so \
+ln -s /usr/lib/qt6/plugins/platforminputcontexts/libfcitx5platforminputcontextplugin.so \
       ~/.local/lib/python3.10/site-packages/PyQt6/Qt6/plugins/platforminputcontexts
 ```
 
