@@ -10,6 +10,7 @@ title: Properties
 .positioning {
   display: block;
   position: relative;
+  transform: translate(-50%, -50%);
   height: 0;
   width: 0;
   top: 0;
