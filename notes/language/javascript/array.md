@@ -48,3 +48,19 @@ arr.forEach((currentValue, index, array) => doSomething())
 arr.find(element => element > 4)  // first found element
 arr.filter(element => element > 4)  // array that satisfies the condition
 ```
+
+To interate an array and run it `async`, use:
+
+```js
+// Sequence
+for (const file of files) {
+  const contents = await fs.readFile(file, 'utf8');
+  console.log(contents);
+}
+
+// Parallel
+await Promise.all(files.map(async (file) => {
+  const contents = await fs.readFile(file, 'utf8')
+  console.log(contents)
+}));
+```
