@@ -39,6 +39,15 @@ Example:
 arr.slice(2, 5)  // Same as arr[2:5] in python
 ```
 
+Remove by value:
+
+```js
+const index = arr.indexOf(value);
+if (index !== -1) {
+  arr.splice(index, 1);
+}
+```
+
 ### With callback
 
 ```js
