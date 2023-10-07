@@ -29,8 +29,18 @@ Also add an entry to the swap file on `/etc/fstab`:
 
 ## Swappiness
 
-The default swappiness is too high,
-reducing it improves performance.
+Read more [here](https://lwn.net/Articles/83588/).
+
+`swap_tendency` behaves diferently when bellow or above 100.
+
+```c
+swap_tendency = mapped_ratio/2 + distress + vm_swappiness;
+```
+
+- Lower than 50: Memory is already full and having distress (trouble to free memory).
+- 50 means: Wait until we run out of memory until swapping.
+- 55 means: When memory usage is 90%, start using swap.
+- 60 means: When memory usage is 80%, start using swap.
 
 Check the current swappiness with:
 
@@ -41,11 +51,11 @@ sysctl vm.swappiness
 Temporarily set the swappiness:
 
 ```shell
-sysctl -w vm.swappiness=10
+sysctl -w vm.swappiness=55
 ```
 
 To set it permanently, add to `/etc/sysctl.d/99-swappiness.conf`:
 
 ```txt
-vm.swappiness=10
+vm.swappiness=55
 ```
