@@ -13,6 +13,20 @@ Restart pipewire components with:
 systemctl --user restart wireplumber pipewire pipewire-pulse
 ```
 
+## Sample rate
+
+Allowing both 44.1kHz and 48kHz may help fixing some cracklings.
+
+```shell
+cp /usr/share/pipewire/pipewire.conf ~/.config/pipewire/pipewire.conf
+```
+
+Add to `~/.config/pipewire/pipewire.conf` > `context.modules`:
+
+```ini
+default.clock.allowed-rates = [ 44100 48000 ]
+```
+
 ## Nice level
 
 For the time I'm writing this (2022/11/27),
