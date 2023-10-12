@@ -23,7 +23,13 @@ mount OPTIONS /dev/sdXN /home/user/Mount
 | --- | --- |
 | `-o` `--options` | Use the specified mount options. The argument is a comma-separated list. |
 
-### Example
+### Examples
+
+File systems used for data may be mounted with lower permissions (for security).
+
+```shell
+mount -o nodev,nosuid,noexec /dev/sdc1 ~/Mount
+```
 
 Set the `gid` and `uid` of the device (needed depending on the file system).
 
