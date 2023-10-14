@@ -31,16 +31,16 @@ File systems used for data may be mounted with lower permissions (for security).
 mount -o nodev,nosuid,noexec /dev/sdc1 ~/Mount
 ```
 
-Set the `gid` and `uid` of the device (needed depending on the file system).
+Set the `gid` and `uid` of the device (needed if not a Linux file system).
 
 ```shell
-mount -o gid=1000,uid=1000 /dev/sdc1 ~/Mount
+mount -o nodev,nosuid,noexec,gid=1000,uid=1000 /dev/sdc1 ~/Mount
 ```
 
 Set `fmask` to remove execution permission from files:
 
 ```shell
-mount -o fmask=111 /dev/sdc1 ~/Mount
+mount -o nodev,nosuid,noexec,fmask=111 /dev/sdc1 ~/Mount
 ```
 
 ## Unmount
