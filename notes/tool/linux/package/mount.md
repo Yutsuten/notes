@@ -48,5 +48,5 @@ mount -o nodev,nosuid,noexec,fmask=111 /dev/sdc1 ~/Mount
 Unmount the device with:
 
 ```shell
-umount /dev/sdXN
+umount /dev/sdXN && sudo sync
 ```

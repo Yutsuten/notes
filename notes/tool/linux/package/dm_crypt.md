@@ -47,6 +47,6 @@ sudo mount -o nodev,nosuid,noexec /dev/mapper/enc1 /media/hdd1
 Unmount
 
 ```fish
-sudo umount /media/hdd1
+sudo umount /media/hdd1 && sudo sync
 sudo cryptsetup close enc1
 ```
