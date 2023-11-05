@@ -40,7 +40,8 @@ the string must be passed as a parameter.
 
 | Function | Description |
 | --- | --- |
-| `len` | Returns the number of characters in the string. |
+| `len` | Return the number of characters in the string. |
+| `ord` | Return an integer representing the Unicode code point of that character. |
 
 ## F-string
 
