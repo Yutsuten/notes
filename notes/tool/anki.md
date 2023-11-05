@@ -7,14 +7,19 @@ ref: https://github.com/ankitects/anki/blob/main/docs/development.md
 
 The latest released Anki can be checked at
 [PyPI](https://pypi.org/project/aqt/).
-To install python from pre-built wheels, run:
+To install python from pre-built wheels,
+first create and activate a virtual environment:
 
 ```shell
-pip install --user --upgrade aqt
+python -m venv --system-site-packages .venv
 ```
 
-The packages `pyqt6 pyqt6-webengine` are also needed.
+The packages `pyqt6 pyqt6-webengine` will also be needed.
 Prefer your system's package manager to install it.
+
+```shell
+pip install --upgrade aqt
+```
 
 On newer Linux that upgraded `glibc`, start `anki` with either:
 
