@@ -38,3 +38,9 @@ Closing tag is not needed.
 ```html
 <br>
 ```
+
+White space:
+
+```html
+&nbsp;
+```
