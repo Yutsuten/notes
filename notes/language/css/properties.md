@@ -47,6 +47,21 @@ title: Properties
 }
 ```
 
+Image border:
+
+```css
+.bordered-image {
+  -webkit-filter: drop-shadow(1px 1px 0.5px black)
+                  drop-shadow(-1px 1px 0.5px black)
+                  drop-shadow(1px -1px 0.5px black)
+                  drop-shadow(-1px -1px 0.5px black);
+  filter: drop-shadow(1px 1px 0.5px black)
+          drop-shadow(-1px 1px 0.5px black)
+          drop-shadow(1px -1px 0.5px black)
+          drop-shadow(-1px -1px 0.5px black);
+}
+```
+
 ### Font
 
 ```css
@@ -56,6 +71,14 @@ title: Properties
   text-decoration: none;
   white-space: pre-wrap; /* pre-line (enable new lines) */
   word-wrap: break-word;
+}
+```
+
+Text border:
+
+```css
+.bordered-text {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 ```
 
