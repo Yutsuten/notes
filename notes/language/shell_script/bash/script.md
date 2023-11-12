@@ -5,7 +5,7 @@ title: Script
 ## Header
 
 ```shell
-##!/bin/bash
+#!/bin/bash
 ```
 
 ## Read from pipe / stdin
