@@ -50,3 +50,16 @@ ffmpeg GLOBAL_OPTIONS INPUT_OPTIONS -i input_url OUTPUT_OPTIONS output_url
 | --- | --- |
 | `ffmpeg -encoders 2>&1 | grep "^ A"` | Audio encoders |
 | `ffmpeg -encoders 2>&1 | grep "^ V"` | Video encoders |
+
+## Tips
+
+If using `-shortest` is not working as expected,
+you may need to manually set the desired time with `-t`.
+
+```shell
+ffmpeg \
+  -i video_already_cut.mkv \
+  -ss 01:53:55.300 -t 45.3 -i rec.flac \
+  -ss 01:53:55.300 -t 45.3 -i mix.flac \
+  # ...
+```

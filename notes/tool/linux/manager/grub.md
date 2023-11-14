@@ -39,33 +39,17 @@ Regenerate the `grub.cfg`.
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-Edit `/etc/mkinitcpio.conf`.
+Add `resume` to `/etc/mkinitcpio.conf`
+(After `udev`, maybe before `filesystems`).
 
 ```ini
-HOOKS=(base udev autodetect modconf block filesystems keyboard resume fsck)
+HOOKS=(base udev autodetect modconf block resume filesystems keyboard fsck)
 ```
 
 Regenerate the initramfs.
 
 ```shell
 sudo mkinitcpio -p linux
-```
-
-### Performance improvements
-
-Increase hibernation size for speed.
-Edit `/usr/lib/tmpfiles.d/`:
-
-```txt
-#Type   Path                     Mode   UID     GID     Age     Argument
-w       /sys/power/image_size    -      -       -       -       6612792115
-```
-
-Reduce swappiness to prioritize memory.
-Edit `/etc/sysctl.d/99-swappiness.conf`:
-
-```ini
-vm.swappiness=10
 ```
 
 ## Extra entry with custom option

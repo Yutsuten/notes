@@ -111,6 +111,14 @@ revuid
 save
 ```
 
+### Verify file signature
+
+Given a signature file `.sig` and the data/binary file you want to check (ex: `.efi`):
+
+```shell
+gpg --keyserver-options auto-key-retrieve --verify ipxe-arch.efi.sig ipxe-arch.efi
+```
+
 ## Advanced
 
 Remove only private master key:
