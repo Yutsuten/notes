@@ -6,8 +6,10 @@ arch: cryptsetup
 
 ## Encrypt removable data disk
 
-**Assumption:** Disk is `/dev/sdb`. The whole disk will be used.
+::: info ASSUMPTION
+Disk is `/dev/sdb`. The whole disk will be used.
 We'll call the encrypted partition `enc1`.
+:::
 
 ### Encrypt data partition
 
@@ -61,8 +63,10 @@ Useful links:
 - [Suspend and hibernate](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Hibernation)
 - [Root partition wrongly assumed to be encrypted](https://bbs.archlinux.org/viewtopic.php?id=150850)
 
-**Assumption:** Swap is on disk `/dev/nvme0n1` and partition `/dev/nvme0n1p2`.
+::: info ASSUMPTION
+Swap is on disk `/dev/nvme0n1` and partition `/dev/nvme0n1p2`.
 We'll call the encrypted partition `encSwap`.
+:::
 
 ### Encrypt swap partition
 
@@ -109,7 +113,9 @@ And update the configuration `/etc/default/grub` by:
 GRUB_CMDLINE_LINUX_DEFAULT="audit=0 loglevel=3 quiet cryptdevice=/dev/disk/by-uuid/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee:encSwap resume=/dev/mapper/encSwap"
 ```
 
-> For more details on the options used here, check `mkinitcpio -H encrypt`.
+::: tip
+For more details on the options used here, check `mkinitcpio -H encrypt`.
+:::
 
 Regenerate the `grub.cfg`:
 
