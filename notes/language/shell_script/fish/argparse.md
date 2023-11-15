@@ -17,10 +17,10 @@ Parse `-h` and `-n` as boolean:
 argparse 'h/help' 'n/name' -- $argv
 or return
 
-if test $_flag_h  # Variable is -h if set
+if set -ql _flag_help
     echo 'Show help'
 end
-if test $_flag_n  # Variable is -n if set
+if set -ql _flag_name
     echo 'Show name'
 end
 ```
