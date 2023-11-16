@@ -129,7 +129,7 @@ We use initrd to open swap.
 Update `HOOKS` in `/etc/mkinitcpio.conf` by adding `encrypt` somewhere before `resume` and `filesystems`:
 
 ```shell
-HOOKS=(... encrypt resume filesystems ...)
+HOOKS=(base udev setvtrgb autodetect modconf keyboard keymap block encrypt resume filesystems fsck)
 ```
 
 Regenerate the initramfs.
@@ -146,3 +146,34 @@ Add the following line to `/etc/fstab`:
 ```txt
 /dev/mapper/encSwap swap swap defaults 0 0
 ```
+
+### Using keyfile in USB drive
+
+This step is optional.
+
+Add the module `vfat` to `/etc/mkinitcpio.conf`:
+
+```shell
+MODULES=(vfat)
+```
+
+And add `cryptkey=device:fstype:path` kernel option to `/etc/default/grub`:
+
+```ini
+cryptkey=/dev/disk/by-uuid/AAAA-BBBB:vfat:/swap_keyfile
+```
+
+Apply the changes.
+
+```shell
+sudo mkinitcpio -p linux
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+Now create the `swap_keyfile` in your USB drive with the password on it.
+
+::: warning
+**Be careful to not put a new line at the end of the file!**
+Text editors usually put it automatically,
+so use `echo -n` or a password generator command.
+:::

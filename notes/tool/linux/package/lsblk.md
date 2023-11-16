@@ -11,7 +11,8 @@ lsblk OPTIONS DEVICE
 
 | Option | Description |
 | --- | --- |
-| `-o` | Specify which output columns to print. Extend default list with the `+column` syntax. |
+| `-f` `--fs` | Output info about filesystems. |
+| `-o` `--output` | Specify which output columns to print. Extend default list with the `+column` syntax. |
 | `--help` | Get full list of options and available columns. |
 
 ## Example
@@ -19,5 +20,5 @@ lsblk OPTIONS DEVICE
 Check file system of all connected storage devices.
 
 ```shell
-lsblk -o +FSTYPE
+lsblk -o +FSTYPE,UUID
 ```
