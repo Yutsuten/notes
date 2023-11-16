@@ -91,26 +91,22 @@ Create the encrypted partition, open volume and create the filesystem.
 
 ```shell
 sudo cryptsetup luksFormat /dev/nvme0n1p2
-sudo cryptsetup open /dev/nvme0n1p2 encSwap
+sudo cryptsetup config --label=swap /dev/nvme0n1p2
+sudo cryptsetup open /dev/disk/by-label/swap encSwap
 sudo mkswap /dev/mapper/encSwap
 ```
 
 ### GRUB configuration
 
 Now we configure the boot options on GRUB.
-Get the partition UUID with:
 
-```shell
-lsblk -dno UUID /dev/nvme0n1p2
-```
+Update the configuration `/etc/default/grub` by:
 
-And update the configuration `/etc/default/grub` by:
-
-- Adding `cryptdevice=/dev/disk/by-uuid/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee:encSwap`
+- Adding `cryptdevice=/dev/disk/by-label/swap:encSwap`
 - Update `resume` to `resume=/dev/mapper/encSwap`
 
 ```ini
-GRUB_CMDLINE_LINUX_DEFAULT="audit=0 loglevel=3 quiet cryptdevice=/dev/disk/by-uuid/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee:encSwap resume=/dev/mapper/encSwap"
+GRUB_CMDLINE_LINUX_DEFAULT="audit=0 loglevel=3 quiet cryptdevice=/dev/disk/by-label/swap:encSwap resume=/dev/mapper/encSwap"
 ```
 
 ::: tip
