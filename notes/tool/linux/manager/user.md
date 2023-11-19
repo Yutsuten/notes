@@ -13,7 +13,7 @@ useradd OPTIONS USERNAME
 | Option | Description |
 | --- | --- |
 | `-m` | Create home folder |
-| `-p` | Set password |
+| `-p` | Set password (inline) |
 | `-G g1,g2` | Add user to groups |
 
 To delete user:

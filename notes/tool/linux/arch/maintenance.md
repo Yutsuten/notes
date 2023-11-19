@@ -1,5 +1,5 @@
 ---
-title: Arch
+title: Maintenance
 ref: https://wiki.archlinux.org/title/System_maintenance
 ---
 
