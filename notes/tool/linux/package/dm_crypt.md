@@ -156,7 +156,7 @@ MODULES=(vfat)
 And add `cryptkey=device:fstype:path` kernel option to `/etc/default/grub`:
 
 ```ini
-cryptkey=/dev/disk/by-uuid/AAAA-BBBB:vfat:/swap_keyfile
+cryptkey=/dev/disk/by-label/USB_LOADER:vfat:/swap_keyfile
 ```
 
 Apply the changes.
@@ -167,6 +167,55 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 Now create the `swap_keyfile` in your USB drive with the password on it.
+
+::: warning
+**Be careful to not put a new line at the end of the file!**
+Text editors usually put it automatically,
+so use `echo -n` or a password generator command.
+:::
+
+## Encrypt home
+
+::: info ASSUMPTION
+Home is on disk `/dev/nvme0n1` and partition `/dev/nvme0n1p4`.
+We'll call the encrypted partition `encHome`.
+:::
+
+::: warning
+When creating the home partition,
+do **not** set the flag `linux-home`,
+or else it will conflict with the configuration in `/etc/crypttab`.
+(only password unlock will be available, even without configuration in `/etc/crypttab`)
+:::
+
+### Encrypt home partition
+
+Wipe the partition as described in the sections above.
+
+Create the encrypted partition, open volume and create the filesystem.
+
+```shell
+cryptsetup luksFormat /dev/nvme0n1p4
+cryptsetup config --label=home /dev/nvme0n1p4
+cryptsetup open /dev/disk/by-label/home encHome
+mkfs.ext4 /dev/mapper/encHome
+```
+
+### Crypttab configuration
+
+Add the following line to `/etc/crypttab`:
+
+```ini
+# <name>   <device>                  <password>                                    <options>
+encHome    /dev/disk/by-label/home   /home_keyfile:/dev/disk/by-label/USB_LOADER
+```
+
+Now create the `home_keyfile` in your USB drive with the password on it.
+
+::: tip
+Syntax for password is `path:device`,
+the inverse of the setting `cryptkey` without *fstype* used to encrypt swap.
+:::
 
 ::: warning
 **Be careful to not put a new line at the end of the file!**
