@@ -305,6 +305,13 @@ EDITOR=nvim sudo -e /etc/environment
 # Copy contents of ~/.config/linux/env_vars
 ```
 
+Add `setvtrgb` to `HOOKS` in `/etc/mkinitcpio.conf`,
+and run `sudo mkinitcpio -p linux`.
+
+```shell
+HOOKS=(base udev setvtrgb autodetect modconf block filesystems keyboard resume fsck)
+```
+
 Start/enable some user timers:
 
 ```shell
