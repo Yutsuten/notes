@@ -250,6 +250,14 @@ usermod -s /usr/bin/fish mateus
 %wheel ALL=(ALL) ALL
 ```
 
+- Give some extra permissions to users in `wheel` by editing `/etc/security/limits.conf`,
+if applicable
+
+```ini
+#<domain>      <type>  <item>         <value>
+@wheel         -       nice           -5
+```
+
 - Start and enable `NetworkManager`
 
 ```shell
