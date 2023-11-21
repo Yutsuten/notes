@@ -59,7 +59,7 @@ Here some partition tables I've used:
 ```txt
 Number  Start   End     Size    File system       Name                  Flags
  1      1049kB  538MB   537MB   fat32             EFI System Partition  boot, esp
- 2      538MB   34.2GB  33.6GB                    SWAP Partition        swap, no_automount
+ 2      538MB   34.2GB  33.6GB                    SWAP Partition        swap
  3      34.2GB  1000GB  966GB   ext4              Root Partition
 
 ------------------------------------------------------

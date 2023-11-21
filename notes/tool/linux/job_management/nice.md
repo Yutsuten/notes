@@ -45,5 +45,5 @@ If you do not want to use sudo everytime, edit `/etc/security/limits.conf`:
 
 ```ini
 #<domain>      <type>  <item>         <value>
-myuser          -       nice           -5
+@wheel         -       nice           -5
 ```
