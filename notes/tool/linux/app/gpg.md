@@ -44,6 +44,7 @@ gpg OPTIONS FILE
 | `-c` `--symmetric` | Encrypt a FILE using symmetric cipher. |
 | `-e` `--encrypt` | Encrypt data to one or more public keys. |
 | `-r` `--recipient` | Encrypt for user id NAME. Often used with `--encrypt`. |
+| `--default-recipient-self` | Use the default key as default recipient if option `--recipient` is not used. |
 | `-d` `--decrypt` | Decrypt the FILE. |
 | `--full-generate-key` | Generate a new key pair. |
 | `--delete-keys NAME` | Remove key from the public keyring. |

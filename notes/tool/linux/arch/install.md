@@ -258,10 +258,11 @@ if applicable
 @wheel         -       nice           -5
 ```
 
-- Start and enable `NetworkManager`
+- Start and enable `NetworkManager` and `greetd`
 
 ```shell
 systemctl start/enable NetworkManager
+systemctl enable greetd
 ```
 
 ### As user
