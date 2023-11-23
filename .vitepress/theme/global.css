@@ -36,6 +36,10 @@ html.dark {
   --red: #DD7878;
 }
 
+*:focus-visible {
+  outline: unset;
+}
+
 html, body {
   padding: 0;
   margin: 0;
@@ -87,14 +91,6 @@ h4:hover .header-anchor::before,
 h5:hover .header-anchor::before,
 h6:hover .header-anchor::before {
   opacity: 1;
-}
-
-h2:focus-visible,
-h3:focus-visible,
-h4:focus-visible,
-h5:focus-visible,
-h6:focus-visible {
-  outline: unset;
 }
 
 table {
