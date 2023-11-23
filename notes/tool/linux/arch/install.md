@@ -302,7 +302,7 @@ Set environment variables:
 
 ```shell
 EDITOR=nvim sudo -e /etc/environment
-# Copy contents of ~/.config/linux/env_vars
+# Copy contents of ~/.config/linux/system/env_vars
 ```
 
 Add `setvtrgb` to `HOOKS` in `/etc/mkinitcpio.conf`,
