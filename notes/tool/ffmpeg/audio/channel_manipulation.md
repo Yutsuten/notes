@@ -26,6 +26,6 @@ and merging it with a stereo audio (speakers).
 ffmpeg -i mic.flac -i speakers.flac \
   -filter_complex \
    '[0:a][0:a]amerge=inputs=2[0a];
-    [0a][1:a]amerge=inputs=2[outa]' -map '[outa]' \
+    [0a][1:a]amerge=inputs=2[outa]' -map '[outa]' -ac 2 \
   mix.flac
 ```
