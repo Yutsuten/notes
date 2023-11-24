@@ -8,9 +8,8 @@ export default defineConfig({
   head: [
     [
       'link', {
-        href: '/favicon.png',
+        href: '/favicon.ico',
         rel: 'icon',
-        type: 'image/png',
       },
     ],
   ],

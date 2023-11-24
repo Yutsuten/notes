@@ -24,7 +24,7 @@ onMounted(() => {
       tools information.
     </p>
     <p>
-      There are currently {{ notes.length - 1 }} notes. The last update was at {{ lastUpdated }}.
+      There are currently {{ notes.length - 1 }} notes. The last update was on {{ lastUpdated }}.
     </p>
     <div class="credits">
       <em>
@@ -36,9 +36,13 @@ onMounted(() => {
         </a> and <a
           rel="nofollow"
           href="https://vitepress.dev/"
-        >
-          VitePress
-        </a>
+        >VitePress</a>.
+      </em>
+      <em>
+        Favicon by <a
+          rel="nofollow"
+          href="https://icons8.com/"
+        >Icons8</a>.
       </em>
     </div>
   </div>
