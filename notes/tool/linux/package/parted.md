@@ -37,3 +37,18 @@ set 1 esp on
 
 Disk partitioning is done.
 Type `quit` to go back to shell.
+
+### Partition label
+
+[Persistent block device naming](https://wiki.archlinux.org/title/Persistent_block_device_naming)
+
+If after formatting a partition you want to change the label,
+use one of the commands bellow depending on the file system:
+
+```shell
+swaplabel -L newlabel /dev/XXX
+e2label /dev/XXX newlabel
+fatlabel /dev/XXX newlabel
+ntfslabel /dev/XXX newlabel
+cryptsetup config --label=newlabel /dev/XXX
+```
