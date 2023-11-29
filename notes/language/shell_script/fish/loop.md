@@ -3,7 +3,9 @@ title: Loop
 ref: https://fishshell.com/docs/current/tutorial.html#loops
 ---
 
-## While syntax
+## Syntax
+
+### While
 
 ```fish
 while true
@@ -11,7 +13,7 @@ while true
 end
 ```
 
-## For syntax
+### For
 
 Loop files:
 
@@ -27,4 +29,14 @@ Loop list of numbers:
 for x in (seq 5)
     touch file_$x.txt
 end
+```
+
+## Usage
+
+Read file line by line in loop:
+
+```fish
+while read --line keyvalue
+  export $keyvalue
+end < ~/.local/environment
 ```

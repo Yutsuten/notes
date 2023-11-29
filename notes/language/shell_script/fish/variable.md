@@ -5,14 +5,14 @@ ref: https://fishshell.com/docs/current/language.html#variable-expansion
 
 ## Usage
 
-### Set
+Creating variables
 
 ```fish
 set var_name value
 set my_name (read)
 ```
 
-### Print
+Using variables
 
 ```fish
 echo $HOME
@@ -31,3 +31,13 @@ echo "$foo and $bar"
 | `$!` | `$last_pid` | PID of last program run in background. |
 | `$$` | `$fish_pid` | Current fish PID. |
 | `$-` | `status is-interactive` `status is-login` | Check shell interactivity. |
+
+## Load environment file
+
+Considering `.env` an environment file
+(with `KEY=VALUE` tuples),
+one can export those variables with fish using:
+
+```fish
+export (xargs -L 1 < .env)
+```
