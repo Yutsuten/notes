@@ -1,5 +1,5 @@
 ---
-title: Path
+title: Sys
 ---
 
 ## Adding directories to path

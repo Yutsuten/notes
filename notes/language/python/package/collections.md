@@ -24,6 +24,13 @@ tom = QueryResult(id=1, name='Tom', status='active')
 tom.id
 ```
 
+There is no way to update an instance of a namedtuple,
+but it is possible to create a copy with only some fields replaced:
+
+```python
+inactive_tom = tom._replace(status='inactive')
+```
+
 ### Counter
 
 To count the number of occurrences of an element,

@@ -28,12 +28,6 @@ del my_variable
 
 ## Console interaction
 word = raw_input("Enter a word: ")
-
-## Print
-print(my_int)
-print(span())
-print('%.2f' % my_float)
-print('Title', variable) # Title <variable>
 ```
 
 ### Print
@@ -42,6 +36,7 @@ Print objects to the text stream `file`, separated by `sep` and followed by `end
 
 ```python
 print(objects, sep=' ', end='\n', file=sys.stdout, flush=False)
+print(objects, sep=' ', end='\n', file=sys.stderr, flush=False)
 ```
 
 Example of printing without newline:

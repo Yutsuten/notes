@@ -5,7 +5,9 @@ ref: https://docs.python.org/3/library/pathlib.html
 
 ## Usage
 
-**Note:** Available from version 3.4.
+::: info NOTE
+Available from version 3.4.
+:::
 
 ```python
 from pathlib import Path
@@ -26,6 +28,22 @@ path.stem      # file
 path.suffix    # .txt
 
 path1 / path2  # Same as os.path.join(path1, path2)
+```
+
+### File manipulation
+
+Read or write to file
+
+```python
+with Path.open(path, 'w') as myfile:
+    myfile.write('content')
+```
+
+Create empty file (similar to `touch`)
+
+```python
+with Path.open(path, 'a'):
+    os.utime(path, None)
 ```
 
 ### Delete file
