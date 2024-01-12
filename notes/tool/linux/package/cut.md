@@ -16,6 +16,14 @@ cut OPTIONS FILE
 
 ## Example
 
+Split by `/`, get the 3rd element.
+
 ```shell
 echo 'refs/pull/123/merge' | cut -d / -f 3
+```
+
+Remove first 2 characters (start from 3th character).
+
+```shell
+echo '1234567890' | cut -c 3-
 ```

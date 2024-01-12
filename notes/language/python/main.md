@@ -7,7 +7,7 @@ title: Main
 You may run it as a standalone script.
 
 ```python
-##!/usr/bin/env python
+#!/usr/bin/env python
 import sys
 
 def main(argv=None):

@@ -11,20 +11,21 @@ find LOCATION OPTIONS
 
 | Option | Description |
 | --- | --- |
-| `-mindepth` | Minimum depth to search for files/directories. Default 0. |
-| `-maxdepth` | Maximum depth to search for files/directories. Default is unlimited depth. |
-| `-name` | Base of file name to be matched. |
-| `-iname` | Like `-name`, but the match is case insensitive. |
-| `-type` | File type to be matched. `d` for directory, `f` for file, `l` for symbolic link. |
-| `-mtime` | If `-N` last edited less than N days, if `+N` last edited more than N days. |
-| `-empty` | File is empty and is either a regular file or a directory. |
-| `-o` `-or` | Logical OR. |
-| `-not` `!` | Negates the next condition. |
 | `(` `)` | Force precedence. Usually you need to escape them on the shell. |
 | `-delete` | Delete files (make sure to put it last). |
-| `-print` `-fprint` | Print the full file name on the standard output. |
-| `-print0` `-fprint0` | Print the exact filename separated by `\0`. |
+| `-empty` | File is empty and is either a regular file or a directory. |
 | `-exec` | Execute a command instead of printing. `;` 1 match 1 run; `+` X matches 1 run (like `xargs`) |
+| `-iname` | Like `-name`, but the match is case insensitive. |
+| `-maxdepth` | Maximum depth to search for files/directories. Default is unlimited depth. |
+| `-mindepth` | Minimum depth to search for files/directories. Default 0. |
+| `-mtime` | If `-N` last edited less than N days, if `+N` last edited more than N days. |
+| `-name` | Base of file name to be matched. |
+| `-not` `!` | Negates the next condition. |
+| `-o` `-or` | Logical OR. |
+| `-path` | File name matches shell pattern pattern. The metacharacters do not treat `/` or `.` specially |
+| `-print0` `-fprint0` | Print the exact filename separated by `\0`. |
+| `-print` `-fprint` | Print the full file name on the standard output. |
+| `-type` | File type to be matched. `d` for directory, `f` for file, `l` for symbolic link. |
 
 ## Examples
 
@@ -32,6 +33,12 @@ Find files by name:
 
 ```shell
 find . -name '*.js'
+```
+
+Print the filenames without the `./` prefix:
+
+```shell
+find . -printf '%P\n'
 ```
 
 Find and delete empty directories:
