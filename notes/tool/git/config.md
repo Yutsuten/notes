@@ -13,4 +13,5 @@ git config --global core.autocrlf input
 git config --global color.ui auto
 git config --global init.defaultBranch main
 git config --global fetch.prune true
+git config --global push.autoSetupRemote true
 ```
