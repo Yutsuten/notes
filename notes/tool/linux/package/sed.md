@@ -11,30 +11,19 @@ sed OPTIONS INPUTFILE
 
 | Option | Description |
 | --- | --- |
-| `-i` | Edit files in place |
-| `-e` | Add the script to the commands to be executed (for adding multiple commands) |
-| `-n` | Suppress empty patterns output |
 | `-E` | Use extended regular expressions |
+| `-e` | Add the script to the commands to be executed (for adding multiple commands) |
+| `-i` | Edit files in place |
+| `-n` | Suppress empty patterns output |
+| `-z` | Separate lines by NUL characters |
 
-## Examples
-
-### Edit file
+## Replace command: s
 
 ```shell
-sed -i 's/pattern/result/g' myfile     # Replace
-sed -i 's/.*/\u&/' myfile              # Capitalize
-sed -i '0,/pattern/s//result/' myfile  # Replace once
-sed -i '/pattern/a new text' myfile    # Add after
-sed -i '0,/pattern/a new text' myfile  # Add after once
-sed -i '/pattern/i new text' myfile    # Add before
-sed -i '0,/pattern/i new text' myfile  # Add before once
-sed -i '/pattern/d'                    # Delete single line
-sed -i '/start_pattern/,/end_pattern/d'                  # Delete lines between two patterns (inclusive)
-sed -i '/start_pattern/,/end_pattern/{/end_pattern/!d}'  # Delete lines between two patterns (exclude)
-sed -i '/start_pattern/,+1{/start_pattern/!d}'           # Delete following line to the match
+sed 's/pattern/result/g'
+sed '0,/pattern/s//result/' # Once
+sed 's/.*/\u&/'             # Capitalize
 ```
-
-### Removing special characters
 
 Remove ANSI escape sequences:
 
@@ -56,7 +45,7 @@ Remove trailing newlines:
 sed -Ez '$ s/\n+$//'
 ```
 
-### Find patterns
+### Finding patterns
 
 Regex option `p` : If the substitution was made, then print the new pattern space.
 
@@ -71,4 +60,42 @@ For example, to make a linter fail if it contains more than N errors, run:
 
 ```shell
 echo 'Found 4 errors' | sed -nE 's/^Found ([0-9]+) error.*$/\1/p' | xargs test 4 -ge
+```
+
+## Append command: a
+
+Add text to next line.
+
+```shell
+sed '/pattern/a new text'
+sed '0,/pattern/a new text'  # Once
+```
+
+## Insert command: i
+
+Add text to previous line.
+
+```shell
+sed '/pattern/i new text'
+sed '0,/pattern/i new text'  # Once
+```
+
+## Delete command: d
+
+Delete line.
+
+```shell
+sed '/pattern/d'
+sed '/start_pattern/,/end_pattern/d'                  # Delete lines between two patterns (inclusive)
+sed '/start_pattern/,/end_pattern/{/end_pattern/!d}'  # Delete lines between two patterns (exclude)
+sed '/start_pattern/,+1{/start_pattern/!d}'           # Delete following line to the match
+```
+
+## Read file command: r
+
+Append text read from file.
+Do not escape the `/` character on the file path.
+
+```shell
+sed -e '/{{ CONTENTS }}/r /tmp/contents.html' -e '/{{ CONTENTS }}/d'
 ```
