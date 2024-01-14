@@ -58,7 +58,7 @@ arr.find(element => element > 4)  // first found element
 arr.filter(element => element > 4)  // array that satisfies the condition
 ```
 
-To interate an array and run it `async`, use:
+To iterate an array and run it `async`, use:
 
 ```js
 // Sequence

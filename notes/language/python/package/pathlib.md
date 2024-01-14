@@ -3,11 +3,11 @@ title: Pathlib
 ref: https://docs.python.org/3/library/pathlib.html
 ---
 
-## Usage
-
 ::: info NOTE
 Available from version 3.4.
 :::
+
+## Usage
 
 ```python
 from pathlib import Path
@@ -44,6 +44,16 @@ Create empty file (similar to `touch`)
 ```python
 with Path.open(path, 'a'):
     os.utime(path, None)
+```
+
+### Iterate directory
+
+```python
+for node in Path('.').iterdir():
+    if node.is_dir():
+        pass
+    if node.is_file():
+        pass
 ```
 
 ### Delete file

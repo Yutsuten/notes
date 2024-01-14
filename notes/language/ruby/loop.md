@@ -54,7 +54,7 @@ end
 
 ```ruby
 loop do
-  next if cond  # Same as continue, skip this interaction
+  next if cond  # Same as continue, skip this iteration
   do_something
   break if cond
 end
