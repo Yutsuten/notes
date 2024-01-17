@@ -36,8 +36,14 @@ echo "$foo and $bar"
 
 Considering `.env` an environment file
 (with `KEY=VALUE` tuples),
-one can export those variables with fish using:
+one can export those variables in fish using:
 
 ```fish
 export (xargs -L 1 < .env)
+```
+
+Or a more complex solution like:
+
+```fish
+export (grep -E '^[^#;].+=.*' .env | xargs -L 1)
 ```
