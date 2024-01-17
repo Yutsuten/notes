@@ -3,7 +3,7 @@ title: Gpg
 ref: https://wiki.archlinux.org/index.php/GnuPG
 ---
 
-## Configuration
+## Initial setup
 
 On your shell's rc file,
 export the `GPG_TTY` environment variable:
@@ -12,7 +12,16 @@ export the `GPG_TTY` environment variable:
 export GPG_TTY=$(tty)
 ```
 
-### Dialog
+## Configuration
+
+To apply any configuration changes,
+run this command:
+
+```shell
+gpg-connect-agent reloadagent /bye
+```
+
+### Pinentry
 
 Optionally set the dialog for inputting your password.
 Check the available front-ends and dependencies with:
@@ -28,11 +37,20 @@ Add your choice to `~/.gnupg/gpg-agent.conf`, for example:
 pinentry-program /usr/bin/pinentry-qt
 ```
 
-Then reload the agent:
+### Cache timeout
 
-```shell
-gpg-connect-agent reloadagent /bye
+Value set in seconds,
+`default-cache-ttl` is the value that will extend the timeout each time the cache is used,
+and `max-cache-ttl` is the maximum value it can be extended.
+
+Example for 1 day:
+
+```ini
+default-cache-ttl 86400
+max-cache-ttl 86400
 ```
+
+Use 0 to disable caching.
 
 ## Usage
 
@@ -40,31 +58,71 @@ gpg-connect-agent reloadagent /bye
 gpg OPTIONS FILE
 ```
 
+::: info
+If `FILE` or `-o` is not specified,
+`stdin` and `stout` will be used, respectively.
+:::
+
+Common usage options:
+
 | Option | Description |
 | --- | --- |
-| `--homedir` | Select HOME dir. Default is `~/.gnupg` (GNUPGHOME). |
-| `--keyid-format long` | Display key IDs with 16 characters (used on git and pass). |
-| `-k` `--list-keys` `--list-public-keys` | List public keys. |
 | `-K` `--list-secret-keys` | List secret keys. |
 | `-c` `--symmetric` | Encrypt a FILE using symmetric cipher. |
-| `-e` `--encrypt` | Encrypt data to one or more public keys. |
-| `-r` `--recipient` | Encrypt for user id NAME. Often used with `--encrypt`. |
-| `--default-recipient-self` | Use the default key as default recipient if option `--recipient` is not used. |
 | `-d` `--decrypt` | Decrypt the FILE. |
-| `--full-generate-key` | Generate a new key pair. |
+| `-e` `--encrypt` | Encrypt data to one or more public keys. |
+| `-k` `--list-keys` `--list-public-keys` | List public keys. |
+| `-o` `--output` | Write output to FILE. |
+| `-r` `--recipient` | Encrypt for user id NAME. Often used with `--encrypt`. |
+| `-s` `--sign` | Sign a message. |
+| `--default-recipient-self` | Use the default key as default recipient if option `--recipient` is not used. |
+| `--keyid-format short` | Display key IDs with 8 characters (used on git and pass). |
+
+Key management:
+
+| Option | Description |
+| --- | --- |
+| `-a` `--armor` | Create ASCII armored output (key.asc). |
 | `--delete-keys NAME` | Remove key from the public keyring. |
 | `--delete-secret-keys NAME` | Remove key from the secret keyring. |
-| `-a` `--armor` | Create ASCII armored output (key.asc). |
-| `-o` `--output` | Write output to FILE. |
 | `--export [KEYID!]` | Export keys (usually used with -a and --output). |
-| `--export-secret-keys [KEYID!]` | Export secret keys (usually used with `-a` and `-o`). |
 | `--export-ownertrust` | Export ownertrust values. |
+| `--export-secret-keys [KEYID!]` | Export secret keys (usually used with `-a` and `-o`). |
+| `--full-generate-key` | Generate a new key pair. |
 | `--import FILE` | Import keys. |
 | `--import-ownertrust FILE` | Import ownertrust values. |
+
+Keyserver:
+
+| Option | Description |
+| --- | --- |
 | `--gen-revoke FILE` | Generate a revocation certificate. |
-| `--send-keys KEYID` | Export keys to a keyserver. |
 | `--recv-keys KEYID` | Import keys from a keyserver. |
 | `--search-keys NAME` | Search the keyserver for the given names. |
+| `--send-keys KEYID` | Export keys to a keyserver. |
+
+### Encrypt and decrypt
+
+Encrypt and sign to someone/self with:
+
+```shell
+gpg -esr 'Recipient Name' -o file.txt.gpg file.txt
+gpg -es --default-recipient-self -o file.txt.gpg file.txt
+```
+
+Decrypt with:
+
+```shell
+gpg -o file.txt -d file.txt.gpg
+```
+
+### Verify file signature
+
+Given a signature file `.sig` and the data/binary file you want to check (ex: `.efi`):
+
+```shell
+gpg --keyserver-options auto-key-retrieve --verify ipxe-arch.efi.sig ipxe-arch.efi
+```
 
 ### Key management
 
@@ -78,6 +136,23 @@ delkey  # Delete subkey
 passwd  # Change passphrase
 expire  # Change expire date
 save    # Save changes
+```
+
+Add new user info with:
+
+```shell
+gpg --edit-key IDENTIFIER
+adduid
+save
+```
+
+Optionally revoke the old user:
+
+```shell
+gpg --edit-key IDENTIFIER
+uid N
+revuid
+save
 ```
 
 ### Generate ECC master key
@@ -98,51 +173,14 @@ addkey
 save
 ```
 
-### Update user info
-
-Add new user info with:
-
-```shell
-gpg --edit-key IDENTIFIER
-adduid
-save
-```
-
-Optionally revoke the old user:
-
-```shell
-gpg --edit-key IDENTIFIER
-uid N
-revuid
-save
-```
-
-### Verify file signature
-
-Given a signature file `.sig` and the data/binary file you want to check (ex: `.efi`):
-
-```shell
-gpg --keyserver-options auto-key-retrieve --verify ipxe-arch.efi.sig ipxe-arch.efi
-```
-
 ## Advanced
 
-Remove only private master key:
+### Delete master key
 
 ```shell
 ## Find master key keygrip
 gpg --with-keygrip --list-key MASTERKEYID
 
 ## Securely delete it from .gnupg folder
-rm -P $HOME/.gnupg/private-keys-v1.d/KEYGRIP.key
-```
-
-Always ask for password:
-
-```shell
-## Create/edit file ~/.gnupg/gpg-agent.conf
-max-cache-ttl 0
-
-## Kill gpg-agent process (it will restart automatically)
-echo RELOADAGENT | gpg-connect-agent
+shred --remove ~/.gnupg/private-keys-v1.d/KEYGRIP.key
 ```
