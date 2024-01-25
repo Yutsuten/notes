@@ -77,6 +77,7 @@ Common usage options:
 | `-s` `--sign` | Sign a message. |
 | `--default-recipient-self` | Use the default key as default recipient if option `--recipient` is not used. |
 | `--keyid-format short` | Display key IDs with 8 characters (used on git and pass). |
+| `--verify` | Verify the FILE's signature. |
 
 Key management:
 
@@ -103,6 +104,12 @@ Keyserver:
 
 ### Encrypt and decrypt
 
+Encrypt with symmetric cipher:
+
+```shell
+gpg -co file.txt.gpg file.txt
+```
+
 Encrypt and sign to someone/self with:
 
 ```shell
@@ -110,10 +117,16 @@ gpg -esr 'Recipient Name' -o file.txt.gpg file.txt
 gpg -es --default-recipient-self -o file.txt.gpg file.txt
 ```
 
-Decrypt with:
+Decrypt (and show signature) with:
 
 ```shell
 gpg -o file.txt -d file.txt.gpg
+```
+
+Check the signature only (will not work if file is encrypted):
+
+```shell
+gpg --verify file.txt.gpg
 ```
 
 ### Verify file signature
