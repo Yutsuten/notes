@@ -123,13 +123,13 @@ Decrypt (and show signature) with:
 gpg -o file.txt -d file.txt.gpg
 ```
 
+### Verify file signature
+
 Check the signature only (will not work if file is encrypted):
 
 ```shell
 gpg --verify file.txt.gpg
 ```
-
-### Verify file signature
 
 Given a signature file `.sig` and the data/binary file you want to check (ex: `.efi`):
 
