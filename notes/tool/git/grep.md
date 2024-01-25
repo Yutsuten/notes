@@ -30,7 +30,7 @@ git grep OPTIONS PATTERN
 Find and replace all matches:
 
 ```shell
-git grep --files-with-matches FOO | xargs -n 1 sed -i 's/foo/boo/g'
+git grep --files-with-matches foo | xargs -n 1 sed -i 's/foo/boo/g'
 ```
 
 Match with filter for files:
