@@ -37,7 +37,7 @@ describe('MyTest', () => {
 });
 ```
 
-### Mock axios
+### Axios
 
 - [Reference](https://www.csrhymes.com/2022/03/09/mocking-axios-with-jest-and-typescript.html)
 
@@ -63,4 +63,41 @@ mockedAxios.get.mockImplementation(() => {
     setTimeout(() => resolve({data: []}), 50);
   });
 });
+```
+
+## Mock builtin
+
+### Window
+
+- [Reference](https://stackoverflow.com/questions/41885841/how-can-i-mock-the-javascript-window-object-using-jest)
+
+Suppose you have `window.open('http://example.com', '_blank').focus()`.
+You can use `jest.spyOn` to mock `window`.
+
+```ts
+let windowOpenSpy: jest.Mock;
+let windowOpenFocusMock: jest.Mock;
+
+beforeEach(() => {
+  windowOpenSpy = jest.spyOn(window, 'open') as jest.Mock;
+  windowOpenFocusMock = jest.fn(() => {});
+  windowOpenSpy.mockReturnValue({
+    focus: windowOpenFocusMock,
+  });
+});
+
+afterEach(() => {
+  windowOpenFocusMock.mockRestore();
+  windowOpenSpy.mockRestore();
+});
+```
+
+Then inside the test:
+
+```ts
+act(() => {
+  fireEvent.click(screen.getAllByRole('button', { name: 'Open new window' }));
+});
+expect(windowOpenSpy).toHaveBeenCalledWith('http://example.com', '_blank');
+expect(windowOpenFocusMock).toHaveBeenCalled();
 ```
