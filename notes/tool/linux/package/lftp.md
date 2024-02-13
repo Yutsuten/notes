@@ -13,11 +13,35 @@ lftp OPTIONS URL
 
 | Option | Description |
 | --- | --- |
-| `-u` | Specify the user. |
+| `-u` | Specify the user (and optionally a password, comma separated). |
+| `-p` | Specify the port. |
 
-Even after connecting to a remote server using the URL parameter,
-**local** is your local PC,
-**remote** is somewhere else (specified here or as parameter on other commands).
+| Target | URL syntax |
+| --- | --- |
+| FTP host | `ftp://host/path` |
+| SFTP host | `sftp://host/path` |
+
+After connecting to a remote server you have an interactive shell on the remote side.
+It may be a little confusing as the "local" may feel like where you are now (the remote),
+but that's not how it is.
+
+- **local** is your local PC
+- **remote** is the remote server.
+
+## Connecting
+
+### Open
+
+Open connection to a different remote than the one specified in the command line.
+
+```shell
+open OPTS URL
+```
+
+| Option | Description |
+| --- | --- |
+| `-u` | Specify the user (and optionally a password, comma separated). |
+| `-p` | Specify the port. |
 
 ### User
 
@@ -27,6 +51,8 @@ If password is not specified, it will ask.
 ```shell
 user USER PASS
 ```
+
+## Transferring files
 
 ### Get
 
@@ -64,8 +90,8 @@ Mirror specified source directory to the target directory.
 mirror OPTIONS SOURCE TARGET
 ```
 
-By default the source is remote and the target is a local directory.
-When using `-R`, the source directory is local and the target is remote.
+By default the source is **remote** and the target is a **local** directory (get).
+When using `-R`, the source directory is **local** and the target is **remote** (put).
 
 | Option | Description |
 | --- | --- |
@@ -83,16 +109,17 @@ When using `-R`, the source directory is local and the target is remote.
 | `--include-glob-from` | Load include glob patterns from the file, one per line. |
 | `--exclude-glob-from` | Load exclude glob patterns from the file, one per line. |
 
-## Example
+## Examples
 
 Download musics from [www.vipvgm.net](https://www.vipvgm.net/):
 
 ```shell
-mirror -erP 100 -I '*.m4a' --exclude-glob-from exclude.txt --only-missing --delete-excluded 'https://www.vipvgm.net/mu/'
+mirror -erP 100 -I '*.m4a' --exclude-glob-from exclude.txt --only-missing --delete-excluded https://www.vipvgm.net/mu/
 ```
 
-Sync files to Android:
+Sync files to Android through FTP or SFTP:
 
 ```shell
-mirror --reverse --parallel=10 --ignore-time --delete --no-perms --verbose ~/Music/ /Music
+mirror --reverse --parallel=10 --ignore-time --delete --no-perms --verbose ~/Music/ ftp://android/sd-card/Music
+mirror --reverse --ignore-time --delete --no-perms --verbose ~/Music/ sftp://android/storage/AAAA-BBBB/Music
 ```

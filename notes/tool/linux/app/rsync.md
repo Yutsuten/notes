@@ -8,6 +8,8 @@ title: Rsync
 rsync OPTIONS SRC DEST
 ```
 
+Either `SRC` or `DEST` can be remote.
+
 | Option | Description |
 | --- | --- |
 | `-r` | Recurse into directories. |
@@ -22,13 +24,16 @@ rsync OPTIONS SRC DEST
 
 ## Examples
 
-Synchronize from/to remote.
+Synchronize from/to a remote server (it may be through ssh).
+(Note that `rsync` will run commands on the remote server.)
 
 ```shell
-rsync 'remote:~/code/*.py' ~/code
+rsync user@host:'~/code/*.py' ~/code
 ```
 
 Synchronize to Android (MTP).
+A lot of features does not work on Android,
+we disable to avoid errors and improve performance.
 
 ```shell
 rsync --recursive --inplace --size-only --delete --omit-dir-times --no-perms --verbose ~/local/ /android/mtp/
