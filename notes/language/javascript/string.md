@@ -27,6 +27,8 @@ str.charAt(index)
 str.toUpperCase()
 str.toLowerCase()
 str.endsWith(pattern)
+str.padStart(targetLength, padString)
+str.padEnd(targetLength, padString)
 
 // Find index
 str.indexOf(text)
@@ -38,13 +40,13 @@ reg.test(text)
 
 ## Techniques
 
-### Split by lines
+Split by lines:
 
 ```js
 let lines = text.split(/\r?\n/)
 ```
 
-### Replace all
+Replace all:
 
 ```js
 let reg = /-/g  // Must have the g option
@@ -53,8 +55,14 @@ text.replace(reg, '')
 text.split('-').join('')
 ```
 
-### Capitalize
+Capitalize:
 
 ```js
 text.charAt(0).toUpperCase() + text.slice(1)
+```
+
+Add zeros to the left of a number:
+
+```js
+String(1).padStart(2, '0')  // "01"
 ```

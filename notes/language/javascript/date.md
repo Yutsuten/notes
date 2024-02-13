@@ -8,47 +8,63 @@ ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Ob
 Generating a date:
 
 ```js
-let now = new Date();
-let anotherDay = new Date('2018-04-30');
-let aMonth = new Date('2018/04');
+const now = new Date();
+const copy = new Date(now);
+const fromString = new Date('2018-04-30'); // YYYY-MM-DDTHH:mm:ss.sssZ | YYYY-MM-DDTHH:mm:ss.sss+HH:mm
+const tomorrow  = new Date(
+  now.getFullYear(), now.getMonth(), now.getDate() + 1,
+  now.getHours(), now.getMinutes(), now.getSeconds(), now.getMilliseconds(),
+);
+const yesterday = new Date(
+  now.getFullYear(), now.getMonth(), now.getDate() - 1,
+  now.getHours(), now.getMinutes(), now.getSeconds(), now.getMilliseconds(),
+);
 ```
 
 Updating a date:
 
 ```js
-now.setDate(3);
+now.setFullYear(2024);
+now.setMonth(2); // Starts from 0
+now.setDate(14);
+now.setHours(0);
+now.setMinutes(3);
+now.setSeconds(50);
+now.setMilliseconds(727);
 ```
 
 ## Formating to string
 
+ISO standart:
+
 ```js
-// ISO standart (UTC timezone)
-now.toISOString(); // YYYY-MM-DDTHH:mm:ss.sssZ
-now.toISOString().split('T')[0]; // YYYY-MM-DD
+// UTC: YYYY-MM-DDTHH:mm:ss.sssZ
+now.toISOString();
 
-// ISO standart (local timezone)
-(new Date(now.getTime() - (now.getTimezoneOffset() * 60000))).toISOString();
-(new Date(now.getTime() - (now.getTimezoneOffset() * 60000))).toISOString().split('T')[0];
+// Local: YYYY-MM-DDTHH:mm:ss.sss
+(new Date(now.getTime() - (now.getTimezoneOffset() * 60000))).toISOString().slice(0, -1);
+```
 
+Localized:
+
+```js
+// YYYY/MM/DD HH:mm:ss
+now.toLocaleString();
+```
+
+Custom:
+
+```js
 // YYYY-MM-DD (local timezone)
-function formatDate(date) {
-  const d = new Date(date);
+function formatDate(d) {
   const year = d.getFullYear();
-  let month = '' + (d.getMonth() + 1);
-  let day = '' + d.getDate();
-
-  if (month.length < 2) {
-    month = `0${month}`;
-  }
-  if (day.length < 2) {
-    day = `0${day}`;
-  }
-
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
   return [year, month, day].join('-');
 }
 ```
 
-You may also use `Intl`:
+### Intl
 
 ```js
 const date = new Date(Date.UTC(2020, 11, 20, 3, 23, 16, 738));
