@@ -1,5 +1,5 @@
 ---
-title: Ytdlp
+title: Yt-dlp
 ref: https://github.com/yt-dlp/yt-dlp
 ---
 

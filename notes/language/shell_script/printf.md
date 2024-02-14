@@ -7,9 +7,17 @@ man: printf
 
 Formatting is the same as in C printf.
 
+Align example:
+
 ```shell
-printf "|%-20s|\n" "left align"
-printf "|%20s|\n" "right align"
+printf '|%-20s|\n' 'left align'
+printf '|%20s|\n' 'right align'
+```
+
+Number with zeros on the left example:
+
+```shell
+printf '%02d\n' 5
 ```
 
 ## Color RGB to HEX converter

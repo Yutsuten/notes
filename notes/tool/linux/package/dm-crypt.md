@@ -1,5 +1,5 @@
 ---
-title: dm-crypt
+title: Dm-crypt
 ref: https://wiki.archlinux.org/title/Dm-crypt
 arch: cryptsetup
 ---
