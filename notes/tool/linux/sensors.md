@@ -5,15 +5,27 @@ ref: https://github.com/Alexays/Waybar/wiki/Module:-Temperature
 
 ## hwmon
 
-Get a list of sensors:
+Get a list of sensors (fish):
 
-```shell
-cat /sys/class/hwmon/hwmon*/*_label
+```fish
+paste (ls -1 /sys/class/hwmon/hwmon*/*_input | psub) (cat /sys/class/hwmon/hwmon*/*_label | psub) (cat /sys/class/hwmon/hwmon*/*_input | psub) \
+  | column -ts \t
 ```
 
-To get the value (temperature), replace `label` with `input`.
-Example of `Tctl` sensor (on my PC):
+For CPU temperature, usually the `Tctl` sensor is used.
+Get the `realpath` of it and use on `waybar`, for example.
 
 ```shell
-/sys/class/hwmon/hwmon1/temp1_input
+realpath /sys/class/hwmon/hwmon2/temp1_input
+```
+
+Waybar's `config.json`:
+
+```json
+{
+    "temperature": {
+        "hwmon-path-abs": "/sys/devices/pci0000:00/0000:00:18.3/hwmon",
+        "input-filename": "temp1_input"
+    }
+}
 ```
