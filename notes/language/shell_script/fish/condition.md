@@ -1,17 +1,18 @@
 ---
 title: Condition
 ref: https://fishshell.com/docs/current/tutorial.html#conditionals-if-else-switch
+man: test
 ---
 
 ## If syntax
 
 `[[ ]]` does not exist.
-`[ ]` exist but prefer `test` instead.
+`[ ]` exist but `test` is preferred.
 
 ```fish
-if grep fish /etc/shells
-    echo Found fish
-else if test $number -gt 5 || test $argv[1] = '-c'
+if not grep fish /etc/shells
+    echo 'No fish'
+else if test $number -gt 5 -o test $argv[1] = 'string is equal'
     echo Complex condition
 else
     echo Got nothing
