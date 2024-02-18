@@ -19,9 +19,9 @@ On options, hyphen is optional.
 | `-C` `--directory` | Set current directory. |
 | `-f` `--file` | Set the name of the file to create / extract. |
 | `-a` `--auto-compress` | Use archive suffix to determine the compression program. |
-| `-J` `--xz` | Enable `xz` algorithm. |
-| `-z` `--gzip` `--gunzip` `--ungzip` | Enable gnuzip algorithm. |
-| `--zstd` | Enable Zstandart algorithm. |
+| `-J` `--xz` | Enable **xz** algorithm. |
+| `-z` `--gzip` `--gunzip` `--ungzip` | Enable **gnuzip** algorithm. |
+| `--zstd` | Enable **zstandart** algorithm. |
 | `-v` `--verbose` | Verbosely list files processed. |
 
 Gzipped files can have `.tgz` or `.tar.gz` extensions.
@@ -49,4 +49,11 @@ List files in tar file:
 
 ```shell
 tar -tf file.tar
+```
+
+Compress with `zstd` and encrypt with `gpg`:
+
+```shell
+tar --zstd -cC ~ Folder/ \
+  | gpg -e --default-recipient-self > folder.tar.zst.gpg
 ```

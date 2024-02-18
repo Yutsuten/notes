@@ -123,6 +123,13 @@ Decrypt (and show signature) with:
 gpg -o file.txt -d file.txt.gpg
 ```
 
+Compress and encrypt folder:
+
+```shell
+tar --zstd -cC ~ Folder/ \
+  | gpg -e --default-recipient-self > folder.tar.zst.gpg
+```
+
 ### Verify file signature
 
 Check the signature only (will not work if file is encrypted):
