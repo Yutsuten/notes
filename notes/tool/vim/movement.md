@@ -54,12 +54,14 @@ title: Movement
 
 | Shortcut | Description |
 | --- | --- |
-| `zz` | Move cursor to center of screen. |
-| `zt` | Move cursor to top of screen. |
-| `zb` | Move cursor to bottom of screen. |
-| `Ctrl-F` | Scroll forward |
-| `Ctrl-B` | Scroll backward |
-| `Ctrl-D` | Scroll forward (half) |
-| `Ctrl-U` | Scroll backward (half) |
+| `zz` | Move cursor to center of screen |
+| `zt` | Move cursor to top of screen |
+| `zb` | Move cursor to bottom of screen |
+| `Ctrl-B` | Scroll backward (up) |
+| `Ctrl-F` | Scroll forward (down) |
+| `Ctrl-U` | Scroll half up |
+| `Ctrl-D` | Scroll half down |
+| `Ctrl-Y` | Scroll up (one line) |
+| `Ctrl-E` | Scroll down (one line) |
 | `Ctrl-I` | Redo cursor movement |
 | `Ctrl-O` | Undo cursor movement |
