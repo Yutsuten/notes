@@ -27,12 +27,6 @@ git grep OPTIONS PATTERN
 
 ## Examples
 
-Find and replace all matches:
-
-```shell
-git grep --files-with-matches foo | xargs -n 1 sed -i 's/foo/boo/g'
-```
-
 Match with filter for files:
 
 ```shell
@@ -43,4 +37,10 @@ Search through all the history:
 
 ```shell
 git rev-list --all | xargs git grep 'some text'
+```
+
+Find and replace all matches recursively in files:
+
+```shell
+git grep --files-with-matches foo | xargs -n 1 sed -i 's/foo/boo/g'
 ```

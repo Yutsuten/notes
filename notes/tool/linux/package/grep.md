@@ -45,8 +45,8 @@ Obtain patterns from stdin.
 echo 'pattern' | grep -f - file
 ```
 
-Find and replace all matches:
+Find and replace all matches recursively in files:
 
 ```shell
-grep --files-with-matches FOO | xargs -n 1 sed -i 's/foo/boo/g'
+grep --files-with-matches foo | xargs -n 1 sed -i 's/foo/boo/g'
 ```

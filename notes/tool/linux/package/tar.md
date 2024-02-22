@@ -56,4 +56,7 @@ Compress with `zstd` and encrypt with `gpg`:
 ```shell
 tar --zstd -cC ~ Folder/ \
   | gpg -e --default-recipient-self > folder.tar.zst.gpg
+
+gpg --decrypt folder.tar.zst.gpg \
+    | tar --zstd -xC ~
 ```

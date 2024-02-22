@@ -130,6 +130,13 @@ tar --zstd -cC ~ Folder/ \
   | gpg -e --default-recipient-self > folder.tar.zst.gpg
 ```
 
+Decrypt and extract folder:
+
+```shell
+gpg --decrypt folder.tar.zst.gpg \
+    | tar --zstd -xC ~
+```
+
 ### Verify file signature
 
 Check the signature only (will not work if file is encrypted):

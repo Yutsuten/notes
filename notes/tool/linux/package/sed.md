@@ -45,6 +45,12 @@ Remove trailing newlines:
 sed -Ez '$ s/\n+$//'
 ```
 
+Find and replace all matches recursively in files:
+
+```shell
+git grep --files-with-matches foo | xargs -n 1 sed -i 's/foo/boo/g'
+```
+
 ### Finding patterns
 
 Regex option `p` : If the substitution was made, then print the new pattern space.
