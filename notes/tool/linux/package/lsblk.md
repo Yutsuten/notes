@@ -22,3 +22,9 @@ Check file system of all connected storage devices.
 ```shell
 lsblk -o +FSTYPE,UUID
 ```
+
+Easy to read disk usage command:
+
+```shell
+lsblk -o 'NAME,FSTYPE,SIZE,FSUSED,FSUSE%,MOUNTPOINTS'
+```
