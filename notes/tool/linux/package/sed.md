@@ -19,10 +19,18 @@ sed OPTIONS INPUTFILE
 
 ## Replace command: s
 
+Any character other than backslash or newline can be used instead of a slash
+to delimit the `pattern` and the `replacement`.
+
+Within the `pattern` and the `replacement`,
+the `pattern` delimiter itself can be used as a literal character
+if it is preceded by a backslash.
+
 ```shell
-sed 's/pattern/result/g'
-sed '0,/pattern/s//result/' # Once
-sed 's/.*/\u&/'             # Capitalize
+sed 's/pattern/replacement/g'
+sed 's#pattern#replacement#g'    # Using hash instead of slash
+sed '0,/pattern/s//replacement/' # Once
+sed 's/.*/\u&/'                  # Capitalize
 ```
 
 Remove ANSI escape sequences:
