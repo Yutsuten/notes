@@ -257,11 +257,12 @@ if applicable
 @wheel         -       nice           -5
 ```
 
-- Start and enable `NetworkManager` and `greetd`
+- Enable some services
 
 ```shell
-systemctl start/enable NetworkManager
+systemctl enable NetworkManager
 systemctl enable greetd
+systemctl enable paccache.timer
 ```
 
 ### As user
