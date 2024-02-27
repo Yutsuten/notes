@@ -18,6 +18,7 @@ On options, hyphen is optional.
 | `-t` `--list` | List the contents of an archive. |
 | `-C` `--directory` | Set current directory. |
 | `-f` `--file` | Set the name of the file to create / extract. |
+| `-h` `--dereference` | Follow symlinks; archive and dump the files they point to. |
 | `-a` `--auto-compress` | Use archive suffix to determine the compression program. |
 | `-J` `--xz` | Enable **xz** algorithm. |
 | `-z` `--gzip` `--gunzip` `--ungzip` | Enable **gnuzip** algorithm. |
