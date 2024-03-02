@@ -14,8 +14,9 @@ function! Simple(myarg)
 endfunction
 
 function! OptionalArgs(...)
-  echo a:0  "Number of arguments"
-  echo a:1  "Optional argument"
+  echo a:0    " Number of arguments
+  echo a:1    " Optional argument
+  echo a:000  " List with all arguments
 endfunction
 ```
 

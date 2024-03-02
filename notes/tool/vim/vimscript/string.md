@@ -7,13 +7,14 @@ ref: https://learnvimscriptthehardway.stevelosh.com/chapters/27.html
 
 ```vim
 let mystr = 'somestring'
+let mystr = 'concatenate ' .. 'strings'
 let mystr = mystr[-10]
 ```
 
-## Operations
+Split into a list using a separator:
 
 ```vim
-let mylist = split(mystr)       "Space is used by default"
+let mylist = split(mystr)       " Space is used by default
 let mylist = split(mystr, ',')
 ```
 
@@ -32,14 +33,14 @@ mystr !=# 'text'
 For regex, replace the second `=` with `~`:
 
 ```vim
-mystr =~# '^t'
-mystr !~# '^t'
+mystr =~# '^t'  " Starts with t
+mystr !~# '^t'  " Does not start with t
 ```
 
 ## Functions
 
 ```vim
 echo len(mystr)
-echo tolower('Foo')  " => 'foo'"
-echo toupper('Foo')  " => 'FOO'"
+echo tolower('Foo')  " => 'foo'
+echo toupper('Foo')  " => 'FOO'
 ```
