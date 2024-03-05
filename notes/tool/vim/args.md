@@ -12,6 +12,7 @@ title: Args
 
 | Command | Description |
 | --- | --- |
-| `args` | List arguments. |
-| `n` `N` | Next or previous argument. |
-| `argu` | Jump to argument NUM, defaults to current. |
+| `:ar` | List arguments or define new argument list. |
+| `:n` `:N` | Next or previous argument. |
+| `:fir` `:la` | Jump to first or last argument. |
+| `:argu` | Jump to argument NUM, defaults to current. |

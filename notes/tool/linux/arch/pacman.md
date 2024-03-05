@@ -12,7 +12,9 @@ ref: https://wiki.archlinux.org/title/Mirrors
 | `pacman -S package` | Install new package |
 | `pacman -Rs package` | Remove a package. Add `-c` for cascade, `-u` for group of packages |
 | `pacman -Qtdq \| pacman -Rns -` | Remove orphaned packages |
-| `pacman -Qet` | List all packages explicitly installed and not required as dependencies |
+| `pacman -Qe` | List all packages explicitly installed and not required as dependencies |
+| `pacman -Qi package` | Check information of a package that is installed. |
+| `pacman -Si package` | Check information of a package that may not be installed. |
 
 ## Configuration
 

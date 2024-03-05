@@ -13,6 +13,7 @@ The quickfix list is filled on commands like `:vimgrep` or `:grep`.
 | `:cc` | Jump to location at index NR. | NR: current index |
 | `:cn` | Jump COUNT positions forward. | COUNT: 1 |
 | `:cp` | Jump COUNT positions backward. | COUNT: 1 |
+| `:clist` `:copen` | List or open window with all quickfixes. | |
 
 ## Manually populate the quick list
 

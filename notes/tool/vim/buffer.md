@@ -12,9 +12,13 @@ COMMAND OPTION PATH
 
 | Command | Description |
 | --- | --- |
-| `new` | Create a new file in a new window. |
-| `e` `find` | Edit a file. |
-| `n` | Edit one or more files. |
+| `:new` | Create a new file in a new window. |
+| `:e` `find` | Edit a file. |
+| `:n` | Edit one or more files. |
+| `:w` `:up` | Write buffer contents to file, or only if there are changes. |
+| `:sav` | Save as |
+
+See also [args](/tool/vim/args).
 
 | Option | Description |
 | --- | --- |
