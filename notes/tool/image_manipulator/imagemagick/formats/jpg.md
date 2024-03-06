@@ -10,6 +10,14 @@ title: Jpg
 convert bigimage.png -strip -resize x180 -quality 85 -interlace plane -sampling-factor 4:2:0 smallimage.jpg
 ```
 
+### Colored background into white
+
+Good for creating photos used in documents.
+
+```shell
+convert input.jpg -channel RGB -fuzz 13% -fill white -floodfill +0+0 '#c2b0a2' output.png
+```
+
 ### White background into transparent
 
 With start point:
