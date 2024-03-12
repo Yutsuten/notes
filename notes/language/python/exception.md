@@ -3,7 +3,28 @@ title: Exception
 ref: https://docs.python.org/3/tutorial/errors.html
 ---
 
-## Creating
+## Raise / except
+
+Single:
+
+```python
+try:
+    raise Exception('No way!')
+except Exception as err:
+    print('Error: {}'.format(str(err)))
+    raise
+```
+
+Multiple:
+
+```python
+try:
+    some_function()
+except except (RuntimeError, TypeError, NameError):
+    pass
+```
+
+## Create custom exception
 
 ```python
 class CustomError(Exception):
@@ -15,14 +36,4 @@ class ApplicationSpecificError(CustomError):
     """An application specific error that inherits CustomError."""
     def __init__(self):
         super().__init__('Application specific exception was raised.')
-```
-
-## Raise / except
-
-```python
-try:
-    raise Exception('No way!')
-except Exception as err:
-    print('Error: {}'.format(str(err)))
-    raise
 ```
