@@ -85,7 +85,7 @@ This is for showing multiple accounts in the sidebar at the same time.
 
 To accomplish this, I use the following file structure in the configuration folder:
 
-```
+```txt
 neomuttrc
 personal/
   credentials.neomuttrc
