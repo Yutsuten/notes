@@ -1,7 +1,7 @@
 ---
 title: Pacman
 man: pacman
-ref: https://wiki.archlinux.org/title/Mirrors
+ref: https://wiki.archlinux.org/title/Pacman
 ---
 
 ## Usage
@@ -12,9 +12,17 @@ ref: https://wiki.archlinux.org/title/Mirrors
 | `pacman -S package` | Install new package |
 | `pacman -Rs package` | Remove a package. Add `-c` for cascade, `-u` for group of packages |
 | `pacman -Qtdq \| pacman -Rns -` | Remove orphaned packages |
-| `pacman -Qe` | List all packages explicitly installed and not required as dependencies |
+| `pacman -Qe` | List all packages explicitly installed |
+| `pacman -Qet` | List all packages explicitly installed and not required as dependencies (required + optional) |
+| `pacman -Qett` | List all packages explicitly installed and not required as dependencies (required only) |
 | `pacman -Qi package` | Check information of a package that is installed. |
 | `pacman -Si package` | Check information of a package that may not be installed. |
+
+Check packages explicitly installed but required dependency at the same time.
+
+```fish
+diff -y (pacman -Qqett | psub) (pacman -Qqe | psub)
+```
 
 ## Configuration
 
