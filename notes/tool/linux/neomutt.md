@@ -121,8 +121,8 @@ account-hook 'accountname@proton.me' 'source ~/.config/neomutt/proton/credential
 account-hook 'accountname@gmail.com' 'source ~/.config/neomutt/personal/credentials.neomuttrc'
 
 # Macros
-macro index,pager <f3> '<enter-command>source ~/.config/neomutt/proton/folders.neomuttrc<enter>'
-macro index,pager <f4> '<enter-command>source ~/.config/neomutt/personal/folders.neomuttrc<enter>'
+macro index,pager <f3> '<enter-command>source ~/.config/neomutt/proton/folders.neomuttrc<enter><change-folder>!<enter>'
+macro index,pager <f4> '<enter-command>source ~/.config/neomutt/personal/folders.neomuttrc<enter><change-folder>!<enter>'
 
 # Keybindings
 bind index,pager \CP sidebar-prev
