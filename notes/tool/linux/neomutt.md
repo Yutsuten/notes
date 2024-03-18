@@ -114,11 +114,14 @@ color sidebar_highlight brightblack white
 source ~/.config/neomutt/proton/folders.neomuttrc
 
 # Hooks
-folder-hook 'accountname@proton.me'  'source ~/.config/neomutt/proton/settings.neomuttrc'
-folder-hook 'accountname@gmail.com'  'source ~/.config/neomutt/personal/settings.neomuttrc'
+folder-hook 'accountname@proton\.me' 'source ~/.config/neomutt/proton/settings.neomuttrc'
+folder-hook 'accountname@gmail\.com' 'source ~/.config/neomutt/personal/settings.neomuttrc'
 
-account-hook 'accountname@proton.me' 'source ~/.config/neomutt/proton/credentials.neomuttrc'
-account-hook 'accountname@gmail.com' 'source ~/.config/neomutt/personal/credentials.neomuttrc'
+account-hook 'accountname@proton\.me' 'source ~/.config/neomutt/proton/credentials.neomuttrc'
+account-hook 'accountname@gmail\.com' 'source ~/.config/neomutt/personal/credentials.neomuttrc'
+
+send-hook '~f ^accountname@proton\\.me$' 'source ~/.config/neomutt/proton/credentials.neomuttrc'
+send-hook '~f ^accountname@gmail\\.com$' 'source ~/.config/neomutt/personal/credentials.neomuttrc'
 
 # Macros
 macro index,pager <f3> '<enter-command>source ~/.config/neomutt/proton/folders.neomuttrc<enter><change-folder>!<enter>'
@@ -147,7 +150,8 @@ There are also keybindings for switching mailboxes:
 As for each account settings:
 
 `credentials.neomuttrc` is used by the `account-hook` command,
-may be triggered "randomly" in the background.
+which may be triggered "randomly" in the background,
+and the `send-hook`, before sending an email.
 
 ```shell
 # proton/credentials.neomuttrc
