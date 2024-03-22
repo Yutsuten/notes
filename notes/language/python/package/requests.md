@@ -36,6 +36,7 @@ Check the response content:
 
 ```python
 response.status_code
+response.text
 response.json()
 ```
 
