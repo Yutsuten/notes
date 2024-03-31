@@ -1,6 +1,6 @@
 ---
-title: NeoMutt
-ref: https://neomutt.org/
+title: Configuration
+ref: https://neomutt.org/guide/configuration
 ---
 
 ## Cache configuration
