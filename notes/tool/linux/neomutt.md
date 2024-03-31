@@ -56,21 +56,21 @@ Follow the instructions (open the link in the browser and accept everything).
 After it, check if IMAP/POP/SMTP are working:
 
 ```shell
-mutt_oauth2 ~/.cache/neomutt/oauth2/'myemail@gmail.com'.tokens --verbose --test
+mutt_oauth2 ~/.cache/neomutt/oauth2/'myemail@gmail.com'.tokens --test
 ```
 
 Finally add the configuration to `~/.config/neomutt/neomuttrc`:
 
 ```shell
-# Credentials
+# Authentication settings
 set imap_user = 'myuser@gmail.com'
 set imap_authenticators = 'oauthbearer:xoauth2'
-set imap_oauth_refresh_command = "mutt_oauth2 ~/.cache/neomutt/oauth2/${imap_user}.tokens --client-id ${GMAIL_CLIENT_ID} --client-secret ${GMAIL_CLIENT_SECRET}"
-set smtp_url = "smtps://${imap_user}@smtp.gmail.com:465"
+set imap_oauth_refresh_command = "mutt_oauth2 ~/.cache/neomutt/oauth2/${imap_user}.tokens"
 set smtp_authenticators = ${imap_authenticators}
 set smtp_oauth_refresh_command = ${imap_oauth_refresh_command}
 
-# Folders
+# General settings
+set smtp_url = "smtps://${imap_user}@smtp.gmail.com:465"
 set folder = "imaps://${imap_user}@imap.gmail.com:993/"
 set spoolfile = +INBOX
 mailboxes ${spoolfile}
@@ -79,115 +79,108 @@ mailboxes ${spoolfile}
 With this one should be able to check the emails.
 Still a very basic configuration, but it works.
 
-## Multi accounts
+## Multiple accounts
 
-This is for showing multiple accounts in the sidebar at the same time.
+This is for using multiple accounts at the same time.
 
 To accomplish this, I use the following file structure in the configuration folder:
 
 ```txt
 neomuttrc
-personal/
-  credentials.neomuttrc
-  folders.neomuttrc
-  settings.neomuttrc
+accounts.rc
+gmail/
+  auth.rc
+  general.rc
+  init.rc
 proton/
-  credentials.neomuttrc
-  folders.neomuttrc
-  settings.neomuttrc
+  auth.rc
+  general.rc
+  init.rc
 ```
 
-There are some common settings in `neomuttrc`,
-and account specific settings inside each folder.
+General Neomutt settings are saved at `neomuttrc`.
+At the end of `neomuttrc`, import `accounts.rc`.
 
-For the common settings,
+:::tip
+Manage `neomuttrc` in git,
+but keep a separated backup of the other files.
+Here's [my neomuttrc in GitHub](https://github.com/Yutsuten/linux-config/blob/main/tools/neomutt/neomuttrc).
+:::
+
+Inside `accounts.rc`,
 I load only one account on startup (for performance),
 and open other accounts using shortcuts.
 
 ```shell
-# neomuttrc
-set sidebar_format   = '%D%* %<N?%N>'
-set sidebar_visible  = yes
-color sidebar_highlight brightblack white
+# accounts.rc
+source ~/.config/neomutt/proton/init.rc
 
-# Default mailbox
-source ~/.config/neomutt/proton/folders.neomuttrc
-
-# Hooks
-folder-hook 'accountname@proton\.me' 'source ~/.config/neomutt/proton/settings.neomuttrc'
-folder-hook 'accountname@gmail\.com' 'source ~/.config/neomutt/personal/settings.neomuttrc'
-
-account-hook 'accountname@proton\.me' 'source ~/.config/neomutt/proton/credentials.neomuttrc'
-account-hook 'accountname@gmail\.com' 'source ~/.config/neomutt/personal/credentials.neomuttrc'
-
-send-hook '~f ^accountname@proton\\.me$' 'source ~/.config/neomutt/proton/credentials.neomuttrc'
-send-hook '~f ^accountname@gmail\\.com$' 'source ~/.config/neomutt/personal/credentials.neomuttrc'
-
-# Macros
-macro index,pager <f3> '<enter-command>source ~/.config/neomutt/proton/folders.neomuttrc<enter><change-folder>!<enter>'
-macro index,pager <f4> '<enter-command>source ~/.config/neomutt/personal/folders.neomuttrc<enter><change-folder>!<enter>'
-
-# Keybindings
-bind index,pager \CP sidebar-prev
-bind index,pager \CN sidebar-next
-bind index,pager \CO sidebar-open
+# Shortcuts
+macro index,pager <F2>  '<enter-command>source ~/.config/neomutt/proton/init.rc<enter>'
+macro index,pager <F3>  '<enter-command>source ~/.config/neomutt/gmail/init.rc<enter>'
+macro index,pager <F12> '<enter-command>unmailboxes * unhook *<enter>'
 ```
 
 So I have the following accounts:
 
-- `F3` - Proton
-- `F4` - Personal
-
-If I ever want to drop all mailboxes,
-run `:unmailboxes *`.
-
-There are also keybindings for switching mailboxes:
-
-- `Ctrl+P` - Previous entry of sidebar
-- `Ctrl+N` - Next entry of sidebar
-- `Ctrl+O` - Open selected entry of sidebar
+- `F2` - Proton
+- `F3` - Gmail
+- `F12` - Clear all mailboxes
 
 As for each account settings:
 
-`credentials.neomuttrc` is used by the `account-hook` command,
-which may be triggered "randomly" in the background,
-and the `send-hook`, before sending an email.
+`init.rc` is meant to be run only once,
+used to setup the hooks and the mailboxes.
+
+:::info NOTE
+My interface is setup for Japanese.
+:::
+
+:::warning
+`account-hook` seems to work *only* before `mailboxes` or `named-mailboxes`.
+After it, seems that it doesn't work at all.
+(May be a bug in my NeoMutt version, but be warned anyway)
+:::
 
 ```shell
-# proton/credentials.neomuttrc
-set imap_user           = 'accountname@proton.me'
-set imap_authenticators = 'login'
-set imap_pass           = 'mysecretpass'
-set smtp_url            = "smtp://${imap_user}@127.0.0.1:1025"
-set smtp_authenticators = ${imap_authenticators}
-set smtp_pass           = ${imap_pass}
+# proton/init.rc
+set folder    = 'imap://accountname@proton.me@127.0.0.1:1143/'
+set spoolfile = +INBOX
+
+folder-hook  'proton' 'source ~/.config/neomutt/proton/general.rc'
+account-hook 'proton' 'source ~/.config/neomutt/proton/auth.rc'
+
+named-mailboxes ' Proton'      +INBOX
+named-mailboxes ' ├─ 送信済み' +Sent
+named-mailboxes ' └─ ゴミ箱'   +Trash
 ```
 
-`folders.neomuttrc` is meant to be run only once,
-when adding the mailboxes.
+`general.rc` is used by the `folder-hook` command,
+it should contain everything except
+initialization and authentication settings.
 
 ```shell
-# proton/folders.neomuttrc
-source ~/.config/neomutt/proton/settings.neomuttrc
-source ~/.config/neomutt/proton/credentials.neomuttrc
-
-named-mailboxes ' Proton'  ${spoolfile}
-named-mailboxes '   Sent'  +Sent
-named-mailboxes '   Spam'  +Spam
-named-mailboxes '   Trash' ${trash}
-```
-
-`settings.neomuttrc` is used by the `folder-hook` command,
-is triggered whenever the user changes a folder.
-
-```shell
-# proton/settings.neomuttrc
-color status black magenta
-
-set realname = 'My Name'
-set from     = 'accountname@proton.me'
+# proton/general.rc
+set realname  = 'My Name'
+set from      = 'accountname@proton.me'
 
 set folder    = "imap://${from}@127.0.0.1:1143/"
 set spoolfile = +INBOX
 set trash     = +Trash
+set smtp_url  = "smtp://${from}@127.0.0.1:1025"
+
+color status black magenta
+```
+
+`auth.rc` is used by the `account-hook` command,
+which may be triggered in the background.
+Should contain only authentication or connection related settings (user, pass, tunnel).
+
+```shell
+# proton/auth.rc
+set imap_user           = 'accountname@proton.me'
+set imap_authenticators = 'login'
+set imap_pass           = 'mysecretpass'
+set smtp_authenticators = ${imap_authenticators}
+set smtp_pass           = ${imap_pass}
 ```
