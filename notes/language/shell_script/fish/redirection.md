@@ -13,7 +13,15 @@ File descriptor numbering:
 | 1 | stdout |
 | 2 | stderr |
 
-### Simplest cases
+### Examples
+
+Redirect stdout to stderr:
+
+```fish
+echo 'to stderr' >&2
+```
+
+Redirect stdout or stderr to file (use `>>` to append output):
 
 ```fish
 command < stdin_input
@@ -21,9 +29,7 @@ command > stdout_output
 command 2> stderr_output
 ```
 
-Use `>>` to append output.
-
-### Advanced cases
+Redirect everything to file:
 
 ```fish
 command &> stdout_stderr_output
