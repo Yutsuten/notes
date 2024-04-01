@@ -1,9 +1,22 @@
 ---
 title: Jest
-ref: https://stackoverflow.com/a/73830234
+ref: https://jestjs.io/docs/api
 ---
 
-## Mock import
+## Parametrize
+
+```ts
+it.each([
+  [1, 'expected output 1'],
+  [2, 'expected output 2'],
+])('test with param %s', (inputNum, expected) => {
+  console.log(`${inputNum} ${expected}`);
+})
+```
+
+## Mocking
+
+### Mock import
 
 Example of mocking `import { useRouter } from 'next/router'`.
 
@@ -37,9 +50,7 @@ describe('MyTest', () => {
 });
 ```
 
-### Axios
-
-- [Reference](https://www.csrhymes.com/2022/03/09/mocking-axios-with-jest-and-typescript.html)
+To mock axios ([reference](https://www.csrhymes.com/2022/03/09/mocking-axios-with-jest-and-typescript.html)):
 
 Import:
 
@@ -65,11 +76,9 @@ mockedAxios.get.mockImplementation(() => {
 });
 ```
 
-## Mock builtin
+### Mock builtin
 
-### Window
-
-- [Reference](https://stackoverflow.com/questions/41885841/how-can-i-mock-the-javascript-window-object-using-jest)
+Mocking `window` ([reference](https://stackoverflow.com/questions/41885841/how-can-i-mock-the-javascript-window-object-using-jest)):
 
 Suppose you have `window.open('http://example.com', '_blank').focus()`.
 You can use `jest.spyOn` to mock `window`.
