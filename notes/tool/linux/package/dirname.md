@@ -13,3 +13,7 @@ dirname relative/path/file.txt
 ```
 
 To get only the filename check [basename](/tool/linux/package/basename).
+
+:::tip
+If using `fish`, you may also use `path dirname`.
+:::

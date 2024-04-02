@@ -1,11 +1,11 @@
 ---
-title: Run
-ref: https://docs.docker.com/compose/reference/run/
+title: Exec
+ref: https://docs.docker.com/reference/cli/docker/compose/exec/
 ---
 
 ## Usage
 
-Run a one-off command on a service.
+Execute a command in a running container.
 
 ```shell
 docker-compose run OPTIONS SERVICE COMMAND
@@ -15,9 +15,7 @@ docker-compose run OPTIONS SERVICE COMMAND
 | --- | --- |
 | `-d` `--detach` | Detached mode: Run container in the background. |
 | `-e` `--env` | Set an environment variable (can be used multiple times). |
-| `--name` | Assign a name to the container. |
 | `-T` `--no-TTY` | Disable pseudo-tty allocation. |
-| `--rm` | Remove container after run. |
 | `-u` `--user` | Run as specified username or uid. |
 | `-w` `--workdir` | Working directory inside the container. |
 
@@ -26,5 +24,5 @@ docker-compose run OPTIONS SERVICE COMMAND
 Run a command with an environment variable.
 
 ```shell
-docker-compose run -e DEBUG=1 app bash
+docker-compose exec -e DEBUG=1 app bash
 ```
