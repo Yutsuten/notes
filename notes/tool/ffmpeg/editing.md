@@ -71,7 +71,7 @@ It will adapt the `-ss` to the previous I-Frame.
 ffmpeg -ss 02:19 -to 08:18 -i full.mp4 -codec copy -avoid_negative_ts make_zero cropped.mp4
 ```
 
-### Trim
+### Video Trim
 
 Remove segments from a video/audio.
 
@@ -114,7 +114,7 @@ ffmpeg \
   result.mp4
 ```
 
-### Scale
+### Video Scale
 
 Resize the video to the specified `width` and `height`.
 If `-1` is used, keep aspect ratio.
@@ -127,7 +127,7 @@ ffmpeg -i video.mp4 -vf 'scale=960:-1:flags=lanczos' rescaled.mp4
 It is recommended to rescale using the default scaler `bicubic` or `lanczos`.
 :::
 
-### Crop
+### Video Crop
 
 Crop a portion of a video.
 Syntax: `crop=W:H:X:Y`
@@ -141,7 +141,7 @@ Syntax: `crop=W:H:X:Y`
 ffmpeg -i video.mp4 -vf 'crop=600:400:660:340' cropped.mp4
 ```
 
-### Fade
+### Video Fade
 
 Use the `fade` video filter to fade the video in or out.
 Parameters:
@@ -186,7 +186,7 @@ Allowed values are:
 ffmpeg -i low_volume.m4a -af 'volume=15dB' adjusted.m4a
 ```
 
-### Fade
+### Audio Fade
 
 Use the `afade` audio filter to fade the audio in or out.
 Parameters:
