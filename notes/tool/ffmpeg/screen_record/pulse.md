@@ -18,6 +18,13 @@ Or use `default` for *probably* your mic.
 Use `wav` (max 4GiB) or `w64` to record lossless with WAV.
 :::
 
+After recording with `-f pulse`, PTS may become out-of-sync.
+When re-encoding, use this option (generate timestamps by counting sample):
+
+```shell
+ffmpeg bad-pts.m4a -af 'asetpts=N/SR/TB' good-pts.mp4
+```
+
 ### Record from speakers
 
 Your speakers is probably stereo, so use `-ac 2`.
