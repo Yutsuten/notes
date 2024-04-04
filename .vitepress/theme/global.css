@@ -1,4 +1,5 @@
 html {
+  color-scheme: light;
   --bg-main: #F5F6F7;
   --bg-sec: #E9ECF0;
   --bg-code: #E9ECF0;
@@ -18,6 +19,7 @@ html {
 }
 
 html.dark {
+  color-scheme: dark;
   --bg-main: #404552;
   --bg-sec: #383C4A;
   --bg-code: #383C4A;
