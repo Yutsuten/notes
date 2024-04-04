@@ -1,4 +1,3 @@
-import path from 'path';
 import { data } from '../data/notes.data';
 
 interface LeafNode {
