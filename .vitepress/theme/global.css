@@ -1,7 +1,7 @@
 html {
   --bg-main: #F5F6F7;
   --bg-sec: #E9ECF0;
-  --bg-code: #414657;
+  --bg-code: #E9ECF0;
   --bg-table: #EBEFF5;
   --link: #2077DD;
   --link-hover: #135EB5;
@@ -198,6 +198,14 @@ div[class*="language-"] pre {
   padding: 16px 0;
   margin: 0;
   overflow-y: auto;
+}
+
+div[class*="language-"] pre span {
+    color: var(--shiki-light);
+}
+
+html.dark div[class*="language-"] pre span {
+    color: var(--shiki-dark);
 }
 
 div[class*="language-"] span.line {

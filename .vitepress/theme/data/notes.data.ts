@@ -4,4 +4,4 @@ import { createContentLoader } from 'vitepress'; // eslint-disable-line no-dupli
 declare const data: ContentData[]; // eslint-disable-line init-declarations
 export { data };
 
-export default createContentLoader('notes/**/*.md');
+export default createContentLoader('**/*.md');

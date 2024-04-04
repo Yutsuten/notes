@@ -1,3 +1,4 @@
+import path from 'path';
 import { data } from '../data/notes.data';
 
 interface LeafNode {
@@ -37,14 +38,13 @@ function genIndexTree(filterRegex: RegExp, baseUrl: string) {
   };
   data
     .filter((note) => {
-      const removeBaseRegex = new RegExp(`^${baseUrl}`, 'u');
-      const url = note.url.replace(removeBaseRegex, '');
+      // Remove preceding slash
+      const url = note.url.slice(1);
       return url.split('/').length > 1 && filterRegex.test(url.replace('-', ''));
     })
     .forEach((note) => {
-      // Clean-up URL
-      const removeBaseRegex = new RegExp(`^${baseUrl}`, 'u');
-      const url = note.url.replace(removeBaseRegex, '');
+      // Remove preceding slash
+      const url = note.url.slice(1);
 
       // Generate tree
       let curNode: RootNode | BranchNode = root;
@@ -53,7 +53,7 @@ function genIndexTree(filterRegex: RegExp, baseUrl: string) {
         if (index === urlArray.length - 1) {
           const childNode: LeafNode = {
             text: note.frontmatter.title,
-            url: note.url,
+            url: baseUrl + url,
           };
           curNode.children.push(childNode);
         } else {
