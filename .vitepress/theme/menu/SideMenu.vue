@@ -54,15 +54,10 @@ onMounted(() => {
         // No default
       }
     } else {
-      switch (event.key) {
-        case '/':
-          searchElement.value.focus();
-          event.preventDefault();
-          break;
-        case 'Backspace':
-          searchElement.value.focus();
-          break;
-        // No default
+      const isBackspace = event.key === 'Backspace';
+      const isAvailableKey = event.key.length === 1 && /[a-zA-Z0-9/+ ]/u.test(event.key);
+      if (isBackspace || isAvailableKey) {
+        searchElement.value.focus();
       }
     }
   });
