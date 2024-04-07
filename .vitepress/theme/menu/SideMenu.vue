@@ -56,7 +56,7 @@ onMounted(() => {
     } else {
       const isBackspace = event.key === 'Backspace';
       const isAvailableKey = event.key.length === 1 && /[a-zA-Z0-9/+ ]/u.test(event.key);
-      if (isBackspace || isAvailableKey) {
+      if (isBackspace || (!event.ctrlKey && isAvailableKey)) {
         searchElement.value.focus();
       }
     }
