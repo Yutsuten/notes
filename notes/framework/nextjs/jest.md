@@ -110,3 +110,18 @@ act(() => {
 expect(windowOpenSpy).toHaveBeenCalledWith('http://example.com', '_blank');
 expect(windowOpenFocusMock).toHaveBeenCalled();
 ```
+
+### Mock timers
+
+Mocking `setTimeout`-like native functions ([reference](https://jestjs.io/docs/timer-mocks)):
+
+```ts
+jest.useFakeTimers();
+
+test('my test', () => {
+  // ...
+  jest.runAllTimers();
+  jest.runOnlyPendingTimers();
+  jest.advanceTimersByTime(1000);
+});
+```
