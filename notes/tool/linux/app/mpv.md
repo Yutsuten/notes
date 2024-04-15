@@ -4,6 +4,16 @@ man: mpv
 ref: https://wiki.archlinux.org/title/Mpv
 ---
 
+## Usage
+
+If using with URLs, have `yt-dlp` installed.
+
+If the url used causes "invalid certificate" for some reason, use:
+
+```shell
+mpv --ytdl-raw-options=no-check-certificates= URL
+```
+
 ## Shortcuts
 
 For some shortcuts,
