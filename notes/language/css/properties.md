@@ -59,6 +59,9 @@ Image border:
           drop-shadow(-1px 1px 0.5px black)
           drop-shadow(1px -1px 0.5px black)
           drop-shadow(-1px -1px 0.5px black);
+
+  /* Simpler */
+  filter: drop-shadow(0 0 1px black) drop-shadow(0 0 1px black);
 }
 ```
 
@@ -79,6 +82,8 @@ Text border:
 ```css
 .bordered-text {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: 0 0 1px black, 0 0 1px black;
+  -webkit-text-stroke: 2px black;
 }
 ```
 
