@@ -56,6 +56,13 @@ name = 'John'
 f'My name is {name}.'
 ```
 
+To escape `{` or `}`, double it:
+
+```python
+number = 727
+f'Number is {{ {number} }}'  # Out: 'Number is { 727 }'
+```
+
 ### Format
 
 Array-like usage:

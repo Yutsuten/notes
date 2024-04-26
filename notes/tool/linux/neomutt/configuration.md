@@ -71,7 +71,7 @@ set smtp_oauth_refresh_command = ${imap_oauth_refresh_command}
 
 # General settings
 set smtp_url = "smtps://${imap_user}@smtp.gmail.com:465"
-set folder = "imaps://${imap_user}@imap.gmail.com:993/"
+set folder = "imaps://${imap_user}@imap.gmail.com:993"
 set spoolfile = +INBOX
 mailboxes ${spoolfile}
 ```
@@ -144,13 +144,13 @@ After it, seems that it doesn't work at all.
 
 ```shell
 # proton/init.rc
-set folder    = 'imap://accountname@proton.me@127.0.0.1:1143/'
+set folder    = 'imap://accountname@proton.me@127.0.0.1:1143'
 set spoolfile = +INBOX
 
 folder-hook  'proton' 'source ~/.config/neomutt/proton/general.rc'
 account-hook 'proton' 'source ~/.config/neomutt/proton/auth.rc'
 
-named-mailboxes ' Proton'      +INBOX
+named-mailboxes ' Proton'      ${spoolfile}
 named-mailboxes ' ├─ 送信済み' +Sent
 named-mailboxes ' └─ ゴミ箱'   +Trash
 ```
@@ -164,7 +164,7 @@ initialization and authentication settings.
 set realname  = 'My Name'
 set from      = 'accountname@proton.me'
 
-set folder    = "imap://${from}@127.0.0.1:1143/"
+set folder    = "imap://${from}@127.0.0.1:1143"
 set spoolfile = +INBOX
 set trash     = +Trash
 set smtp_url  = "smtp://${from}@127.0.0.1:1025"
