@@ -184,3 +184,46 @@ set imap_pass           = 'mysecretpass'
 set smtp_authenticators = ${imap_authenticators}
 set smtp_pass           = ${imap_pass}
 ```
+
+## Local account
+
+With a local account you can save emails locally for backup or development.
+
+```txt
+local/
+  general.rc
+  init.rc
+```
+
+Here we will create a [Maildir](https://neomutt.org/guide/advancedusage#9-%C2%A0mailbox-formats),
+so inside `~/.local/share/neomutt` create the directories `cur` `new` `tmp`.
+
+```shell
+# proton/init.rc
+set folder    = ~/.local/share/neomutt
+set spoolfile = ${folder}
+
+folder-hook  'local' 'source ~/.config/neomutt/local/general.rc'
+
+named-mailboxes ' Local' ~/.local/share/neomutt
+```
+
+```shell
+# proton/general.rc
+unset realname
+unset from
+
+set folder    = ~/.local/share/neomutt
+set spoolfile = ${folder}
+unset trash
+unset smtp_url
+
+color status black white
+```
+
+When saving an email to this account,
+use this macro:
+
+```shell
+macro index,pager S '<save-message>~/.local/share/neomutt<enter>'
+```
