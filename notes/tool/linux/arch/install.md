@@ -182,6 +182,7 @@ hwclock --systohc
 Uncomment needed locales in `/etc/locale.gen`:
 
 ```ini
+en_US.UTF-8 UTF-8
 ja_JP.UTF-8 UTF-8
 ```
 
