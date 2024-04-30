@@ -3,6 +3,12 @@ title: Desktop entry
 ref: https://wiki.archlinux.org/title/desktop_entries
 ---
 
+## Freedesktop specification
+
+Full documentation [here](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys).
+
+- [Registered Categories](https://specifications.freedesktop.org/menu-spec/latest/apa.html)
+
 ## Create entry
 
 User defined desktop entries are at `~/.local/share/applications/`.
