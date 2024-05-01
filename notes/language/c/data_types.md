@@ -5,16 +5,52 @@ ref: https://en.wikipedia.org/wiki/C_data_types
 
 ## Common types
 
-```c
-char         // %c    8 bits
-short        // %hi   16 bits
-int          // %i %d 16 bits
-long         // %li   32 bits
-long long    // %lli  64 bits
-float        // %f    32 bits
-double       // %lf   64 bits
-long double  // %Lf   128 bits
+| Type | Size (bytes) | Format specifier |
+| --- | --- | --- |
+| `char`, `signed char`, `unsigned char` | 1 | `%c` |
+| `short`, `short int` | 2 | `%hd` `%hi` |
+| `int` | 2, **4** | `%i` `%d` |
+| `unsigned int` | 2, **4** | `%u` |
+| `long`, `long int` | 4, **8** | `%ld` `%li` |
+| `long long`, `long long int` | 8+ | `%lld` `%lli` |
+| `unsigned long`, `unsigned long int` | 4+ | `%lu` |
+| `unsigned long long`, `unsigned long long int` | 4+ | `%llu` |
+| `float` | 4 | `%f` |
+| `double` | 8 | `%lf` |
+| `long double` | 10+, **12, 16** | `%Lf` |
 
-signed <type>   // Force type to be signed
-unsigned <type> // Force type to be unsigned
+Force type sign:
+
+```c
+signed TYPE
+unsigned TYPE
+```
+
+Create constants:
+
+```c
+const TYPE
+```
+
+### Examples
+
+Creating numbers.
+
+```c
+float exponential_notation = 1e3;  // same as 1 * 10^3 = 1000
+const float PI = 3.14159;
+int octal_num = 021, hexadecimal_num = 0xff;
+```
+
+Character literals use `'` while string literals use `"`.
+
+```c
+char c = 'c';
+char name[4] = "Sora";
+```
+
+Get the variable size at runtime with `sizeof()`:
+
+```c
+printf("Size of PI is %lu bytes.\n", sizeof(PI));
 ```

@@ -2,20 +2,28 @@
 title: Compile
 ---
 
-## Single script
+## Single file
+
+Most basic command for compiling:
 
 ```shell
-gcc mainscript.c -o mybinary
+gcc myapp.c -o myapp
 ```
 
-## Sample Makefile
+For development adding some options may help debugging:
+
+```shell
+gcc -Wall -Wextra -Werror myapp.c -o myapp
+```
+
+## Makefile
 
 ```shell
 all: build run
 
 build:
-	gcc main.c -o program
+	gcc -Wall -Wextra -Werror myapp.c -o myapp
 
 run:
-	konsole -e 'bash -c "./program; echo -e \"\nProgram finished with status code $$?.\nPress [Enter] to continue.\"; read"' &
+	./myapp
 ```
