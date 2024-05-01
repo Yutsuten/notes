@@ -11,7 +11,10 @@ Full documentation [here](https://specifications.freedesktop.org/desktop-entry-s
 
 ## Create entry
 
-User defined desktop entries are at `~/.local/share/applications/`.
+Desktop entries are defined at:
+
+- User: `~/.local/share/applications`
+- System: `/usr/share/applications`
 
 For example, to add a desktop entry for the application `osu`,
 add a file called `osu.desktop` with:
