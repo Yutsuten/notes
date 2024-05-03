@@ -54,3 +54,11 @@ Get the variable size at runtime with `sizeof()`:
 ```c
 printf("Size of PI is %lu bytes.\n", sizeof(PI));
 ```
+
+Print ASCII value of a char:
+
+```c
+char c = 'c';
+printf("Character %c has code %d", c, c);
+return 0;
+```

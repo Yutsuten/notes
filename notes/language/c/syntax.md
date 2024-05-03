@@ -1,43 +1,56 @@
 ---
 title: Syntax
+ref: https://www.programiz.com/c-programming/c-storage-class
 ---
 
-## Basic input & output
-
-Get input with `fgets()` or `scanf()`:
+## Functions
 
 ```c
 #include <stdio.h>
 
-int main(int argc, char *args[]) {
-    char name[20];
-    int age;
-    printf("Your name: ");
-    fgets(name, 20, stdin);
-    printf("Your age: ");
-    scanf("%d", &age);
-    printf("Hello %s, you are %d years old.", name, age);
-    return 0;
+/* Function prototype
+   We declare its body later, but can use from now on. */
+int sum_numbers(int a, int b);
+
+void my_function() {
+    printf("This is my function!\n");
 }
-```
-
-Print ASCII value of a char:
-
-```c
-#include <stdio.h>
 
 int main() {
-    char c = 'c';
-    printf("Character %c has code %d", c, c);
+    int total;
+    my_function();
+    total = sum_numbers(10, 5);
+    printf("Sum of 10 and 5 is %d", total);
     return 0;
+}
+
+int sum_numbers(int a, int b) {  // Function definition
+    return a + b;
 }
 ```
 
-## Comments
+## Storage class
+
+Determines the scope, visibility and lifetime of variables.
 
 ```c
-// One line
+#include <stdio.h>
 
-/* Multi
-line */
+int global_variable = 10;  // Available everywhere, should be avoided
+
+void some_function(int number) {
+    static int call_count = 0;  // `static`: Value persists between calls
+    printf("Argument is %d. This function was called %d times.\n", number, ++call_count);
+}
+
+int main() {
+    if (1) {
+        int local_variable = 5;         // Available only inside this block
+        some_function(local_variable);  // OK, call_count becomes 1
+    }
+    some_function(local_variable);      // Error: Variable is not defined
+    some_function(3);  // call_count becomes 2
+    some_function(8);  // call_count becomes 3
+    return 0;
+}
 ```
