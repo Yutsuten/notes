@@ -40,6 +40,7 @@ Creating numbers.
 float exponential_notation = 1e3;  // same as 1 * 10^3 = 1000
 const float PI = 3.14159;
 int octal_num = 021, hexadecimal_num = 0xff;
+float avg = (float) 5 / 2;  // Type casting
 ```
 
 Character literals use `'` while string literals use `"`.
