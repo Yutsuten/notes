@@ -47,7 +47,7 @@ Character literals use `'` while string literals use `"`.
 
 ```c
 char c = 'c';
-char name[4] = "Sora";
+char name[] = "Sora";
 ```
 
 Get the variable size at runtime with `sizeof()`:

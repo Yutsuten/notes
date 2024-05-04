@@ -8,6 +8,14 @@ doc: https://www.programiz.com/c-programming/c-arrays
 Seems that with `gcc` arrays are initialized with 0.
 
 ```c
+int numbers[5];
+int numbers[5] = {};
+int numbers[] = {30, 35, 40, 45, 50};
+```
+
+Example:
+
+```c
 #include <stdio.h>
 
 void dump_array(int array[], int size) {
@@ -31,6 +39,14 @@ int main() {
 ```
 
 ## Multidimensional
+
+```c
+int matrix[2][3];
+int matrix[2][3] = {};
+int matrix[][3] = {{5, 10, 15}, {30, 35, 40}};
+```
+
+Example:
 
 ```c
 #include <stdio.h>
