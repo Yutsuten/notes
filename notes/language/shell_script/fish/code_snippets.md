@@ -24,3 +24,19 @@ To keep the last 7 backups of `*.bkp` files:
 ```fish
 trim_old_backup 7 *.bkp
 ```
+
+## Delete old history
+
+Add this to `config.fish` to clear history automatically.
+
+```fish
+set -g fish_history_max 1500
+
+# Fish history cleanup
+set remainder (math $fish_history_max - (count $history))
+if test $remainder -lt 0
+    for cmd in $history[-1..$remainder]
+        history delete --exact --case-sensitive -- "$cmd"
+    end
+end
+```
