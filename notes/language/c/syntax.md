@@ -29,6 +29,31 @@ int sum_numbers(int a, int b) {  // Function definition
 }
 ```
 
+Using pointers:
+
+```c
+#include <stdio.h>
+
+void swap_numbers(int *a, int *b) {
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+int main() {
+    int numA = 5, numB = 20;
+    int *pointerA = &numA;
+    int *pointerB;
+    pointerB = &numB;
+    printf("numA address %p with value %d\n", pointerA, numA);
+    printf("numB address %p with value %d\n", pointerB, numB);
+    swap_numbers(&numA, &numB);
+    printf("numA address %p with value %d\n", pointerA, numA);
+    printf("numB address %p with value %d\n", pointerB, numB);
+    return 0;
+}
+```
+
 ## Storage class
 
 Determines the scope, visibility and lifetime of variables.
