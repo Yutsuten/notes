@@ -188,7 +188,7 @@ int main() {
 }
 ```
 
-Updating structs inside functions.
+Updating struct instance inside a function.
 
 ```c
 #include <stdio.h>
