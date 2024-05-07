@@ -76,7 +76,7 @@ CC = gcc
 OBJ = main.o mylib.o
 
 build: $(OBJ)
-	gcc -o myapp -Wall -Wextra -Werror $(OBJ)
+	$(CC) -o myapp -Wall -Wextra -Werror $(OBJ)
 
 mylib.o: mylib.h
 
