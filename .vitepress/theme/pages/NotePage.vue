@@ -83,6 +83,13 @@ onMounted(() => {
             {{ page.frontmatter.man }}
           </a>
         </div>
+        <div
+          v-if="page.frontmatter.vim"
+          class="vim-help"
+        >
+          <b>Vim:</b>
+          <span>help {{ page.frontmatter.vim }}</span>
+        </div>
       </div>
     </div>
     <Content />
@@ -144,6 +151,15 @@ onMounted(() => {
 .note .metadata > div.man-page a {
   color: var(--text-yellow);
   border-left-color: var(--text-yellow);
+}
+
+.note .metadata > div.vim-help {
+  color: var(--red);
+  border-left-color: var(--red);
+}
+
+.note .metadata > div.vim-help span {
+  user-select: all;
 }
 
 .note .metadata > div.package a:hover {
