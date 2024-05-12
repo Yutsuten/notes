@@ -159,7 +159,11 @@ onMounted(() => {
 }
 
 .note .metadata > div.vim-help span {
+  padding: 1px 6px;
+  margin-left: 3px;
   user-select: all;
+  background-color: var(--bg-sec);
+  border-radius: 8px;
 }
 
 .note .metadata > div.package a:hover {
