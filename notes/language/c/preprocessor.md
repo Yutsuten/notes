@@ -30,7 +30,7 @@ int main() {
 }
 ```
 
-Conditional compilation (`#if`, `#elif`, `#else`, `endif`, `#ifdef`, `#ifndef`, `#defined`):
+Conditional compilation (`#if` `#elif` `#else` `endif` `#ifdef` `#ifndef` `#defined`):
 
 ```c
 #if OS == "windows"

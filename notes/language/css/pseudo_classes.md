@@ -16,7 +16,7 @@ it won't select anything.
 
 Selects the `nth` of the type.
 If no element is specified before this pseudo class,
-every first of type will be selected (ex: `h1`, `div`).
+every first of type will be selected (ex: `h1` `div`).
 
 ```css
 :first-of-type

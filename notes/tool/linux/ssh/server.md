@@ -19,7 +19,7 @@ For better security:
 - Disable any kind of authentication by default
 - Enable `PubkeyAuthentication` for local connections only
 - Disable shell by:
-  - Enabling sftp-only access with `Subsystem` and `ForceCommand`
+  - Enabling sftp-only access with `Subsystem` `ForceCommand`
   - Changing `ChrootDirectory`
 
 Create a file `/etc/ssh/sshd_config.d/10-local-sftp.conf` with:

@@ -5,7 +5,7 @@ ref: https://wiki.archlinux.org/title/V4l2loopback
 
 ## Usage
 
-To use it, install `v4l2loopback-dkms` and `linux-headers`.
+To use it, install `v4l2loopback-dkms` `linux-headers`.
 
 Then load the kernel module with:
 

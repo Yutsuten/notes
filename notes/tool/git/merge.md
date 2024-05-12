@@ -39,8 +39,8 @@ git commit --no-edit
 Using `-s ours` discards everything the other tree did,
 declaring our history contains all that happened in it.
 
-Example: Suppose there are two branches,
-`keep` and `overwrite` that cannot be merged because of conflicts.
+Example: Suppose there are two branches
+`keep` `overwrite` that cannot be merged because of conflicts.
 The changes in `overwrite` are not needed anymore,
 and you just want to update it to `keep`.
 

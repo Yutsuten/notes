@@ -16,7 +16,7 @@ Default H.265 codec, uses your CPU for processing.
 | Option | Description |
 | --- | --- |
 | `-crf` | [0; 51] default 28. Constant Rate Factor, where 0 is lossless and 51 is worst quality possible. |
-| `-preset` | Quality-speed tradeoff. Options: `ultrafast`, `superfast`, `veryfast`, `faster`, `fast`, `medium`, `slow`, `slower`, `veryslow` and `placebo`. |
+| `-preset` | Quality-speed tradeoff. Options: `ultrafast` `superfast` `veryfast` `faster` `fast` `medium` `slow` `slower` `veryslow` `placebo`. |
 
 ### Constant Rate Factor (CRF)
 
@@ -34,7 +34,7 @@ Pass the result to `-b` for both passes.
 
 And as for CRF, choose the desired preset.
 
-1. On the first pass, set `-y`, `-an`, `-x265-params pass=1`, `-f mp4` and output to `/dev/null`.
+1. On the first pass, set `-y` `-an` `-x265-params pass=1` `-f mp4` and output to `/dev/null`.
 2. On the second pass, set `-x265-params pass=2`.
 
 ```shell
@@ -73,4 +73,4 @@ For a full list of options, run `ffmpeg -h encoder=hevc_nvenc`.
 | --- | --- |
 | `-vcodec` | Set to `hevc_nvenc`. |
 | `-cq` | Target quality level. The range is 0-51. Similar to CRF? |
-| `-preset` | Determines compression efficiency. Options: `losslesshp`, `lossless`, `llhp`, `llhq`, `ll`, `bd`, `hq`, `hp`, `fast`, `medium` and `slow`. |
+| `-preset` | Determines compression efficiency. Options: `losslesshp` `lossless` `llhp` `llhq` `ll` `bd` `hq` `hp` `fast` `medium` `slow`. |

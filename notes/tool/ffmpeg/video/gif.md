@@ -78,7 +78,7 @@ These options are recommended, in order:
 - `dither=sierra2_4a`
 - `dither=bayer:bayer_scale=3`
 
-Remember to keep the other options (`fps`, `scale`) the same as when you generated the palette.
+Remember to keep the other options (`fps` `scale`) the same as when you generated the palette.
 
 ```shell
 ffmpeg \

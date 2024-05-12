@@ -27,5 +27,5 @@ select `Custom formula` (at the bottom) and use:
 
 | Formula | Objective |
 | --- | --- |
-| `C1=1` | Column is auto incremented if applying to multiple columns (ex: implies `D1=1`, `E1=1`). |
+| `C1=1` | Column is auto incremented if applying to multiple columns (ex: implies `D1=1` `E1=1`). |
 | `$C1=1` | Column is fixed to the provided formula. |

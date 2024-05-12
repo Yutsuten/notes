@@ -5,7 +5,7 @@ ref: https://wiki.archlinux.org/index.php/Systemd/Timers
 
 ## Usage
 
-`start`, `enable`, `stop` or `disable` the timer:
+`start` `enable` `stop` or `disable` the timer:
 
 ```shell
 sudo systemctl enable mytimer.timer

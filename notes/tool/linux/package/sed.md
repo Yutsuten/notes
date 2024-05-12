@@ -131,7 +131,7 @@ Explanation:
 > Commands within a script or script-file can be separated by semicolons `;` or newlines.
 > Multiple scripts can be specified with `-e` or `-f` options.
 
-We have two commands: `5q` and `d`.
+We have two commands: `5q` `d`.
 
 - `5q`: This will only run at the 5th line.
 `sed` by default prints the line (`-n` is not specified).

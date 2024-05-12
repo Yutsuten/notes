@@ -88,7 +88,7 @@ Key management:
 | `--delete-secret-keys NAME` | Remove key from the secret keyring. |
 | `--export [KEYID!]` | Export keys (usually used with -a and --output). |
 | `--export-ownertrust` | Export ownertrust values. |
-| `--export-secret-keys [KEYID!]` | Export secret keys (usually used with `-a` and `-o`). |
+| `--export-secret-keys [KEYID!]` | Export secret keys (usually used with `-a` `-o`). |
 | `--full-generate-key` | Generate a new key pair. |
 | `--import FILE` | Import keys. |
 | `--import-ownertrust FILE` | Import ownertrust values. |

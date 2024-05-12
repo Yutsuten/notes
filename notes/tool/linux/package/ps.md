@@ -18,8 +18,8 @@ ps OPTIONS
 | `x` | Lift the BSD-style "must have a tty" restriction. |
 | `-A` `-e` | Select all processes. |
 | `-f` | Do full-format listing. |
-| `-O` | Add new columns to the output. Ex: `ppid`, `ni` (nice) |
-| `-o` | Customize columns to be shown. Ex: `pid`, `comm` |
+| `-O` | Add new columns to the output. Ex: `ppid` `ni` (nice) |
+| `-o` | Customize columns to be shown. Ex: `pid` `comm` |
 
 ## Examples
 

@@ -28,4 +28,4 @@ xrdb ~/.Xresources
 
 ## Usage
 
-Scroll with `Shift+PgUp` and `Shift+PgDn`.
+Scroll with `Shift+PgUp` `Shift+PgDn`.

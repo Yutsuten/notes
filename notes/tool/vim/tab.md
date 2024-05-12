@@ -18,7 +18,7 @@ On netrw, use `t` to open the highlighted file into a new tab.
 | Shortcut | Command | Description |
 | --- | --- | --- |
 | `Ngt` | `:tabn N` | Go to tab `N` |
-| `gt`, `C-PageDown` | `:tabn` | Go to next tab |
-| `gT`, `C-PageUp` | `:tabp` `:tabN` | Go to previous tab |
+| `gt` `C-PageDown` | `:tabn` | Go to next tab |
+| `gT` `C-PageUp` | `:tabp` `:tabN` | Go to previous tab |
 | | `:tabm N` | Move current tab to after tab `N` |
 | | `:tabm +N` `:tabm -N` `:+Ntabm` `:-Ntabm` | Move current tab `N` places to right/left |

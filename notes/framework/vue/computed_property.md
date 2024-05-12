@@ -7,7 +7,7 @@ ref: https://vuejs.org/tutorial/#step-8
 
 Using `computed` we can combine variables.
 
-Example of variables `x` and `y` to be summed:
+Example of variables `x` `y` to be summed:
 
 ```vue
 <script>

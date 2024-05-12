@@ -41,7 +41,7 @@ cd ~2  # From directory stack id 2 (expanded by the shell)
 
 It is possible to navigate between multiple directories efficiently.
 For this we use a directory stack,
-that can be accessed by `pushd`, `popd` and `dirs`.
+that can be accessed by `pushd` `popd` `dirs`.
 
 ### Pushd
 

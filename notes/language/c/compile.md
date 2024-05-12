@@ -74,9 +74,10 @@ Multiple files, generating object files before executable.
 ```shell
 CC = gcc
 OBJ = main.o mylib.o
+CFLAGS = -Wall -Wextra -Werror $(EXTRA_CFLAGS)
 
 build: $(OBJ)
-	$(CC) -o myapp -Wall -Wextra -Werror $(OBJ)
+	$(CC) -o myapp $(CFLAGS) $(OBJ)
 
 mylib.o: mylib.h
 
@@ -84,3 +85,5 @@ mylib.o: mylib.h
 clean:
 	-rm -f myapp $(OBJ)
 ```
+
+Build with `make EXTRA_CFLAGS='-g -O0'` to enable debugging with `gdb`.

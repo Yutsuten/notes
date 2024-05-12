@@ -11,7 +11,7 @@ argparse OPTIONS OPTION_SPEC -- $argv
 
 ## Example
 
-Parse `-h` and `-n` as boolean:
+Parse `-h` `-n` as boolean:
 
 ```fish
 argparse 'h/help' 'n/name' -- $argv

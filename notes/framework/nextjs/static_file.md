@@ -6,7 +6,7 @@ ref: https://nextjs.org/docs/basic-features/static-file-serving
 ## Static File Serving
 
 Put static files inside the `public/` directory.
-Useful for image files, `robots.txt`, `favicon.ico` and others.
+Useful for image files, `robots.txt` `favicon.ico` and others.
 
 For example,
 adding the file `public/profile.png` would allow you to access it with:

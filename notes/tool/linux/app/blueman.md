@@ -5,7 +5,7 @@ ref: https://wiki.archlinux.org/title/Blueman
 
 ## Requirements
 
-On Arch Linux, `bluez`, `bluez-utils` and `pulseaudio-bluetooth` packages are needed.
+On Arch Linux, `bluez` `bluez-utils` `pulseaudio-bluetooth` packages are needed.
 
 Also enable `bluetooth.service`.
 

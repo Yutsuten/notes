@@ -12,7 +12,7 @@ ref: https://pylint.pycqa.org/
 
 | Home | Parent |
 | ---- | ------ |
-| `~/.pylintrc`, `.config/pylintrc` | `pylintrc` |
+| `~/.pylintrc` `.config/pylintrc` | `pylintrc` |
 
 ### Command
 

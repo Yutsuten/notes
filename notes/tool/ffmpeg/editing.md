@@ -24,7 +24,7 @@ ffmpeg GLOBAL_OPTIONS INPUT_OPTIONS -i input_url OUTPUT_OPTIONS output_url
 
 | Option | Description |
 | --- | --- |
-| `-loglevel` | (Global Option) Default is `info`. Options: `quiet`, `fatal`, `error`, `warning`, `info`, `verbose`, `debug`, `trace`. |
+| `-loglevel` | (Global Option) Default is `info`. Options: `quiet` `fatal` `error` `warning` `info` `verbose` `debug` `trace`. |
 | `-nostdin` | (Global Option) Disable interaction on standard input. Useful for running in the background. |
 | `-codecs` | List all available codecs |
 | `-formats` | Show available formats (including devices). |
@@ -50,7 +50,7 @@ ffmpeg GLOBAL_OPTIONS INPUT_OPTIONS -i input_url OUTPUT_OPTIONS output_url
 | `-t` | Duration. Format is `hh:mm:ss.000`. |
 | `-y` | Overwrite output files without asking. |
 
-`-filter_complex` cannot be used with the simple filter options `-af` and `-vf`.
+`-filter_complex` cannot be used with the simple filter options `-af` `-vf`.
 The syntax is `[NUM_INPUT:CHANNEL]FILTERS[LABEL]`.
 
 List available encoders with:
@@ -80,7 +80,7 @@ Bellow an example of removing the segment `00:39:28 - 00:53:10` from a video and
 #### Single input
 
 Read the whole video/audio once and trim using the `trim` filter.
-`start` and `end` parameters are read in seconds.
+`start` `end` parameters are read in seconds.
 
 The segment to be removed will still be decoded and later discarded,
 so may be a little slow.
@@ -116,7 +116,7 @@ ffmpeg \
 
 ### Video Scale
 
-Resize the video to the specified `width` and `height`.
+Resize the video to the specified `width:height`.
 If `-1` is used, keep aspect ratio.
 
 ```shell

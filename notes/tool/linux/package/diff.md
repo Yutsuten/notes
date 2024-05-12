@@ -15,7 +15,7 @@ diff OPTIONS FROM_FILE TO_FILE
 | `-t` `--expand-tabs` | Expand tabs to spaces in output. |
 | `-u` `-U` `--unified` | Output NUM (default 3) lines of unified context (git like). |
 | `-Z` `--ignore-trailing-space` | Ignore white space at line end. |
-| `--color` | Colorize the output; Can be `never`, `always`, or `auto`. |
+| `--color` | Colorize the output; Can be `never` `always` `auto`. |
 | `--suppress-common-lines` | Do not output common lines. |
 
 ## Examples

@@ -20,7 +20,7 @@ export default {
 ```
 
 ::: v-pre
-Variables are used in template within `{{` and `}}`.
+Variables are used in template within `{{` `}}`.
 :::
 
 ```vue

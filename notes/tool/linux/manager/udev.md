@@ -34,7 +34,7 @@ Example of adding access,
 required for `aft-mtp-mount`,
 to OPPO Reno5 A ([some tips](https://wiki.archlinux.org/title/Udev#Allowing_regular_users_to_use_devices)):
 
-Find `idVendor` and `idProduct` using the tool `lsusb`:
+Find `idVendor` `idProduct` using the tool `lsusb`:
 
 ```shell
 lsusb

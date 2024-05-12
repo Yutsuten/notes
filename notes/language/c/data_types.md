@@ -9,14 +9,14 @@ Check a full list of format specifiers [here](https://www.gnu.org/software/libc/
 
 | Type | Size (bytes) | Format specifier |
 | --- | --- | --- |
-| `char`, `signed char`, `unsigned char` | 1 | `%c` |
-| `short`, `short int` | 2 | `%hd` `%hi` |
+| `char` `signed char` `unsigned char` | 1 | `%c` |
+| `short` `short int` | 2 | `%hd` `%hi` |
 | `int` | 2, **4** | `%i` `%d` |
 | `unsigned int` | 2, **4** | `%u` |
-| `long`, `long int` | 4, **8** | `%ld` `%li` |
-| `long long`, `long long int` | 8+ | `%lld` `%lli` |
-| `unsigned long`, `unsigned long int` | 4+ | `%lu` |
-| `unsigned long long`, `unsigned long long int` | 4+ | `%llu` |
+| `long` `long int` | 4, **8** | `%ld` `%li` |
+| `long long` `long long int` | 8+ | `%lld` `%lli` |
+| `unsigned long` `unsigned long int` | 4+ | `%lu` |
+| `unsigned long long` `unsigned long long int` | 4+ | `%llu` |
 | `float` | 4 | `%f` |
 | `double` | 8 | `%lf` |
 | `long double` | 10+, **12, 16** | `%Lf` |

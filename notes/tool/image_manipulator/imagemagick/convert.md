@@ -18,7 +18,7 @@ convert INPUT_OPTIONS INPUT_FILE OUTPUT_OPTIONS OUTPUT_FILE
 | --- | --- |
 | `-strip` | Strip image of all profiles and comments. |
 | `-trim` | Trim image edges. |
-| `-interlace` | Type of image interlacing scheme. `none`, `line`, `plane`, `JPEG`, `GIF`, `PNG`. |
+| `-interlace` | Type of image interlacing scheme. `none` `line` `plane` `JPEG` `GIF` `PNG`. |
 | `-quality` | Valid only for JPEG or MPEG. 100 is lossless, 1 is worst quality. |
 | `-sampling-factor` | Used by the JPEG encoder for chroma downsampling. |
 
@@ -55,7 +55,7 @@ convert INPUT_OPTIONS INPUT_FILE OUTPUT_OPTIONS OUTPUT_FILE
 | `-alpha` | **set**: Activate alpha channel. **background**: Set any fully-transparent pixel to the background color, while leaving it fully-transparent. |
 | `-channel type` | Change the channel subsequent operators will act. |
 | `-fuzz` | On subsequent operators, colors within this distance are considered equal. Ex: `1%` |
-| `-fill` | On subsequent operators, color to use when filling a graphic primitive. Ex: `none`, `"#ffffff"` |
+| `-fill` | On subsequent operators, color to use when filling a graphic primitive. Ex: `none` `"#ffffff"` |
 | `-floodfill` | Starting from (X;Y), any color that matches the color are filled with the `-fill` color. Ex: `+0+0 white` |
 | `-opaque` | Change this color to the fill color within the image. |
 | `-background` | Set the background color. Ex: `none` |

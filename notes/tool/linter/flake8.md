@@ -18,7 +18,7 @@ python -m pip install flake8
 
 | Home | Parent |
 | ---- | ------ |
-| `~/.config/flake8` | `setup.cfg`, `tox.ini`, `.flake8` |
+| `~/.config/flake8` | `setup.cfg` `tox.ini` `.flake8` |
 
 ### Command
 

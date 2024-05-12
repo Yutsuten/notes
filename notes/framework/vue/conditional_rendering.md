@@ -5,7 +5,7 @@ ref: https://vuejs.org/tutorial/#step-6
 
 ## Single-File Component (SFC)
 
-Using `v-if`, `v-else-if` and `v-else` we can create branches of the rendering condition.
+Using `v-if` `v-else-if` `v-else` we can create branches of the rendering condition.
 
 ```vue
 <script setup lang="ts">

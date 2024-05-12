@@ -27,7 +27,7 @@ Resource constraint options:
 
 | Option | Description |
 | --- | --- |
-| `-m` `--memory` | Memory limit. Followed by a suffix of `b`, `k`, `m`, `g`. Ex: `1g` for 1GB. |
+| `-m` `--memory` | Memory limit. Followed by a suffix of `b` `k` `m` `g`. Ex: `1g` for 1GB. |
 | `--cpus` | CPU resources a container can use. Ex: `1` for 1 CPU. |
 
 ### Mount syntax

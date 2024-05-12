@@ -77,13 +77,13 @@ fcitx-remote OPTION
 | `-o` | Activate input method. |
 | `-c` | Inactivate input method. |
 | `-t` | Toggle active/inactive. |
-| `-s` | Switch to a input method. Example: `mozc`, `fcitx-keyboard-jp`. For all options, run `fcitx-diagnose`. |
+| `-s` | Switch to a input method. Example: `mozc` `fcitx-keyboard-jp`. For all options, run `fcitx-diagnose`. |
 
 ```shell
 /usr/lib/mozc/mozc_tool --mode=config_dialog
 ```
 
-Another available modes are `dictionary_tool`, `word_register_dialog`, `hand_writing`, `character_palette`.
+Another available modes are `dictionary_tool` `word_register_dialog` `hand_writing` `character_palette`.
 
 ### Uim
 
