@@ -32,5 +32,7 @@ Open Windows Powershell and add the `DISPLAY` variable:
 [System.Environment]::SetEnvironmentVariable("DISPLAY", "localhost:0", "User")
 ```
 
-Now, if `ssh`ing into some server with `-X` or `-Y`,
-X11 forwarding must work.
+## SSH
+
+Install `dbus-x11` in the remote server.
+When using `ssh -Y` X11 forwarding must work.
