@@ -7,13 +7,13 @@ ref: https://docs.microsoft.com/en-us/windows-server/administration/openssh/open
 
 ```powershell
 Get-WindowsCapability -Online | ? Name -like 'OpenSSH*'
-Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+Add-WindowsCapability -Online -Name OpenSSH.Server
 Start-Service sshd
 Get-Service sshd
 Set-Service -Name sshd -StartupType 'Automatic'
 ```
 
-Find the IP sddress to be used when running the SSH command:
+Find the IP address to be used when running the SSH command:
 
 ```bat
 ipconfig /all

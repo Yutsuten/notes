@@ -1,10 +1,10 @@
 ---
-title: Condition
+title: Flow control
 ref: https://fishshell.com/docs/current/tutorial.html#conditionals-if-else-switch
 man: test
 ---
 
-## If syntax
+## Condition
 
 `[[ ]]` does not exist.
 `[ ]` exist but `test` is preferred.
@@ -28,7 +28,51 @@ if test -n "$(find $DIR -maxdepth 0 -empty)"
 end
 ```
 
-## Switch syntax
+## For loop
+
+Loop files:
+
+```fish
+for file in *.txt
+    cp $file $file.bak
+end
+```
+
+Loop list of numbers:
+
+```fish
+for x in (seq 5)
+    touch file_$x.txt
+end
+```
+
+Break:
+
+```fish
+for var in a b c
+    if break_from_loop
+        break
+    end
+end
+```
+
+## While loop
+
+```fish
+while true
+    echo 'Loop forever'
+end
+```
+
+Read file line by line in loop:
+
+```fish
+while read --line keyvalue
+    export $keyvalue
+end < ~/.local/environment
+```
+
+## Switch
 
 ```fish
 switch (uname)
