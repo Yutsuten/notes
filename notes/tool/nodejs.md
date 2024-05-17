@@ -1,9 +1,9 @@
 ---
-title: Package manager
+title: Node.js
 ref: https://dev.to/equiman/npm-vs-yarn-vs-pnpm-commands-cheatsheet-3el8
 ---
 
-## Management
+## Package management
 
 ### Package
 

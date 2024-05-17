@@ -1,9 +1,13 @@
 ---
 title: Flow control
-ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for
+ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements
 ---
 
 ## Condition
+
+See
+[if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+documentation.
 
 ```js
 if (10 < 20) {
@@ -16,6 +20,12 @@ if (10 < 20) {
 ```
 
 ## For loop
+
+See
+[for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for),
+[for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in),
+[for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+documentation.
 
 ```js
 for (let i = 0; i < 10; i++) {
@@ -34,6 +44,10 @@ for (const element of [3, 4, 5]) {
 
 ## While loop
 
+See
+[while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
+documentation.
+
 ```js
 let price = 5;
 while (price < 100) {
@@ -50,7 +64,11 @@ while (price < 100) {
 console.log(`\$${price} is too expensive!`);
 ```
 
-## Do while loop
+## Do...while loop
+
+See
+[do...while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while)
+documentation.
 
 ```js
 let price = 5;
@@ -62,6 +80,10 @@ console.log(`\$${price} is too expensive!`);
 ```
 
 ## Switch
+
+See
+[switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+documentation.
 
 ```js
 switch (myExpr) {
@@ -76,3 +98,28 @@ switch (myExpr) {
     break;
 }
 ```
+
+## Try...catch finally
+
+See
+[throw](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw),
+[try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
+documentation.
+
+```js
+try {
+  throw new Error('Something is wrong!');
+} catch (error) {
+  console.log(error.message);
+  if (error instanceof TypeError) {
+    // Handle TypeError
+  } else if (error instanceof RangeError) {
+    // Handle RangeError
+  } else if (error instanceof EvalError) {
+    // Handle EvalError
+  } else {
+    throw error;
+  }
+} finally {
+  // Will always run
+}
