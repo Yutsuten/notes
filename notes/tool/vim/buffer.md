@@ -7,16 +7,16 @@ title: Buffer
 The syntax is:
 
 ```shell
-COMMAND OPTION PATH
+:COMMAND OPTION PATH
 ```
 
 | Command | Description |
 | --- | --- |
-| `:new` | Create a new file in a new window. |
-| `:e` `find` | Edit a file. |
-| `:n` | Edit one or more files. |
-| `:w` `:up` | Write buffer contents to file, or only if there are changes. |
-| `:sav` | Save as |
+| `new` | Create a new file in a new window. |
+| `e` `find` | Edit a file. |
+| `n` | Edit one or more files. |
+| `w` `up` | Write buffer contents to file, or only if there are changes. |
+| `sav` | Save as |
 
 See also [args](/tool/vim/args).
 
@@ -32,6 +32,9 @@ See also [args](/tool/vim/args).
 | `%:h` | Path to the current directory. |
 | `scp://srv-name/` | Path to a remote file. Path defaults to home directory. Add one more `/` for absolute path. |
 
+When using globs, use `Tab` to auto-complete one entry,
+or `C-a` to auto-complete all available entries.
+
 ## Buffer navigation
 
 | Command | Description |
@@ -46,11 +49,11 @@ See also [args](/tool/vim/args).
 Close all buffers but current.
 
 ```vim
-%bd|e#
+%bd | e #
 ```
 
 Close buffer without closing window.
 
 ```vim
-bp|bd #
+bp | bd #
 ```
