@@ -1,14 +1,14 @@
 ---
 title: Function
+vim: userfunc.txt
 ---
 
 ## Definition
 
-Add `!` after `function` to overwrite if it is already defined
-(useful when reloading the script).
+Use `...` for optional arguments.
 
 ```vim
-function! Simple(myarg)
+function SimpleFunc(myarg)
   echo a:myarg
   return 0
 endfunction
@@ -17,6 +17,16 @@ function! OptionalArgs(...)
   echo a:0    " Number of arguments
   echo a:1    " Optional argument
   echo a:000  " List with all arguments
+endfunction
+```
+
+Add `abort` after function name to stop as soon as an error is detected,
+like most programming languages (recommended).
+
+```vim
+function SimpleFunc(myarg) abort
+  echo a:myarg
+  return 0
 endfunction
 ```
 
