@@ -84,11 +84,11 @@ onMounted(() => {
           </a>
         </div>
         <div
-          v-if="page.frontmatter.vim"
+          v-if="page.frontmatter.nvim"
           class="vim-help"
         >
           <b>Vim:</b>
-          <span>help {{ page.frontmatter.vim }}</span>
+          <span>help {{ page.frontmatter.nvim }}</span>
         </div>
       </div>
     </div>

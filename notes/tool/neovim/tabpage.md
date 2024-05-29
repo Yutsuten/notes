@@ -1,6 +1,6 @@
 ---
 title: Tabpage
-vim: tabpage.txt
+nvim: tabpage.txt
 ---
 
 ## Create tab

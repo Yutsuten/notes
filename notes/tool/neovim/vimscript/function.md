@@ -1,6 +1,6 @@
 ---
 title: Function
-vim: userfunc.txt
+nvim: userfunc.txt
 ---
 
 ## Definition
