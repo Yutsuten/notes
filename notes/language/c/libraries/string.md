@@ -1,6 +1,6 @@
 ---
 title: String
-ref: https://www.programiz.com/c-programming/string-handling-functions
+ref: https://cplusplus.com/reference/cstring/
 ---
 
 ## Available functions

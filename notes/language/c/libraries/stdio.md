@@ -1,5 +1,6 @@
 ---
 title: Stdio
+ref: https://cplusplus.com/reference/cstdio/
 ---
 
 ## Basic input & output

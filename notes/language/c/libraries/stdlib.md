@@ -1,6 +1,6 @@
 ---
 title: Stdlib
-ref: https://www.programiz.com/c-programming/c-dynamic-memory-allocation
+ref: https://cplusplus.com/reference/cstdlib/
 ---
 
 ## Dynamic memory allocation
