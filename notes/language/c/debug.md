@@ -40,3 +40,26 @@ The most commonly used commands are:
 | `fin` `finish` | Execute until selected stack frame returns (step-out). |
 | `u` `until` | Execute until past the current line, useful for loops. |
 | `c` `continue` | Continue program until it finishes or until next breakpoint. |
+
+### Debug curses app
+
+Information extracted from the [neomutt documentation](https://neomutt.org/dev/build/debug).
+
+Use two terminals, in the first one run:
+
+```shell
+tty
+sleep 1d
+```
+
+In the second one, start `gdb` and configure it with:
+
+```shell
+# Inside gdb prompt
+tty /dev/pts/5  # Device of the first terminal
+handle SIGPIPE noprint nostop
+set args -d 2   # Default parameters
+run
+```
+
+Press `Ctrl+C` in the second terminal to insert more debug commands (breakpoint etc).
