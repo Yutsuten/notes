@@ -10,21 +10,21 @@ let str1 = 'Some string'
 let str2 = `Value of a is ${a}`  // Template string [ES6]
 ```
 
-| Method | Description |
-| --- | --- |
-| `str.charAt(index)` | Returns a new string consisting of the single UTF-16 code unit at the given index. |
-| `str.endsWith(pattern)` | Determines whether a string ends with the characters of this string, returning `true` or `false` as appropriate. |
-| `str.indexOf(text)` | Searches this string and returns the index of the first occurrence of the specified substring. |
-| `str.match(regex)` | Retrieves the result of matching this string against a regular expression. |
-| `str.padEnd(targetLength, padString)` | Pads this string from end with the given string. |
-| `str.padStart(targetLength, padString)` | Pads this string from start with the given string. |
-| `str.replace(pattern, newPattern)` | Returns a new string with one, some, or all matches of a pattern replaced by a replacement. If pattern is a string, only the first occurrence will be replaced. |
-| `str.search(reg)` | Returns the index of the first match in the string. |
-| `str.slice(beginIndex, endIndex)` | Extracts a section of this string and returns it as a new string. |
-| `str.split(separator)` | Splits by separator and returns an array of substrings. |
-| `str.toLowerCase()` | Returns this string converted to lower case. |
-| `str.toUpperCase()` | Returns this string converted to uppercase. |
-| `str.trim()` | Removes whitespace from both ends of this string. |
+| Method | Params | Return type | Description |
+| --- | --- | --- | --- |
+| `charAt` | `index` | `string` | Get character from index. |
+| `endsWith` | `pattern` | `boolean` | Checks whether a string ends with the characters of this string. |
+| `indexOf` | `searchString` | `number` | Get the index of the first occurrence of the specified substring. |
+| `match` | `regex` | `array` | Find matching results (with `g` flag) or captured groups (without `g` flag). |
+| `padEnd` | `targetLen` `padString` | `string` | Pads this string from end with the given string. |
+| `padStart` | `targetLen` `padString` | `string` | Pads this string from start with the given string. |
+| `replace` | `pattern` `replacement` | `string` | Replace first match (if `pattern` is string) or all matches (if `pattern` is regex). |
+| `search` | `reg` | `number` | Same as `indexOf`, but uses regex as parameter. |
+| `slice` | `beginIndex` `endIndex` | `string` | Same as, for example, `text[5:10]` in python. |
+| `split` | `sep` | `array` | Splits by separator. |
+| `toLowerCase` | | `string` | Convert to lower case. |
+| `toUpperCase` | | `string` | Convert to upper case. |
+| `trim` | | `string` | Remove whitespace from both ends. |
 
 ## Examples
 
