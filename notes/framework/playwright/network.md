@@ -16,4 +16,5 @@ page.on('response', response => {
         responseCount++;
     }
 });
+expect(responseCount).toBe(1);
 ```

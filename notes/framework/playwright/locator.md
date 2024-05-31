@@ -14,7 +14,7 @@ await page.getByRole('button', { name: 'Submit' }).click();
 Get parent container:
 
 ```js
-await page.getByText('Welcome', { exact: true }).locator('..');
+const parent = await page.getByText('Welcome', { exact: true }).locator('..');
 ```
 
 Get specific row of table and check its checkbox:
