@@ -40,3 +40,14 @@ if test $remainder -lt 0
     end
 end
 ```
+
+## Read yes or no from user
+
+```fish
+read --line --prompt-str 'Are you sure? [y/N] ' answer
+if string match --quiet --regex '^[Yy]$' $answer
+    echo 'Answer is yes'
+else
+    echo 'Answer is no'
+end
+```

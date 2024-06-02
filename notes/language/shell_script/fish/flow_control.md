@@ -12,7 +12,7 @@ man: test
 ```fish
 if not grep fish /etc/shells
     echo 'No fish'
-else if test $number -gt 5 -o test $argv[1] = 'string is equal'
+else if test $number -gt 5 -o $argv[1] = 'string is equal'
     echo Complex condition
 else
     echo Got nothing
