@@ -12,7 +12,7 @@ and count the number of responses.
 let responseCount = 0;
 page.on('response', response => {
     if (response.url().endsWith('/api/users')) {
-        expect(response).toBeOK();
+        expect(response.status()).toBe(200);
         responseCount++;
     }
 });
