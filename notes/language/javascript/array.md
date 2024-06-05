@@ -21,17 +21,19 @@ arr = Array.from(arrayLikeObject);
 
 ## Methods
 
-| Method | Description |
-| --- | --- |
-| `arr.indexOf(element)` | Returns the element's index, or `-1` if not present. |
-| `arr.includes(element)` | Returns `true` if the element exists, `false` otherwise. |
-| `arr.join(',')` | Concatenates all elements using the separator and returns a string. |
-| `arr.push(element1, ...)` | Append elements to an array. |
-| `arr.pop()` | Removes the last element and return it. |
-| `arr.shift()` | Removes the first element and return it. |
-| `arr.slice()` | Returns a shallow copy of a portion of an array. `[start; end]` (end not included) |
-| `arr.splice(startIndex, deleteCount, item1, ...)` | Changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. |
-| `arr1.concat(arr2)` | Creates a new array with `arr1` and `arr2` elements merged. |
+| Method | Params | Return type | Description |
+| --- | --- | --- | --- |
+| `concat` | `array` | `array` | Creates a new array with `arr1` and `arr2` elements merged. |
+| `includes` | `element` | `boolean` | Returns `true` if the element exists, `false` otherwise. |
+| `indexOf` | `element` | `number` | Returns the element's index, or `-1` if not present. |
+| `join` | `separator` | `string` | Concatenates all elements using the separator and returns a string. |
+| `pop` | | `element` | Removes the last element and return it. |
+| `push` | `elements` | `number` | Append elements to an array. |
+| `shift` | | `element` | Removes the first element and return it. |
+| `slice` | `beginIndex` `endIndex` | `array` | Returns a shallow copy of a portion of an array. `[start; end]` (end not included) |
+| `sort` | `compareFn` | `array` | Sort an array in place. |
+| `splice` | `startIndex` `deleteCount` `items` | `array` | Changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. |
+| `toSorted` | `compareFn` | `array` | A copy of the array sorted. |
 
 Example:
 
