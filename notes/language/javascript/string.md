@@ -14,6 +14,7 @@ let str2 = `Value of a is ${a}`  // Template string [ES6]
 | --- | --- | --- | --- |
 | `charAt` | `index` | `string` | Get character from index. |
 | `endsWith` | `pattern` | `boolean` | Checks whether a string ends with the characters of this string. |
+| `includes` | `searchString` | `boolean` | Determine whether a given string may be found within this string. |
 | `indexOf` | `searchString` | `number` | Get the index of the first occurrence of the specified substring. |
 | `match` | `regex` | `array` | Find matching results (with `g` flag) or captured groups (without `g` flag). |
 | `padEnd` | `targetLen` `padString` | `string` | Pads this string from end with the given string. |
