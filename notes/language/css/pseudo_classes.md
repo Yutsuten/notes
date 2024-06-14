@@ -78,6 +78,14 @@ Select the second `div`.
 }
 ```
 
+Select a specific column in a table.
+
+```css
+tr td:nth-child(3) {
+    background: blue;
+}
+```
+
 Select even or odd.
 
 ```css
