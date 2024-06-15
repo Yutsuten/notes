@@ -14,8 +14,8 @@ ref: https://chromium.googlesource.com/chromiumos/docs/+/master/constants/signal
 | `SIGABRT` | 6 | Core | Abort signal from abort(3) |
 | `SIGFPE` | 8 | Core | Floating point exception |
 | `SIGKILL` | 9 | Term | Kill signal |
-| `SIGUSR1` | 10 | User defined signal 1 |
+| `SIGUSR1` | 10 | Term | User defined signal 1 |
 | `SIGSEGV` | 11 | Core | Invalid memory reference |
-| `SIGUSR2` | 12 | User defined signal 2 |
+| `SIGUSR2` | 12 | Term | User defined signal 2 |
 | `SIGPIPE` | 13 | Term | Broken pipe: write to pipe with no |
 | `SIGTERM` | 15 | Term | Termination signal |

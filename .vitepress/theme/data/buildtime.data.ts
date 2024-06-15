@@ -1,6 +1,6 @@
 import { defineLoader } from 'vitepress';
 
-declare const data: Date; // eslint-disable-line init-declarations
+declare const data: Date;
 export { data };
 
 export default defineLoader({

@@ -48,14 +48,17 @@ export default [
     },
   },
   {
-    files: ['.vitepress/**/*.vue'],
+    files: ['.vitepress/theme/**/*.vue'],
     languageOptions: {
       parser: vueParser,
       parserOptions: {
         parser: tsParser,
       },
     },
-    processor: vue.processors['.vue'],
+    plugins: {
+      vue,
+    },
+    processor: 'vue/vue',
     rules: {
       ...vue.configs.base.rules,
       ...vue.configs.essential.rules,
@@ -74,13 +77,8 @@ export default [
     ],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: {
-        ...globals.browser,
-      },
+      globals: globals.browser,
       sourceType: 'module',
-    },
-    plugins: {
-      vue,
     },
     rules: {
       ...js.configs.all.rules,

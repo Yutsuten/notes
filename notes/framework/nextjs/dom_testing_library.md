@@ -28,7 +28,7 @@ When there is no `<label>`, aria-label, and we want to get it by `placeholder`.
 
 | User action | HTML | Test |
 | --- | --- | --- |
-| Insert text | `<input placeholder="Name" />` | `fireEvent.change(screen.getByPlaceholderText('Name'), { target: { value: 'Suguri' } })`
+| Insert text | `<input placeholder="Name" />` | `fireEvent.change(screen.getByPlaceholderText('Name'), { target: { value: 'Suguri' } })` |
 
 ## Third option: getByText
 

@@ -5,7 +5,7 @@ ref: http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.htm
 
 ## System variables
 
-| Variable | Explanation
+| Variable | Explanation |
 | --- | --- |
 | `${CURDIR}` | An absolute path to the directory where the test data file is located. |
 | `${TEMPDIR}` | An absolute path to the system temporary directory. |
