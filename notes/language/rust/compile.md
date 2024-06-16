@@ -1,6 +1,6 @@
 ---
 title: Compile
-reference: https://doc.rust-lang.org/rust-by-example/index.html
+ref: https://doc.rust-lang.org/rust-by-example/index.html
 ---
 
 ## Single file
