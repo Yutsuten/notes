@@ -3,7 +3,7 @@ title: Data types
 ref: https://en.wikipedia.org/wiki/C_data_types
 ---
 
-## Common types
+## Types
 
 Check a full list of format specifiers [here](https://www.gnu.org/software/libc/manual/html_node/Table-of-Output-Conversions.html).
 
