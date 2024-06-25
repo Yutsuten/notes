@@ -23,7 +23,7 @@ tsc --noEmit
 - String: `string`
 - Boolean: `boolean`
 - List: `Array` `[]`
-- Dict: `Record<Type1, Type2>`
+- Dict: `Record<Type1, Type2>` `{}`
 - Set: -
 - Symbol: `symbol` [[1]](https://javascript.info/symbol)
 - Function: `Function`
