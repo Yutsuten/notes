@@ -21,12 +21,15 @@ Defaults:
 
 ## Compound Types
 
-| Type | Example |
+| Type | Notation (example) |
 | --- | --- |
-| Array | `[1, 2, 3]` |
-| Tuples | `(1, true)` |
+| Array | `[i32, 5]` |
+| Slice | `&[i32]` |
+| Tuple | `(i32, bool)` |
 
 ## Examples
+
+Scalar variables.
 
 ```rust
 let a_char       = 'a';
@@ -52,4 +55,17 @@ let mut mutable = 12;
 mutable = 21;
 
 let mutable = true;  // Override with shadowing
+```
+
+Coumpound variables.
+
+```rust
+let myarray = [1, 5, 9, 13, 17];
+let myarray: [i32, 3] = [1, 5, 9, 13, 17];  // Type signature is superfluous
+
+let myslice = &myarray[1 .. 3];  // Same as myarray[1:3] in python [inclusive:exclusive]
+let myslice: &[i32] = &myarray[1 .. 3];  // Type signature is superfluous
+
+let mytuple = (1, true);
+let mytuple: (i32, bool) = (1, true);  // Type signature is superfluous
 ```
