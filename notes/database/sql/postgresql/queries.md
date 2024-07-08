@@ -4,11 +4,6 @@ title: Queries
 
 ## Database
 
-```sql
-CREATE DATABASE dbname;
-DROP DATABASE dbname;
-```
-
 | Command | Description |
 | --- | --- |
 | `\c DBNAME` `\connect DBNAME` | Connect to database. |

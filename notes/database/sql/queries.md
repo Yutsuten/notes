@@ -2,6 +2,28 @@
 title: Queries
 ---
 
+## Database
+
+```sql
+CREATE DATABASE dbname;
+DROP DATABASE dbname;
+```
+
+## Table
+
+```sql
+CREATE TABLE users (id INTEGER PRIMARY KEY, nick TEXT);
+CREATE TABLE inventory (id INTEGER, name TEXT, FOREIGN KEY (id) REFERENCES users(id));
+ALTER TABLE users ADD COLUMN achievements INTEGER;
+ALTER TABLE users MODIFY nick TEXT NOT NULL;
+```
+
+Foreign key
+
+```sql
+ALTER TABLE users ADD FOREIGN KEY (item) REFERENCES items(id);
+```
+
 ## Select
 
 ```sql
@@ -16,6 +38,12 @@ SELECT * FROM users WHERE achievements BETWEEN 10 AND 20;
 SELECT * FROM users WHERE server = 'Poring' AND achievements > 5;
 SELECT * FROM users WHERE achievements < 5 OR achievements > 10;
 SELECT nick AS 'Nickname' FROM users;
+```
+
+### Limit
+
+```sql
+SELECT * FROM users LIMIT 10;
 ```
 
 ### Distinct

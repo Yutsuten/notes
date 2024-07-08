@@ -10,7 +10,8 @@ ref: https://github.com/jarun/nnn/wiki
 
 | Shortcut | Description |
 | --- | --- |
-| `Ctrl + L` | Clear filter |
+| `C-l` | Clear filter |
+| `mm` | Clear selection |
 
 ## Show cp/mv progress
 
