@@ -20,9 +20,9 @@ git merge OPTIONS SOURCE_BRANCH
 
 ## Examples
 
-### Conflict resolution
+### Manual conflict resolution
 
-Make sure all conflicts were resolved by running:
+Check if all conflicts were resolved by running:
 
 ```shell
 git grep -HE '<{7} HEAD'
@@ -34,19 +34,33 @@ To commit with the default merge message:
 git commit --no-edit
 ```
 
+### Automatic conflict resolution
+
+Merge is actually done and files content change,
+but contents of `ours` or `theirs` is automatically chosen in case of conflict.
+
+Example of merging `master` into a dev branch.
+
+```shell
+git merge -Xours master    # In case of conflict: Keep ours, drop master
+git merge -Xtheirs master  # In case of conflict: Drop ours, keep master
+```
+
 ### Overwrite branch
 
 Using `-s ours` discards everything the other tree did,
 declaring our history contains all that happened in it.
 
-Example: Suppose there are two branches
-`keep` `overwrite` that cannot be merged because of conflicts.
-The changes in `overwrite` are not needed anymore,
-and you just want to update it to `keep`.
+In summary, no changes are done in the files.
+Only git changes.
+
+Example: Suppose there are two branches `keep` and `override`.
+You want `keep` as is,
+and drop everything in `override`.
 
 ```shell
 git switch keep
-git merge -s ours overwrite
-git switch overwrite
+git merge -s ours override
+git switch override
 git merge keep
 ```

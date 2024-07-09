@@ -69,8 +69,8 @@ Common usage options:
 | --- | --- |
 | `-K` `--list-secret-keys` | List secret keys. |
 | `-c` `--symmetric` | Encrypt a FILE using symmetric cipher. |
-| `-d` `--decrypt` | Decrypt the FILE. |
-| `-e` `--encrypt` | Encrypt data to one or more public keys. |
+| `-d` `--decrypt` | Decrypt the FILE. Output to STDOUT by default. |
+| `-e` `--encrypt` | Encrypt data to one or more public keys. Output to `$FILE.gpg` by default. |
 | `-k` `--list-keys` `--list-public-keys` | List public keys. |
 | `-o` `--output` | Write output to FILE. |
 | `-r` `--recipient` | Encrypt for user id NAME. Often used with `--encrypt`. |
@@ -113,8 +113,14 @@ gpg -co file.txt.gpg file.txt
 Encrypt and sign to someone/self with:
 
 ```shell
-gpg -esr 'Recipient Name' -o file.txt.gpg file.txt
-gpg -es --default-recipient-self -o file.txt.gpg file.txt
+gpg -o file.txt.gpg -esr 'Recipient Name' file.txt         # `-o` is optional in this case
+gpg -o file.txt.gpg -es --default-recipient-self file.txt  # `-o` is optional in this case
+```
+
+Encrypt and redirect the data (`-o -` is needed):
+
+```shell
+gpg -o - -e --default-recipient-self file.txt > ~/result.gpg  # Just override output file
 ```
 
 Decrypt (and show signature) with:
@@ -126,15 +132,13 @@ gpg -o file.txt -d file.txt.gpg
 Compress and encrypt folder:
 
 ```shell
-tar --zstd -cC ~ Folder/ \
-  | gpg -e --default-recipient-self > folder.tar.zst.gpg
+tar --zstd -c Folder/ | gpg -e --default-recipient-self > folder.tar.zst.gpg
 ```
 
 Decrypt and extract folder:
 
 ```shell
-gpg --decrypt folder.tar.zst.gpg \
-    | tar --zstd -xC ~
+gpg -d folder.tar.zst.gpg | tar --zstd -x
 ```
 
 ### Verify file signature
