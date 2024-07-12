@@ -3,11 +3,11 @@ title: Pathlib
 ref: https://docs.python.org/3/library/pathlib.html
 ---
 
-::: info NOTE
+## Usage
+
+:::info
 Available from version 3.4.
 :::
-
-## Usage
 
 ```python
 from pathlib import Path
@@ -32,11 +32,25 @@ path1 / path2  # Same as os.path.join(path1, path2)
 
 ### File manipulation
 
+| Mode | Description |
+| ---- | ----------- |
+| `r` | Open for reading (default). |
+| `w` | Open for writing, truncating the file first. |
+| `x` | Open for exclusive creation, failing if the file already exists. |
+| `a` | Open for writing, appending to the end of the file if it exists. |
+| `b` | Binary mode. |
+| `t` | Text mode (default). |
+| `+` | Open for updating (reading and writing). |
+
 Read or write to file
 
 ```python
-with Path.open(path, 'w') as myfile:
-    myfile.write('content')
+with Path.open(path, 'r') as f:
+    all_text = f.read()
+    lines_list = f.readlines()
+
+with Path.open(path, 'w') as f:
+    f.write('content')
 ```
 
 Create empty file (similar to `touch`)

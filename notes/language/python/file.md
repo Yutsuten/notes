@@ -5,6 +5,10 @@ ref: https://docs.python.org/3/library/functions.html#open
 
 ## Usage
 
+:::tip
+If using Python 3.4+, prefer using `pathlib` instead.
+:::
+
 Open file and return a corresponding file object.
 
 ```python
