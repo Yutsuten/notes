@@ -8,6 +8,37 @@ ref: https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
 TypeScript offers all of JavaScript’s features, and an additional layer on top of these:
 TypeScript’s type system.
 
+## Configuration
+
+[Configuration](https://www.typescriptlang.org/tsconfig/) is done in `tsconfig.json`.
+
+Usage of the `strict` compiler option is recommended to make typescript more
+[sound](https://blog.logrocket.com/is-typescript-worth-it/).
+
+Sample configuration:
+
+```json
+{
+  "compilerOptions": {
+    "module": "ES2020",
+    "target": "ES2020",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+    "jsx": "preserve",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"]
+  },
+  "include": [
+    ".vitepress/**/*.ts",
+    ".vitepress/**/*.vue",
+    "shims.d.ts"
+  ]
+}
+```
+
 ## Run type check
 
 ```shell
