@@ -15,6 +15,7 @@ wget OPTIONS URL
 | `-N` `--timestamping` | Do not download again if file already exists and have newer/same timestamp. |
 | `-P` `--directory-prefix` | Directory to save the file. If the directory doesn't exist, it will be created. |
 | `--show-progress` | Show progress even when disabling verbose output. |
+| `--output-document` | Concatenate and write all content into the specified filename. |
 
 ## Example
 

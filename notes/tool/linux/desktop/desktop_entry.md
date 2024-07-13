@@ -32,6 +32,12 @@ Terminal=false
 
 **Note:** Only `Type` and `Name` are required.
 
+One may install desktop menu entries with `xdg-desktop-menu`.
+
+```shell
+xdg-desktop-menu install --novendor osu.desktop
+```
+
 ### Icon
 
 To add icon, specify the path to it in `Icon`:
