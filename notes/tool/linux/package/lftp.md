@@ -28,6 +28,13 @@ but that's not how it is.
 - **local** is your local PC
 - **remote** is the remote server.
 
+## Navigating
+
+| Command | Description |
+| --- | --- |
+| `lcd` | Change the local directory. |
+| `cd` | Change the remote directory. |
+
 ## Connecting
 
 ### Open
