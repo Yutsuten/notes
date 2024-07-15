@@ -8,6 +8,14 @@ ref: https://docs.python.org/3/library/stdtypes.html#dict
 ```python
 my_dict = {'name': 'John', 'age': 28}
 my_dict = dict(name='John', age=28)
+my_dict = {expression for value in input_set (if predicate)}
+```
+
+## Operators
+
+Set value of key:
+
+```python
 my_dict['hobby'] = 'games'
 ```
 
@@ -23,9 +31,10 @@ del my_dict['key']
 | --- | --- |
 | `get` | Get the value for key if key is in the dictionary, else default (`None`). |
 | `pop` | Same as get, but removes the key. |
-| `keys` | List of keys |
-| `values` | List of values |
-| `update` | Merge dicts |
+| `keys` | List of keys. |
+| `values` | List of values. |
+| `update` | Merge dicts. |
+| `copy` | Creates a shallow copy. |
 
 ```python
 value = mydict.get(key)
@@ -77,13 +86,13 @@ cleared = {key: value for key, value in errors.items() if value}
 Shallow
 
 ```python
-dict(my_dict)
-my_dict.copy()
+copy1 = dict(my_dict)
+copy2 = my_dict.copy()
 ```
 
 Deep
 
 ```python
 import copy
-copy.deepcopy(my_dict)
+deep_copy = copy.deepcopy(my_dict)
 ```
