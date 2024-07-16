@@ -155,7 +155,7 @@ pacstrap /mnt base linux linux-firmware $ADD_MORE_HERE
 
 - `base-devel` - Development packages
 - `networkmanager` - Network connection manager and user applications
-- `grub` `efibootmgr` `os-prober` - For boot
+- `efibootmgr` `os-prober` (`grub`) - For boot
 - `neovim` `man-db` `man-pages` - Basic tools
 
 ## Configuration
@@ -214,11 +214,35 @@ Set the root password:
 passwd
 ```
 
-Setup the boot loader (requires `grub` `efibootmgr`):
+Setup the boot loader.
+
+**Using grub:** (requires `grub` `efibootmgr`):
 
 ```shell
 grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+**Using UKI:**  (requires `efibootmgr` and at least 200M on UEFI partition):
+
+```shell
+# /etc/kernel/cmdline
+root=UUID=1a3448da-b6df-400b-b85e-695cca6eeba1 rw loglevel=3 quiet splash
+
+# /etc/mkinitcpio.d/linux.preset
+ALL_kver="/boot/vmlinuz-linux"
+
+PRESETS=('default' 'fallback')
+
+default_uki="/efi/EFI/Linux/arch-linux.efi"
+default_options="--splash /usr/share/systemd/bootctl/splash-arch.bmp"
+fallback_uki="/efi/EFI/Linux/arch-linux-fallback.efi"
+fallback_options="-S autodetect"
+
+# Then run on shell
+mkdir -p /efi/EFI/Linux
+mkinitcpio -p linux
+efibootmgr --create --disk /dev/nvme0n1 --part 1 --label 'Arch Linux' --loader '\EFI\Linux\arch-linux.efi' --unicode
 ```
 
 The most basic configuration is done.
@@ -233,7 +257,7 @@ reboot
 
 ### As root
 
-- Configure `grub` to support hibernation if going to use it
+- Configure `grub` or `/etc/kernel/cmdline` to support hibernation if going to use it
 - Configure `dm-crypt` to unlock your partitions if using encryption
 - Double check if `/etc/fstab` is correct
 - Create and configure the new user
