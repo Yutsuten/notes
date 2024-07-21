@@ -1,9 +1,9 @@
 ---
-title: Syntax
+title: Functions
 ref: https://www.programiz.com/c-programming/c-storage-class
 ---
 
-## Functions
+## Usage
 
 ```c
 #include <stdio.h>
@@ -54,7 +54,7 @@ int main() {
 }
 ```
 
-## Storage class
+### Storage class
 
 Determines the scope, visibility and lifetime of variables.
 

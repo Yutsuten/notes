@@ -19,6 +19,13 @@ Defaults:
 - Integer: `i32`
 - Float: `f64`
 
+Constant or static variable (use it instead of the usual `let`):
+
+```c
+const TYPE
+static TYPE  // Modifying it is unsafe
+```
+
 ## Compound Types
 
 | Type | Notation (example) |

@@ -28,10 +28,11 @@ signed TYPE
 unsigned TYPE
 ```
 
-Create constants:
+Constant or static variable:
 
 ```c
 const TYPE
+static TYPE
 ```
 
 ### Examples
