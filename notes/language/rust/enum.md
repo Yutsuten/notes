@@ -95,6 +95,16 @@ fn main() {
 }
 ```
 
+If there is no need to exaust all possibilities,
+use `if let` and a binding `@`:
+
+```rust
+let pressed = WebEvent::KeyPress('x');
+if let WebEvent::KeyPress(mychar @ 'a' ..= 'z') = pressed {
+    println!("Pressed a lower case character: '{}'", mychar);
+}
+```
+
 To make `enum` values become available without manual scoping (`Result::`) like in C,
 use the `use` declaration:
 

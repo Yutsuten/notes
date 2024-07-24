@@ -32,6 +32,15 @@ Mutable variable:
 let mut mutable_var
 ```
 
+Reference / dereference:
+
+```rust
+let reference = &4;
+let ref reference = 4;
+
+let dereference = *reference;
+```
+
 ## Compound Types
 
 | Type | Notation (example) |
