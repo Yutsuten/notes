@@ -19,6 +19,12 @@ Generating an array from an array-like object:
 arr = Array.from(arrayLikeObject);
 ```
 
+Destructure into simpler types:
+
+```js
+const [first, ...remaining] = arr;
+```
+
 ## Methods
 
 | Method | Params | Return type | Description |
@@ -38,7 +44,7 @@ arr = Array.from(arrayLikeObject);
 Example:
 
 ```js
-arr.slice(2, 5)  // Same as arr[2:5] in python
+arr.slice(2, 5);  // Same as arr[2:5] in python
 ```
 
 Remove by value:

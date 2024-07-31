@@ -1,5 +1,6 @@
 ---
 title: Switch
+man: git-switch
 ref: https://git-scm.com/docs/git-switch
 ---
 
@@ -19,3 +20,9 @@ git switch OPTIONS BRANCH START_POINT
 | `-f` `--force` `--discard-changes` | Proceed while discarding uncommited changes. |
 | `-m` `--merge` | Proceed while merging uncommited changes. |
 | `-t` `--track` | When creating a new branch, set up "upstream" configuration. |
+
+## Example
+
+```shell
+git switch feature-branch
+```
