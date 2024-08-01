@@ -8,6 +8,12 @@ import vueParser from 'vue-eslint-parser';
 
 export default [
   {
+    ignores: [
+      '.vitepress/cache/',
+      '.vitepress/dist/',
+    ],
+  },
+  {
     files: ['README.md', 'notes/**/*.md'],
     languageOptions: {
       parser: markdownlintParser,
