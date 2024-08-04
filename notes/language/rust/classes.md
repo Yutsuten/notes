@@ -7,7 +7,7 @@ ref: https://doc.rust-lang.org/book/ch05-03-method-syntax.html
 
 Classes in rust are under the name of *associated functions* and *methods*.
 
-- **Classes:** Created with the `impl` keyword, with the same name of the type you want to associate with
+- **Classes:** Created with the `impl` keyword, using the same name of the type to associate with
 - **Associated function:** Constructors, takes no `self` and returns an instance of the type
 - **Methods:** Takes `self` and may access and modify the instance
 
