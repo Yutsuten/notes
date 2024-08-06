@@ -49,6 +49,16 @@ let dereference = *reference;
 | Slice | `&[i32]` |
 | Tuple | `(i32, bool)` |
 
+## Alias
+
+Give a new name to a existing primitive or custom types (struct, enum etc)
+with the `type` keyword.
+It must use CamelCase naming convention.
+
+```rust
+type NanoSecond = u64;
+```
+
 ## Scope
 
 - Variable scope is determined by the code block (inside `{` and `}`) it is in
@@ -70,17 +80,33 @@ fn main() {
 }
 ```
 
+## Suffix & Casting
+
+When creating a literal,
+explicitly choose its type by adding the type as suffix:
+
+```rust
+let small_number = 5u8;
+```
+
+Implict type conversion is not possible,
+but explicit type conversion can be performed using the `as` keyword.
+
+```rust
+let number1: i16 = 10;
+let number2: i32 = number1 as i32;
+```
+
 ## Examples
 
 Scalar variables.
 
 ```rust
-let a_char       = 'a';
-let a_string     = "Yuki";
-let a_float: f64 = 1.0;  // Regular annotation
-let an_integer   = 5i32; // Suffix annotation
-let a_boolean    = true;
-let _unused_var  = 1;    // Start unused variables with an underscore
+let a_char      = 'a';
+let a_string    = "Yuki";
+let a_float     = 1.0;
+let a_boolean   = true;
+let _unused_var = 1;    // Start unused variables with an underscore
 
 let mut inferred_type = 12; // Type i64 is inferred from the next line
 inferred_type = 4294967296i64;

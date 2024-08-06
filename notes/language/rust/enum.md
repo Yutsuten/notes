@@ -25,12 +25,6 @@ enum WebEvent {
 }
 ```
 
-Create an alias to rename an `enum`:
-
-```rust
-type Res = Result;
-```
-
 ## Usage
 
 To use it in the C way:
