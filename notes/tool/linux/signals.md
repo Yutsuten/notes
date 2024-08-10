@@ -5,6 +5,8 @@ ref: https://chromium.googlesource.com/chromiumos/docs/+/master/constants/signal
 
 ## List
 
+Get a full list with `kill -L`.
+
 | Signal | Value | Action | Comment |
 | --- | --- | --- | --- |
 | `SIGHUP` | 1 | Term | Hangup detected on controlling terminal or death of controlling process |

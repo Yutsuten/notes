@@ -7,8 +7,20 @@ title: Kill
 Kill processes by process ID.
 
 ```shell
-kill PID  # Defaults to SIGTERM
-kill -9 PID
+kill OPTIONS PID
+```
+
+| Option | Description |
+| --- | --- |
+| `-s` `--signal` | The signal to send. It may be given as a name or a number. |
+| `-l` `--list` | Print a list of signal names, or convert the given signal number to a name. |
+| `-L` `--table` | Pretty print a table of signal names and numbers. |
+
+Examples:
+
+```shell
+kill PID     # Defaults to `-s 15` (SIGTERM)
+kill -9 PID  # Same as `-s 9` (SIGKILL)
 kill -9 %JOBID
 ```
 
