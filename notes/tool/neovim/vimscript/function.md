@@ -37,3 +37,13 @@ Use the `call` keyword to call the function.
 ```vim
 call Simple(1)
 ```
+
+## Reference
+
+To get a `funcref` variable (to use in callbacks),
+use `function()` or `funcref()`.
+
+```vim
+let no_update_on_reload = function('callback', [args])
+let update_on_reload = funcref('callback', [args])
+```

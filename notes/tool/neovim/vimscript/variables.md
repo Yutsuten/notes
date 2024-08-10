@@ -18,13 +18,18 @@ See help for `internal-variables` for more details.
 | `&shiftwidth` | Global setting. |
 | `$HOME` | Environment variable. |
 
-## Set variable value
+## Set/unset variable
 
-Differently of other programming languages,
-on every value change `let` keyword is needed.
+Create/change a variable with `let`.
 
 ```vim
 let myvar = 'Hello'
+```
+
+Delete a variable with `unlet`.
+
+```vim
+unlet myvar
 ```
 
 ## Variable existence

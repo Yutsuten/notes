@@ -1,5 +1,5 @@
 ---
-title: Built in
+title: User interaction
 ---
 
 ## Ask for input
@@ -16,19 +16,8 @@ let name = input(opts)
 call inputrestore()
 ```
 
-## Useful functions
+## Print text
 
 | Function | Description |
 | --- | --- |
 | `printf(' %s ', myvar)` | Print formatted string. |
-| `writefile(list, filename, flags)` | Save list of text into file. |
-| `executable('binary-name')` | Check if `binary-name` is executable. |
-
-## Load vim file
-
-Use `%` for the current file.
-
-```vim
-so %
-so $MYVIMRC
-```
