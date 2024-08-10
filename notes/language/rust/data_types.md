@@ -80,7 +80,9 @@ fn main() {
 }
 ```
 
-## Suffix & Casting
+## Type conversion
+
+### Suffix & Casting
 
 When creating a literal,
 explicitly choose its type by adding the type as suffix:
@@ -95,6 +97,85 @@ but explicit type conversion can be performed using the `as` keyword.
 ```rust
 let number1: i16 = 10;
 let number2: i32 = number1 as i32;
+```
+
+### From Into traits
+
+`From` and `Into` traits can be used to convert between types.
+
+For example, given this customized type:
+
+```rust
+#[derive(Debug)]
+struct Number(i32);
+```
+
+We can define conversions from `Number` from `i32`, and `i32` into `Number`.
+
+```rust
+// This automatically defines `Into`, usually you just define this one
+use std::convert::From;
+impl From<i32> for Number {
+    fn from(item: i32) -> Self {
+        Number(item)
+    }
+}
+
+// This *do not* automatically defines `From`
+use std::convert::Into;
+impl Into<Number> for i32 {
+    fn into(self) -> Number {
+        Number(self)
+    }
+}
+```
+
+Then perform the conversions with:
+
+```rust
+fn main() {
+    let num_from = Number::from(30);
+    let num_into: Number = 50.into();  // Type annotation is necessary
+}
+```
+
+### TryFrom TryInto traits
+
+Same as `From` and `Into`, but `TryFrom` and `TryInto` are fallible.
+
+For example, given this customized type:
+
+```rust
+#[derive(Debug, PartialEq)]
+struct EvenNumber(i32);
+```
+
+This will only succeed if the `i32` is even.
+
+```rust
+use std::convert::TryFrom;
+use std::convert::TryInto;
+impl TryFrom<i32> for EvenNumber {
+    type Error = ();
+    fn try_from(value: i32) -> Result<Self, Self::Error> {
+        if value % 2 == 0 {
+            Ok(EvenNumber(value))
+        } else {
+            Err(())
+        }
+    }
+}
+```
+
+Perform the conversions with:
+
+```rust
+fn main() {
+    let result_from_success = EvenNumber::try_from(8);  // Ok(EvenNumber(8))
+    let result_from_error   = EvenNumber::try_from(5);  // Err(())
+    let result_into_success: Result<EvenNumber, ()> = 8i32.try_into();  // Ok(EvenNumber(8))
+    let result_into_error: Result<EvenNumber, ()>   = 5i32.try_into();  // Err(())
+}
 ```
 
 ## Examples
