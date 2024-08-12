@@ -3,7 +3,7 @@ title: Array
 ref: https://doc.rust-lang.org/rust-by-example/primitives/array.html
 ---
 
-## Constructor
+## Basic
 
 Slice is subset of an array.
 They work in the same way.
@@ -17,6 +17,14 @@ let myslice: &[i32] = &myarray[1 .. 3];  // Type signature is superfluous
 
 let emptyarray = [];
 let emptyslice = &[];
+```
+
+Destructure into simpler types:
+
+```rust
+let [head @ .., penultimate, last] = myarray;
+let [first, middle @ .., last] = myarray;
+let [first, second, tail @ ..] = myarray;
 ```
 
 ## Methods

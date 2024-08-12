@@ -58,3 +58,21 @@ ref: https://doc.rust-lang.org/book/appendix-02-operators.html
 | `~` | Complement |
 | `<<` | Shift left |
 | `>>` | Shift right |
+
+## Ranges
+
+| Operator | Example | Description |
+| --- | --- | --- |
+| `..` | `0 .. 10` | Right-exclusive range literal (from 0 to 9) |
+| `..` | `0 ..= 10` | Right-inclusive range literal (from 0 to 10) |
+
+May be used when destructuring or assigning while defining a valid range.
+
+```rust
+let grade @ 0 ..= 100 = user_input else {
+    return;
+};
+if let WebEvent::KeyPress(mychar @ 'a' ..= 'z') = pressed {
+    println!("Pressed a lower case character: '{}'", mychar);
+}
+```

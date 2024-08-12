@@ -31,6 +31,50 @@ fn sum(a: u32, b: u32) -> u32 {
 }
 ```
 
+### Arguments by reference
+
+Given this struct:
+
+```rust
+struct Book {
+    title: &'static str,
+    year: u32,
+}
+```
+
+To borrow as an immutable reference:
+
+```rust
+fn borrow_book(book: &Book) {
+    println!("I immutably borrowed {} - {} edition", book.title, book.year);
+}
+
+fn main() {
+    let immutabook = Book {
+        title: "Hello, World",
+        year: 1979,
+    };
+    borrow_book(&immutabook);
+}
+```
+
+To Borrow as a mutable reference:
+
+```rust
+fn new_edition(book: &mut Book) {
+    book.year = 2024;
+    println!("I mutably borrowed {} - {} edition", book.title, book.year);
+}
+
+fn main() {
+    let mut mutabook = Book {
+        title: "Hello, World",
+        year: 1979,
+    };
+    new_edition(&mut mutabook);
+}
+```
+
 ### Closures
 
 Useful to create inline functions (like `lambda` in python).
