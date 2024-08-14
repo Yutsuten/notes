@@ -17,7 +17,16 @@ cargo OPTIONS COMMAND
 | `add` | Add dependencies to a manifest file. |
 | `remove` | Remove dependencies from a manifest file. |
 | `build` | Compile the current package. |
+| `run` | Build if not compiled, generate a binary and run. |
 | `test` | Run the tests. |
+
+```shell
+cargo new myproject
+cd myproject
+cargo add iced
+# Create your script...
+cargo run
+```
 
 ## Tests
 
