@@ -31,7 +31,15 @@ fn sum(a: u32, b: u32) -> u32 {
 }
 ```
 
-### Arguments by reference
+If the function does not return, use `!` return type.
+
+```rust
+fn critical_error() -> ! {
+    panic!("This call never returns.");
+}
+```
+
+### Arguments
 
 Given this struct:
 
@@ -58,7 +66,7 @@ fn main() {
 }
 ```
 
-To Borrow as a mutable reference:
+To borrow as a mutable reference:
 
 ```rust
 fn new_edition(book: &mut Book) {
@@ -75,7 +83,65 @@ fn main() {
 }
 ```
 
-### Closures
+Take it by value (consume the variable).
+
+```rust
+fn destroy_edition(book: Book) {
+    println!("Destroyed the book {} - {} edition", book.title, book.year);
+}
+
+fn main() {
+    let book = Book {
+        title: "Hello, World",
+        year: 1979,
+    };
+    destroy_edition(book);
+    // println!("Where's the book {} - {} ?", book.title, book.year);
+    // ^ Uncommenting above line will result in compile-time error
+}
+```
+
+### Function as argument
+
+The lifetime of the arguments used inside the function argument
+must be defined by using a trait:
+
+| Trait | Read | Write | Delete | Description |
+| --- | --- | --- | --- | --- |
+| `Fn` | <span class="green">✔</span> | <span class="red">✘</span> | <span class="red">✘</span> | Use the captured value by immutable reference (`&T`). |
+| `FnMut` | <span class="green">✔</span> | <span class="green">✔</span> | <span class="red">✘</span> | Use the captured value by mutable reference (`&mut T`). |
+| `FnOnce` | <span class="green">✔</span> | <span class="green">✔</span> | <span class="green">✔</span> | Uses the captured value by value (`T`). |
+
+Both functions and closures can be used as argument in the same way.
+
+```rust
+fn call_me<F: Fn()>(callback: F) {
+    callback();
+}
+```
+
+### Function as return value
+
+When returning a function, `move` is required so the variables aren't dropped.
+
+```rust
+fn create_fn() -> impl Fn() {
+    let text = "Fn".to_owned();
+    move || println!("This is a: {}", text)
+}
+
+fn create_fnmut() -> impl FnMut() {
+    let text = "FnMut".to_owned();
+    move || println!("This is a: {}", text)
+}
+
+fn create_fnonce() -> impl FnOnce() {
+    let text = "FnOnce".to_owned();
+    move || println!("This is a: {}", text)
+}
+```
+
+## Closures
 
 Useful to create inline functions (like `lambda` in python).
 It is possible to use variables in the same scope.
@@ -102,5 +168,19 @@ fn main() {
     };
     buy_by(25);
     buy_by(15);
+}
+```
+
+Use `move` to move ownership of used variables into the closure.
+This way the variables won't be usable outside it anymore.
+
+```rust
+fn main() {
+    let haystack = vec![1, 2, 3];
+    let contains = move |needle| haystack.contains(needle);
+    println!("{}", contains(&1));
+    println!("{}", contains(&4));
+    // println!("There're {} elements in vec", haystack.len());
+    // ^ Uncommenting above line will result in compile-time error
 }
 ```

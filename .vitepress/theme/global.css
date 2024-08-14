@@ -287,3 +287,11 @@ blockquote p {
 .custom-block p:last-child {
     margin-bottom: 16px;
 }
+
+.green {
+    color: green;
+}
+
+.red {
+    color: firebrick;
+}
