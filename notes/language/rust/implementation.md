@@ -1,13 +1,14 @@
 ---
-title: Classes
+title: Implementation
 ref: https://doc.rust-lang.org/book/ch05-03-method-syntax.html
 ---
 
-## Usage
+## Basic
 
-Classes in rust are under the name of *associated functions* and *methods*.
+Implementation in rust works similarly to classes,
+and are under the name of *associated functions* and *methods*.
 
-- **Classes:** Created with the `impl` keyword, using the same name of the type to associate with
+- **Implementation:** Created with the `impl` keyword, using the same name of the type to associate with
 - **Associated function:** Constructors, takes no `self` and returns an instance of the type
 - **Methods:** Takes `self` and may access and modify the instance
 
