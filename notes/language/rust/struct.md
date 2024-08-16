@@ -71,6 +71,27 @@ fn main() {
 }
 ```
 
+### Default
+
+Automatically generate defaults for a `struct`:
+
+```rust
+#[derive(Default)]
+struct Point {
+    x: u8,
+    y: u8,
+}
+```
+
+Or create your own defaults by implementing the [default](https://doc.rust-lang.org/std/default/trait.Default.html)
+`trait`.
+
+Then initialize with defaults:
+
+```rust
+let point = Point::default();
+```
+
 ## Printing
 
 To print structures, you can derive the `fmt::Debug` implementation.

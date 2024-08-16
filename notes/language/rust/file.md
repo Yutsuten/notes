@@ -16,22 +16,22 @@ fn main() {
 
     // Write (create + truncate) file
     let mut file = match File::create(&path) {
-        Err(why) => panic!("Couldn't create file: {}", why),
+        Err(reason) => panic!("Couldn't create file: {}", reason),
         Ok(file) => file,
     };
     match file.write_all("Hello World!!".as_bytes()) {
-        Err(why) => panic!("Couldn't write to file: {}", why),
+        Err(reason) => panic!("Couldn't write to file: {}", reason),
         Ok(_) => println!("successfully wrote to file"),
     }
 
     // Read from file
     let mut file = match File::open(&path) {
-        Err(why) => panic!("Couldn't open file: {}", why),
+        Err(reason) => panic!("Couldn't open file: {}", reason),
         Ok(file) => file,
     };
     let mut s = String::new();
     match file.read_to_string(&mut s) {
-        Err(why) => panic!("Couldn't read file: {}", why),
+        Err(reason) => panic!("Couldn't read file: {}", reason),
         Ok(_) => print!("Successfully read file:\n{}", s),
     }
 }
@@ -50,32 +50,32 @@ fn main() {
 
     // Write (create + truncate) file
     let mut file = match OpenOptions::new().write(true).create(true).truncate(true).open(path) {
-        Err(why) => panic!("Couldn't create file: {}", why),
+        Err(reason) => panic!("Couldn't create file: {}", reason),
         Ok(file) => file,
     };
     match writeln!(file, "Hello World!!") {
-        Err(why) => panic!("Couldn't write to file: {}", why),
+        Err(reason) => panic!("Couldn't write to file: {}", reason),
         Ok(_) => println!("successfully wrote to file"),
     }
 
     // Append to file
     let mut file = match OpenOptions::new().append(true).open(path) {
-        Err(why) => panic!("Couldn't create file: {}", why),
+        Err(reason) => panic!("Couldn't create file: {}", reason),
         Ok(file) => file,
     };
     match writeln!(file, "Appended content!") {
-        Err(why) => panic!("Couldn't append to file: {}", why),
+        Err(reason) => panic!("Couldn't append to file: {}", reason),
         Ok(_) => println!("successfully appended to file"),
     }
 
     // Read from file
     let mut file = match OpenOptions::new().read(true).open(path) {
-        Err(why) => panic!("Couldn't open file: {}", why),
+        Err(reason) => panic!("Couldn't open file: {}", reason),
         Ok(file) => file,
     };
     let mut s = String::new();
     match file.read_to_string(&mut s) {
-        Err(why) => panic!("Couldn't read file: {}", why),
+        Err(reason) => panic!("Couldn't read file: {}", reason),
         Ok(_) => print!("Successfully read file:\n{}", s),
     }
 }
