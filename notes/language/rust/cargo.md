@@ -28,6 +28,12 @@ cargo add iced
 cargo run
 ```
 
+To build an optimized binary, run:
+
+```shell
+cargo build --release
+```
+
 ## Tests
 
 Create a directory named `tests`:
