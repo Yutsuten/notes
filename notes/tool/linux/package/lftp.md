@@ -30,10 +30,12 @@ but that's not how it is.
 
 ## Navigating
 
-| Command | Description |
-| --- | --- |
-| `lcd` | Change the local directory. |
-| `cd` | Change the remote directory. |
+Commands to navigate.
+
+| Remote | Local | Description |
+| --- | --- | --- |
+| `cd` | `lcd` | Change the current directory. |
+| `ls` `cls` | `!ls` | List directory. |
 
 ## Connecting
 
