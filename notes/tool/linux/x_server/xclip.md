@@ -17,7 +17,15 @@ xclip OPTION FILE
 
 ## Examples
 
+In bash:
+
 ```bash
 echo -n $(pwd) | xclip -sel clip
 xclip -sel clip -o | jq . | xclip -sel clip
+```
+
+In fish:
+
+```fish
+echo -n (string replace --regex "^$HOME" \~ $PWD) | xclip -selection clipboard
 ```
