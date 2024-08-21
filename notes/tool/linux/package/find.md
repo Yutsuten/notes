@@ -23,6 +23,7 @@ find LOCATION OPTIONS
 | `-not` `!` | Negates the next condition. |
 | `-o` `-or` | Logical OR. |
 | `-path` | File name matches shell pattern pattern. The metacharacters do not treat `/` or `.` specially |
+| `-prune` | Do not descend into the selected directories. |
 | `-print0` `-fprint0` | Print the exact filename separated by `\0`. |
 | `-print` `-fprint` | Print the full file name on the standard output. |
 | `-type` | File type to be matched. `d` for directory, `f` for file, `l` for symbolic link. |
@@ -47,10 +48,12 @@ Find and delete empty directories:
 find . -type d -empty -delete
 ```
 
-Exclude hidden folders from search:
+Exclude folders from search (prefer `-prune`, and `-print` is important):
 
 ```shell
-find . -not -path '*/.*'
+find . -not -path '*/.*'  # Exclude hidden folders
+find . -type d -path '*/.*' -prune -o -type f -printf '%P\n'  # Better exclude hidden folders
+find . -type d \( -name .git -o -name node_modules \) -prune -o -type f -printf '%P\n'
 ```
 
 Delete all but:
