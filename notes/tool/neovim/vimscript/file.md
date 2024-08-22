@@ -15,6 +15,12 @@ nvim: writefile()
 
 ## Filenames
 
+| Function | Description |
+| --- | --- |
+| `expand()` | Expand a file or path. |
+| `fnamemodify()` | Modify a file or path. |
+| `tempname()` | Generate temporary filenames. |
+
 To deal with filenames and its paths we use
 `expand()` and `fnamemodify()`.
 
@@ -22,6 +28,10 @@ To deal with filenames and its paths we use
 let curfile = expand('%:~:.')
 let arbitrary = fnamemodify('myfile', ':p:~')
 ```
+
+:::tip
+For more see `help filename-modifiers`.
+:::
 
 | Modifier | Description |
 | --- | --- |
@@ -31,6 +41,4 @@ let arbitrary = fnamemodify('myfile', ':p:~')
 | `:r` | Root (one extension removed). |
 | `:e` | Extension only. |
 | `:~` | Replaces `$HOME` with `~`. |
-| `:.` | Replaces `$PWD` with `.`. |
-
-To generate temporary filenames we use `tempname()`.
+| `:.` | Path becomes relative to `$PWD`. |
