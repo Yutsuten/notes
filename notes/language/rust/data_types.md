@@ -155,6 +155,7 @@ This will only succeed if the `i32` is even.
 ```rust
 use std::convert::TryFrom;
 use std::convert::TryInto;
+
 impl TryFrom<i32> for EvenNumber {
     type Error = ();
     fn try_from(value: i32) -> Result<Self, Self::Error> {
@@ -175,6 +176,18 @@ fn main() {
     let result_from_error   = EvenNumber::try_from(5);  // Err(())
     let result_into_success: Result<EvenNumber, ()> = 8i32.try_into();  // Ok(EvenNumber(8))
     let result_into_error: Result<EvenNumber, ()>   = 5i32.try_into();  // Err(())
+}
+```
+
+These are common ways to unwrap `Result`:
+
+```rust
+fn main() {
+    let even_number: EvenNumber = match 8i32.try_into() {
+        Ok(value) => value,
+        Err(_) => panic!("Number is not even"),
+    };
+    let even_number_unwrap: EvenNumber = 8i32.try_into().unwrap();
 }
 ```
 
