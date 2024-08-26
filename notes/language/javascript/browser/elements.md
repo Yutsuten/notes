@@ -19,6 +19,7 @@ ref: https://developer.mozilla.org/en-US/docs/Web/API/Element
 | --- | --- |
 | `Element.textContent` | A DOMString representing the text content of the node and its descendants. |
 | `Element.innerText` | A DOMString representing the rendered text content of an element. |
+| `Element.innerHTML` | A HTML or XML markup contained within the element. |
 | `Element.id` | A DOMString representing the id of the element. |
 | `Element.tagName` | A String with the name of the tag for the given element. |
 | `Element.classList` | A DOMTokenList containing the list of class attributes. |
