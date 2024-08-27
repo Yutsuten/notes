@@ -43,7 +43,7 @@ Generating `string` from `datetime` objects:
 
 | Method | Description |
 | --- | --- |
-| `isoformat(sep='T')` | string representing the date and time in ISO 8601 format. |
+| `isoformat(sep='T')` | String representing the date and time in ISO 8601 format. |
 | `strftime(format)` | String representing the date and time formatted according to the given [format](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes). |
 
 ```python
