@@ -21,6 +21,12 @@ run this command:
 gpg-connect-agent reloadagent /bye
 ```
 
+If for some reason, password prompt does not appear (i.e. because of `CTRL+c` in a prompt), try:
+
+```shell
+pkill -KILL gpg-agent
+```
+
 ### Pinentry
 
 Optionally set the dialog for inputting your password.

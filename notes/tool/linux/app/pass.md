@@ -14,7 +14,7 @@ gpg -K --keyid-format long
 Then initialize your key store.
 
 ```shell
-pass init <keyID>
+pass init KEYID
 ```
 
 ### Synchronize with remote
@@ -23,7 +23,7 @@ Initialize and add a remote:
 
 ```shell
 pass git init
-pass git remote add origin <remote URL>
+pass git remote add origin REMOTE_URL
 ```
 
 Then you can reset (for restoring) or push (for backing up) as needed.
