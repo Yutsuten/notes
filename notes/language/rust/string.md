@@ -8,6 +8,8 @@ ref: https://doc.rust-lang.org/std/string/struct.String.html
 There is the `str` (sequence of chars) and the `String` type.
 
 ```rust
+const GLOBAL_STR: &'static str = "Available globally";
+
 let mystr = "Hello World";
 let string_type1 = String::from(mystr);
 let string_type2 = mystr.to_string();

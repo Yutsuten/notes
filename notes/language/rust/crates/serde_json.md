@@ -5,21 +5,11 @@ ref: https://github.com/serde-rs/json
 
 ## Basic
 
-Operating on untyped JSON values:
-
-`Cargo.toml`
-
-```toml
-[package]
-name = "training"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-serde_json = "1.0.127"
+```shell
+cargo add serde_json
 ```
 
-`src/main.rs`
+Operating on untyped JSON values using `v1.0.127`:
 
 ```rust
 use serde_json::Value;
@@ -36,4 +26,13 @@ fn main() {
     };
     println!("Name is {}, age is {}.", dict["name"], dict["age"])
 }
+```
+
+[Convert](https://docs.rs/serde_json/1.0.127/serde_json/value/enum.Value.html#implementations)
+values into primitives:
+
+```rust
+let name = dict["name"].as_str().unwrap();
+let number = dict["age"].as_i64().unwrap();  // Integer
+let number = dict["age"].as_f64().unwrap();  // Float
 ```
