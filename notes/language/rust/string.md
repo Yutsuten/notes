@@ -13,6 +13,19 @@ const GLOBAL_STR: &'static str = "Available globally";
 let mystr = "Hello World";
 let string_type1 = String::from(mystr);
 let string_type2 = mystr.to_string();
+let raw_string = r#"
+    {
+        "name": "John Doe",
+        "age": 43,
+    }"#;
+```
+
+To create new strings from existing strings,
+like `f-string` on python,
+`format!()` is very useful.
+
+```rust
+let keyvalue_display = format!("{}={}", key, value);
 ```
 
 ### Split

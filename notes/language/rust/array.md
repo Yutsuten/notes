@@ -1,6 +1,6 @@
 ---
 title: Array
-ref: https://doc.rust-lang.org/rust-by-example/primitives/array.html
+ref: https://doc.rust-lang.org/std/vec/struct.Vec.html
 ---
 
 ## Basic
@@ -17,6 +17,10 @@ let myslice: &[i32] = &myarray[1 .. 3];  // Type signature is superfluous
 
 let emptyarray = [];
 let emptyslice = &[];
+
+let mut vec = Vec::new();
+vec.push(1);
+vec.push(2);
 ```
 
 Destructure into simpler types:
@@ -33,6 +37,7 @@ let [first, second, tail @ ..] = myarray;
 | --- | --- |
 | `get` | Safer way to access index of array/slice. |
 | `len` | Get the length of the array/slice. |
+| `push` | Appends an element to the back of a collection. |
 
 ## Examples
 
