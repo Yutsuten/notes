@@ -28,7 +28,17 @@ cargo add iced
 cargo run
 ```
 
-To build an optimized binary, run:
+### Release builds
+
+[Strip](https://doc.rust-lang.org/beta/cargo/reference/profiles.html#strip)
+on releases to get smaller binaries by adding to `Cargo.toml`:
+
+```toml
+[profile.release]
+strip = "symbols"
+```
+
+Build the binary:
 
 ```shell
 cargo build --release
