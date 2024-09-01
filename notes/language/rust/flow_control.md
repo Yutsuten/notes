@@ -191,3 +191,20 @@ match point {
     Point { x, y } => println!("x is {}, y is {}", x, y),
 }
 ```
+
+Can be used to unwrap `Result` or `Option`:
+
+```rust
+let result_value = match result {
+    Ok(value) => value,
+    Err(_) => panic!("Result failed"),
+};
+let option_value = match option {
+    Some(value) => value,
+    None => panic!("There was no value"),
+}
+
+// Same as:
+let result_value_unwrap = result.unwrap();
+let option_value_unwrap = option.unwrap();
+```

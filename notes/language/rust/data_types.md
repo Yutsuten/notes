@@ -171,24 +171,10 @@ impl TryFrom<i32> for EvenNumber {
 Perform the conversions with:
 
 ```rust
-fn main() {
-    let result_from_success = EvenNumber::try_from(8);  // Ok(EvenNumber(8))
-    let result_from_error   = EvenNumber::try_from(5);  // Err(())
-    let result_into_success: Result<EvenNumber, ()> = 8i32.try_into();  // Ok(EvenNumber(8))
-    let result_into_error: Result<EvenNumber, ()>   = 5i32.try_into();  // Err(())
-}
-```
-
-These are common ways to unwrap `Result`:
-
-```rust
-fn main() {
-    let even_number: EvenNumber = match 8i32.try_into() {
-        Ok(value) => value,
-        Err(_) => panic!("Number is not even"),
-    };
-    let even_number_unwrap: EvenNumber = 8i32.try_into().unwrap();
-}
+let result_from_success = EvenNumber::try_from(8);  // Ok(EvenNumber(8))
+let result_from_error = EvenNumber::try_from(5);    // Err(())
+let result_into_success: Result<EvenNumber, ()> = 8i32.try_into();  // Ok(EvenNumber(8))
+let result_into_error: Result<EvenNumber, ()> = 5i32.try_into();    // Err(())
 ```
 
 ## Examples

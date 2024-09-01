@@ -122,6 +122,23 @@ use std::fs;
 let timestamp = fs::metadata("myfile").unwrap().modified().unwrap().duration_since(SystemTime::UNIX_EPOCH).unwrap().as_secs();
 ```
 
+### Listing directory
+
+Use [read_dir](https://doc.rust-lang.org/std/fs/fn.read_dir.html)
+to get an iterator over the entries within a directory.
+
+For example, to list all file names (not folder or symlink) in a directory:
+
+```rust
+let file_names_iter = fs::read_dir("./").unwrap()
+    .map(|res_entry| res_entry.unwrap())
+    .filter(|entry| entry.path().is_file())
+    .map(|entry| entry.file_name().into_string().unwrap())
+for file_name in file_names_iter {
+    println!("{}", file_name);
+}
+```
+
 ## Collections
 
 Use [collections](https://doc.rust-lang.org/std/collections/index.html)
