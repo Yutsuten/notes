@@ -121,3 +121,18 @@ use std::fs;
 
 let timestamp = fs::metadata("myfile").unwrap().modified().unwrap().duration_since(SystemTime::UNIX_EPOCH).unwrap().as_secs();
 ```
+
+## Collections
+
+Use [collections](https://doc.rust-lang.org/std/collections/index.html)
+to calculate the difference between two sets:
+
+```rust
+use std::collections::HashSet;
+
+fn main() {
+    let a = HashSet::from([1, 2, 3, 4]);
+    let b = HashSet::from([2, 4]);
+    println!("{:?}", a.difference(&b));
+}
+```
