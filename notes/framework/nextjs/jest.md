@@ -14,7 +14,30 @@ it.each([
 })
 ```
 
+## Expect error
+
+If a call is [expected to throw an error](https://jestjs.io/docs/using-matchers#exceptions):
+
+```js
+expect(() => willThrow()).toThrow();
+```
+
+The code changes slightly
+[if we are doing things asynchronously](https://jestjs.io/docs/expect#rejects):
+
+```js
+await expect(() => asyncWillThrow()).rejects.toThrow();
+```
+
 ## Mocking
+
+List of functions [here](https://jestjs.io/docs/mock-function-api).
+
+| Function | Description |
+| --- | --- |
+| `mockClear` | Clean up a mocks usage data between two assertions. |
+| `mockReset` | Replaces the mock implementation with an empty function. |
+| `mockRestore` | Restores the original (non-mocked) implementation. |
 
 ### Mock import
 
