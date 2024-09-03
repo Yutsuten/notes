@@ -28,6 +28,16 @@ like `f-string` on python,
 let keyvalue_display = format!("{}={}", key, value);
 ```
 
+## Methods
+
+| Method | Description |
+| --- | --- |
+| `get` | Safer way to access index of the string. |
+| `is_empty` | Returns `true` if the string has length of zero. |
+| `len` | Get the length of the string in number of bytes. |
+| `lines` | An iterator over the lines of a string, as string slices. |
+| `trim` | Returns a string slice with leading and trailing whitespace removed (includes `\n`). |
+
 ### Split
 
 [Split by lines](https://doc.rust-lang.org/std/primitive.str.html#method.lines):

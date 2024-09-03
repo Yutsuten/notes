@@ -36,6 +36,8 @@ let [first, second, tail @ ..] = myarray;
 | Method | Description |
 | --- | --- |
 | `get` | Safer way to access index of array/slice. |
+| `is_empty` | Returns `true` if the vector contains no elements. |
+| `join` | Flattens a slice into a single value, placing a given separator between each. |
 | `len` | Get the length of the array/slice. |
 | `push` | Appends an element to the back of a collection. |
 

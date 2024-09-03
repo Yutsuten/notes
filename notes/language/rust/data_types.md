@@ -11,6 +11,7 @@ ref: https://doc.rust-lang.org/rust-by-example/primitives.html
 | Unsigned integers | `u8` `u16` `u32` `u64` `u128` `usize` |
 | Floating point | `f32` `f64` |
 | Unicode characters (4 char) | `char` |
+| List of characters | `str` |
 | Boolean | `bool` |
 | Unit | `()` |
 
@@ -45,8 +46,8 @@ let dereference = *reference;
 
 | Type | Notation (example) |
 | --- | --- |
-| Array | `[i32, 5]` |
-| Slice | `&[i32]` |
+| Array | `[i32, 5]` `str` |
+| Slice | `&[i32]` `&str` |
 | Tuple | `(i32, bool)` |
 
 ## Alias
