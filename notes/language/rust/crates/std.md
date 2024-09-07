@@ -31,6 +31,16 @@ fn main() {
 
 ## Filesystem
 
+| Function | Shell equivalent | Description |
+| --- | --- | --- |
+| `create_dir_all` | `mkdir -p` | Recursively create directories. |
+| `create_dir` | `mkdir` | Create directory. |
+| `exists` | `test -e` | Return `true` if file exists. |
+| `metadata` | `stat` | Get file's metadata. |
+| `read_dir` | `ls` | List entries in directory. |
+| `read_link` | `realpath` | Return the path to the file a symbolic link points to. |
+| `remove_file` | `rm` | Remove file. |
+
 ### File
 
 Write/read a [File](https://doc.rust-lang.org/std/fs/struct.File.html)
@@ -135,4 +145,12 @@ Use `from_iter` if creating a `HashSet` from `Vec`:
 ```rust
 let myvec = vec![1, 2, 3];
 let myset = HashSet::from_iter(myvec);  // Use myvec.clone() to not consume myvec
+```
+
+## Process
+
+Run external commands.
+
+```rust
+process::Command::new("swaymsg").args(["output", "*", "bg", wallpaper.as_str(), "fill"]).output().unwrap();
 ```
