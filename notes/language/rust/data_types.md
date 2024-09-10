@@ -20,6 +20,34 @@ Defaults:
 - Integer: `i32`
 - Float: `f64`
 
+## Compound Types
+
+Literal array or string is hardcoded in the binary.
+
+| Type | Literal notation | Owned notation |
+| --- | --- | --- |
+| Array | `[i32, 5]` | - |
+| Slice | `&[i32]` | `Vec<i32>` |
+| String | `&str` | `String` |
+| Tuple | `(i32, bool)` | - |
+
+When dealing with a slice (*pointer* to an array or string),
+its contents are freed when the block that created it ends.
+If we need to return that value, we need to take ownership of it.
+
+There are many ways to "own" such literal data,
+the most common way is to "convert" to `Vec` or `String`.
+
+```rust
+let owned_list = {  // Vec<i32>
+    let myarray = [1, 2, 3];
+    myarray[0..2].to_owned()
+};
+let owned_str = "Hello World".to_owned();  // String
+```
+
+## Variable Declaration
+
 Constant or static variable (use it instead of the usual `let`):
 
 ```rust
@@ -40,32 +68,6 @@ let reference = &4;
 let ref reference = 4;
 
 let dereference = *reference;
-```
-
-## Compound Types
-
-A literal array or string is a hardcoded value in the binary.
-
-| Type | Literal notation | Owned notation |
-| --- | --- | --- |
-| Array | `[i32, 5]` | - |
-| Slice | `&[i32]` | `Vec<i32>` |
-| String | `&str` | `String` |
-| Tuple | `(i32, bool)` | - |
-
-When dealing with a slice (*pointer* to an array or string),
-its contents are freed when the block that created it ends.
-If we need to return that value, we need to take ownership of it.
-
-There are many ways to "own" such literal data,
-the most common way is to use `Vec` and `String`.
-
-```rust
-let owned_list = {  // Vec<i32>
-    let myarray = [1, 2, 3];
-    myarray[0..2].to_owned()
-};
-let owned_str = "Hello World".to_owned();  // String
 ```
 
 ## Alias
