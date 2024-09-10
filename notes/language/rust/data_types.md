@@ -44,11 +44,29 @@ let dereference = *reference;
 
 ## Compound Types
 
-| Type | Notation (example) |
-| --- | --- |
-| Array | `[i32, 5]` `str` |
-| Slice | `&[i32]` `&str` |
-| Tuple | `(i32, bool)` |
+A literal array or string is a hardcoded value in the binary.
+
+| Type | Literal notation | Owned notation |
+| --- | --- | --- |
+| Array | `[i32, 5]` | - |
+| Slice | `&[i32]` | `Vec<i32>` |
+| String | `&str` | `String` |
+| Tuple | `(i32, bool)` | - |
+
+When dealing with a slice (*pointer* to an array or string),
+its contents are freed when the block that created it ends.
+If we need to return that value, we need to take ownership of it.
+
+There are many ways to "own" such literal data,
+the most common way is to use `Vec` and `String`.
+
+```rust
+let owned_list = {  // Vec<i32>
+    let myarray = [1, 2, 3];
+    myarray[0..2].to_owned()
+};
+let owned_str = "Hello World".to_owned();  // String
+```
 
 ## Alias
 

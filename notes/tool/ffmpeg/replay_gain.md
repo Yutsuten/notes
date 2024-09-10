@@ -14,7 +14,6 @@ For specific audio formats ([reference](https://askubuntu.com/questions/106632/a
 - **metaflac**: `metaflac --add-replay-gain *.flac`
 - **mp3gain**: `mp3gain -a *.mp3`
 
-
 ## Changing audio
 
 Using this [superuser](https://superuser.com/questions/323119/how-can-i-normalize-audio-using-ffmpeg)
