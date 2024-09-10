@@ -38,6 +38,18 @@ on releases to get smaller binaries by adding to `Cargo.toml`:
 strip = "symbols"
 ```
 
+[Further optimizations](https://nnethercote.github.io/perf-book/build-configuration.html)
+can be done with
+[lto](https://doc.rust-lang.org/cargo/reference/profiles.html#lto)
+and
+[codegen-units](https://doc.rust-lang.org/cargo/reference/profiles.html#codegen-units).
+
+```toml
+[profile.release]
+codegen-units = 1
+lto = "fat"
+```
+
 Build the binary:
 
 ```shell
