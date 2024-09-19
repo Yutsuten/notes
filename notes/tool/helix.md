@@ -50,3 +50,12 @@ language-servers = [ "vuels", "typescript-language-server" ]
 ```
 
 Read more [here](https://github.com/helix-editor/helix/discussions/10691).
+
+## Truecolor
+
+When accessing `helix` in a remote server (through SSH, for example),
+one may need to set the `COLORTERM` to get truecolor support.
+
+```fish
+set -gx COLORTERM truecolor
+```

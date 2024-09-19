@@ -67,6 +67,24 @@ Use as a proxy server.
 ssh -D 1080 A
 ```
 
+## Terminal
+
+When SSH'ing a server, the environment variable `TERM` will be inherited by default.
+To change it instead, use:
+
+```shell
+env TERM=xterm ssh
+```
+
+The environment variable `COLORTERM` may be needed for programs that use truecolor,
+but it is not inherited by the destination server.
+Before running the program remotely or in the remote shell's `rc` file,
+define it.
+
+```fish
+set -gx COLORTERM truecolor
+```
+
 ## Example
 
 Port-forward a SSH connection in the background:
