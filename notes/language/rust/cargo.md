@@ -11,14 +11,14 @@ Rust's package manager.
 cargo OPTIONS COMMAND
 ```
 
-| Command | Description |
-| --- | --- |
-| `new` | Create a new Cargo package. |
-| `add` | Add dependencies to a manifest file. |
-| `remove` | Remove dependencies from a manifest file. |
-| `build` | Compile the current package. |
-| `run` | Build if not compiled, generate a binary and run. |
-| `test` | Run the tests. |
+| Command  | Description                                       |
+| -------- | ------------------------------------------------- |
+| `new`    | Create a new Cargo package.                       |
+| `add`    | Add dependencies to a manifest file.              |
+| `remove` | Remove dependencies from a manifest file.         |
+| `build`  | Compile the current package.                      |
+| `run`    | Build if not compiled, generate a binary and run. |
+| `test`   | Run the tests.                                    |
 
 ```shell
 cargo new myproject
