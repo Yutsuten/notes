@@ -16,3 +16,9 @@ while read --line keyvalue
   export $keyvalue
 end < ~/.local/environment
 ```
+
+Read input from the user using a customized prompt:
+
+```fish
+read --prompt-str 'Are you sure? [y/N] '
+```
