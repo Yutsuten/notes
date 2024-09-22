@@ -1,5 +1,6 @@
 ---
 title: Service
+ref: https://linuxhandbook.com/create-systemd-services/
 man: systemctl
 ---
 
@@ -11,29 +12,29 @@ Root privileges are often needed when running `systemctl` commands.
 systemctl OPTION ACTION my.service
 ```
 
-| Option | Description |
-| --- | --- |
+| Option   | Description                   |
+| -------- | ----------------------------- |
 | `--user` | Use the user service manager. |
 
-| Action | Description |
-| --- | --- |
-| `start` | Start the service. |
-| `stop` | Stop the service. |
-| `restart` | Restart the service. |
-| `enable` | Enable automatic service startup on boot. |
+| Action    | Description                                |
+| --------- | ------------------------------------------ |
+| `start`   | Start the service.                         |
+| `stop`    | Stop the service.                          |
+| `restart` | Restart the service.                       |
+| `enable`  | Enable automatic service startup on boot.  |
 | `disable` | Disable automatic service startup on boot. |
 
 ## Creation
 
-| Scope | Path |
-| --- | --- |
-| System | `/etc/systemd/system` |
-| User | `~/.config/systemd/user` |
+| Scope  | Path                     |
+| ------ | ------------------------ |
+| System | `/etc/systemd/system`    |
+| User   | `~/.config/systemd/user` |
 
 ### System service
 
 ```ini
-## someservice.service
+# something.service
 [Unit]
 Description=some service
 Wants=network-online.target
@@ -52,15 +53,23 @@ WantedBy=multi-user.target
 
 ### User service
 
+Replace `{HOME}` with your home directory.
+
 ```ini
-## wallpaper.service
+# caddy.service
 [Unit]
-Description=set random wallpaper
+Description=Caddy web server
+Documentation=https://caddyserver.com/docs/
+After=network.target
 
 [Service]
-Type=oneshot
-ExecStart=/home/mateus/.local/bin/wallpaper --random
+Type=notify
+ExecStartPre=/usr/bin/caddy validate --config {HOME}/.local/server/Caddyfile
+ExecStart=/usr/bin/caddy run --config {HOME}/.local/server/Caddyfile
+ExecReload=/usr/bin/caddy reload --config {HOME}/.local/server/Caddyfile --force
+Restart=on-abnormal
+TimeoutStopSec=5s
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
 ```

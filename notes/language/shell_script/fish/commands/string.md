@@ -38,3 +38,10 @@ Match using regex (similar to grep).
 ```fish
 string match -qr 'ERROR|CRITICAL'
 ```
+
+### Capitalize
+
+```fish
+set word hello
+echo (string sub -l 1 -- $word | string upper)(string sub -s 2 -- $word)
+```

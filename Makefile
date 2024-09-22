@@ -4,7 +4,7 @@ build:
 	pnpm run build
 
 deploy:
-	mkdir -p /usr/share/caddy/notes
-	rm -rf /usr/share/caddy/notes/*
-	mv .vitepress/dist/* /usr/share/caddy/notes
-	systemctl reload caddy
+	mkdir -p ~/.local/server/static/notes
+	rm -rf ~/.local/server/static/notes/*
+	mv .vitepress/dist/* ~/.local/server/static/notes
+	systemctl --user reload caddy

@@ -5,7 +5,7 @@ ref: https://caddyserver.com/docs/
 
 ## Serving static content
 
-`/etc/caddy/Caddyfile`
+When using `systemctl`, edit the file `/etc/caddy/Caddyfile`.
 
 ```shell
 http://localhost:80 {
@@ -15,6 +15,12 @@ http://localhost:80 {
     # Hide .html extension on the browser
     try_files {path}.html
 }
+```
+
+Create a server on demand by running a command.
+
+```shell
+caddy file-server --listen :2000
 ```
 
 ## With docker compose
