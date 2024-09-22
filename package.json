@@ -4,8 +4,7 @@
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview",
-    "eslint": "eslint .",
-    "stylelint": "stylelint '.vitepress/theme/global.css' '.vitepress/theme/**/*.vue'"
+    "lint": "eslint . && stylelint '.vitepress/theme/global.css' '.vitepress/theme/**/*.vue'"
   },
   "stylelint": {
     "extends": [
