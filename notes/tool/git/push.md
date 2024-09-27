@@ -15,14 +15,20 @@ git push OPTIONS REPOSITORY REFSPEC
 - `REPOSITORY` defaults to `origin`
 - `REFSPEC` defaults to the current branch
 
-| Option | Description |
-| --- | --- |
+| Option          | Description                                             |
+| --------------- | ------------------------------------------------------- |
 | `-d` `--delete` | All listed refs are deleted from the remote repository. |
 
-## Example
+## Examples
+
+Push to branch `main`:
+
+```shell
+git push origin main
+```
 
 Delete branch in remote:
 
 ```shell
-git push -d origin another-feature
+git push -d origin some-feature
 ```

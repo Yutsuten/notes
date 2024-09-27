@@ -9,14 +9,15 @@ ref: https://man.archlinux.org/man/git-submodule.1.en
 git submodule COMMAND OPTIONS
 ```
 
-| Command | Option | Description |
-| --- | --- | --- |
-| `add` | | Add a new submodule. |
-| `init` | | Initialize (clone) new submodules, if any. |
-| `update` | | Update submodules. |
-| `update` | `--init` | Update and initialize submodules. |
+| Command  | Option        | Description                                                   |
+| -------- | ------------- | ------------------------------------------------------------- |
+| `add`    |               | Add a new submodule.                                          |
+| `init`   |               | Initialize (clone) new submodules, if any.                    |
+| `status` |               | List submodules and their status.                             |
+| `update` | `--init`      | Update and initialize submodules.                             |
 | `update` | `--recursive` | Update submodules recursively (submodules inside submodules). |
-| `update` | `--remote` | Update submodules to the latest commit. |
+| `update` | `--remote`    | Update submodules to the latest commit.                       |
+| `update` |               | Update submodules.                                            |
 
 ## Example
 
@@ -38,6 +39,12 @@ There is no single command for it,
 so a small script is needed.
 
 ```shell
+# Bash
 SUBMODULE_PATH='path/to/submodule'
 git submodule deinit -f ${SUBMODULE_PATH}; rm -rf .git/modules/${SUBMODULE_PATH}; git rm -f ${SUBMODULE_PATH}
+```
+
+```fish
+# Fish
+git submodule deinit -f (wl-paste); rm -rf .git/modules/(wl-paste); git rm -f (wl-paste)
 ```
