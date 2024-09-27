@@ -20,5 +20,13 @@ pip wheel OPTIONS TARGET
 Build a wheel file from a gzipped source code.
 
 ```shell
-pip wheel --wheel-dir wheelhouse package.tar.gz
+pip wheel -w wheelhouse package.tar.gz
+```
+
+The `wheel` command accepts the same options as `install`,
+so `-r` to look for packages in a `requirements.txt` or typing the package name directly are also ok.
+
+```shell
+pip wheel -w wheelhouse -r requirements.txt
+pip wheel -w wheelhouse flask
 ```
