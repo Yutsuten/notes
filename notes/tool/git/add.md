@@ -25,6 +25,7 @@ Some often used options:
 | `q`    | Quit; do not stage this hunk or any of the remaining ones.    |
 | `a`    | Stage this hunk and all later hunks in the file.              |
 | `d`    | Do not stage this hunk or any of the later hunks in the file. |
+| `s`    | Split the current hunk into smaller hunks.                    |
 | `e`    | Manually edit the current hunk.                               |
 
 ## Examples
