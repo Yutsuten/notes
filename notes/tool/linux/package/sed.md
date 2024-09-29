@@ -20,7 +20,9 @@ sed OPTIONS INPUTFILE
 | `-n` | Suppress empty patterns output |
 | `-z` | Separate lines by NUL characters |
 
-## Replace command: s
+## Commands
+
+### Replace: s
 
 Any character other than backslash or newline can be used instead of a slash
 to delimit the `pattern` and the `replacement`.
@@ -62,7 +64,7 @@ Find and replace all matches recursively in files:
 git grep --files-with-matches foo | xargs -n 1 sed -i 's/foo/boo/g'
 ```
 
-### Finding patterns
+#### Finding patterns
 
 Regex option `p` : If the substitution was made, then print the new pattern space.
 
@@ -79,25 +81,39 @@ For example, to make a linter fail if it contains more than N errors, run:
 echo 'Found 4 errors' | sed -nE 's/^Found ([0-9]+) error.*$/\1/p' | xargs test 4 -ge
 ```
 
-## Append command: a
+### Change: c
 
-Add text to next line.
+Replaces a line with some text.
 
 ```shell
-sed '/pattern/a new text'
-sed '0,/pattern/a new text'  # Once
+sed '1c\#!/data/data/com.termux/files/usr/bin/env fish' script.fish # Changes only the first line
+sed '1c\first line\
+second line' # Add multiple lines
 ```
 
-## Insert command: i
+### Insert: i
 
 Add text to previous line.
 
 ```shell
-sed '/pattern/i new text'
-sed '0,/pattern/i new text'  # Once
+sed '/pattern/i\new text'
+sed '0,/pattern/i\new text' # Once
+sed '1i\first line\
+second line' # Add multiple lines
 ```
 
-## Delete command: d
+### Append: a
+
+Add text to next line.
+
+```shell
+sed '/pattern/a\new text'
+sed '0,/pattern/a\new text' # Once
+sed '1a\first line\
+second line' # Add multiple lines
+```
+
+### Delete: d
 
 Delete line.
 
@@ -108,7 +124,7 @@ sed '/start_pattern/,/end_pattern/{/end_pattern/!d}'  # Delete lines between two
 sed '/start_pattern/,+1{/start_pattern/!d}'           # Delete following line to the match
 ```
 
-## Read file command: r
+### Read file: r
 
 Append text read from file.
 Do not escape the `/` character on the file path.
@@ -117,7 +133,7 @@ Do not escape the `/` character on the file path.
 sed -e '/{{ CONTENTS }}/r /tmp/contents.html' -e '/{{ CONTENTS }}/d'
 ```
 
-## Stop reading input: q
+### Stop reading input: q
 
 Given that [we just want to print one line from a file](https://stackoverflow.com/a/30657175),
 one can use this command.
