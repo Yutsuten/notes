@@ -20,7 +20,7 @@ onMounted(() => {
       Home
     </h1>
     <p>
-      Welcome to Mateus Etto's notes, a personal knowledge base mainly with programming and Linux
+      Welcome to Mateus Eto's notes, a personal knowledge base mainly with programming and Linux
       tools information.
     </p>
     <p>
