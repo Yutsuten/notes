@@ -79,20 +79,25 @@ Bellow an example of removing the segment `00:39:28 - 00:53:10` from a video and
 
 #### Single input
 
-Read the whole video/audio once and trim using the `trim` filter.
-`start` `end` parameters are read in seconds.
+Read the whole video/audio once and trim using the [trim filter](https://ffmpeg.org/ffmpeg-filters.html#trim).
+`start` `end` parameters are read in seconds (operators `+ - * /` can be used) or time,
+relative to the start time of the input.
 
 The segment to be removed will still be decoded and later discarded,
 so may be a little slow.
 
 ```shell
-ffmpeg \
-  -ss 00:00:43.000 -to 01:42:56.000 -i video.mp4 \
-  -ss 00:00:43.700 -to 01:42:56.700 -i audio.m4a \
+ffmpeg -i video.mp4 -i audio.m4a \
   -filter_complex \
-   '[0:v]trim=start=2368:end=3190,setpts=PTS-STARTPTS[0v];
-    [1:a]atrim=start=2368:end=3190,asetpts=PTS-STARTPTS[0a];
-    [0v][0a]concat=n=1:v=1:a=1[outv][outa]' -map '[outv]' -map '[outa]' \
+   "[0:v]
+     trim=start='00\:43.00':end='39\:28.00',
+     trim=start='53\:10.00':end='1\:42\:56.00',
+     setpts=PTS-STARTPTS[0v];
+    [1:a]
+     atrim=start='00\:43.70':end='39\:28.70',
+     atrim=start='53\:10.70':end='1\:42\:56.70',
+     asetpts=PTS-STARTPTS[0a];
+    [0v][0a]concat=n=1:v=1:a=1[outv][outa]" -map '[outv]' -map '[outa]' \
   result.mp4
 ```
 
@@ -105,10 +110,10 @@ This method may have better performance because there is no decoding of the fram
 
 ```shell
 ffmpeg \
-  -ss 00:00:43.000 -to 00:39:28.000 -i video.mp4 \
-  -ss 00:00:43.700 -to 00:39:28.700 -i audio.m4a \
-  -ss 00:53:10.000 -to 01:42:56.000 -i video.mp4 \
-  -ss 00:53:10.700 -to 01:42:56.700 -i audio.m4a \
+  -ss 0:00:43.00 -to 0:39:28.00 -i video.mp4 \
+  -ss 0:00:43.70 -to 0:39:28.70 -i audio.m4a \
+  -ss 0:53:10.00 -to 1:42:56.00 -i video.mp4 \
+  -ss 0:53:10.70 -to 1:42:56.70 -i audio.m4a \
   -filter_complex
    '[0:v][1:a][2:v][3:a]concat=n=2:v=1:a=1[outv][outa]' -map '[outv]' -map '[outa]' \
   result.mp4
@@ -116,7 +121,8 @@ ffmpeg \
 
 ### Video Scale
 
-Resize the video to the specified `width:height`.
+Resize the video using the [scale filter](https://ffmpeg.org/ffmpeg-filters.html#scale-1)
+to the specified `width:height`.
 If `-1` is used, keep aspect ratio.
 
 ```shell
@@ -129,7 +135,7 @@ It is recommended to rescale using the default scaler `bicubic` or `lanczos`.
 
 ### Video Crop
 
-Crop a portion of a video.
+Crop a portion of a video using the [crop filter](https://ffmpeg.org/ffmpeg-filters.html#crop).
 Syntax: `crop=W:H:X:Y`
 
 - `W`: Width of the output
@@ -143,17 +149,73 @@ ffmpeg -i video.mp4 -vf 'crop=600:400:660:340' cropped.mp4
 
 ### Video Fade
 
-Use the `fade` video filter to fade the video in or out.
-Parameters:
+Use the [fade filter](https://ffmpeg.org/ffmpeg-filters.html#fade) to fade the video in or out.
 
-- `st` is the start time, in seconds
-- `d` is the duration, in seconds
+| Parameter | Description            |
+| --------- | ---------------------- |
+| `st`      | Start time, in seconds |
+| `d`       | Duration, in seconds   |
 
 Considering an 90 seconds long video file,
 fade in the first 1 second and fade out the last 1 second.
 
 ```shell
 ffmpeg -i video.mp4 -vf 'fade=in:0:d=1,fade=out:st=89:d=1' out.mp4
+```
+
+### Draw text
+
+Use the [drawtext filter](https://ffmpeg.org/ffmpeg-filters.html#drawtext-1)
+to put some text into the video.
+Parameters:
+
+| Parameter     | Description                                                                  |
+| ------------- | ---------------------------------------------------------------------------- |
+| `text`        | The text string to be drawn.                                                 |
+| `fontsize`    | The font size to be used for drawing text (default 16).                      |
+| `fontcolor`   | The color to be used for drawing fonts (default `black`).                    |
+| `borderw`     | Set the width of the border to be drawn around the text using `bordercolor`. |
+| `bordercolor` | Set the color to be used for drawing border around text (default `black`).   |
+| `x`           | X offset where text will be drawn within the video frame.                    |
+| `y`           | Y offset where text will be drawn within the video frame.                    |
+| `enable`      | (Generic option) If the evaluation is non-zero, the filter will be enabled.  |
+
+For offsets, use these variables to position the text:
+
+- `w` for video width
+- `h` for video height
+- `tw` for text width
+- `th` for text height
+
+Some common positioning:
+
+|            | Left             | Center                  | Right               |
+| ---------- | ---------------- | ----------------------- | ------------------- |
+| **Top**    | `x=0:y=0`        | `x=(w-tw)/2:y=0`        | `x=w-tw:y=0`        |
+| **Center** | `x=0:y=(h-th)/2` | `x=(w-tw)/2:y=(h-th)/2` | `x=w-tw:y=(h-th)/2` |
+| **Bottom** | `x=0:y=h-th`     | `x=(w-tw)/2:y=h-th`     | `x=w-tw:y=h-th`     |
+
+For `enable`, here are some common [expression evaluations](https://ffmpeg.org/ffmpeg-utils.html#Expression-Evaluation)
+(value in seconds, relative to the start time of the input):
+
+- `between(t, 2, 4)` for showing the text between two times;
+- `lte(t, 2)` for showing the text in the beginning;
+- `gte(t, 3*60+2)` for showing the text in the end.
+
+For example, if skipping some part of the content and telling it to the viewer:
+
+```shell
+ffmpeg \
+-ss 02:12.60 -to 02:33.85 -i video.mp4 \
+-ss 02:12.60 -to 02:33.85 -i rec.flac \
+-ss 33:52.10 -to 36:46.30 -i video.mp4 \
+-ss 33:52.10 -to 36:46.30 -i rec.flac \
+-vcodec libsvtav1 -r 60 -crf 46 -preset 0 -g 600 -pix_fmt yuv420p \
+-acodec libopus \
+-filter_complex \
+ "[2:v]drawtext=text='Skipping 30 minutes...':fontsize=45:fontcolor=white:borderw=2:x=(w-text_w)/2:y=(h-text_h)/2:enable='lte(t, 1.5)'[2v];
+  [0:v][1:a][2v][3:a]concat=n=2:v=1:a=1[outv][outa]" -map '[outv]' -map '[outa]' \
+out.mkv
 ```
 
 ### Shortest
