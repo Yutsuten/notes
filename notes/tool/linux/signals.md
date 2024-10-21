@@ -1,23 +1,22 @@
 ---
 title: Signals
-ref: https://chromium.googlesource.com/chromiumos/docs/+/master/constants/signals.md
+ref: https://www.chromium.org/chromium-os/developer-library/reference/linux-constants/signals/
+man: signal.7
 ---
 
 ## List
 
 Get a full list with `kill -L`.
 
-| Signal | Value | Action | Comment |
-| --- | --- | --- | --- |
-| `SIGHUP` | 1 | Term | Hangup detected on controlling terminal or death of controlling process |
-| `SIGINT` | 2 | Term | Interrupt from keyboard |
-| `SIGQUIT` | 3 | Core | Quit from keyboard |
-| `SIGILL` | 4 | Core | Illegal Instruction |
-| `SIGABRT` | 6 | Core | Abort signal from abort(3) |
-| `SIGFPE` | 8 | Core | Floating point exception |
-| `SIGKILL` | 9 | Term | Kill signal |
-| `SIGUSR1` | 10 | Term | User defined signal 1 |
-| `SIGSEGV` | 11 | Core | Invalid memory reference |
-| `SIGUSR2` | 12 | Term | User defined signal 2 |
-| `SIGPIPE` | 13 | Term | Broken pipe: write to pipe with no |
-| `SIGTERM` | 15 | Term | Termination signal |
+| Signal | Value | Shortcut | Comment                                                                 |
+| ------ | ----- | -------- | ----------------------------------------------------------------------- |
+| `HUP`  | 1     |          | Hangup detected on controlling terminal or death of controlling process |
+| `INT`  | 2     | `Ctrl+C` | Interrupt from keyboard                                                 |
+| `QUIT` | 3     | `Ctrl+\` | Quit from keyboard                                                      |
+| `KILL` | 9     |          | Kill signal                                                             |
+| `USR1` | 10    |          | User-defined signal 1                                                   |
+| `USR2` | 12    |          | User-defined signal 2                                                   |
+| `TERM` | 15    |          | Termination signal                                                      |
+| `CONT` | 18    |          | Continue if stopped                                                     |
+| `STOP` | 19    |          | Stop process (prefer `TSTP`)                                            |
+| `TSTP` | 20    | `Ctrl+Z` | Stop typed at terminal                                                  |
