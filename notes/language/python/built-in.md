@@ -45,7 +45,14 @@ Example of printing without newline:
 print('Hello', end='')
 ```
 
-## Vars
+## Variables
+
+Check if a variable is defined:
+
+```python
+'my_local' in locals()
+'MY_GLOBAL' in globals()
+```
 
 Return the `__dict__` attribute for a module, class, instance, or any other object with a `__dict__`
 attribute.
