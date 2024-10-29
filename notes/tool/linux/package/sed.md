@@ -81,6 +81,13 @@ For example, to make a linter fail if it contains more than N errors, run:
 echo 'Found 4 errors' | sed -nE 's/^Found ([0-9]+) error.*$/\1/p' | xargs test 4 -ge
 ```
 
+It is also possible to just print some specific lines,
+for example from line 10 to 20:
+
+```shell
+sed -n '10,20p'
+```
+
 ### Change: c
 
 Replaces a line with some text.

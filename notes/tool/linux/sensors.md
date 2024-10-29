@@ -8,7 +8,7 @@ ref: https://github.com/Alexays/Waybar/wiki/Module:-Temperature
 Get a list of sensors (fish):
 
 ```fish
-paste (ls -1 /sys/class/hwmon/hwmon*/*_input | psub) (cat /sys/class/hwmon/hwmon*/*_label | psub) (cat /sys/class/hwmon/hwmon*/*_input | psub) \
+paste (ls -1 /sys/class/hwmon/hwmon*/temp*_input | psub) (cat /sys/class/hwmon/hwmon*/temp*_label | psub) (cat /sys/class/hwmon/hwmon*/temp*_input | psub) \
   | column -ts \t
 ```
 

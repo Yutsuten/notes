@@ -8,27 +8,39 @@ title: Less
 less OPTIONS FILE
 ```
 
-| Option | Description |
-| --- | --- |
-| `-S` | Chop long lines |
-| `-X` | Do not clean the screen |
-| `-F` | Quit if one screen |
-| `-R` | Show colors |
-| `-N` | Show line numbers |
-| `-n` | Supress line numbers |
-| `+` | Automatically run commands |
+| Option | Description                                             |
+| ------ | ------------------------------------------------------- |
+| `+`    | Automatically run commands                              |
+| `-F`   | Quit if one screen                                      |
+| `-J`   | Displays a status column at the left edge of the screen |
+| `-N`   | Show line numbers                                       |
+| `-R`   | Show colors                                             |
+| `-S`   | Chop long lines                                         |
+| `-X`   | Do not clean the screen                                 |
+| `-n`   | Supress line numbers                                    |
 
 It is also possible to toggle any option by typing `-` and its character.
 For example, to show line numbers: `-N`.
 
 ### Commands
 
-| Command | Description |
-| --- | --- |
-| `g` | Go to first line. |
-| `G` | Go to last line. |
-| `F` | Follow mode, `ctrl+C` to cancel. |
-| `s FILENAME` | Save the input to a file. |
-| `\| <m>` | `<m>` represents any mark letter (`^` `$` `.`). Pipes a section of the input file to the given shell command. |
-| `:n` | Examine  the next file in the command line list. |
-| `:p` | Examine the previous file in the command line list. |
+| Command          | Description                                                                                                                       |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `g`              | Go to first line.                                                                                                                 |
+| `G`              | Go to last line.                                                                                                                  |
+| `F`              | Follow mode, `ctrl+C` to cancel.                                                                                                  |
+| `m`              | Followed by any lowercase or uppercase letter, marks the first displayed line with that letter.                                   |
+| `s FILENAME`     | Save the input to a file.                                                                                                         |
+| `\|` `<m>` `CMD` | `<m>` represents any mark letter (`^` start; `$` end; `.` current). Pipes a section of the input file to the given shell command. |
+| `:n`             | Examine  the next file in the command line list.                                                                                  |
+| `:p`             | Examine the previous file in the command line list.                                                                               |
+
+Examples:
+
+To copy the current screen to the clipboard,
+press `|`, then `.` and any of the following:
+
+```shell
+wl-copy
+xclip -sel clip
+```
