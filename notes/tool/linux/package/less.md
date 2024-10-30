@@ -12,15 +12,30 @@ less OPTIONS FILE
 | ------ | ------------------------------------------------------- |
 | `+`    | Automatically run commands                              |
 | `-F`   | Quit if one screen                                      |
+| `-I`   | Search ignoring case even if pattern has uppercase      |
 | `-J`   | Displays a status column at the left edge of the screen |
 | `-N`   | Show line numbers                                       |
 | `-R`   | Show colors                                             |
 | `-S`   | Chop long lines                                         |
 | `-X`   | Do not clean the screen                                 |
+| `-i`   | Search ignoring case if pattern is only lowercase       |
 | `-n`   | Supress line numbers                                    |
 
 It is also possible to toggle any option by typing `-` and its character.
 For example, to show line numbers: `-N`.
+
+### Searching
+
+Jump to line with a match:
+
+- Use `/` or `?` to search (`!` to invert selection)
+- Then `n` or `N` to jump between matches
+- `ESC`+`U` to clear
+
+Show only lines with a match:
+
+- Use `&` to search (`!` to invert selection)
+- `&`+`ENTER` to clear
 
 ### Commands
 
