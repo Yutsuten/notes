@@ -12,7 +12,8 @@ const GLOBAL_STR: &'static str = "Available globally";
 
 let mystr = "Hello World";
 let string_type1 = String::from(mystr);
-let string_type2 = mystr.to_string();
+let string_type2 = mystr.to_owned(); // `.to_string()` also ok
+let back_to_str = string_type1.to_str();
 let raw_string = r#"
     {
         "name": "John Doe",
@@ -20,7 +21,7 @@ let raw_string = r#"
     }"#;
 ```
 
-To create new strings from existing strings,
+To create a new `String` from existing values,
 like `f-string` on python,
 `format!()` is very useful.
 

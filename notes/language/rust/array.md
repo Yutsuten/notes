@@ -31,6 +31,14 @@ let [first, middle @ .., last] = myarray;
 let [first, second, tail @ ..] = myarray;
 ```
 
+Iterate an array:
+
+```rust
+for value in &myarray {
+    println!("{value}");
+}
+```
+
 ## Methods
 
 | Method     | Description                                                                   |

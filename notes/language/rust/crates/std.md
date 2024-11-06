@@ -129,8 +129,12 @@ fs::create_dir_all(format!("{home}/some/dir", home=env::var("HOME").unwrap())).u
 
 ## Collections
 
-Use `HashSet` from [collections](https://doc.rust-lang.org/std/collections/index.html)
-to calculate the difference between two sets:
+[Collections](https://doc.rust-lang.org/std/collections/index.html)
+documentation.
+
+### HashSet
+
+Use `HashSet` to calculate the difference between two sets:
 
 ```rust
 use std::collections::HashSet;
@@ -146,6 +150,56 @@ Use `from_iter` if creating a `HashSet` from `Vec`:
 let myvec = vec![1, 2, 3];
 let myset = HashSet::from_iter(myvec);  // Use myvec.clone() to not consume myvec
 ```
+
+### HashMap
+
+Use `HashMap` to create dictionary-like objects.
+
+Create and initialize a `HashMap`:
+
+```rust
+use std::collections::HashMap;
+let mut dictionary: HashMap<&String, i32> = HashMap::new();
+```
+
+Create a new entry:
+
+```rust
+dictionary.insert("atk", 6);
+```
+
+Modify an existing entry:
+
+```rust
+dictionary.entry("atk").and_modify(|value| *value += 1);
+```
+
+Iterate/access entries:
+
+```rust
+for (key, value) in &dictionary { // Order is arbitrary
+    println!("{key}: {value}");
+}
+dictionary["atk"]; // Use `.get()` to deal with non-existent keys
+```
+
+Remove an entry:
+
+```rust
+dictionary.remove("atk");
+```
+
+Other common methods:
+
+| Method         | Description                                                       |
+| -------------- | ----------------------------------------------------------------- |
+| `contains_key` | Returns `true` if the map contains a value for the specified key. |
+| `get`          | Returns a reference to the value corresponding to the key.        |
+| `len`          | Returns the number of elements in the map.                        |
+| `keys`         | An iterator visiting all keys in arbitrary order.                 |
+
+Using `keys().collect()` may be useful to `.sort()` and iterate the `HashMap` in the same order,
+because by default the order can change each run.
 
 ## Process
 
