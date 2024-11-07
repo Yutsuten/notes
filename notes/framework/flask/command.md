@@ -1,6 +1,6 @@
 ---
 title: Command
-ref: https://flask.palletsprojects.com/en/3.0.x/cli/
+ref: https://flask.palletsprojects.com/en/stable/cli/
 ---
 
 ## Usage
