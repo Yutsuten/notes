@@ -26,11 +26,19 @@ Generating `datetime` objects:
 
 | Method | Description |
 | --- | --- |
-| `now()` | Current local date and time. TZ defaults not `None`. |
-| `nowutc()` | Current UTC date and time. TZ defaults not `None`. |
+| `now(tz)` | Current local date and time. Timezone defaults to `None`. |
 | `fromtimestamp(ts)` | Local date and time corresponding to the POSIX timestamp. |
 | `fromisoformat(date_string)` | Local date and time given a string formatted in the ISO 8601 format. |
 | `strptime(date_string, format)` | Local date and time given a string formatted according to the given [format](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes). |
+
+Current date and time:
+
+```python
+now_utc = datetime.now(timezone.utc)
+now_jst = datetime.now(timezone(timedelta(hours=9)))
+```
+
+Arbitrary values:
 
 ```python
 mydate = datetime(2018, 5, 2, 10, 30)
