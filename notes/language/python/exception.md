@@ -20,7 +20,7 @@ Multiple:
 ```python
 try:
     some_function()
-except except (RuntimeError, TypeError, NameError):
+except (RuntimeError, TypeError, NameError):
     pass
 ```
 
