@@ -69,7 +69,7 @@ If `FILE` or `-o` is not specified,
 `stdin` and `stout` will be used, respectively.
 :::
 
-Common usage options:
+Common options:
 
 | Option | Description |
 | --- | --- |
@@ -107,6 +107,14 @@ Keyserver:
 | `--recv-keys KEYID` | Import keys from a keyserver. |
 | `--search-keys NAME` | Search the keyserver for the given names. |
 | `--send-keys KEYID` | Export keys to a keyserver. |
+
+### Exporting
+
+Export public key to share with people or register on websites (like GitHub):
+
+```shell
+gpg --armor --export IDENTIFIER
+```
 
 ### Encrypt and decrypt
 
