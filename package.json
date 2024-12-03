@@ -14,16 +14,16 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^22.5.5",
-    "@typescript-eslint/parser": "^8.6.0",
-    "@vue/typescript-plugin": "^2.1.6",
+    "@types/node": "^22.10.1",
+    "@typescript-eslint/parser": "^8.17.0",
+    "@vue/typescript-plugin": "^2.1.10",
     "eslint": "<9.0.0",
     "eslint-plugin-markdownlint": "^0.6.0",
-    "eslint-plugin-vue": "^9.28.0",
-    "globals": "^15.9.0",
+    "eslint-plugin-vue": "^9.32.0",
+    "globals": "^15.13.0",
     "postcss-html": "^1.7.0",
-    "stylelint": "^16.9.0",
-    "stylelint-config-recess-order": "^5.1.0",
+    "stylelint": "^16.11.0",
+    "stylelint-config-recess-order": "^5.1.1",
     "stylelint-config-standard-vue": "^1.0.0",
     "typescript": "<5.6.0",
     "vue-eslint-parser": "^9.4.3"
@@ -31,8 +31,8 @@
   "dependencies": {
     "@fontsource/roboto": "^5.1.0",
     "@fontsource/source-code-pro": "^5.1.0",
-    "@fortawesome/fontawesome-free": "^6.6.0",
-    "vitepress": "1.3.4",
-    "vue": "^3.5.6"
+    "@fortawesome/fontawesome-free": "^6.7.1",
+    "vitepress": "1.5.0",
+    "vue": "^3.5.13"
   }
 }

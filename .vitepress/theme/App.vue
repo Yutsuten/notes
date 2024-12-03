@@ -174,8 +174,8 @@ onMounted(() => {
   .sidemenu {
     position: relative;
     display: flex;
-    flex-direction: row-reverse;
     flex-grow: 1;
+    flex-direction: row-reverse;
     background-color: var(--bg-sec);
   }
 }
