@@ -10,5 +10,5 @@ Seems to work better with PNG images.
 JPEG may glitch.
 
 ```shell
-convert page*.png mydoc.pdf
+magick page*.png mydoc.pdf
 ```

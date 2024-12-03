@@ -1,7 +1,7 @@
 ---
-title: Convert
-man: convert
-ref: https://imagemagick.org/script/convert.php#options
+title: Magick
+man: magick
+ref: https://imagemagick.org/script/magick.php#options
 ---
 
 ## Usage
@@ -9,7 +9,7 @@ ref: https://imagemagick.org/script/convert.php#options
 Manipulate images.
 
 ```shell
-convert INPUT_OPTIONS INPUT_FILE OUTPUT_OPTIONS OUTPUT_FILE
+magick INPUT_OPTIONS INPUT_FILE OUTPUT_OPTIONS OUTPUT_FILE
 ```
 
 ### Optimization

@@ -9,5 +9,5 @@ title: Svg
 Convert to PNG while keeping transparent background.
 
 ```shell
-convert -background none in.svg out.png
+magick -background none in.svg out.png
 ```

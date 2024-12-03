@@ -8,7 +8,7 @@ ref: https://imagemagick.org/script/webp.php
 ### Lossless compression
 
 ```shell
-convert input.png -quality 50 -define webp:lossless=true -define webp:method=6 output.webp
+magick input.png -quality 50 -define webp:lossless=true -define webp:method=6 output.webp
 ```
 
 ### Lossy compression
@@ -16,5 +16,5 @@ convert input.png -quality 50 -define webp:lossless=true -define webp:method=6 o
 Quality can be adjusted with `-quality`.
 
 ```shell
-convert input.png -define webp:method=6 output.webp
+magick input.png -define webp:method=6 output.webp
 ```

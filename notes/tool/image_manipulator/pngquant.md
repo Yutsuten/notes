@@ -26,5 +26,5 @@ pngquant -s 1 -Q 50-70 - < input.png > output.png
 From imagemagick output:
 
 ```shell
-convert input.png ... png:- | pngquant -s 1 - > output.png
+magick input.png ... png:- | pngquant -s 1 - > output.png
 ```
