@@ -53,6 +53,7 @@ export default [
       parser: ts.parser,
     },
     rules: {
+      ...js.configs.all.rules,
       ...ts.configs.recommended.rules,
     },
   },
@@ -69,15 +70,16 @@ export default [
     },
     processor: 'vue/vue',
     rules: {
+      ...js.configs.all.rules,
       ...vue.configs.base.rules,
       ...vue.configs.essential.rules,
       ...vue.configs['vue3-strongly-recommended'].rules,
       ...vue.configs['vue3-recommended'].rules,
+      'no-useless-assignment': 'off',
       'vue/html-self-closing': ['error', { html: { normal: 'any' } }],
     },
   },
   {
-    ...js.configs.all,
     files: [
       '.vitepress/config.ts',
       '.vitepress/theme/**/*.ts',

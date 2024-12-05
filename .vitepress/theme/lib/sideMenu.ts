@@ -77,7 +77,7 @@ function indexTree2List(indexTreeRoot: RootNode) {
   function traverseTree(indexTree: Array<BranchNode | LeafNode>, depth: number): NotesIndex[] {
     const indexList: NotesIndex[] = [];
     indexTree
-      .sort((a, b) => {
+      .sort((a, b) => { // eslint-disable-line id-length
         if (Object.prototype.hasOwnProperty.call(a, 'children')
             && !Object.prototype.hasOwnProperty.call(b, 'children')) {
           return 1;
