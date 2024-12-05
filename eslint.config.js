@@ -2,7 +2,7 @@ import globals from 'globals';
 import js from '@eslint/js';
 import markdownlint from 'eslint-plugin-markdownlint';
 import markdownlintParser from 'eslint-plugin-markdownlint/parser.js';
-import tsParser from '@typescript-eslint/parser';
+import ts from 'typescript-eslint';
 import vue from 'eslint-plugin-vue';
 import vueParser from 'vue-eslint-parser';
 
@@ -50,7 +50,10 @@ export default [
       'shims.d.ts',
     ],
     languageOptions: {
-      parser: tsParser,
+      parser: ts.parser,
+    },
+    rules: {
+      ...ts.configs.recommended.rules,
     },
   },
   {
@@ -58,7 +61,7 @@ export default [
     languageOptions: {
       parser: vueParser,
       parserOptions: {
-        parser: tsParser,
+        parser: ts.parser,
       },
     },
     plugins: {
@@ -74,6 +77,7 @@ export default [
     },
   },
   {
+    ...js.configs.all,
     files: [
       '.vitepress/config.ts',
       '.vitepress/theme/**/*.ts',
@@ -87,7 +91,6 @@ export default [
       sourceType: 'module',
     },
     rules: {
-      ...js.configs.all.rules,
       'array-element-newline': ['error', 'consistent'],
       'comma-dangle': ['error', 'always-multiline'],
       'dot-location': ['error', 'property'],

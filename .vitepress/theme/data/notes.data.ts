@@ -1,5 +1,5 @@
 import type { ContentData } from 'vitepress';
-import { createContentLoader } from 'vitepress'; // eslint-disable-line no-duplicate-imports
+import { createContentLoader } from 'vitepress';
 
 declare const data: ContentData[];
 export { data };
