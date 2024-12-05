@@ -80,6 +80,10 @@ export default [
     },
   },
   {
+    files: ['eslint.config.js'],
+    rules: js.configs.all.rules,
+  },
+  {
     files: [
       '.vitepress/config.ts',
       '.vitepress/theme/**/*.ts',
