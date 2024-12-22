@@ -200,11 +200,11 @@ onMounted(() => {
 
 @media (width >= 1440px) {
   .content {
-    width: 850px;
+    width: 900px;
   }
 }
 
-@media (width >= 1920px) {
+@media (width >= 1540px) {
   .content {
     width: 1000px;
   }
