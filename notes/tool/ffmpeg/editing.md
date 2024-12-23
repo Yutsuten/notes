@@ -295,3 +295,31 @@ ffmpeg -i mic.flac -i speakers.flac \
     [0a][1:a]amerge=inputs=2[outa]' -map '[outa]' -ac 2 \
   mix.flac
 ```
+
+## Image manipulation
+
+Similar to video manipulation.
+
+### Image Resize
+
+Resize an image to 1920x1080, only shrink and keep aspect ratio:
+
+```shell
+ffmpeg -i input.png -vf "scale=iw*min(1\,min(1920/iw\,1080/ih)):-2" -y output.png
+```
+
+### Image Pad
+
+Make an image become 1920x1080 by filling the surroundings with transparent background:
+
+```shell
+ffmpeg -i input.png -vf "pad=1920:1080:(1920-iw)/2:(1080-ih)/2:color=0x00000000" -y output.png
+```
+
+### Image Convert
+
+Convert an image to raw BGRA format:
+
+```shell
+ffmpeg -i input.png -f rawvideo -pix_fmt bgra -y image.raw
+```
