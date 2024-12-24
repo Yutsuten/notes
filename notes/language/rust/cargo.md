@@ -19,6 +19,7 @@ cargo OPTIONS COMMAND
 | `build`  | Compile the current package.                      |
 | `run`    | Build if not compiled, generate a binary and run. |
 | `test`   | Run the tests.                                    |
+| `update` | Update dependencies in the `Cargo.lock` file.     |
 
 ```shell
 cargo new myproject

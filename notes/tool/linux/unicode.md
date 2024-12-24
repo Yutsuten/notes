@@ -5,7 +5,7 @@ ref: https://en.wikipedia.org/wiki/List_of_Unicode_characters
 
 ## Input
 
-Type `Ctrl` + `U` to insert a character by its code.
+Type `Ctrl` + `Shift` + `U` to insert a character by its code.
 
 Some common characters:
 
