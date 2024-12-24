@@ -3,7 +3,29 @@ title: Helix
 ref: https://helix-editor.com/
 ---
 
-## Project specific configuration
+## Usage
+
+### Search
+
+The default search is smart, case insensitive if search pattern is all lower case,
+case sensitive otherwise.
+To force a mode, prepend the search with:
+
+- `(?-i)`: Case sensitive search
+- `(?i)`: Case insensitive search
+
+### Truecolor
+
+When accessing `helix` in a remote server (through SSH, for example),
+one may need to set the `COLORTERM` to get truecolor support.
+
+```fish
+set -gx COLORTERM truecolor
+```
+
+## Configuration
+
+### Project specific
 
 Create a `.helix` folder in the project's root directory.
 
@@ -11,9 +33,10 @@ To override the `languages.toml` configuration,
 for example,
 create it inside the `.helix` folder.
 
-## Vue language server
+### Vue language server
 
-To update the language server, update `languages.toml`.
+To update the language server, update `languages.toml`
+(read more [here](https://github.com/helix-editor/helix/discussions/10691)).
 
 For `hybridMode = false`:
 
@@ -47,15 +70,4 @@ includeInlayVariableTypeHints = true
 [[language]]
 name = "vue"
 language-servers = [ "vuels", "typescript-language-server" ]
-```
-
-Read more [here](https://github.com/helix-editor/helix/discussions/10691).
-
-## Truecolor
-
-When accessing `helix` in a remote server (through SSH, for example),
-one may need to set the `COLORTERM` to get truecolor support.
-
-```fish
-set -gx COLORTERM truecolor
 ```
