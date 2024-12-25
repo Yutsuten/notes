@@ -3,6 +3,22 @@ title: Anki
 ref: https://github.com/ankitects/anki/blob/main/docs/development.md
 ---
 
+## Official installer
+
+Download and extract the installer from [here](https://apps.ankiweb.net/),
+then install using (no sudo needed):
+
+```shell
+env PREFIX=$HOME/.local ./install.sh
+```
+
+Fix the icon directory for launchers:
+
+```shell
+mv ~/.local/share/pixmaps/anki.png ~/.local/share/icons/anki.png
+rm -rf ~/.local/share/pixmaps
+```
+
 ## Pre-built Python wheels
 
 The latest released Anki can be checked at

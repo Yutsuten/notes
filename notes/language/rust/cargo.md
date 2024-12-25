@@ -29,6 +29,9 @@ cargo add iced
 cargo run
 ```
 
+More details on `cargo update` and `Cargo.toml`
+[here](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html).
+
 ### Release builds
 
 [Strip](https://doc.rust-lang.org/beta/cargo/reference/profiles.html#strip)
