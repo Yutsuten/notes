@@ -110,7 +110,11 @@ Anki then can be executed by typing `anki` on the terminal.
 
 ### Install
 
-For code syntax highlight, install [minted](https://archlinux.org/packages/extra/any/minted/).
+For code syntax highlight `texlive-minted` and `pygmentize` is needed.
+On Arch Linux, install
+[texlive-latexextra](https://archlinux.org/packages/extra/any/texlive-latexextra/)
+and
+[python-pygments](https://archlinux.org/packages/extra/any/python-pygments/).
 
 When compiling the LaTeX code, we will need the `-shell-escape` extra argument.
 For that, install [Edit LaTeX build process](https://ankiweb.net/shared/info/937148547) add-on,
