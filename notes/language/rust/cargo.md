@@ -21,16 +21,29 @@ cargo OPTIONS COMMAND
 | `test`   | Run the tests.                                    |
 | `update` | Update dependencies in the `Cargo.lock` file.     |
 
+Creating new rust project:
+
 ```shell
 cargo new myproject
-cd myproject
+```
+
+Add new dependency and feature:
+
+```shell
 cargo add iced
-# Create your script...
+cargo add bevy -F wayland
+```
+
+Build and run for development:
+
+```shell
 cargo run
 ```
 
-More details on `cargo update` and `Cargo.toml`
+:::tip
+More details on how `cargo update` and `Cargo.toml` works
 [here](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html).
+:::
 
 ### Release builds
 

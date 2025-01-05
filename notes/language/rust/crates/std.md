@@ -73,6 +73,7 @@ is useful to write lines to the file
 ```rust
 use std::fs;
 use std::io::prelude::*;
+use std::io::BufReader;
 
 let path = "config";
 
