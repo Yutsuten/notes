@@ -8,8 +8,8 @@ title: Date
 date OPTIONS FORMAT
 ```
 
-| Option | Description |
-| -- | -- |
+| Option        | Description                        |
+| ------------- | ---------------------------------- |
 | `-d` `--date` | Use specified date instead of now. |
 
 ## Examples

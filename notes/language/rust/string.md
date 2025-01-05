@@ -31,13 +31,15 @@ let keyvalue_display = format!("{}={}", key, value);
 
 ## Methods
 
-| Method | Description |
-| --- | --- |
-| `get` | Safer way to access index of the string. |
-| `is_empty` | Returns `true` if the string has length of zero. |
-| `len` | Get the length of the string in number of bytes. |
-| `lines` | An iterator over the lines of a string, as string slices. |
-| `trim` | Returns a string slice with leading and trailing whitespace removed (includes `\n`). |
+| Method             | Description                                                                          |
+| ------------------ | ------------------------------------------------------------------------------------ |
+| `get`              | Safer way to access index of the string.                                             |
+| `is_empty`         | Returns `true` if the string has length of zero.                                     |
+| `len`              | Get the length of the string in number of bytes.                                     |
+| `lines`            | An iterator over the lines of a string, as string slices.                            |
+| `trim`             | Returns a string slice with leading and trailing whitespace removed (includes `\n`). |
+| `split`            | Splits a string slice by one or more characters.                                     |
+| `split_whitespace` | Splits a string slice by any amount of whitespace.                                   |
 
 ### Split
 
@@ -57,9 +59,31 @@ into a collection (array):
 let key_value: Vec<&str> = line.split('=').collect();
 ```
 
+Split by space and remove empty values:
+
+```rust
+let values: Vec<String> = line
+    .split_whitespace()
+    .map(|s| s.to_owned())
+    .collect();
+```
+
 ### Convert to number
 
 ```rust
 let parsed: i32 = "5".parse().unwrap();
 let turbo_parsed = "10".parse::<i32>().unwrap();
+```
+
+## Matching
+
+Given an owned `String`,
+match its values with:
+
+```rust
+match text.as_str() {
+    "true" => true,
+    "false" => false,
+    _ => panic!("Expected true or false");
+}
 ```
