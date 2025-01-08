@@ -9,14 +9,15 @@ ref: https://wiki.archlinux.org/title/Systemd/Journal
 journalctl OPTIONS
 ```
 
-| Option | Description |
-| --- | --- |
-| `-b` `--boot` | Show messages from a specific boot. Defaults to current boot. |
-| `-S` `--since` | Show messages from date. |
-| `-U` `--until` | Show messages until date. |
-| `-u` `--unit` | Show messages for the specified systemd unit. |
-| `-k` `--dmesg` | Show only kernel messages. This implies `-b`. |
-| `-p` `--priority` | Filter output by message priorities or priority ranges. |
+| Option            | Description                                                   |
+| ----------------- | ------------------------------------------------------------- |
+| `--user`          | Show messages from service of current user.                   |
+| `-b` `--boot`     | Show messages from a specific boot. Defaults to current boot. |
+| `-S` `--since`    | Show messages from date.                                      |
+| `-U` `--until`    | Show messages until date.                                     |
+| `-u` `--unit`     | Show messages for the specified systemd unit.                 |
+| `-k` `--dmesg`    | Show only kernel messages. This implies `-b`.                 |
+| `-p` `--priority` | Filter output by message priorities or priority ranges.       |
 
 Priority levels are: `emerg` (0), `alert` (1), `crit` (2), `err` (3), `warning` (4), `notice` (5),
 `info` (6), `debug` (7).
