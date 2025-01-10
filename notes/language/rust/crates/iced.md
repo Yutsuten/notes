@@ -3,22 +3,17 @@ title: Iced
 ref: https://book.iced.rs/first-steps.html
 ---
 
-## Basic
+## Install
 
-A very simple example of a working GUI application
-(using the unreleased v0.13.0 as for 2024/08/17):
+Create GUI applications.
 
-`Cargo.toml`
-
-```toml
-[package]
-name = "sample"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-iced = { git = "https://github.com/iced-rs/iced.git" } # "0.13.0"
+```shell
+cargo add iced
 ```
+
+## Usage
+
+A very simple example using v0.13.0:
 
 `src/main.rs`
 

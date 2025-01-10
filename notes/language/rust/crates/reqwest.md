@@ -3,15 +3,17 @@ title: Reqwest
 ref: https://docs.rs/reqwest/latest/reqwest/index.html
 ---
 
-## Blocking
+## Install
 
-The simplest way to make a request is by making a blocking request.
+Make HTTP requests.
 
 ```shell
-cargo add -F blocking reqwest
+cargo add -F blocking reqwest  # For blocking requests
 ```
 
-Simple example using `v0.12.7`:
+## Blocking
+
+Simple example using v0.12.7:
 
 ```rust
 fn main() -> Result<(), Box<dyn std::error::Error>> {

@@ -3,11 +3,15 @@ title: Serde JSON
 ref: https://docs.rs/serde_json/latest/serde_json/enum.Value.html
 ---
 
-## Untyped JSON
+## Install
+
+Manipulate JSON.
 
 ```shell
 cargo add serde_json
 ```
+
+## Untyped JSON
 
 Instantiate a JSON:
 

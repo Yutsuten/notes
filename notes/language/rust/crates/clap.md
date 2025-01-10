@@ -3,13 +3,15 @@ title: Clap
 ref: https://docs.rs/clap/latest/clap/_derive/_tutorial/chapter_0/index.html
 ---
 
-## Usage
+## Install
 
-Command Line Argument Parser for Rust.
+Command line argument parser.
 
 ```shell
 cargo add -F derive clap
 ```
+
+## Usage
 
 Example of program with 3 available arguments:
 

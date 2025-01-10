@@ -3,13 +3,15 @@ title: Rand
 ref: https://rust-lang-nursery.github.io/rust-cookbook/algorithms/randomness.html
 ---
 
-## Usage
+## Install
 
-Utilities to generate random numbers in Rust.
+Generate random numbers.
 
 ```shell
 cargo add rand
 ```
+
+## Usage
 
 Generate a random number within a range:
 
