@@ -13,7 +13,7 @@ const GLOBAL_STR: &'static str = "Available globally";
 let mystr = "Hello World";
 let string_type1 = String::from(mystr);
 let string_type2 = mystr.to_owned(); // `.to_string()` also ok
-let back_to_str = string_type1.to_str();
+let back_to_str = string_type1.as_str();
 let raw_string = r#"
     {
         "name": "John Doe",
@@ -40,6 +40,8 @@ let keyvalue_display = format!("{}={}", key, value);
 | `trim`             | Returns a string slice with leading and trailing whitespace removed (includes `\n`). |
 | `split`            | Splits a string slice by one or more characters.                                     |
 | `split_whitespace` | Splits a string slice by any amount of whitespace.                                   |
+| `clear`            | Truncates this `String`, removing all contents.                                      |
+| `push_str`         | Appends a given string slice onto the end of this `String`.                          |
 
 ### Split
 
@@ -85,5 +87,20 @@ match text.as_str() {
     "true" => true,
     "false" => false,
     _ => panic!("Expected true or false");
+}
+```
+
+## Update without assign
+
+If updating a `String` in a function that received it as `&mut`,
+reassigning do not work.
+
+```rust
+fn update_string(&mut s) {
+    // Instead of:
+    // s = String::from("New string");
+    // Do:
+    s.clear();
+    s.push_str("New string");
 }
 ```

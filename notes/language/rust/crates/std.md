@@ -202,10 +202,32 @@ Other common methods:
 Using `keys().collect()` may be useful to `.sort()` and iterate the `HashMap` in the same order,
 because by default the order can change each run.
 
-## Process
+## External command
 
-Run external commands.
+Run external commands and get `stdout` as UTF8 `String`:
 
 ```rust
-process::Command::new("swaymsg").args(["output", "*", "bg", wallpaper.as_str(), "fill"]).output().unwrap();
+let output = process::Command::new("echo").args(["Hello World!"]).output().unwrap();
+let text = String::from_utf8(output.stdout);
+```
+
+To get `stdout` in real time, a buffer is needed ([Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/os/external.html#continuously-process-child-process-outputs)):
+
+```rust
+use std::process::{Command, Stdio};
+use std::io::{BufRead, BufReader};
+
+fn main() {
+    let stdout = Command::new("ffmpeg")
+        .args(ffmpeg_args)
+        .stdout(Stdio::piped())
+        .spawn()
+        .unwrap()
+        .stdout
+        .unwrap();
+    let reader = BufReader::new(stdout);
+    reader
+        .lines()
+        .for_each(|line| println!("{}", line.unwrap()));
+}
 ```

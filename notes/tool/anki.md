@@ -30,7 +30,7 @@ first create and activate a virtual environment:
 python -m venv --system-site-packages .venv
 ```
 
-The packages `pyqt6 pyqt6-webengine` will also be needed.
+The package `python-pyqt6-webengine` will also be needed.
 Prefer your system's package manager to install it.
 
 ```shell
