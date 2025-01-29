@@ -2,6 +2,8 @@
 title: Control flow
 ---
 
+## Condition
+
 ```ruby
 if cond1
   do_something
@@ -21,7 +23,11 @@ do_something if cond
 do_something unless cond
 
 cond ? was_true : was_false
+```
 
+## Switch
+
+```ruby
 case my_var
   when 0
     do_something

@@ -1,6 +1,9 @@
 ---
 title: Hash
+ref: https://docs.ruby-lang.org/en/3.4/Hash.html
 ---
+
+## Basic
 
 ```ruby
 my_hash = Hash.new

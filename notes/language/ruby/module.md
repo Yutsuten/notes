@@ -2,6 +2,8 @@
 title: Module
 ---
 
+## Basic
+
 Unlike classes, instances cannot be created,
 and cannot have subclasses.
 

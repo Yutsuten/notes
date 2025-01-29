@@ -2,6 +2,8 @@
 title: Class
 ---
 
+## Basic
+
 ```ruby
 class BaseClass
   include Math  # Variables and methods are inherited to class instances

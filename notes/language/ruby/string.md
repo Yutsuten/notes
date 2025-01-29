@@ -1,6 +1,9 @@
 ---
 title: String
+ref: https://docs.ruby-lang.org/en/3.4/String.html
 ---
+
+## Basic
 
 ```ruby
 my_string = "Taro"

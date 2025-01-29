@@ -2,15 +2,21 @@
 title: Method
 ---
 
+## Basic
+
+Without parameters:
+
 ```ruby
-## Simple case
 def method_name
   do_something
 end
 
 method_name  # Call it
+```
 
-## With parameters
+With parameters:
+
+```ruby
 def method_name(param=5, *splat)
   # splat becomes an array
   do_something

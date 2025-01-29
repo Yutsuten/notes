@@ -2,25 +2,55 @@
 title: Operators
 ---
 
-```ruby
-my_var = "something"
-my_var ||= "something"  # Only assign if it is nil
+## Arithmetic
 
-my_int += 1
-my_int -= 1
-my_int *= 2
-my_int /= 2
+| Operator | Description                                |
+| -------- | ------------------------------------------ |
+| `+`      | Addition or unary plus                     |
+| `-`      | Subtraction or unary minus                 |
+| `*`      | Multiplication                             |
+| `/`      | Division                                   |
+| `%`      | Remainder after division (modulo division) |
+| `**`     | Exponentiation                             |
 
-v1 == v2
-v1 != v2
-v1 > v2
-v1 < v2
-v1 >= v2
-v1 <= v2
+## Assignment
 
-v1 <=> v2  # -1, 0, 1 (less, equal, greater)
+| Operator | Example     | Same as                               |
+| -------- | ----------- | ------------------------------------- |
+| `=`      | `a = b`     | `a = b`                               |
+| `+=`     | `a += b`    | `a = a + b`                           |
+| `-=`     | `a -= b`    | `a = a - b`                           |
+| `*=`     | `a *= b`    | `a = a * b`                           |
+| `/=`     | `a /= b`    | `a = a / b`                           |
+| `\|\|=`  | `a \|\|= b` | `a = b if a == nil or a == false`     |
+| `\|\|=`  | `a \|\|= b` | `a = b unless a == nil or a == false` |
 
-c1 && c2
-c1 || c2
-!cond
-```
+## Relational
+
+| Operator | Description                       |
+| -------- | --------------------------------- |
+| `==`     | Equal to                          |
+| `!=`     | Not equal to                      |
+| `>`      | Greater than                      |
+| `<`      | Less than                         |
+| `>=`     | Greater than or equal to          |
+| `<=`     | Less than or equal to             |
+| `<=>`    | Less, equal or greater (-1, 0, 1) |
+
+## Logical
+
+| Operator      | Description |
+| ------------- | ----------- |
+| `&&` `and`    | AND         |
+| `\|\|` `or`   | OR          |
+| `!`           | NOT         |
+
+## Bitwise
+
+| Operator | Description |
+| -------- | ----------- |
+| `&`      | AND         |
+| `\|`     | OR          |
+| `^`      | XOR         |
+| `<<`     | Shift left  |
+| `>>`     | Shift right |

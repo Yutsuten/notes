@@ -19,7 +19,7 @@ Print current datetime in an arbitrary format:
 use chrono::prelude::*;
 
 fn main() {
-    let now: DateTime<Local> = Local::now();
+    let now = Local::now();
     println!("{}", now.format("%Y-%m-%d %H:%M:%S"));
 }
 ```
