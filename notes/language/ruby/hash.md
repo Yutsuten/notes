@@ -5,25 +5,41 @@ ref: https://docs.ruby-lang.org/en/3.4/Hash.html
 
 ## Basic
 
+Create empty hash:
+
 ```ruby
 my_hash = Hash.new
-my_hash = Hash.new("default value")
-my_hash["id"] = 1
+my_hash = {}
+```
+
+Create filled hash:
+
+```ruby
+my_hash = {
+  'name' => 'Taro',
+  'age' => 24,
+}
+my_hash = {
+  :name => 'Taro',
+  :age => 24,
+}
+my_hash = {
+  name: 'Taro',  # Becomes symbol
+  age: 24,       # Becomes symbol
+}
+```
+
+Access values of a hash:
+
+```ruby
+my_hash['id'] = 1
+my_hash[:id] = 1
 my_hash.delete(key)
+```
 
-my_hash = {
-  "name" => "Taro",
-  "age" => 24
-}
-my_hash = {
-  :name => "Taro",
-  :age => 24
-}
-my_hash = {
-  name: "Taro",
-  age: 24
-}
+## Methods
 
+```ruby
 my_hash.select do |key, value|
   value > 10
 end

@@ -33,6 +33,8 @@ Resource constraint options:
 
 ### Mount syntax
 
+[All options documentation](https://docs.docker.com/engine/storage/bind-mounts/#options-for---mount)
+
 | Syntax                                    | Info                |
 | ----------------------------------------- | ------------------- |
 | `source=VOLNAME,target=CONTDIR`           | Mount a volume      |
@@ -45,4 +47,10 @@ Run bash in an image:
 ```shell
 docker run -it --rm IMAGE bash               # If ENTRYPOINT is the default `/bin/sh -c`
 docker run -it --rm --entrypoint bash IMAGE  # Always works
+```
+
+Bind mount current directory to container's `/src`:
+
+```shell
+docker run --rm --mount type=bind,src=$PWD,dst=/src IMAGE
 ```

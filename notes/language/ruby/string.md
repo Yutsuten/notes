@@ -6,17 +6,39 @@ ref: https://docs.ruby-lang.org/en/3.4/String.html
 ## Basic
 
 ```ruby
-my_string = "Taro"
+my_string = 'Taro'
+interpolation = "Hello, #{name}"
+my_string << 'concatenate me'
+```
 
-my_string.length
-my_string.reverse
-my_string.upcase
-my_string.downcase
-my_string.capitalize
-my_string.gsub(/s/, "th")  # Global substitution
-my_string.include? "substring"
+### Methods
 
-my_string << "concatenate me"
+| Method       | Description                                        |
+| ------------ | -------------------------------------------------- |
+| `length`     | Get the length of string.                          |
+| `empty?`     | Returns `true` if string is empty.                 |
+| `reverse`    | Reverse order of characters.                       |
+| `upcase`     | Change all characters to upper case.               |
+| `downcase`   | Change all characters to lower case.               |
+| `capitalize` | Change first character of each word to upper case. |
+| `gsub`       | Global substitution.                               |
+| `include?`   | Returns `true` if string includes substring.       |
+| `split`      | Split string by the specified separator.           |
 
-words_array = my_string.split(" ")
+Replace all `s` with `th`:
+
+```ruby
+my_string.gsub(/s/, 'th')
+```
+
+Check if string includes substring:
+
+```ruby
+my_string.include? 'substring'
+```
+
+Split string by space (default):
+
+```ruby
+words_array = my_string.split(' ')
 ```

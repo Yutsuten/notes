@@ -12,12 +12,22 @@ irb
 
 ## Functions
 
+Simple printing:
+
 ```ruby
-print "Hello"  # Prints something and do NOT put a new line
-puts "Hello"   # Prints something and puts a new line at the end
+print 'Hello'  # Prints something and do NOT put a new line
+puts 'Hello'   # Prints something and puts a new line at the end
+```
 
-puts "My name is #{name}!"
+[String formatting](https://docs.ruby-lang.org/en/3.4/format_specifications_rdoc.html):
 
+```ruby
+sprintf('%.1f', 8.199)
+```
+
+Getting user input:
+
+```ruby
 my_name = gets  # Gets the input from the user
 my_name = gets.chomp  # Same as gets but removes the new line
 ```

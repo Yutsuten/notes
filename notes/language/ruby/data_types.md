@@ -1,11 +1,11 @@
 ---
-title: Basic types
+title: Data types
 ---
 
 ## Types
 
 ```ruby
-my_name = "Taro"    # String
+my_name = 'Taro'    # String
 my_int = 10         # Integer
 my_float = 3.14
 my_bool = true
@@ -13,20 +13,24 @@ my_nil = nil
 my_symbol = :hello  # Symbol
 ```
 
+Check the type of a variable:
+
+```ruby
+my_var.class
+```
+
+## Type conversion
+
 To convert between types:
 
 ```ruby
 my_name.to_sym  # to symbol
 my_name.intern  # to symbol
 my_symbol.to_s  # to string
+my_str.to_f     # to float
 ```
 
-Number operations:
-
-```ruby
-my_int.next     # Add 1 to an integer
-my_float.floor  # Round down
-```
+## Common methods
 
 Check if an object can receive a method:
 
@@ -43,5 +47,5 @@ my_name.capitalize!
 Methods that return boolean use `?`:
 
 ```ruby
-string_to_check.include? "substring"
+string_to_check.include? 'substring'
 ```
