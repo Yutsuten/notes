@@ -17,15 +17,15 @@ Create filled hash:
 ```ruby
 my_hash = {
   'name' => 'Taro',
-  'age' => 24,
+  'age' => 24
 }
 my_hash = {
   :name => 'Taro',
-  :age => 24,
+  :age => 24
 }
 my_hash = {
   name: 'Taro',  # Becomes symbol
-  age: 24,       # Becomes symbol
+  age: 24        # Becomes symbol
 }
 ```
 

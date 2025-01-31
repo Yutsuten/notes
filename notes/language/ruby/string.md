@@ -5,10 +5,26 @@ ref: https://docs.ruby-lang.org/en/3.4/String.html
 
 ## Basic
 
+To make strings immutable (recommended),
+add this the first line of the script:
+
+```ruby
+# frozen_string_literal: true
+```
+
+Instantiation:
+
 ```ruby
 my_string = 'Taro'
 interpolation = "Hello, #{name}"
 my_string << 'concatenate me'
+```
+
+[String formatting](https://docs.ruby-lang.org/en/3.4/format_specifications_rdoc.html):
+
+```ruby
+format('%.1f', 8.199)  # Preferred
+sprintf('%.1f', 8.199)
 ```
 
 ### Methods

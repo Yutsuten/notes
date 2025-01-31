@@ -17,11 +17,18 @@ ref: https://wiki.archlinux.org/title/Pacman
 | `pacman -Qett` | List all packages explicitly installed and not required as dependencies (required only) |
 | `pacman -Qi package` | Check information of a package that is installed. |
 | `pacman -Si package` | Check information of a package that may not be installed. |
+| `pacman -D --asdeps` | Mark the specified package as installed as a dependency. |
 
 Check packages explicitly installed but required dependency at the same time.
 
 ```fish
 diff -y (pacman -Qqett | psub) (pacman -Qqe | psub)
+```
+
+Mark a package as installed as a dependency.
+
+```fish
+sudo pacman -D --asdeps ruby
 ```
 
 ## Configuration

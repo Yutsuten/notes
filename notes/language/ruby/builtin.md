@@ -2,9 +2,15 @@
 title: Built-in
 ---
 
-## Interactive Console
+## Usage
 
-Run the command:
+Usually it is expected to have the default tools and libraries.
+
+```shell
+pacman -S ruby-stdlib
+```
+
+Open the interactive console:
 
 ```shell
 irb
@@ -17,12 +23,6 @@ Simple printing:
 ```ruby
 print 'Hello'  # Prints something and do NOT put a new line
 puts 'Hello'   # Prints something and puts a new line at the end
-```
-
-[String formatting](https://docs.ruby-lang.org/en/3.4/format_specifications_rdoc.html):
-
-```ruby
-sprintf('%.1f', 8.199)
 ```
 
 Getting user input:
