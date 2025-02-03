@@ -1,9 +1,9 @@
 ---
-title: Node.js
+title: Timers
 ref: https://nodejs.org/api/timers.html
 ---
 
-## Timers
+## Usage
 
 Equivalent to `sleep` in other languages.
 

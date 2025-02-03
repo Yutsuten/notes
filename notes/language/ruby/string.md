@@ -36,7 +36,7 @@ sprintf('%.1f', 8.199)
 | `reverse`    | Reverse order of characters.                       |
 | `upcase`     | Change all characters to upper case.               |
 | `downcase`   | Change all characters to lower case.               |
-| `capitalize` | Change first character of each word to upper case. |
+| `capitalize` | Capitalize Every Word This Way.                    |
 | `gsub`       | Global substitution.                               |
 | `include?`   | Returns `true` if string includes substring.       |
 | `split`      | Split string by the specified separator.           |

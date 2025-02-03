@@ -9,6 +9,19 @@ Library to make HTTP requests.
 
 ```ruby
 require 'net/http'
+```
 
-Net::HTTP.get('example.com', '/index.html')
+Make a GET request:
+
+```ruby
+url = URI('https://example.com/')
+Net::HTTP.get(url)
+```
+
+Make a `application/json` POST request:
+
+```ruby
+url = URI('https://example.com/')
+data = JSON.generate(myhash)
+Net::HTTP.post(url, data, { 'content-type': 'application/json' })
 ```
