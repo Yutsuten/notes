@@ -11,6 +11,8 @@ Library to make HTTP requests.
 require 'net/http'
 ```
 
+## Request
+
 Make a GET request:
 
 ```ruby
@@ -24,4 +26,15 @@ Make a `application/json` POST request:
 url = URI('https://example.com/')
 data = JSON.generate(myhash)
 Net::HTTP.post(url, data, { 'content-type': 'application/json' })
+```
+
+## Response
+
+A [Net::HTTPResponse](https://docs.ruby-lang.org/en/3.4/Net/HTTPResponse.html)
+object is returned.
+
+```ruby
+res = Net::HTTP.post(...)
+puts res.code
+puts res.body
 ```

@@ -1,5 +1,5 @@
 ---
-title: Built-ins
+title: Built-in
 man: zshbuiltins
 ---
 

@@ -16,6 +16,12 @@ Open the interactive console:
 irb
 ```
 
+## Variables
+
+| Variable | Description                             |
+| -------- | --------------------------------------- |
+| `ENV`    | A hash containing the user environment. |
+
 ## Functions
 
 Simple printing:
