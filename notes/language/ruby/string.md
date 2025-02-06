@@ -20,6 +20,12 @@ interpolation = "Hello, #{name}"
 my_string << 'concatenate me'
 ```
 
+To escape `#` within a double-quoted string:
+
+```ruby
+text = "Your ID is \##{user_id}"
+```
+
 [String formatting](https://docs.ruby-lang.org/en/3.4/format_specifications_rdoc.html):
 
 ```ruby

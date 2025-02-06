@@ -28,6 +28,7 @@ my_array << 40  # Same as push
 | `sort`     | Returns a new array sorted.                                       |
 | `sort_by!` | Sort in place by using the given block.                           |
 | `reverse`  | Returns a new array in inverse order.                             |
+| `join`     | Return a string which is the concatenation of the elements.       |
 | `each`     | Iterate over the elements of the array.                           |
 | `map`      | Returns a new array with each element updated by the given block. |
 | `collect`  | Same as `map`.                                                    |
@@ -56,6 +57,12 @@ my_array = my_array.sort_by do |key, value|
   value
 end
 my_array.reverse!
+```
+
+Join elements using `\n`:
+
+```ruby
+my_array.join("\n")
 ```
 
 Calculate the square of every element:
