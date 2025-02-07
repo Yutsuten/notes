@@ -30,6 +30,12 @@ my_symbol.to_s  # to string
 my_str.to_f     # to float
 ```
 
+To check if a variable is of a class:
+
+```ruby
+success = response.is_a?(Net::HTTPSuccess)
+```
+
 ## Common methods
 
 Check if an object can receive a method:

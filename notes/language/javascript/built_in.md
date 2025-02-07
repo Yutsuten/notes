@@ -1,5 +1,5 @@
 ---
-title: Syntax
+title: Built-in
 ref: https://developer.mozilla.org/docs/Web/JavaScript/Reference
 ---
 

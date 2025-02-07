@@ -17,7 +17,7 @@ Make a GET request:
 
 ```ruby
 url = URI('https://example.com/')
-Net::HTTP.get(url)
+Net::HTTP.get_response(url)
 ```
 
 Make a `application/json` POST request:
@@ -34,7 +34,9 @@ A [Net::HTTPResponse](https://docs.ruby-lang.org/en/3.4/Net/HTTPResponse.html)
 object is returned.
 
 ```ruby
-res = Net::HTTP.post(...)
-puts res.code
-puts res.body
+response = Net::HTTP.post(...)
+puts response.code
+if response.is_a?(Net::HTTPSuccess)
+  puts response.body
+end
 ```

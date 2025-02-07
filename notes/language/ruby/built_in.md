@@ -38,6 +38,13 @@ my_name = gets  # Gets the input from the user
 my_name = gets.chomp  # Same as gets but removes the new line
 ```
 
+Exit a ruby script with a specific status code:
+
+```ruby
+exit(0)
+exit(1)
+```
+
 ## Comments
 
 ```ruby

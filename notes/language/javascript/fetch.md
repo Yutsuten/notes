@@ -35,5 +35,8 @@ object is returned.
 fetch('https://example.com/').then((res) => {
   console.log(res.status);
   res.text().then((text) => console.log(text));
+  if (!res.ok) {
+    throw new Error('HTTP request failed');
+  }
 });
 ```
