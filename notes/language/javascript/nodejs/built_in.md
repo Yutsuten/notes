@@ -14,7 +14,22 @@ ref: https://nodejs.org/api/process.html
 | -------------- | ---------------------------------------------------------------- |
 | `process.exit` | Immediately terminates the process with the specified exit code. |
 
-## Usage
+## Async
+
+Creating an async function (returns `Promise`) and waiting for the result:
+
+```js
+async function getUser() {}
+const user = await getUser();
+```
+
+To continue the program meanwhile, use a callback:
+
+```js
+getUser().then((user) => {});
+```
+
+## Exit Code
 
 If exiting the program due to an error,
 setting `process.exitCode = 1` is preferred over `process.exit(1)`

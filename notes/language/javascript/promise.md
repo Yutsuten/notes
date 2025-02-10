@@ -3,6 +3,24 @@ title: Promise
 ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
 ---
 
+## Promise
+
+Creating a function that returns a `Promise`:
+
+```js
+function getUser() {
+  return new Promise((resolve, reject) => {
+    resolve({ id: 1 });
+  });
+}
+```
+
+Calling it and getting the result:
+
+```js
+getUser().then((user) => {});
+```
+
 ## Wait all promises
 
 First put all promises in an array:
