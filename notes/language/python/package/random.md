@@ -21,3 +21,9 @@ Choose randomly an element from a sequence:
 random.choice(my_list)
 random.choice(tuple(my_set))
 ```
+
+Generate a random `float` value from a range:
+
+```python
+random.uniform(0, 100)
+```
