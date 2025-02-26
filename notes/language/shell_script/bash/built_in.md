@@ -12,6 +12,14 @@ set -o pipefail  # Throw error on command pipe failures
 set -x           # Print the commands (-o xtrace)
 ```
 
+## Read
+
+Read a value interactively and output its value to stdout:
+
+```shell
+sleep "$(read -p 'Time: ' time && echo $time)"
+```
+
 ## Random
 
 ```shell

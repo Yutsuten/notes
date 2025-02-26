@@ -239,10 +239,12 @@ default_options="--splash /usr/share/systemd/bootctl/splash-arch.bmp"
 fallback_uki="/efi/EFI/Linux/arch-linux-fallback.efi"
 fallback_options="-S autodetect"
 
-# Then run on shell
+# Then run on a shell
 mkdir -p /efi/EFI/Linux
 mkinitcpio -p linux
 efibootmgr --create --disk /dev/nvme0n1 --part 1 --label 'Arch Linux' --loader '\EFI\Linux\arch-linux.efi' --unicode
+efibootmgr --create --disk /dev/nvme0n1 --part 1 --label 'Arch Linux Fallback' --loader '\EFI\Linux\arch-linux-fallback.efi' --unicode
+efibootmgr --bootorder 0,1  # Adjust order, put fallback as second
 ```
 
 The most basic configuration is done.

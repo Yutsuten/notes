@@ -3,13 +3,13 @@ title: Variable
 ref: https://fishshell.com/docs/current/language.html#variable-expansion
 ---
 
-## Usage
+## Single Value
 
 Creating variables
 
 ```fish
 set var_name value
-set my_name (read)
+read my_name
 ```
 
 Using variables
@@ -18,6 +18,25 @@ Using variables
 echo $HOME
 echo {$WORD}s
 echo "$foo and $bar"
+```
+
+## Array
+
+```fish
+set mylist banana orange melon
+```
+
+Fish uses base 1 for accessing values in a list.
+
+```fish
+echo $mylist[1]  # => banana
+```
+
+One way to print an array with every element quoted using `'`
+(useful if we need to expand it inside `"` for another command):
+
+```fish
+echo "'$(string join "' '" $mylist)'"
 ```
 
 ## Special variables
