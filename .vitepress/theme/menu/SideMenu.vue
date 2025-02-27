@@ -150,8 +150,8 @@ onMounted(() => {
 }
 
 .sidemenu .search input:focus {
-  border: solid 2px var(--link);
   outline: unset;
+  border: solid 2px var(--link);
   box-shadow: 0 0 3px var(--link);
 }
 
