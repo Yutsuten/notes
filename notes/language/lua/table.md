@@ -40,3 +40,9 @@ for index, value in pairs(mylist) do
     print(index, value)
 end
 ```
+
+Join elements with a newline:
+
+```lua
+table.concat(mytable, "\n")
+```

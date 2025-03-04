@@ -2,6 +2,12 @@
 title: Code snippets
 ---
 
+## Shebang
+
+```fish
+#!/usr/bin/env fish
+```
+
 ## Delete old backups
 
 It is considered that the backups have date in its name.
