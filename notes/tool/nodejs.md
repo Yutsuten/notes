@@ -16,6 +16,12 @@ ref: https://dev.to/equiman/npm-vs-yarn-vs-pnpm-commands-cheatsheet-3el8
 | Uninstall package | `npm uninstall <package> [--global]` | `yarn [global] remove <package>` | `pnpm remove <package> [--global]` |
 | Update package | `npm update [<package>] [--global]` | `yarn [global] upgrade [<package>] [--latest]` | `pnpm update [<package>] [--latest] [--global]` |
 
+Check peer dependency issues:
+
+```shell
+pnpm install --resolution-only
+```
+
 ### Project
 
 | | npm | yarn | pnpm |

@@ -5,10 +5,17 @@ ref: https://developer.mozilla.org/docs/Web/JavaScript/Reference
 
 ## Types
 
-Check the type of a variable:
+Check the type of a variable, for primitive types
+(if used against class instances, it gives `object`):
 
 ```js
 typeof myVar;  // 'string', 'number', 'boolean', 'object', 'undefined'
+```
+
+Check the type of a variable, for class instances:
+
+```js
+myvar instanceof Date;  // true|false
 ```
 
 Casting:

@@ -33,6 +33,16 @@ now.setSeconds(50);
 now.setMilliseconds(727);
 ```
 
+Check if a date is valid:
+
+```js
+if (date instanceof Date && !isNaN(date.getTime())) {
+  console.log('Valid!');
+} else {
+  console.log('Invalid!');
+}
+```
+
 ## Formating to string
 
 ISO standart:

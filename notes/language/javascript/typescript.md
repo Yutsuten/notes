@@ -228,3 +228,13 @@ To change it to its keys instead, use:
 ```
 
 `key` will have the type of `keyof typeof mydict`.
+
+### event.target
+
+By default its type is a generic `HTMLElement` (don't have `value` property),
+but usually we deal with `HTMLInputElement` (textfield, checkbox, etc).
+For that we need to cast to our desired type.
+
+```ts
+(event.target as HTMLInputElement).value
+```
