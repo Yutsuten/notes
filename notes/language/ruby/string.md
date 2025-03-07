@@ -46,6 +46,7 @@ sprintf('%.1f', 8.199)
 | `gsub`       | Global substitution.                               |
 | `include?`   | Returns `true` if string includes substring.       |
 | `split`      | Split string by the specified separator.           |
+| `strip`      | Remove leading and trailing whitespace.            |
 
 Replace all `s` with `th`:
 
