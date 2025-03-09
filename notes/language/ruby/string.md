@@ -17,6 +17,7 @@ Instantiation:
 ```ruby
 my_string = 'Taro'
 interpolation = "Hello, #{name}"
+concatenation = 'Hello ' + 'World'
 my_string << 'concatenate me'
 ```
 

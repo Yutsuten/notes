@@ -27,8 +27,9 @@ irb
 Simple printing:
 
 ```ruby
-print 'Hello'  # Prints something and do NOT put a new line
-puts 'Hello'   # Prints something and puts a new line at the end
+print 'Hello'                    # Prints something and do NOT put a new line
+puts 'Hello'                     # Prints something and puts a new line at the end
+printf('%<score>4d', score: 56)  # For complex output formatting
 ```
 
 Getting user input:

@@ -30,10 +30,12 @@ my_symbol.to_s  # to string
 my_str.to_f     # to float
 ```
 
-To check if a variable is of a class:
+To check the variable's type:
 
 ```ruby
-success = response.is_a?(Net::HTTPSuccess)
+is_nil = myvar.nil?
+is_numeric = myvar.is_a?(Numeric)
+is_success = response.is_a?(Net::HTTPSuccess)
 ```
 
 ## Common methods

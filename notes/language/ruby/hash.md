@@ -39,6 +39,15 @@ my_hash.delete(key)
 
 ## Methods
 
+| Method       | Description                             |
+| ------------ | --------------------------------------- |
+| `select`     | Filter the pairs of key/value.          |
+| `each`       | An iterator for each pair of key/value. |
+| `each_key`   | An iterator for all keys.               |
+| `each_value` | An iterator for all values.             |
+| `keys`       | An array with only the keys.            |
+| `values`     | An array with only the values.          |
+
 ```ruby
 my_hash.select do |key, value|
   value > 10

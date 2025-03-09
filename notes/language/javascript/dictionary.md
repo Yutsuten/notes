@@ -1,23 +1,29 @@
 ---
-title: Object
+title: Dictionary
 ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
 ---
 
 ## Basic
 
+:::info
+Everything in javascript is an `Object`,
+but to differentiate these from hash table,
+I'll call it dictionary here.
+:::
+
 ```js
 const animal = 'seagull'
-const obj = {
-   'cat' : 'Meow',
-   'dog' : 'Bark'
+const dict = {
+   cat: 'Meow',
+   'dog': 'Bark',
    [animal]: 'Mew',
 }
-obj.cat === obj['cat']
-delete obj.cat  // delete key
-for (let key in obj) {}
+dict.cat === dict['cat']
+delete dict.cat  // delete key
+for (let key in dict) {}
 ```
 
-## Calls from Object class
+## Methods
 
 | Method | Description |
 | --- | --- |
@@ -30,24 +36,24 @@ for (let key in obj) {}
 ### Looping object keys
 
 ```js
-Object.entries(object1).forEach(([key, value]) => {
+Object.entries(dict).forEach(([key, value]) => {
   console.log(`${key}: ${value}`);
 })
 
-Object.keys(obj).forEach(function (key) {})
+Object.keys(dict).forEach(function (key) {})
 ```
 
 ### Shallow and deep object copy
 
 ```js
 // Shallow
-Object.assign({}, obj)
+Object.assign({}, dict)
 
 // Deep
-JSON.parse(JSON.stringify(obj))
+JSON.parse(JSON.stringify(dict))
 
 let $ = require('jquery')
-$.extend(true, {}, oldObject)
+$.extend(true, {}, oldDict)
 
 let _ = require('lodash')
 _.clonedeep(original)
