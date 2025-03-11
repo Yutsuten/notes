@@ -11,7 +11,11 @@ is built of an `input` (URL) and `options`.
 Make a GET request:
 
 ```js
-fetch('https://example.com/').then(callback);
+// Using callback
+fetch('https://example.com/').then((res) => {});
+
+// Using await
+const res = await fetch('https://example.com/');
 ```
 
 Make a `application/json` POST request:
@@ -23,7 +27,28 @@ const options = {
     method: 'POST',
     body: JSON.stringify({ username: 'example' }),
 };
-fetch(url, options).then(callback);
+
+// Using callback
+fetch(url, options).then((res) => {});
+
+// Using await
+const res = await fetch(url, options);
+```
+
+Make a `multipart/form-data` POST request with a file and a string,
+sent as [a form](https://developer.mozilla.org/en-US/docs/Web/API/FormData):
+
+```js
+const url = 'https://example.com/';
+const formData = new FormData();
+formData.append('file', new Blob(['File Contents\n']), 'notes.txt');
+formData.append('name', 'notes.txt')
+const options = {
+  headers: { 'Authorization': 'Use if needed' },
+  method: 'POST',
+  body: formData,
+}
+const res = await fetch(url, options);
 ```
 
 ## Response
@@ -32,11 +57,9 @@ A [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)
 object is returned.
 
 ```js
-fetch('https://example.com/').then((res) => {
-  console.log(res.status);
-  res.text().then((text) => console.log(text));
-  if (!res.ok) {
-    throw new Error('HTTP request failed');
-  }
-});
+console.log(res.status);
+console.log(await res.text());
+if (!res.ok) {
+  throw new Error('HTTP request failed');
+}
 ```

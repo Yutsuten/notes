@@ -18,7 +18,11 @@ function getUser() {
 Calling it and getting the result:
 
 ```js
+// Using callback
 getUser().then((user) => {});
+
+// Using await
+const user = await getUser();
 ```
 
 ## Wait all promises

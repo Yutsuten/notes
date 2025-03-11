@@ -31,12 +31,12 @@ documentation.
 for (let i = 0; i < 10; i++) {
     console.log(i);
 }
-// Loop dict
+// Loop dict (useful for async)
 const mydict = { a: 1, b: 2, c: 3 };
 for (const key in mydict) {
     console.log(`${key}: ${mydict[key]}`);
 }
-// Loop list
+// Loop list (useful for async)
 for (const element of [3, 4, 5]) {
   console.log(element);
 }
