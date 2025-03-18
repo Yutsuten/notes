@@ -8,44 +8,55 @@ title: Curl
 curl OPTIONS URL
 ```
 
-| Option | Description |
-| --- | --- |
-| `-v` `--verbose` | Makes curl verbose during the operation. |
-| `-X` `--request` | Specifies a custom request method (GET, HEAD, POST, PUT). |
-| `-H` `--header` | Extra header to include in the request when sending HTTP to a server. |
-| `-d` `--data` | Sends the specified data to the HTTP server. |
-| `-s` `--silent` | Silent (Does not show progress bar). |
-| `-o` `--output` | Write response into file. |
-| `-L` `--location` | Follow redirect. |
-| `-k` `--insecure` | Skip SSL certificate check. |
-| `--noproxy` | Comma-separated list of hosts which do not use a proxy, if one is specified. |
+| Option            | Description                                                                  |
+| ----------------- | ---------------------------------------------------------------------------- |
+| `-X` `--request`  | Specifies a custom request method (GET, HEAD, POST, PUT).                    |
+| `-H` `--header`   | Extra header to include in the request when sending HTTP to a server.        |
+| `-d` `--data`     | Sends the specified data to the HTTP server.                                 |
+| `-F` `--form`     | Emulate a filled-in form in which a user has pressed the submit button.      |
+| `-o` `--output`   | Write response into file.                                                    |
+| `-L` `--location` | Follow redirect.                                                             |
+| `-k` `--insecure` | Skip SSL certificate check.                                                  |
+| `-s` `--silent`   | Silent (Does not show progress bar).                                         |
+| `-v` `--verbose`  | Makes curl verbose during the operation.                                     |
+| `--noproxy`       | Comma-separated list of hosts which do not use a proxy, if one is specified. |
 
 ## Examples
 
 Download file from remote:
 
 ```shell
-curl -o pylint.svg "https://img.shields.io/badge/pylint-10-green.svg"
-curl -o nvim.appimage -L https://github.com/neovim/neovim/releases/download/v0.10.2/nvim.appimage
+curl --output pylint.svg 'https://img.shields.io/badge/pylint-10-green.svg'
+curl --output nvim.appimage -L 'https://github.com/neovim/neovim/releases/download/v0.10.2/nvim.appimage'
 ```
 
 PUT `application/json` request:
 
 ```shell
-curl -X PUT \
-  -H 'Content-Type:application/json' \
-  -d '{"json":1,"encoded":{"key":"value"}}' \
-  http://mysite.com/api/user/1
+curl --request PUT \
+  --header 'Content-Type:application/json' \
+  --data '{"json":1,"encoded":{"key":"value"}}' \
+  'http://mysite.com/api/user/1'
 ```
 
 POST `application/x-www-form-urlencoded` request with array:
 
 ```shell
-curl -X POST \
-  -d 'username=admin' \
-  -d 'groups[]=user' \
-  -d 'groups[]=admin' \
-  http://mysite.com/api/user
+curl --request POST \
+  --data 'username=admin' \
+  --data 'groups[]=user' \
+  --data 'groups[]=admin' \
+  'https://example.com/api/user'
+```
+
+POST `multipart/form-data` with a file and a string:
+
+```shell
+curl --request POST \
+  --header "Authorization: $TOKEN" \
+  --form 'file=@path/to/file.txt' \
+  --form 'name=filename.txt' \
+  'https://example.com/storage'
 ```
 
 ## Useful services
