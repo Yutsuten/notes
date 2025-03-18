@@ -47,6 +47,7 @@ my_hash.delete(key)
 | `each_value` | An iterator for all values.             |
 | `keys`       | An array with only the keys.            |
 | `values`     | An array with only the values.          |
+| `empty?`     | `true` if there are no key/values.      |
 
 ```ruby
 my_hash.select do |key, value|
