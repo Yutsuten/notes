@@ -14,7 +14,7 @@ Read file line by line in loop:
 ```fish
 while read --line keyvalue
   export $keyvalue
-end < ~/.local/environment
+end <~/.local/environment
 ```
 
 Read input from the user using a customized prompt:

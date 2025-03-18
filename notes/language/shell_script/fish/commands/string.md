@@ -14,7 +14,7 @@ string OPERATION OPTIONS
 Lines of a file into a list.
 
 ```fish
-set lines (string split \n < file)
+set lines (string split \n <file)
 ```
 
 Split comma separated values.

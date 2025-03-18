@@ -9,24 +9,25 @@ man: find
 find LOCATION OPTIONS
 ```
 
-| Option | Description |
-| --- | --- |
-| `(` `)` | Force precedence. Usually you need to escape them on the shell. |
-| `-delete` | Delete files (make sure to put it last). |
-| `-empty` | File is empty and is either a regular file or a directory. |
-| `-exec` | Execute a command instead of printing. `;` 1 match 1 run; `+` X matches 1 run (like `xargs`) |
-| `-iname` | Like `-name`, but the match is case insensitive. |
-| `-maxdepth` | Maximum depth to search for files/directories. Default is unlimited depth. |
-| `-mindepth` | Minimum depth to search for files/directories. Default 0. |
-| `-mtime` | If `-N` last edited less than N days, if `+N` last edited more than N days. |
-| `-name` | Base of file name to be matched. |
-| `-not` `!` | Negates the next condition. |
-| `-o` `-or` | Logical OR. |
-| `-path` | File name matches shell pattern pattern. The metacharacters do not treat `/` or `.` specially |
-| `-prune` | Do not descend into the selected directories. |
-| `-print0` `-fprint0` | Print the exact filename separated by `\0`. |
-| `-print` `-fprint` | Print the full file name on the standard output. |
-| `-type` | File type to be matched. `d` for directory, `f` for file, `l` for symbolic link. |
+| Option      | Description                                                                                   |
+| ----------- | --------------------------------------------------------------------------------------------- |
+| `(` `)`     | Force precedence. Usually you need to escape them on the shell.                               |
+| `-delete`   | Delete files (make sure to put it last).                                                      |
+| `-empty`    | File is empty and is either a regular file or a directory.                                    |
+| `-exec`     | Execute a command instead of printing. `;` 1 match 1 run; `+` X matches 1 run (like `xargs`)  |
+| `-iname`    | Like `-name`, but the match is case insensitive.                                              |
+| `-maxdepth` | Maximum depth to search for files/directories. Default is unlimited depth.                    |
+| `-mindepth` | Minimum depth to search for files/directories. Default 0.                                     |
+| `-mtime`    | If `-N` last edited less than N days, if `+N` last edited more than N days.                   |
+| `-name`     | Base of file name to be matched.                                                              |
+| `-not` `!`  | Negates the next condition.                                                                   |
+| `-o` `-or`  | Logical OR.                                                                                   |
+| `-path`     | File name matches shell pattern pattern. The metacharacters do not treat `/` or `.` specially |
+| `-prune`    | Do not descend into the selected directories.                                                 |
+| `-print0`   | Print the exact filename separated by `\0`.                                                   |
+| `-print`    | Print the full file name on the standard output.                                              |
+| `-printf`   | Like `-print`, but you can choose the format of the output.                                   |
+| `-type`     | File type to be matched. `d` for directory, `f` for file, `l` for symbolic link.              |
 
 ## Examples
 

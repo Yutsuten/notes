@@ -58,7 +58,7 @@ Considering `.env` an environment file
 one can export those variables in fish using:
 
 ```fish
-export (xargs -L 1 < .env)
+export (xargs -L 1 <.env)
 ```
 
 Or a more complex solution like:
