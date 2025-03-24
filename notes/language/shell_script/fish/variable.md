@@ -5,38 +5,60 @@ ref: https://fishshell.com/docs/current/language.html#variable-expansion
 
 ## Single Value
 
-Creating variables
+Creating variables:
 
 ```fish
 set var_name value
 read my_name
 ```
 
-Using variables
+Using variables:
 
 ```fish
 echo $HOME
 echo {$WORD}s
-echo "$foo and $bar"
+echo "$foo $bar"
+```
+
+Save the output of a command in a variable and use it later
+(possibly several times to avoid running the command every time):
+
+```fish
+ps -ef | read --null ps_output
+printf '%s' $ps_output | sed -nE 's#pattern#\1#p'
 ```
 
 ## Array
 
+Creating an array:
+
 ```fish
-set mylist banana orange melon
+set fruits banana orange melon
 ```
 
 Fish uses base 1 for accessing values in a list.
 
 ```fish
-echo $mylist[1]  # => banana
+echo $fruits[1]  # => banana
 ```
 
-One way to print an array with every element quoted using `'`
+Print an array with every element quoted with `'`
 (useful if we need to expand it inside `"` for another command):
 
 ```fish
-echo "'$(string join "' '" $mylist)'"
+echo "'$(string join "' '" $fruits)'" # => 'banana' 'orange' 'melon'
+```
+
+If outside double quotes, the same can achieved with:
+
+```fish
+echo \'$fruits\' # => 'banana' 'orange' 'melon'
+```
+
+The same syntax can be used to expand multiple arguments:
+
+```fish
+set options --arg=$fruits # => --arg=banana --arg=orange --arg=melon
 ```
 
 ## Special variables
