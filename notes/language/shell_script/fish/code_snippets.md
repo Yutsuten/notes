@@ -8,13 +8,23 @@ title: Code snippets
 #!/usr/bin/env fish
 ```
 
-## Delete old backups
+## Read yes or no from user
+
+```fish
+read --line --prompt-str 'Are you sure? [y/N] ' answer
+if string match --quiet --regex '^[Yy]$' $answer
+    echo 'Answer is yes'
+else
+    echo 'Answer is no'
+end
+```
+
+## Rotate backups
 
 It is considered that the backups have date in its name.
 
 ```fish
-function trim_old_backup
-    set keep_count $argv[1]
+function trim_old_backup --argument-names keep_count
     set cur 0
     printf '%s\0' $argv[2..] | sort --zero-terminated --reverse | while read --null filename
         set cur (math $cur + 1)
@@ -31,7 +41,7 @@ To keep the last 7 backups of `*.bkp` files:
 trim_old_backup 7 *.bkp
 ```
 
-## Delete old history
+## Delete old command history
 
 Add this to `config.fish` to clear history automatically.
 
@@ -44,16 +54,5 @@ if test $remainder -lt 0
     for cmd in $history[-1..$remainder]
         history delete --exact --case-sensitive -- "$cmd"
     end
-end
-```
-
-## Read yes or no from user
-
-```fish
-read --line --prompt-str 'Are you sure? [y/N] ' answer
-if string match --quiet --regex '^[Yy]$' $answer
-    echo 'Answer is yes'
-else
-    echo 'Answer is no'
 end
 ```

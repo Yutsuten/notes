@@ -5,6 +5,8 @@ ref: https://fishshell.com/docs/current/language.html#variable-expansion
 
 ## Single Value
 
+### Basic variable usage
+
 Creating variables:
 
 ```fish
@@ -20,6 +22,29 @@ echo {$WORD}s
 echo "$foo $bar"
 ```
 
+### Compare datetime
+
+To easily compare date and time in `fish`,
+we remove `/` and `:` to make them become numbers,
+and then use `test` to compare.
+
+```fish
+function check_time --argument-names now # now is in format HH:MM
+    set now (echo "$now" | tr -d :)
+    if test "$now" -lt 0600
+        echo 'You should be sleeping now!'
+    else if test "$now" -lt 1200
+        echo 'Good morning!'
+    else if test "$now" -lt 1800
+        echo 'Good day!'
+    else
+        echo 'Good night!'
+    end
+end
+```
+
+### Save command output
+
 Save the output of a command in a variable and use it later
 (possibly several times to avoid running the command every time):
 
@@ -29,6 +54,8 @@ printf '%s' $ps_output | sed -nE 's#pattern#\1#p'
 ```
 
 ## Array
+
+### Basic array usage
 
 Creating an array:
 
@@ -41,6 +68,8 @@ Fish uses base 1 for accessing values in a list.
 ```fish
 echo $fruits[1]  # => banana
 ```
+
+### Escape and expand arrays
 
 Print an array with every element quoted with `'`
 (useful if we need to expand it inside `"` for another command):
@@ -59,6 +88,27 @@ The same syntax can be used to expand multiple arguments:
 
 ```fish
 set options --arg=$fruits # => --arg=banana --arg=orange --arg=melon
+```
+
+### Integrate arrays with commands
+
+Output of commands can be splitted on *newlines* if using **command substitution**:
+
+```fish
+set lines (cmd)
+```
+
+To pipe an array to a command, make each element be in one line:
+
+```fish
+string join \n $fruits | cmd
+printf '%s\n' $fruits | cmd
+```
+
+With this we can, for example, sort the elements of an array:
+
+```fish
+set fruits (string join \n $fruits | sort)
 ```
 
 ## Special variables

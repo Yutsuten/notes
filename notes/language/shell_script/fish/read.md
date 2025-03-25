@@ -17,6 +17,14 @@ while read --line keyvalue
 end <~/.local/environment
 ```
 
+Read the output of a command line by line:
+
+```fish
+cmd | while read --line line
+    echo $line
+end
+```
+
 Read input from the user using a customized prompt:
 
 ```fish
