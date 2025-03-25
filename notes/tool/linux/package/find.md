@@ -49,6 +49,12 @@ Find and delete empty directories:
 find . -type d -empty -delete
 ```
 
+Find and delete broken symlinks:
+
+```shell
+find ~/.local/bin -xtype l -delete
+```
+
 Exclude folders from search (prefer `-prune`, and `-print` is important):
 
 ```shell

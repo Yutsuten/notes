@@ -6,23 +6,23 @@ man: ssh
 ## Usage
 
 ```shell
-ssh OPTIONS host COMMAND
+ssh OPTIONS HOST COMMAND
 ```
 
-| Option | Description |
-| --- | --- |
-| `-i` | Specify an identity file. |
-| `-t` | Open a tty even with there are COMMANDs. |
-| `-X` `-Y` | Enable trusted X11 forwarding. |
-| `-o` | Allow specifying options in the configuration file format. |
-| `-f` | Go to background just before command execution. |
-| `-N` | Do not execute a remote command. This is useful for just forwarding ports. |
-| `-T` | Disable pseudo-terminal allocation. |
-| `-M` | Places the ssh client into "master" mode for connection sharing. |
-| `-S` | Specifies the location of a control socket for connection sharing. |
+| Option    | Description                                                                |
+| --------- | -------------------------------------------------------------------------- |
+| `-i`      | Specify an identity file.                                                  |
+| `-t`      | Open a tty even if there are COMMANDs.                                     |
+| `-X` `-Y` | Enable trusted X11 forwarding.                                             |
+| `-o`      | Allow specifying options in the configuration file format.                 |
+| `-f`      | Go to background just before command execution.                            |
+| `-N`      | Do not execute a remote command. This is useful for just forwarding ports. |
+| `-T`      | Disable pseudo-terminal allocation.                                        |
+| `-M`      | Places the ssh client into "master" mode for connection sharing.           |
+| `-S`      | Specifies the location of a control socket for connection sharing.         |
 
-| Config Option | Values | Description |
-| --- | --- | --- |
+| Config Option           | Values                  | Description              |
+| ----------------------- | ----------------------- | ------------------------ |
 | `StrictHostKeyChecking` | `yes/accept-new/no/ask` | Verify host fingerprint. |
 
 ### X11 forwarding
@@ -90,7 +90,13 @@ set -gx COLORTERM truecolor
 Port-forward a SSH connection in the background:
 
 ```shell
-ssh -fNTMS my-socket -D 1070 dest
-ssh -S my-socket -O check dest
-ssh -S my-socket -O exit dest
+ssh -fNTMS my-socket -D 1070 HOST
+ssh -S my-socket -O check HOST
+ssh -S my-socket -O exit HOST
+```
+
+Run an interactive command remotely:
+
+```shell
+ssh -t HOST interactive_command arg1 arg2 ...
 ```

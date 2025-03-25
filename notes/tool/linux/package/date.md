@@ -26,6 +26,12 @@ date '+%Y-%m-%d %H:%M:%S'  # 2020-05-20 13:18:19
 date '+%Ex (%a) %H:%M'     # 令和07年02月07日 (金) 23:04
 ```
 
+Get current timestamp:
+
+```shell
+date '+%s'  # 1742914507
+```
+
 Specify date relative to now:
 
 ```shell
