@@ -6,19 +6,13 @@ title: Config
 
 Configuration is on `about:config`.
 
-| Key | Default | Value | Description |
-| --- | ------- | ----- | ----------- |
-| `browser.cache.disk.smart_size.enabled` | `False` | `True` | |
-| `browser.cache.disk.capacity` | `1048576` | `X (KiB)` | |
-| `browser.display.focus_ring_width` | `1` | `0` | |
-| `browser.startup.page` | `1` | `0` | |
-| `browser.urlbar.clickSelectsAll` | `False` | `True` | |
-| `browser.urlbar.doubleClickSelectsAll` | `True` | `False` | |
-| `layout.word_select.eat_space_to_next_word` | `True` | `False` | |
-| `network.captive-portal-service.enabled` | `True` | `False` | |
-| `widget.content.allow-gtk-dark-theme` | `False` | `True` | |
-| `widget.content.gtk-theme-override` | | `Adwaita:light` | |
-| `privacy.webrtc.legacyGlobalIndicator` | `True` | `False` | Microphone/webcam indicator |
+| Key                                         | Value   | Description                                             |
+| ------------------------------------------- | ------- | ------------------------------------------------------- |
+| `browser.display.focus_ring_width`          | `0`     | Border shown when pressing TAB.                         |
+| `layout.word_select.eat_space_to_next_word` | `false` | Don't select extra space.                               |
+| `network.captive-portal-service.enabled`    | `false` | Disable if it is annoying (on some internet providers.) |
+| `keyword.enabled`                           | `false` | Disable search engine on address bar.                   |
+| `browser.tabs.closeWindowWithLastTab`       | `false` | Keep browser open even if closing the last tab.         |
 
 ## Default application
 
@@ -37,3 +31,7 @@ xdg-mime default firefox.desktop application/xhtml+xml
 xdg-mime default firefox.desktop application/x-extension-xhtml
 xdg-mime default firefox.desktop application/x-extension-xht
 ```
+
+## Shortcut list
+
+Learn some shortcuts [here](https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly?redirectslug=Keyboard+shortcuts&redirectlocale=en-US).

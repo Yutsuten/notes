@@ -23,6 +23,20 @@ one may need to set the `COLORTERM` to get truecolor support.
 set -gx COLORTERM truecolor
 ```
 
+### Sort
+
+The helix way to sort is:
+
+1. Select lines with `x`
+2. Press `Alt+s` to split selection on newlines
+3. Run `:sort` or `:rsort`
+
+For case insensitive sort or version sort,
+use pipe to run an external command (in this case `sort`):
+
+1. Select lines with `x`
+2. Run `|sort -f` for case insensitive sort, or `|sort -V` for version sort
+
 ## Configuration
 
 ### Project specific
