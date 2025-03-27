@@ -23,6 +23,7 @@ docker run OPTIONS IMAGE COMMAND
 | `--name`             | Assign a name to the container.                                  |
 | `--mount`            | Attach a filesystem mount to the container.                      |
 | `--rm`               | Automatically remove the container when it exits.                |
+| `--add-host`         | Add a custom host-to-IP mapping.                                 |
 
 Resource constraint options:
 
@@ -53,4 +54,10 @@ Bind mount current directory to container's `/src`:
 
 ```shell
 docker run --rm --mount type=bind,src=$PWD,dst=/src IMAGE
+```
+
+Add a custom host-to-IP mapping (like editing `/etc/hosts`):
+
+```shell
+docker run --add-host example.com:127.0.0.1 IMAGE
 ```

@@ -135,7 +135,7 @@ onMounted(() => {
 
 .sidemenu .search label {
   position: absolute;
-  top: 7px;
+  top: 9px;
   left: 9px;
 }
 

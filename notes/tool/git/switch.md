@@ -23,6 +23,15 @@ git switch OPTIONS BRANCH START_POINT
 
 ## Example
 
+Switch to an existing branch:
+
 ```shell
 git switch feature-branch
+```
+
+Create a new branch from a forked repository,
+and start tracking changes on it (`git remote add` before doing so):
+
+```shell
+git switch -c feature-branch some-remote/feature-branch
 ```
