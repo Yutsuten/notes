@@ -1,11 +1,31 @@
 ---
-title: Promise
-ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+title: Function
+ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
 ---
 
-## Promise
+## Basic
 
-Creating a function that returns a `Promise`:
+Declaraction:
+
+```js
+function sum(a, b) {
+  return a + b;
+}
+```
+
+Calling the function:
+
+```js
+const result = sum(8, 16);
+```
+
+## Async
+
+[Async function documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+
+### Declaration
+
+Async functions are functions that return a `Promise`:
 
 ```js
 function getUser() {
@@ -14,6 +34,16 @@ function getUser() {
   });
 }
 ```
+
+The `async` keyword can also be used if using [modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules):
+
+```js
+async function getUser() {
+  return { id: 1 };
+}
+```
+
+### Calling async functions
 
 Calling it and getting the result:
 
@@ -25,7 +55,7 @@ getUser().then((user) => {});
 const user = await getUser();
 ```
 
-## Wait all promises
+### Wait all
 
 First put all promises in an array:
 

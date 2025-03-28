@@ -1,5 +1,5 @@
 ---
-title: Functions
+title: Function
 ref: https://www.programiz.com/c-programming/c-storage-class
 ---
 

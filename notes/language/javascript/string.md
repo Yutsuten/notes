@@ -10,22 +10,23 @@ let str1 = 'Some string'
 let str2 = `Value of a is ${a}`  // Template string [ES6]
 ```
 
-| Method | Params | Return type | Description |
-| --- | --- | --- | --- |
-| `charAt` | `index` | `string` | Get character from index. |
-| `endsWith` | `pattern` | `boolean` | Checks whether a string ends with the characters of this string. |
-| `includes` | `searchString` | `boolean` | Determine whether a given string may be found within this string. |
-| `indexOf` | `searchString` | `number` | Get the index of the first occurrence of the specified substring. |
-| `match` | `regex` | `array` | Find matching results (with `g` flag) or captured groups (without `g` flag). |
-| `padEnd` | `targetLen` `padString` | `string` | Pads this string from end with the given string. |
-| `padStart` | `targetLen` `padString` | `string` | Pads this string from start with the given string. |
-| `replace` | `pattern` `replacement` | `string` | Replace first match (if `pattern` is string) or all matches (if `pattern` is regex). |
-| `search` | `reg` | `number` | Same as `indexOf`, but uses regex as parameter. |
-| `slice` | `beginIndex` `endIndex` | `string` | Same as, for example, `text[5:10]` in python. |
-| `split` | `sep` | `array` | Splits by separator. |
-| `toLowerCase` | | `string` | Convert to lower case. |
-| `toUpperCase` | | `string` | Convert to upper case. |
-| `trim` | | `string` | Remove whitespace from both ends. |
+| Method        | Returns   | Description                                                                                             |
+| ------------- | --------  | ------------------------------------------------------------------------------------------------------- |
+| `charAt`      | `string`  | Get character from `index`.                                                                             |
+| `startsWith`  | `boolean` | Checks whether a string starts with the characters of `pattern`.                                        |
+| `endsWith`    | `boolean` | Checks whether a string ends with the characters of `pattern`.                                          |
+| `includes`    | `boolean` | Determine whether a given string may be found within this `searchString`.                               |
+| `indexOf`     | `number`  | Get the index of the first occurrence of the specified `searchString`.                                  |
+| `match`       | `array`   | Find matching results (with `g` flag) or captured groups (without `g` flag) with the given `regex`.     |
+| `padEnd`      | `string`  | Pads `length` from end with the given `string`.                                                         |
+| `padStart`    | `string`  | Pads `length` from start with the given `string`.                                                       |
+| `replace`     | `string`  | Replace first match (if `pattern` is string) or all matches (if `pattern` is regex) with `replacement`. |
+| `search`      | `number`  | Same as `indexOf`, but uses `regex` as parameter.                                                       |
+| `slice`       | `string`  | Same as, for example, `text[5:10]` in python.                                                           |
+| `split`       | `array`   | Splits by separator.                                                                                    |
+| `toLowerCase` | `string`  | Convert to lower case.                                                                                  |
+| `toUpperCase` | `string`  | Convert to upper case.                                                                                  |
+| `trim`        | `string`  | Remove whitespace from both ends.                                                                       |
 
 ## Examples
 
