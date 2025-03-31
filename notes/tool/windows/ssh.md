@@ -19,6 +19,27 @@ Find the IP address to be used when running the SSH command:
 ipconfig /all
 ```
 
+## Configuration
+
+Configuration file is at `%PROGRAMDATA%\ssh\sshd_config`.
+
+### SFTP
+
+If enabling SFTP, make sure to:
+
+- Have the bellow configuration on `sshd_config`
+- `sftp-server.exe` is in the `%PATH%` (usually at `C:\Program Files\OpenSSH`)
+
+```txt
+Subsystem  sftp  sftp-server.exe
+```
+
+From a remote linux machine, you can mount a Windows folder with:
+
+```shell
+sshfs user@windows_ip:/C:/Users/myuser /media/windows -o nodev,nosuid,noexec,idmap=user,reconnect,umask=137
+```
+
 ## Authorize keys
 
 To login using a SSH key instead of a password,
@@ -45,11 +66,11 @@ icacls.exe "C:\ProgramData\ssh\administrators_authorized_keys" /inheritance:r /g
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value "PathToShell" -PropertyType String -Force
 ```
 
-| Shell | Path |
-| --- | --- |
+| Shell    | Path                                |
+| -------- | ----------------------------------- |
 | Git Bash | `C:\Program Files\Git\bin\bash.exe` |
-| Bash | `C:\WINDOWS\System32\bash.exe` |
-| WSL | `C:\Windows\System32\wsl.exe` |
+| Bash     | `C:\WINDOWS\System32\bash.exe`      |
+| WSL      | `C:\Windows\System32\wsl.exe`       |
 
 Using Bash or WSL may give issues when using tools like `sshfs`.
 

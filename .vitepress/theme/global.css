@@ -129,7 +129,6 @@ code {
 :not(pre) > code {
     padding: 2px 4px;
     color: var(--text-magenta);
-    user-select: all;
     background-color: var(--bg-sec);
     border-color: var(--bg-main);
     border-style: solid;

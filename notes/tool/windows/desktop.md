@@ -4,10 +4,17 @@ title: Desktop
 
 ## Shortcuts
 
-```bash
-Windows Key + Tab  # Task View
-Windows Key + Ctrl + D  # New desktop
-Windows Key + Ctrl + Left Arrow  # Switch desktop
-Windows Key + Ctrl + Right Arrow  # Switch desktop
-Windows Key + Ctrl + F4  # Close desktop
-```
+| Shortcut                           | Description    |
+| ---------------------------------- | -------------- |
+| `SuperKey` + `Tab`                 | Task View      |
+| `SuperKey` + `Ctrl` + `D`          | New desktop    |
+| `SuperKey` + `Ctrl` + `LeftArrow`  | Switch desktop |
+| `SuperKey` + `Ctrl` + `RightArrow` | Switch desktop |
+| `SuperKey` + `Ctrl` + `F4`         | Close desktop  |
+
+## Environment variables
+
+Run `sysdm.cpl` and:
+
+- Go to tab "Advanced"
+- Click "Environment Variables" button
