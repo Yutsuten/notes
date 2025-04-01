@@ -1,60 +1,92 @@
 ---
 title: SQLAlchemy
-ref: https://docs.sqlalchemy.org/en/13/orm/query.html
+ref: https://docs.sqlalchemy.org/en/20/orm/quickstart.html
 ---
 
-## Query API
+## Defining tables
 
-```python
-from sqlalchemy import func
+[Column documentation](https://docs.sqlalchemy.org/en/20/core/metadata.html#sqlalchemy.schema.Column)
+
+```py
+from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy import Column, Integer, String
+
+class Base(DeclarativeBase):
+    pass
+
+class Model(Base):
+    __tablename__ = 'model'
+
+    id = Column('id', Integer, primary_key=True)
+    column = Column('column', String(50), index=True)  # To index this column
+```
+
+To apply or revert table changes, use [alembic](https://alembic.sqlalchemy.org/en/latest/front.html).
+
+```shell
+alembic upgrade head
+alembic downgrade -1
+alembic revision --autogenerate -m 'description of changes'
+```
+
+## Querying
+
+```py
+from sqlalchemy import select
+from sqlalchemy.sql.expression import func
 ```
 
 ### FROM clause
 
 Generate a query:
 
-```python
-query = session.query(Table)
+```py
+query = select(Model)
 ```
 
 ### SELECT clause
 
-Choose the columns:
+Choose the columns (`Column` objects are accessed from the `Table.c` accessor):
 
-```python
-query = query.with_entities(
-  Table.id,
-  Table.column,
-)
+```py
+query = select(Model.id, Model.column)
 ```
 
 Apply some special functions to columns (MIN, MAX, COUNT):
 
-```python
-query = query.with_entities(
-  func.count(Table.column)
-)
-query = query.with_entities(
-  func.max(Table.column)
-)
+```py
+query = select(func.count(Model.id))
+query = select(func.max(Model.id))
 ```
 
 ### WHERE clause
 
-```python
-query = query.filter_by(id=3)
+```py
+query = query.where(Model.id == 3)
+query = query.where(Model.column.in_(['first', 'second']))
+query = query.where(Model.column.contains('foo'))
+query = query.where(Model.column.startswith('boo'))
 ```
 
 ### GROUP BY clause
 
-```python
-query = query.group_by(Table.column)
+```py
+query = query.group_by(Model.column)
+```
+
+### JOIN
+
+```py
+query = query.join(Model.column)  # column is foreign key
 ```
 
 ### Execute
 
-Get all results from current query:
+Get results from query:
 
-```python
-query.all()
+```py
+session.execute(query).scalars().all()
+session.execute(query).scalar_one()
+session.scalars(query).all()
+session.scalar(query)
 ```
