@@ -59,6 +59,9 @@ onMounted(() => {
       if (isBackspace || (!event.ctrlKey && isAvailableKey)) {
         searchElement.value.focus();
       }
+      if (event.key === 'Delete' && event.shiftKey) {
+        search.value = '';
+      }
     }
   });
 });

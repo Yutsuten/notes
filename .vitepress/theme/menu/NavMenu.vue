@@ -23,6 +23,16 @@ const { page, site } = useData();
 const headers = ref<Header[]>([]);
 const curScroll = ref(0);
 
+function clearSearch(event: Event) {
+  const keyboardEvent = new KeyboardEvent('keydown', {
+    bubbles: true,
+    code: 'Delete',
+    key: 'Delete',
+    shiftKey: true,
+  });
+  event.currentTarget!.dispatchEvent(keyboardEvent);
+}
+
 function getIndexClass(header: Header) {
   const classList = ['entry'];
   if (curScroll.value >= header.offsetTop && curScroll.value < header.nextOffsetTop) {
@@ -96,7 +106,7 @@ onMounted(() => {
         <div class="link">
           <a
             :href="site.base"
-            @click="$emit('jump')"
+            @click="$emit('jump'); clearSearch($event);"
           >
             <i class="fa-solid fa-house-chimney"></i>
             Home

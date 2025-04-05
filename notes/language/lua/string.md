@@ -38,3 +38,9 @@ Remove last character:
 ```lua
 string.sub(my_str, 1, -2)
 ```
+
+Remove the word `password` from a string:
+
+```lua
+string.gsub(my_str, "password", "")
+```
