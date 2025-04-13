@@ -6,13 +6,22 @@ ref: https://flask-restx.readthedocs.io/en/latest/swagger.html
 
 ## Decorators
 
-Define route:
+### Route definition
+
+Endpoint with no arguments:
 
 ```py
-@api.route()
+@api.route('/tasks')
 ```
 
-Input:
+Endpoint that requires an argument
+([available converters](https://github.com/pallets/werkzeug/blob/main/src/werkzeug/routing/converters.py#L253-L261)):
+
+```py
+@api.route('/tasks/<string:name>')
+```
+
+### Input
 
 ```py
 @api.doc()       # Additional information
@@ -20,7 +29,7 @@ Input:
 @api.expect()    # Expected input parameters
 ```
 
-Output:
+### Output
 
 ```py
 @api.marshal_with()  # Expected return values, code, description

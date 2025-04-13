@@ -111,6 +111,18 @@ With this we can, for example, sort the elements of an array:
 set fruits (string join \n $fruits | sort)
 ```
 
+### Avoid cat
+
+To avoid running `cat` and creating a new process just to print the contents of a file,
+use fish's builtin `read` instead.
+
+```fish
+# Instead of
+set lines (cat input_file)
+# Do
+set lines (read --null <input_file)
+```
+
 ## Special variables
 
 | Bash | Fish | Description |
