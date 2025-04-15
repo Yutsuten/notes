@@ -29,11 +29,10 @@ alembic downgrade -1
 alembic revision --autogenerate -m 'description of changes'
 ```
 
-## Querying
+## Query
 
 ```py
-from sqlalchemy import select
-from sqlalchemy.sql.expression import func
+from sqlalchemy import func, select
 ```
 
 ### FROM clause
@@ -82,11 +81,42 @@ query = query.join(Model.column)  # column is foreign key
 
 ### Execute
 
-Get results from query:
+Get [results](https://docs.sqlalchemy.org/en/20/core/connections.html#sqlalchemy.engine.Result)
+from a query:
 
 ```py
-session.execute(query).scalars().all()
+# Single column, single row
 session.execute(query).scalar_one()
-session.scalars(query).all()
+session.execute(query).scalar_one_or_none()
 session.scalar(query)
+
+# Single column, multiple rows
+session.execute(query).scalars().all()
+session.scalars(query).all()
+
+# Multiple columns, single row
+session.execute(query).one()
+session.execute(query).one_or_none()
+session.execute(query).first()
+session.execute(query).fetchone()
+
+# Multiple columns, multiple rows
+session.execute(query).all()
+session.execute(query).fetchall()
+```
+
+It is possible to iterate the result object directly:
+
+```py
+for row in session.execute(query):
+    print(row)
+```
+
+## Insert
+
+Batch insert data (uses `dict` instead of Model's instances):
+
+```py
+session.execute(insert(Model), [dict, dict, dict, ...])
+session.commit()
 ```

@@ -5,30 +5,41 @@ ref: https://docs.python.org/3/library/datetime.html
 
 ## Usage
 
-```python
+Import:
+
+```py
 from datetime import datetime, timedelta, timezone
+```
+
+Create a copy of a `date` or `datetime` instance:
+
+```py
+date_copy = original.replace()
+
+import copy
+date_copy = copy.copy(original)
 ```
 
 ### Datetime
 
-| Attributes | Description |
-| --- | --- |
-| `year` | Between MINYEAR (1) and MAXYEAR (9999) inclusive. |
-| `month` | Between 1 and 12 inclusive. |
-| `day` | Between 1 and the number of days in the given month of the given year. |
-| `hour` | In `range(24)`. |
-| `minute` | In `range(60)`. |
-| `second` | In `range(60)`. |
-| `microsecond` | In `range(1000000)`. |
-| `tzinfo` | Time zone information. |
+| Attributes    | Description                                                            |
+| ------------- | ---------------------------------------------------------------------- |
+| `year`        | Between MINYEAR (1) and MAXYEAR (9999) inclusive.                      |
+| `month`       | Between 1 and 12 inclusive.                                            |
+| `day`         | Between 1 and the number of days in the given month of the given year. |
+| `hour`        | In `range(24)`.                                                        |
+| `minute`      | In `range(60)`.                                                        |
+| `second`      | In `range(60)`.                                                        |
+| `microsecond` | In `range(1000000)`.                                                   |
+| `tzinfo`      | Time zone information.                                                 |
 
 Generating `datetime` objects:
 
-| Method | Description |
-| --- | --- |
-| `now(tz)` | Current local date and time. Timezone defaults to `None`. |
-| `fromtimestamp(ts)` | Local date and time corresponding to the POSIX timestamp. |
-| `fromisoformat(date_string)` | Local date and time given a string formatted in the ISO 8601 format. |
+| Method                          | Description                                                                                                                                                       |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `now(tz)`                       | Current local date and time. Timezone defaults to `None`.                                                                                                         |
+| `fromtimestamp(ts)`             | Local date and time corresponding to the POSIX timestamp.                                                                                                         |
+| `fromisoformat(date_string)`    | Local date and time given a string formatted in the ISO 8601 format.                                                                                              |
 | `strptime(date_string, format)` | Local date and time given a string formatted according to the given [format](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes). |
 
 Current date and time:
@@ -49,10 +60,10 @@ mydate = datetime.strptime('2018-04-30 13:45:01', '%Y-%m-%d %H:%M:%S')
 
 Generating `string` from `datetime` objects:
 
-| Method | Description |
-| --- | --- |
-| `isoformat(sep='T')` | String representing the date and time in ISO 8601 format. |
-| `strftime(format)` | String representing the date and time formatted according to the given [format](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes). |
+| Method               | Description                                                                                                                                                          |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `isoformat(sep='T')` | String representing the date and time in ISO 8601 format.                                                                                                            |
+| `strftime(format)`   | String representing the date and time formatted according to the given [format](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes). |
 
 ```python
 strdate = mydate.isoformat()

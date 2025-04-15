@@ -69,8 +69,22 @@ SELECT LENGTH(nick) FROM users;
 
 ### Group by
 
+Search for duplicated emails:
+
 ```sql
 SELECT email FROM users GROUP BY email HAVING COUNT(email) > 1;
+```
+
+Count number of entries for each combination of two columns:
+
+```sql
+SELECT column1, column2, COUNT(*) FROM my_table GROUP BY column1, column2;
+```
+
+Add `WHERE` before `GROUP BY` to filter by a condition (order is important):
+
+```sql
+SELECT column1, column2, COUNT(*) FROM my_table WHERE column3 = 'foo' GROUP BY column1, column2;
 ```
 
 ### Order By
