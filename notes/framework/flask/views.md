@@ -37,29 +37,27 @@ request.json.get('arg_name')
 
 ## Response
 
-### Customize response
-
-The import bellow is required:
+Common imports:
 
 ```python
 from flask import jsonify, Response
 ```
 
-#### Status code
+### Status code
 
 ```python
 return Response('', status=204)
 return jsonify({}), 204
 ```
 
-#### Headers
+### Headers
 
-Consider we are inside the function of a view.
+Setting `mimetype` also changes the value of the header `Content-Type`.
 
 ```python
-response = Response('<?xml version="1.0" encoding="UTF-8"?>\n<html></html>')
-response.headers['content-type'] = 'text/xml'
-return response
+@app.route('/', methods=['GET'])
+def index():
+    return Response('<?xml version="1.0" encoding="UTF-8"?>\n<html></html>', mimetype='text/xml')
 ```
 
 ### Return file

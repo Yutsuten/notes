@@ -1,6 +1,6 @@
 ---
 title: Capture
-ref: https://docs.pytest.org/en/6.2.x/capture.html
+ref: https://docs.pytest.org/en/stable/how-to/capture-stdout-stderr.html
 ---
 
 ## Capturing logs
