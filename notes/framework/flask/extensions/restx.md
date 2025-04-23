@@ -1,5 +1,5 @@
 ---
-title: Swagger
+title: RESTX
 pypi: flask-restx
 ref: https://flask-restx.readthedocs.io/en/latest/swagger.html
 ---
