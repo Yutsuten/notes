@@ -79,6 +79,25 @@ query = query.group_by(Model.column)
 query = query.join(Model.column)  # column is foreign key
 ```
 
+### Execution Options
+
+Lazily process query result
+(be sure to not close the session by doing everything inside the `with` block,
+or by passing `session` as a parameter to the generator function):
+
+```py
+# Flask example
+def generate_csv(session):
+    for row in session.execute(query.execution_options(yield_per=1000)):
+        yield ','.join(map(str, row)) + '\n'
+
+return Response(
+    generate_csv(session),
+    mimetype='text/csv',
+    headers={'Content-Disposition': 'attachment;filename=data.csv'},
+)
+```
+
 ### Execute
 
 Get [results](https://docs.sqlalchemy.org/en/20/core/connections.html#sqlalchemy.engine.Result)

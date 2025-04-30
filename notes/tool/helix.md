@@ -52,21 +52,7 @@ create it inside the `.helix` folder.
 To update the language server, update `languages.toml`
 (read more [here](https://github.com/helix-editor/helix/discussions/10691)).
 
-For `hybridMode = false`:
-
-```toml
-[language-server.typescript-language-server.config]
-plugins = [{ name = "@vue/typescript-plugin", location = "/usr/bin/vue-language-server", languages = ["vue"] }]
-
-[language-server.vuels.config]
-vue = { hybridMode = false }
-
-[[language]]
-name = "vue"
-language-servers = [ "vuels", "typescript-language-server" ]
-```
-
-For `hybridMode = true`:
+#### For `hybridMode = true`:
 
 ```toml
 [language-server.typescript-language-server.config]
@@ -84,4 +70,41 @@ includeInlayVariableTypeHints = true
 [[language]]
 name = "vue"
 language-servers = [ "vuels", "typescript-language-server" ]
+```
+
+#### For `hybridMode = false`
+
+Use `vuels` for all `.{vue,js,ts,tsx,jsx}` files
+(don't use `typescript-language-server` at all):
+
+```toml
+[language-server.vuels.config]
+vue = { hybridMode = false }
+
+[[language]]
+name = "typescript"
+language-servers = [ "vuels" ]
+
+[[language]]
+name = "tsx"
+language-servers = [ "vuels" ]
+
+[[language]]
+name = "javascript"
+language-servers = [ "vuels" ]
+
+[[language]]
+name = "jsx"
+language-servers = [ "vuels" ]
+```
+
+Switch between `vuels` and `typescript-language-server`
+(use `vuels` for only `.vue` files and `typescript-language-server` for `.{js,ts,tsx,jsx}` files):
+
+```toml
+[language-server.vuels.config]
+vue = { hybridMode = false }
+
+[language-server.typescript-language-server.config]
+plugins = [{ name = "@vue/typescript-plugin", location = "/usr/bin/vue-language-server", languages = ["vue"] }]
 ```
