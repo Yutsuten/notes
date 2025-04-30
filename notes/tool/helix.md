@@ -52,7 +52,7 @@ create it inside the `.helix` folder.
 To update the language server, update `languages.toml`
 (read more [here](https://github.com/helix-editor/helix/discussions/10691)).
 
-#### For `hybridMode = true`:
+#### For `hybridMode = true`
 
 ```toml
 [language-server.typescript-language-server.config]
