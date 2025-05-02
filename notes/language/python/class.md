@@ -35,8 +35,8 @@ Creating and using an instance:
 instance = MyClass(5)
 print(instance.custom_method(10))
 
-getattr(x, 'foobar')       # Equivalent to x.foobar
-setattr(x, 'foobar', 123)  # Equivalent to x.foobar = 123
+getattr(instance, 'foobar')       # Equivalent to x.foobar
+setattr(instance, 'foobar', 123)  # Equivalent to x.foobar = 123
 
 vars(instance)  # Print attributes as a dict
 ```
