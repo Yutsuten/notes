@@ -67,10 +67,28 @@ query = query.where(Model.column.contains('foo'))
 query = query.where(Model.column.startswith('boo'))
 ```
 
-### GROUP BY clause
+### DISTINCT clause
 
 ```py
-query = query.group_by(Model.column)
+query = query.distinct()
+```
+
+### GROUP BY clause
+
+:::tip
+Don't forget to select the columns used by `group_by`.
+:::
+
+Single column example:
+
+```py
+query = select(Model.column, func.count(Model.id)).group_by(Model.column)
+```
+
+Multiple columns example:
+
+```py
+query = select(Model.column1, Model.column2, func.count(Model.id)).group_by(Model.column1, Model.column2)
 ```
 
 ### JOIN
