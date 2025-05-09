@@ -1,5 +1,6 @@
 ---
 title: Gpg
+man: gpg
 ref: https://wiki.archlinux.org/index.php/GnuPG
 ---
 
@@ -13,6 +14,9 @@ export GPG_TTY=$(tty)
 ```
 
 ## Configuration
+
+Configuration is done in the `~/.gnupg/gpg-agent.conf` file.
+See the full documentation with `man gpg-agent`.
 
 To apply any configuration changes,
 run this command:

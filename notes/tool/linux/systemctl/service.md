@@ -6,7 +6,8 @@ man: systemctl
 
 ## Usage
 
-Root privileges are often needed when running `systemctl` commands.
+There are user and system services.
+If dealing with system services, root privileges are needed.
 
 ```shell
 systemctl OPTION ACTION my.service
@@ -25,6 +26,12 @@ systemctl OPTION ACTION my.service
 | `disable` | Disable automatic service startup on boot. |
 
 ## Creation
+
+After any changes to a service, run:
+
+```shell
+systemctl --user daemon-reload
+```
 
 | Scope  | Path                     |
 | ------ | ------------------------ |
@@ -53,7 +60,7 @@ WantedBy=multi-user.target
 
 ### User service
 
-Replace `{HOME}` with your home directory.
+`notify` service (Replace `{HOME}` with your home directory):
 
 ```ini
 # caddy.service
@@ -72,4 +79,15 @@ TimeoutStopSec=5s
 
 [Install]
 WantedBy=default.target
+```
+
+`oneshot` service (when using a timer):
+
+```ini
+[Unit]
+Description=clear old trash files
+
+[Service]
+Type=oneshot
+ExecStart=trash-empty 7
 ```
