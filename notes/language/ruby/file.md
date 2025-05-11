@@ -18,6 +18,13 @@ Append can only write to the end of the file.
 
 Append `b` to mode for binary data.
 
+Line ending [reference](https://en.wikipedia.org/wiki/Newline):
+
+| OS      | Line ending |
+| ------- | ----------- |
+| Linux   | `\n`        |
+| Windows | `\r\n`      |
+
 ## Read file
 
 Read everything in a single read:

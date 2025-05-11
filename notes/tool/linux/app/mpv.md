@@ -39,12 +39,10 @@ cp -r /usr/share/doc/mpv ~/.config
 
 ### Tips
 
-Load high quality OpenGL options:
+Load high quality OpenGL options ([available profiles](https://github.com/mpv-player/mpv/blob/master/etc/builtin.conf)):
 
 ```ini
-profile=gpu-hq
-scale=ewa_lanczossharp
-cscale=ewa_lanczossharp
+profile=high-quality
 ```
 
 Display timestamps with milliseconds in the OSC:

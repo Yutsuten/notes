@@ -49,10 +49,15 @@ render() {
 }
 ```
 
-### Constructor
+### State
 
-Allow saving state of a component.
-Should be considered private.
+Create a variable that should be tracked:
+
+```jsx
+const [value, setValue] = React.useState('');
+```
+
+A constructor also can be used.
 
 ```jsx
 constructor(props) {

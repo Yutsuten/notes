@@ -30,6 +30,13 @@ setting the encoding is recommended.*
 
 It may also be useful to check out the contents of `package > os` for system wide operations.
 
+Line ending [reference](https://en.wikipedia.org/wiki/Newline):
+
+| OS      | Line ending |
+| ------- | ----------- |
+| Linux   | `\n`        |
+| Windows | `\r\n`      |
+
 ## Examples
 
 Write an audio file:

@@ -42,6 +42,13 @@ path1 / path2  # Same as os.path.join(path1, path2)
 | `t` | Text mode (default). |
 | `+` | Open for updating (reading and writing). |
 
+Line ending [reference](https://en.wikipedia.org/wiki/Newline):
+
+| OS      | Line ending |
+| ------- | ----------- |
+| Linux   | `\n`        |
+| Windows | `\r\n`      |
+
 Read or write to file
 
 ```python
