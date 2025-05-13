@@ -103,9 +103,12 @@ const ids: number[] = [0, 1];
 For functions:
 
 ```ts
-function getAdminUser(): User {
+function getAdminUser(id: number): User {
   // Must return a value of type User
 }
+const arrowFunction = (param: string): number => {
+  // Must return a value of type number
+};
 ```
 
 For classes:
