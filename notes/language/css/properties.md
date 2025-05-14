@@ -65,12 +65,13 @@ Image border:
 }
 ```
 
-### Font
+### Text and font
 
 ```css
 .font {
   font-size: 1.2rem;
   font-weight: 400;
+  line-height: 1.5rem;
   text-decoration: none;
   white-space: pre-wrap; /* pre-line (enable new lines) */
   word-wrap: break-word;
@@ -87,7 +88,7 @@ Text border:
 }
 ```
 
-### Text formatting
+Format text:
 
 ```css
 .text-formatting {

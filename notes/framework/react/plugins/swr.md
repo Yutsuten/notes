@@ -9,8 +9,13 @@ Install the `swr` package.
 
 ```js
 import useSWR from 'swr';
+import useSWRImmutable from 'swr/immutable';
 
+// If data can change
 const dataQuery = useSWR(key, fetcher, options);
+
+// If data is expected to NOT change
+const dataQuery = useSWRImmutable(key, fetcher, options);
 ```
 
 `key` can be anything (string, array, dict),
