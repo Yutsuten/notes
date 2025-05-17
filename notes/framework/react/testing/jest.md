@@ -3,6 +3,32 @@ title: Jest
 ref: https://jestjs.io/docs/api
 ---
 
+## Command line
+
+Given this configuration in `package.json`:
+
+```json
+{
+  "scripts": {
+    "test": "jest"
+  }
+}
+```
+
+For the full documentation, check [Jest CLI Options](https://jestjs.io/docs/cli).
+
+Run a specific script with:
+
+```shell
+pnpm run test __tests__/path/to/test.tsx
+```
+
+Run a specific test with (match against the name in `describe` or `test`):
+
+```shell
+pnpm run test -t 'open home screen'
+```
+
 ## Parametrize
 
 ```ts

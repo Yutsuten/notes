@@ -71,3 +71,25 @@ import { screen, within } from '@testing-library/react'
 const modal = screen.getByTestId('modal');
 const button = within(modal).getByRole('button');
 ```
+
+## Debug
+
+Print the `screen` contents in HTML:
+
+```js
+screen.debug();
+```
+
+## Extensions
+
+### React Select
+
+[react-select-event](https://testing-library.com/docs/ecosystem-react-select-event)
+is a helper library to help testing `react-select` elements:
+
+```jsx
+import selectEvent from 'react-select-event';
+
+const selectElement = screen.getByLabelText('Please select');
+await selectEvent.select(selectElement, 'Option 2');
+```

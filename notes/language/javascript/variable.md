@@ -24,6 +24,13 @@ Casting:
 const flag = Boolean(0);  // !!0 - true for empty lists and objects!
 ```
 
+Use the [Nullish coalescing operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
+to fallback a `null` or `undefined` variable:
+
+```js
+const errMsg = error.message ?? 'Unknown error';
+```
+
 ## Declaration
 
 ```js
