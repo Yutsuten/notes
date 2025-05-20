@@ -5,8 +5,6 @@ ref: https://docs.sqlalchemy.org/en/20/orm/quickstart.html
 
 ## Defining tables
 
-[Column documentation](https://docs.sqlalchemy.org/en/20/core/metadata.html#sqlalchemy.schema.Column)
-
 ```py
 from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy import Column, Integer, String
@@ -71,6 +69,14 @@ query = query.where(Model.column.startswith('boo'))
 
 ```py
 query = query.distinct()
+```
+
+### ORDER BY clause
+
+```py
+query = query.order_by(Model.column)
+query = query.order_by(Model.column.asc())
+query = query.order_by(Model.column.desc())
 ```
 
 ### GROUP BY clause
@@ -157,3 +163,10 @@ Batch insert data (uses `dict` instead of Model's instances):
 session.execute(insert(Model), [dict, dict, dict, ...])
 session.commit()
 ```
+
+## More documentation
+
+- [Using ORM Declarative Forms to Define Table Metadata](https://docs.sqlalchemy.org/en/20/tutorial/metadata.html#using-orm-declarative-forms-to-define-table-metadata)
+- [Using SELECT Statements](https://docs.sqlalchemy.org/en/20/tutorial/data_select.html)
+- [Using INSERT Statements](https://docs.sqlalchemy.org/en/20/tutorial/data_insert.html)
+- [Using UPDATE and DELETE Statements](https://docs.sqlalchemy.org/en/20/tutorial/data_update.html)
