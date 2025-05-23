@@ -92,4 +92,8 @@ import selectEvent from 'react-select-event';
 
 const selectElement = screen.getByLabelText('Please select');
 await selectEvent.select(selectElement, 'Option 2');
+// If the selection triggers some background request, use the `waitFor` to prevent warnings
+await waitFor(() => {
+  // expect() something or even keep it empty
+});
 ```

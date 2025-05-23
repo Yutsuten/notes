@@ -13,6 +13,7 @@ Configuration is on `about:config`.
 | `network.captive-portal-service.enabled`    | `false` | Disable if it is annoying (on some internet providers.) |
 | `keyword.enabled`                           | `false` | Disable search engine on address bar.                   |
 | `browser.tabs.closeWindowWithLastTab`       | `false` | Keep browser open even if closing the last tab.         |
+| `browser.fullscreen.autohide`               | `false` | Keep URL and toolbar visible even while fullscreen.     |
 
 ## Default application
 
@@ -35,3 +36,7 @@ xdg-mime default firefox.desktop application/x-extension-xht
 ## Shortcut list
 
 Learn some shortcuts [here](https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly?redirectslug=Keyboard+shortcuts&redirectlocale=en-US).
+
+| Shortcut | Description       |
+| -------- | ----------------- |
+| `F11`    | Toggle fullscreen |

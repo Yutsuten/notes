@@ -71,19 +71,21 @@ build:
 
 Multiple files, generating object files before executable.
 
-```shell
+```make
 CC = gcc
-OBJ = main.o mylib.o
 CFLAGS = -Wall -Wextra -Werror $(EXTRA_CFLAGS)
+OBJ = main.o mylib.o
+TARGET = myapp
+
+.PHONY: build clean
 
 build: $(OBJ)
-	$(CC) -o myapp $(CFLAGS) $(OBJ)
+	$(CC) -o $(TARGET) $(CFLAGS) $(OBJ)
 
 mylib.o: mylib.h
 
-.PHONY: clean
 clean:
-	-rm -f myapp $(OBJ)
+	rm -f $(TARGET) $(OBJ)
 ```
 
 Build with `make EXTRA_CFLAGS='-g -O0'` to enable debugging with `gdb`.

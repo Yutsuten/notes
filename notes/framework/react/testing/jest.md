@@ -153,7 +153,7 @@ afterEach(() => {
 Then inside the test:
 
 ```ts
-act(() => {
+await act(async () => {
   fireEvent.click(screen.getAllByRole('button', { name: 'Open new window' }));
 });
 expect(windowOpenSpy).toHaveBeenCalledWith('http://example.com', '_blank');
@@ -174,3 +174,7 @@ test('my test', () => {
   jest.advanceTimersByTime(1000);
 });
 ```
+
+## More documentation
+
+- [API for act](https://react.dev/reference/react/act)

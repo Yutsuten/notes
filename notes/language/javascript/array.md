@@ -22,7 +22,9 @@ arr = Array.from(arrayLikeObject);
 Destructure into simpler types:
 
 ```js
-const [first, ...remaining] = arr;
+const [first, second, third, fourth] = arr;
+const [first, ...remaining] = arr;  // Extract one element
+const [first, , , fourth] = arr;  // Skip some (unneeded) elements
 ```
 
 ## Methods
