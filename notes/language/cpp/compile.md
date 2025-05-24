@@ -26,6 +26,19 @@ Example of a hello world program:
 int main()
 {
     std::cout << "Hello World!" << std::endl;
+    return 0;
+}
+```
+
+For more printing features, use the `fmt` library
+(add `-lfmt` to `CFLAGS`) and write the code like this:
+
+```cpp
+#include <fmt/base.h>
+
+int main() {
+    fmt::print("Hello, world!\n");
+    return 0;
 }
 ```
 
