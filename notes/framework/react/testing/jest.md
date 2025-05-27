@@ -31,11 +31,26 @@ pnpm run test -t 'open home screen'
 
 ## Parametrize
 
+Check the full documentation [here](https://jestjs.io/docs/api#testeachtablename-fn-timeout).
+
+Using a list:
+
 ```ts
-it.each([
+test.each([
   [1, 'expected output 1'],
   [2, 'expected output 2'],
-])('test with param %s', (inputNum, expected) => {
+])('test with param %i', (inputNum, expected) => {
+  console.log(`${inputNum} ${expected}`);
+})
+```
+
+Using a dict:
+
+```ts
+test.each([
+  { inputNum: 1, expected: 'expected output 1' },
+  { inputNum: 2, expected: 'expected output 2' },
+])('test with param $inputNum', ({ inputNum, expected }) => {
   console.log(`${inputNum} ${expected}`);
 })
 ```
@@ -91,7 +106,7 @@ jest.mock('next/router', () => ({
 }));
 
 describe('MyTest', () => {
-  it('tests something', () => {
+  test('tests something', () => {
     (useRouter as jest.Mock).mockReturnValue({
       pathname: '/home',
     });

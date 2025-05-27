@@ -82,6 +82,15 @@ screen.debug();
 
 ## Extensions
 
+### Jest DOM
+
+Use [jest-dom](https://github.com/testing-library/jest-dom)
+to extend the `expect` keyword and allow asserting the state of a DOM.
+
+```jsx
+expect(element).toBeVisible();
+```
+
 ### React Select
 
 [react-select-event](https://testing-library.com/docs/ecosystem-react-select-event)
