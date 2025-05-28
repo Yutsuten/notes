@@ -47,6 +47,13 @@ tsc --noEmit
 
 ## Types
 
+To check the type of a variable, use `typeof`:
+
+```ts
+typeof n === 'number'
+Array.isArray(a)
+```
+
 ### Primitives
 
 - Any: `any`
@@ -65,6 +72,8 @@ tsc --noEmit
 - Class: -
 - Final: -
 
+### Functions
+
 Async functions don't have a primitive type.
 Declare one with:
 
@@ -72,11 +81,11 @@ Declare one with:
 type AsyncFunction = () => Promise<any>;
 ```
 
-To check the type, use `typeof`:
+Similarly, if you want to configure the arguments and the return type of a `Function`,
+don't use the generic, create a new type instead.
 
 ```ts
-typeof n === 'number'
-Array.isArray(a)
+type SumFunction = (a: number, b: number) => number;
 ```
 
 ### Type from dict

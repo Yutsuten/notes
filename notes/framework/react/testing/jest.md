@@ -175,6 +175,25 @@ expect(windowOpenSpy).toHaveBeenCalledWith('http://example.com', '_blank');
 expect(windowOpenFocusMock).toHaveBeenCalled();
 ```
 
+Mocking `global`:
+
+Some (all?) global variables are not defined inside jest.
+
+```js
+global.URL.createObjectURL = jest.fn(() => '');
+global.URL.revokeObjectURL = jest.fn();
+```
+
+Mocking `console`:
+
+Validate logs and (optionally) prevent them from polluting test logs.
+
+```js
+const consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {}); // Skip mockImplementation to keep logs
+functionToBeTested();
+expect(consoleWarnSpy).toHaveBeenCalledWith('something was not quite as expected');
+```
+
 ### Mock timers
 
 Mocking `setTimeout`-like native functions ([reference](https://jestjs.io/docs/timer-mocks)):
