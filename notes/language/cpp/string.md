@@ -1,0 +1,75 @@
+---
+title: String
+ref: https://cplusplus.com/reference/string/string/
+---
+
+## Trim
+
+**In place** whitespace trim of a `std::string`:
+
+```cpp
+#include <string>
+
+const std::string WHITESPACE = " \n\r\t\f\v";
+
+void ltrim(std::string &s) {
+    s.erase(s.begin(), s.begin() + s.find_first_not_of(WHITESPACE));
+}
+
+void rtrim(std::string &s) {
+    s.erase(s.begin() + s.find_last_not_of(WHITESPACE) + 1, s.end());
+}
+
+void trim(std::string &s) {
+    ltrim(s);
+    rtrim(s);
+}
+```
+
+**Copy** of a `std::string` with the whitespace trimmed:
+
+```cpp
+#include <string>
+
+const std::string WHITESPACE = " \n\r\t\f\v";
+
+std::string ltrim(const std::string &s) {
+    size_t start = s.find_first_not_of(WHITESPACE);
+    return (start == std::string::npos) ? "" : s.substr(start);
+}
+
+std::string rtrim(const std::string &s) {
+    size_t end = s.find_last_not_of(WHITESPACE);
+    return (end == std::string::npos) ? "" : s.substr(0, end + 1);
+}
+
+std::string trim(const std::string &s) {
+    size_t start = s.find_first_not_of(WHITESPACE);
+    if (start == std::string::npos) {
+        return "";
+    }
+    size_t end = s.find_last_not_of(WHITESPACE);
+    return s.substr(start, end - start + 1);
+}
+```
+
+## Replace
+
+Using [regex replace](https://cplusplus.com/reference/regex/regex_replace/)
+to trim whitespace of a `std::string`:
+
+```cpp
+#include <regex>
+
+std::string ltrim(const std::string &s) {
+    return std::regex_replace(s, std::regex("^\\s+"), std::string(""));
+}
+
+std::string rtrim(const std::string &s) {
+    return std::regex_replace(s, std::regex("\\s+$"), std::string(""));
+}
+
+std::string trim(const std::string &s) {
+    return ltrim(rtrim(s));
+}
+```

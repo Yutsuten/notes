@@ -1,5 +1,5 @@
 ---
-title: Miscellaneous
+title: Code snippets
 ---
 
 ## JSON
