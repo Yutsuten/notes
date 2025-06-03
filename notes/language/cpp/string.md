@@ -3,13 +3,29 @@ title: String
 ref: https://cplusplus.com/reference/string/string/
 ---
 
+## Usage
+
+```cpp
+#include <string>
+```
+
+## Contains
+
+Check if `text` contains `substr`:
+
+```cpp
+if (text.find(substr) != std::string::npos) {
+    fmt::println("Substring found!");
+} else {
+    fmt::println("Substring not found!");
+}
+```
+
 ## Trim
 
 **In place** whitespace trim of a `std::string`:
 
 ```cpp
-#include <string>
-
 const std::string WHITESPACE = " \n\r\t\f\v";
 
 void ltrim(std::string &s) {
@@ -29,8 +45,6 @@ void trim(std::string &s) {
 **Copy** of a `std::string` with the whitespace trimmed:
 
 ```cpp
-#include <string>
-
 const std::string WHITESPACE = " \n\r\t\f\v";
 
 std::string ltrim(const std::string &s) {
