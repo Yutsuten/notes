@@ -66,24 +66,3 @@ std::string trim(const std::string &s) {
     return s.substr(start, end - start + 1);
 }
 ```
-
-## Replace
-
-Using [regex replace](https://cplusplus.com/reference/regex/regex_replace/)
-to trim whitespace of a `std::string`:
-
-```cpp
-#include <regex>
-
-std::string ltrim(const std::string &s) {
-    return std::regex_replace(s, std::regex("^\\s+"), std::string(""));
-}
-
-std::string rtrim(const std::string &s) {
-    return std::regex_replace(s, std::regex("\\s+$"), std::string(""));
-}
-
-std::string trim(const std::string &s) {
-    return ltrim(rtrim(s));
-}
-```
