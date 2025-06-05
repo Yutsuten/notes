@@ -1,7 +1,7 @@
 ---
 title: RESTX
 pypi: flask-restx
-ref: https://flask-restx.readthedocs.io/en/latest/swagger.html
+ref: https://flask-restx.readthedocs.io/en/latest/
 ---
 
 ## Decorators
@@ -21,25 +21,40 @@ Endpoint that requires an argument
 @api.route('/tasks/<string:name>')
 ```
 
-### Input
+### Input args
 
 ```py
-@api.doc()       # Additional information
-@api.response()  # Same as @api.doc(responses='...')
-@api.expect()    # Expected input parameters
+@api.doc(
+    description='Documentation of this API',
+    params={  # If not using @api.expect()
+        'id': {
+            'description': 'An ID',
+            'in': 'query',
+            'type': 'int',
+        },
+        'format': {
+            'description': 'A file format',
+            'in': 'query',
+            'type': 'string',
+            'enum': ['json', 'csv'],
+        }
+    }
+)
+@api.expect(my_model)  # Expected input parameters
 ```
 
-### Output
+### Output data
 
 ```py
-@api.marshal_with(model)  # Expected return values, code, description
-@api.header()             # Response header
+@api.marshal_with(my_model)    # Expected return values, code, description
+@api.response(200, 'Success')  # May be used several times
+@api.header()                  # Response header
 ```
 
 If the same endpoint returns multiple data formats:
 
-- Manually use `marshal()` while returning for multiple models
-- Don't use `marshal()` at all if the returning value isn't JSON
+- Use `marshal()` when returning JSON data
+- Use `Response()` when returning anything else
 
 ```py
 from flask_restx import marshal
@@ -47,18 +62,23 @@ from flask_restx import marshal
 def get(self):
     output_format = request.args.get('format', 'json')
     output_type = request.args.get('type', 'summary')
-    if output_format == 'csv':
-        # Generate csv_content
+    if output_format == 'csv':     # CSV data
         return Response(csv_content, mimetype='text/csv')
-    if output_type == 'detailed':
-        # Generate detailed_json_content, use detailed_model
+    if output_type == 'detailed':  # Dict using detailed_model
         return marshal(detailed_json_content, detailed_model), 200
-    # Generate summary_json_content, use summary_model
+    # Dict using summary_model
     return marshal(summary_json_content, summary_model), 200
 ```
 
 ## Models
 
+- [Models](https://flask-restx.readthedocs.io/en/latest/api.html#models)
+- [Documenting the fields](https://flask-restx.readthedocs.io/en/latest/swagger.html#documenting-the-fields)
+- [Automatically documented models](https://flask-restx.readthedocs.io/en/latest/swagger.html#automatically-documented-models)
+
 ```py
-api.model()
+my_model = api.model('ResourceName', {
+    'id': fields.Integer,
+    'name': fields.String,
+})
 ```
