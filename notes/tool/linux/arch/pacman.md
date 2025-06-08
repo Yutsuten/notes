@@ -6,18 +6,18 @@ ref: https://wiki.archlinux.org/title/Pacman
 
 ## Usage
 
-| Command | Description |
-| --- | --- |
-| `pacman -Syu` | Update all packages |
-| `pacman -S package` | Install new package |
-| `pacman -Rs package` | Remove a package. Add `-c` for cascade, `-u` for group of packages |
-| `pacman -Qtdq \| pacman -Rns -` | Remove orphaned packages |
-| `pacman -Qe` | List all packages explicitly installed |
-| `pacman -Qet` | List all packages explicitly installed and not required as dependencies (required + optional) |
-| `pacman -Qett` | List all packages explicitly installed and not required as dependencies (required only) |
-| `pacman -Qi package` | Check information of a package that is installed. |
-| `pacman -Si package` | Check information of a package that may not be installed. |
-| `pacman -D --asdeps` | Mark the specified package as installed as a dependency. |
+| Command                         | Description                                                                                    |
+| ------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `pacman -Syu`                   | Update all packages.                                                                           |
+| `pacman -S package`             | Install new package.                                                                           |
+| `pacman -Rs package`            | Remove a package. Add `-c` for cascade, `-u` for group of packages.                            |
+| `pacman -Qtdq \| pacman -Rns -` | Remove orphaned packages.                                                                      |
+| `pacman -Qe`                    | List all packages explicitly installed.                                                        |
+| `pacman -Qet`                   | List all packages explicitly installed and not required as dependencies (required + optional). |
+| `pacman -Qett`                  | List all packages explicitly installed and not required as dependencies (required only).       |
+| `pacman -Qi package`            | Check information of a package that is installed.                                              |
+| `pacman -Si package`            | Check information of a package that may not be installed.                                      |
+| `pacman -D --asdeps`            | Mark the specified package to installed as dependency.                                         |
 
 Check packages explicitly installed but required dependency at the same time.
 
