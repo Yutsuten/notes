@@ -1,6 +1,6 @@
 ---
 title: Flow control
-ref: https://www.programiz.com/c-programming/c-if-else-statement
+ref: https://devdocs.io/cpp/language/statements
 ---
 
 ## Condition

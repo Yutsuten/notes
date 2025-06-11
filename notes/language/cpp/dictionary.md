@@ -1,11 +1,14 @@
 ---
 title: Dictionary
-ref: https://cplusplus.com/reference/stl/
+ref: https://devdocs.io/cpp-containers/
 ---
 
 ## Basic
 
-Includes:
+Includes for
+[unordered_map](https://devdocs.io/cpp/container/unordered_map)
+and
+[map](https://devdocs.io/cpp/container/map):
 
 ```cpp
 #include <unordered_map>

@@ -1,11 +1,12 @@
 ---
 title: Array
-ref: https://cplusplus.com/reference/vector/vector/
+ref: https://devdocs.io/cpp-containers/
 ---
 
 ## Vectors
 
-Creating vectors and optionally debugging (by including `fmt/ranges.h`):
+Creating [vectors](https://devdocs.io/cpp/container/vector)
+and optionally debugging (by including `fmt/ranges.h`):
 
 ```cpp
 #include <vector>
@@ -78,3 +79,19 @@ int main()
     return 0;
 }
 ```
+
+## Deques
+
+[Deques](https://devdocs.io/cpp/container/deque)
+
+## Lists
+
+[Lists](https://devdocs.io/cpp/container/list)
+
+## Forward list
+
+[Forward list](https://devdocs.io/cpp/container/forward_list)
+
+## Array
+
+[Array](https://devdocs.io/cpp/container/array)

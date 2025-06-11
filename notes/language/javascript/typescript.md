@@ -250,3 +250,12 @@ For that we need to cast to our desired type.
 ```ts
 (event.target as HTMLInputElement).value
 ```
+
+### reduce
+
+Sometimes the default type for `accumulator` is incorrect,
+in such cases explicitly writing the type is the solution.
+
+```ts
+myarr.reduce((acc: Set<string>, cur) => acc.add(cur.name), new Set<string>());
+```

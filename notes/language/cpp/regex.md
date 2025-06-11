@@ -1,6 +1,6 @@
 ---
 title: Regex
-ref: https://cplusplus.com/reference/regex/
+ref: https://devdocs.io/cpp/header/regex
 ---
 
 ## Usage

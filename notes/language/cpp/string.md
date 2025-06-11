@@ -1,6 +1,6 @@
 ---
 title: String
-ref: https://cplusplus.com/reference/string/string/
+ref: https://devdocs.io/cpp/header/string
 ---
 
 ## Usage
