@@ -15,6 +15,7 @@ More references:
 - [Audio Volume](https://trac.ffmpeg.org/wiki/AudioVolume)
 - [Filters](https://ffmpeg.org/ffmpeg-filters.html)
 - [Formats](https://ffmpeg.org/ffmpeg-formats.html)
+- [Codecs](https://ffmpeg.org/ffmpeg-codecs.html)
 
 ## Usage
 
