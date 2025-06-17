@@ -6,8 +6,9 @@ ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Ob
 ## Usage
 
 ```js
-let str1 = 'Some string'
-let str2 = `Value of a is ${a}`  // Template string [ES6]
+const str1 = 'Some string';
+const str2 = `Value of a is ${a}`;  // Template string [ES6]
+const size = str1.length;
 ```
 
 | Method        | Returns   | Description                                                                                             |
