@@ -174,5 +174,24 @@ pw-loopback --capture=${mic} --capture-props='audio.position=[FL] stream.dont-re
 
 The `mix` sink with have the audio of both sources.
 
-_Note: `PIPEWIRE_NODE` environment variable seems to affect the `module-loopback` in a way that
-makes it not work._
+:::warning
+`PIPEWIRE_NODE` environment variable seems to affect the `module-loopback` in a way that
+makes it not work.
+:::
+
+## Recording
+
+To record a node, first we need to get its ID.
+To get the ID from a name, use:
+
+```fish
+set node_id (wpctl status --name | sed -nE 's/^.* ([0-9]+)\. alsa_input.+analog-stereo .*$/\1/p')
+```
+
+To record a microphone (usually only one channel),
+or to record speakers (usually two channels), use:
+
+```fish
+pw-record --channels 1 --target $node_id mic.flac
+pw-record --channels 2 --target $node_id --properties 'stream.capture.sink=true' speakers.flac
+```

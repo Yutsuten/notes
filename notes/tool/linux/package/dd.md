@@ -26,7 +26,7 @@ Use `conv=fdatasync` to be sure all data was written to the device.
 Write ISO into a drive (`sudo` needed):
 
 ```shell
-dd if=linux.iso of=/dev/sda bs=4M
+dd if=linux.iso of=/dev/sda bs=4M conv=fdatasync
 ```
 
 Benchmark write speed of a disk by writing a 2GiB file (for read speed use `hdparm`):

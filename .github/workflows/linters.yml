@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
 jobs:
-  eslint:
+  lint:
     runs-on: ubuntu-latest
     name: ESLint and Stylelint
     steps:
@@ -20,4 +20,4 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Lint with ESLint
-        run: pnpm run lint
+        run: pnpm run eslint && pnpm run stylelint

@@ -146,15 +146,23 @@ div[class*="language-"] {
 }
 
 div[class*="language-"] span.lang {
-    display: none;
+    position: absolute;
+    top: 7px;
+    left: 15px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--text-comment);
+    user-select: none;
 }
 
 div[class*="language-"] button.copy {
     position: absolute;
     top: 8px;
     right: 8px;
-    width: 80px;
-    padding: 5px;
+    width: 75px;
+    padding: 4px;
+    font-size: 11px;
     color: var(--text);
     cursor: pointer;
     background-color: var(--bg-main);
@@ -165,12 +173,11 @@ div[class*="language-"] button.copy {
 }
 
 div[class*="language-"]:hover button.copy {
-    opacity: 1;
+    opacity: 0.5;
 }
 
 div[class*="language-"] button.copy:hover {
-    color: var(--link);
-    border: solid 1px var(--link);
+    opacity: 1;
 }
 
 div[class*="language-"] button.copy::before {
@@ -204,7 +211,7 @@ div[class*="language-"] button.copy.copied::after {
 }
 
 div[class*="language-"] pre {
-    padding: 16px 0;
+    padding: 28px 0 12px;
     margin: 0;
     overflow-y: auto;
 }
