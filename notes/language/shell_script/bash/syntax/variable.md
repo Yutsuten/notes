@@ -13,7 +13,7 @@ title: Variable
 
 ## String
 
-```shell
+```bash
 myvar="value"
 ```
 
@@ -21,21 +21,21 @@ myvar="value"
 
 Creation:
 
-```shell
+```bash
 names=('My name' 'Your name' 'Their name')
 read -ra state < <(echo '1 2 3')  # From output
 ```
 
 Access elements:
 
-```shell
+```bash
 echo "${names[@]}"  # All elements
 echo "${names[1]}"  # Index (start from 0)
 ```
 
 Length:
 
-```shell
+```bash
 echo "${#names[@]}"
 ```
 
@@ -43,14 +43,14 @@ echo "${#names[@]}"
 
 To lower case:
 
-```shell
+```bash
 name="Sora"
 echo "${name,,}"
 ```
 
 Remove trailing character (slash):
 
-```shell
+```bash
 SOME_DIR="some_dir/"
 echo "${SOME_DIR%/}"
 ```

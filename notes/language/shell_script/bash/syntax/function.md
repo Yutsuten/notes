@@ -2,7 +2,7 @@
 title: Function
 ---
 
-```shell
+```bash
 myfunc() {
     # Do something
 }
@@ -10,7 +10,7 @@ myfunc() {
 
 ## Allow calling function from script
 
-```shell
+```bash
 ## ...
 ## Functions definition
 ## ...
@@ -20,6 +20,6 @@ myfunc() {
 
 ### Usage
 
-```shell
+```bash
 ./myscript.sh myfunc param
 ```

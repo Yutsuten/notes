@@ -7,7 +7,7 @@ Those expressions are evaluated to a number.
 
 ## Integer
 
-```shell
+```bash
 $(( 5+2 ))
 $(( 5-2 ))
 $(( 5*2 ))
@@ -22,7 +22,7 @@ $(( 5**2 ))
 
 Package `bc` is required.
 
-```shell
+```bash
 '10.5+2.5' | bc -l
 '10.5-2.5' | bc -l
 '10.5*2.5' | bc -l

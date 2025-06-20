@@ -4,7 +4,7 @@ title: Argument
 
 ## Manual
 
-```shell
+```bash
 ## Check the number of arguments
 if [[ "$#" -ne 2 ]]; then
   # >&2 Echo output to standard error instead of standard out
@@ -19,7 +19,7 @@ echo $2  # Argument 2
 
 Checking existence of argument:
 
-```shell
+```bash
 if [[ "$*" == *' --argument'* ]]; then
   echo '--argument found'
 fi
@@ -31,7 +31,7 @@ Works for arguments with a single letter.
 
 Nice tutorial [here](https://wiki.bash-hackers.org/howto/getopts_tutorial).
 
-```shell
+```bash
 while getopts ":a:" opt; do
   case ${opt} in
     a)

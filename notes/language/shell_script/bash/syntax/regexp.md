@@ -6,7 +6,7 @@ title: RegExp
 
 Assigning the regex into a variable seems to be important.
 
-```shell
+```bash
 REGEXP='\{.+\} (\{.+\})'
 if [[ ${INPUT} =~ ${REGEXP} ]]; then
   MATCH="${BASH_REMATCH[1]}"

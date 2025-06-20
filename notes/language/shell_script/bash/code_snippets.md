@@ -6,13 +6,13 @@ title: Code snippets
 
 Generate a random string:
 
-```shell
+```bash
 tr -dc '!-~' </dev/urandom | head -c16; echo
 ```
 
 Get exit code of a command:
 
-```shell
+```bash
 some-command; echo "[Exit code $?]"
 ```
 
@@ -20,7 +20,7 @@ some-command; echo "[Exit code $?]"
 
 Bulk copy with renaming:
 
-```shell
+```bash
 for file in ./*; do
   cp "${file##*/}" "/path/to/destination/m_${file##*/}"
 done
@@ -30,7 +30,7 @@ done
 
 Load `.bashrc` when using `.bash_profile`:
 
-```shell
+```bash
 if [ -f ~/.bashrc ]; then
   source ~/.bashrc
 fi

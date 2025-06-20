@@ -4,7 +4,7 @@ title: Expression
 
 ## Logical
 
-```shell
+```bash
 test expression
 [[ expression ]]
 [[ ! expression ]]
@@ -14,7 +14,7 @@ test expression
 
 ## File check
 
-```shell
+```bash
 [[ -d dir/ ]]          # True if exists and is a directory
 [[ -f dir/filename ]]  # True if exists and is a file
 [[ -e dir/filename ]]  # True if path exists
@@ -22,7 +22,7 @@ test expression
 
 ## Integer comparison
 
-```shell
+```bash
 [[ 12 -eq 10 ]]  # (( 12 == 10 ))
 [[ 12 -ne 10 ]]  # (( 12 != 10 ))
 [[ 12 -lt 10 ]]  # (( 12 < 10 ))
@@ -36,7 +36,7 @@ test expression
 
 ## String comparison
 
-```shell
+```bash
 [[ '04:00' == '12:00' ]]
 [[ '04:00' != '12:00' ]]
 [[ '04:00' < '12:00' ]]
@@ -48,7 +48,7 @@ test expression
 
 ## Decimal comparison
 
-```shell
+```bash
 (( $(echo '8.5==7' | bc -l) ))
 (( $(echo '8.5!=7' | bc -l) ))
 (( $(echo '8.5<7' | bc -l) ))

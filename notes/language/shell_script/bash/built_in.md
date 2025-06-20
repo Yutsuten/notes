@@ -4,7 +4,7 @@ title: Built-in
 
 ## Set
 
-```shell
+```bash
 ## https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html
 set -e           # Exit on error
 set -u           # Exit on undefined variables
@@ -16,12 +16,12 @@ set -x           # Print the commands (-o xtrace)
 
 Read a value interactively and output its value to stdout:
 
-```shell
+```bash
 sleep "$(read -p 'Time: ' time && echo $time)"
 ```
 
 ## Random
 
-```shell
+```bash
 echo $(( RANDOM % 10 ))
 ```

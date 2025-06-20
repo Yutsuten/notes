@@ -61,7 +61,7 @@ sed -Ez '$ s/\n+$//'
 Find and replace all matches recursively in files:
 
 ```shell
-git grep --files-with-matches foo | xargs -n 1 sed -i 's/foo/boo/g'
+git grep --files-with-matches foo | xargs sed -i 's/foo/boo/g'
 ```
 
 #### Finding patterns

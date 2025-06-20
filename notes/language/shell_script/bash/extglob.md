@@ -6,13 +6,13 @@ title: Extglob
 
 Enable / Disable:
 
-```shell
+```bash
 shopt -s extglob
 shopt -u extglob
 ```
 
 ## Remove all but
 
-```shell
+```bash
 rm -v !('filename1'|'filename2')
 ```

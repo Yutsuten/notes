@@ -4,7 +4,7 @@ title: Loop
 
 ## While syntax
 
-```shell
+```bash
 while condition; do
   do_domething
 done
@@ -12,7 +12,7 @@ done
 
 ## For syntax
 
-```shell
+```bash
 for i in {1..10}; do
   echo $i
 done
@@ -31,7 +31,7 @@ done
 
 Loop until user signal:
 
-```shell
+```bash
 terminate=0
 trap abort SIGUSR1
 
@@ -47,7 +47,7 @@ done
 
 Loop a variable using newline as separator.
 
-```shell
+```bash
 while IFS='' read -r line || [[ -n "${line}" ]]; do
   echo $line
 done <<< "${message}"
@@ -55,7 +55,7 @@ done <<< "${message}"
 
 Loop a variable using `;` as separator (using `IFS=''` may add newline to the last variable).
 
-```shell
+```bash
 while read -rd ';' i || [[ -n "${i}" ]]; do
   echo "Value $i"
 done <<< "1;2;3"
