@@ -13,7 +13,7 @@ I'll call it dictionary here.
 
 Instantiate:
 
-```js
+```javascript
 const animal = 'seagull';
 const mydict = {
    cat: 'Meow',
@@ -24,21 +24,21 @@ const mydict = {
 
 Access values (either one is OK):
 
-```js
+```javascript
 const cat = mydict.cat;
 const dog = mydict['dog'];
 ```
 
 Delete a key/value pair:
 
-```js
+```javascript
 delete mydict.cat;
 ```
 
 Get number of key/value pairs,
 can also be used to check if dictionary is empty:
 
-```js
+```javascript
 const dictLength = Object.keys(mydict).length;
 ```
 
@@ -54,7 +54,7 @@ const dictLength = Object.keys(mydict).length;
 
 ## Loop key/value pairs
 
-```js
+```javascript
 for (let key in mydict) {
   console.log(`${key}: ${mydict[key]}`);
 }
@@ -68,7 +68,7 @@ Object.keys(mydict).forEach(function (key) {});
 
 ## Create a copy
 
-```js
+```javascript
 // Shallow
 Object.assign({}, mydict);
 

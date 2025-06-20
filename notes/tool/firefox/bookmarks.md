@@ -14,7 +14,7 @@ title: Bookmarks
 
 Add a bookmark with the following content on the URL:
 
-```js
+```javascript
 javascript:var main = function(){ doSomething(); }()
 ```
 
@@ -22,7 +22,7 @@ javascript:var main = function(){ doSomething(); }()
 
 Pretty-print a page with JSON content.
 
-```js
+```javascript
 javascript:var main = function(){ document.getElementsByTagName('pre')[0].textContent = JSON.stringify(JSON.parse(document.getElementsByTagName('pre')[0].textContent), null, 2); }()
 ```
 

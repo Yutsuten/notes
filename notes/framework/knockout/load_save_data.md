@@ -24,7 +24,7 @@ You have <b data-bind="text: incompleteTasks().length">&nbsp;</b> incomplete tas
 <button data-bind="click: save">Save</button>
 ```
 
-```js
+```javascript
 function Task(data) {
     this.title = ko.observable(data.title);
     this.isDone = ko.observable(data.isDone);

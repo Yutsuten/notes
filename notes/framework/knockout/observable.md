@@ -4,6 +4,6 @@ title: Observable
 
 ## Force update
 
-```js
+```javascript
 myObservable.valueHasMutated()
 ```

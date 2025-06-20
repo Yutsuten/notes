@@ -20,7 +20,7 @@ mongo
 
 Then create an admin account with the following command.
 
-```js
+```javascript
 use admin
 db.createUser(
   {
@@ -68,7 +68,7 @@ use admin
 
 Create some users.
 
-```js
+```javascript
 use my_db
 db.createUser(
   {
@@ -93,7 +93,7 @@ Update user permissions.
 mongo -u "admin" -p --authenticationDatabase "admin"
 ```
 
-```js
+```javascript
 use my_db
 db.updateUser(
   "my_user"

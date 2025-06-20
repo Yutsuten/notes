@@ -5,7 +5,7 @@ ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Ob
 
 ## Basic
 
-```js
+```javascript
 let arr = [2, 3, 5];
 arr.length;
 arr = Array(size).fill(value);
@@ -15,13 +15,13 @@ let empty = Array.isArray(myvar) && myvar.length
 
 Generating an array from an array-like object:
 
-```js
+```javascript
 arr = Array.from(arrayLikeObject);
 ```
 
 Destructure into simpler types:
 
-```js
+```javascript
 const [first, second, third, fourth] = arr;
 const [first, ...remaining] = arr;  // Extract one element
 const [first, , , fourth] = arr;  // Skip some (unneeded) elements
@@ -47,13 +47,13 @@ const [first, , , fourth] = arr;  // Skip some (unneeded) elements
 
 Getting a slice:
 
-```js
+```javascript
 arr.slice(2, 5);  // Same as arr[2:5] in python
 ```
 
 Remove by value:
 
-```js
+```javascript
 const index = arr.indexOf(value);
 if (index !== -1) {
   arr.splice(index, 1);
@@ -62,14 +62,14 @@ if (index !== -1) {
 
 Merge two arrays:
 
-```js
+```javascript
 const merged = [...array1, ...array2]; // Spread Operator
 const merged = array1.concat(array2);
 ```
 
 ### With callback
 
-```js
+```javascript
 arr.map(n => n * 2)
 arr.reduce((accumulator, current) => accumulator + current, initialValue)
 arr.forEach((currentValue, index, array) => doSomething())
@@ -79,7 +79,7 @@ arr.filter(element => element > 4)  // array that satisfies the condition
 
 To iterate an array and run it `async`, use:
 
-```js
+```javascript
 // Sequence
 for (const file of files) {
   const contents = await fs.readFile(file, 'utf8');

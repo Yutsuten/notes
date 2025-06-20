@@ -19,7 +19,7 @@ export default {
 </script>
 ```
 
-::: v-pre
+:::v-pre
 Variables are used in template within `{{` `}}`.
 :::
 

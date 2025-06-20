@@ -13,7 +13,7 @@ Use `paramsSerializer.indexes = null` to avoid adding `[]` in array parameters.
 i.e.: `values=one&values=two` instead of `values[]=one&values[]=two`.
 :::
 
-```js
+```javascript
 axios.get(
   '/endpoint',
   {
@@ -30,7 +30,7 @@ axios.get(
 
 POST request (PUT, PATCH is similar):
 
-```js
+```javascript
 axios.post(
   '/endpoint',
   data,
@@ -52,7 +52,7 @@ may be useful if it is necessary to deal with big files
 (and we want to avoid external dependencies).
 :::
 
-```js
+```javascript
 const response = await axios.get(
   '/endpoint',
   {

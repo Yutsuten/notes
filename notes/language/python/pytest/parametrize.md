@@ -7,7 +7,7 @@ ref: https://docs.pytest.org/en/stable/how-to/parametrize.html
 
 [API reference](https://docs.pytest.org/en/stable/reference/reference.html#pytest.Metafunc.parametrize)
 
-```py
+```python
 @pytest.mark.parametrize(
     ('param1', 'param2', 'param3'),
     [

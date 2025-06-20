@@ -9,7 +9,7 @@ Enable client-side transitions between routes.
 
 ## Usage
 
-```js
+```javascript
 import Link from 'next/link'
 ```
 

@@ -5,7 +5,7 @@ ref: https://nextjs.org/docs/api-reference/next/script
 
 ## Usage
 
-```js
+```javascript
 import Script from 'next/script'
 ```
 

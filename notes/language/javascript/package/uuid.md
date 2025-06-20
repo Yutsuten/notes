@@ -5,7 +5,7 @@ ref: https://www.npmjs.com/package/uuid
 
 ## Example
 
-```js
+```javascript
 import { v4 as uuidv4 } from 'uuid';
 const uuid = uuidv4();
 ```

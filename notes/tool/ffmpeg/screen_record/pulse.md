@@ -14,7 +14,7 @@ pactl list short sources
 
 Or use `default` for *probably* your mic.
 
-::: info
+:::info
 Use `wav` (max 4GiB) or `w64` to record lossless with WAV.
 :::
 

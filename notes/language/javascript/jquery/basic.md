@@ -9,7 +9,7 @@ A low level javascript library.
 
 Run code after the DOM is loaded.
 
-```js
+```javascript
 $(document).ready(function () {
   // Initialization code
 });
@@ -17,7 +17,7 @@ $(document).ready(function () {
 
 ### Selector functions
 
-```js
+```javascript
 // Get the number of selected items by the selector
 $('.selector').length;
 $('.selector').toArray();

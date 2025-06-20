@@ -7,7 +7,7 @@ ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
 
 Declaraction:
 
-```js
+```javascript
 function sum(a, b) {
   return a + b;
 }
@@ -15,7 +15,7 @@ function sum(a, b) {
 
 Calling the function:
 
-```js
+```javascript
 const result = sum(8, 16);
 ```
 
@@ -27,7 +27,7 @@ const result = sum(8, 16);
 
 Async functions are functions that return a `Promise`:
 
-```js
+```javascript
 function getUser() {
   return new Promise((resolve, reject) => {
     resolve({ id: 1 });
@@ -37,7 +37,7 @@ function getUser() {
 
 The `async` keyword can also be used if using [modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules):
 
-```js
+```javascript
 async function getUser() {
   return { id: 1 };
 }
@@ -47,7 +47,7 @@ async function getUser() {
 
 Calling it and getting the result:
 
-```js
+```javascript
 // Using callback
 getUser().then((user) => {});
 
@@ -59,7 +59,7 @@ const user = await getUser();
 
 First put all promises in an array:
 
-```ts
+```typescript
 const promises: Promise<any>[] = [];
 promises.push(fetch('example.com/1'));
 promises.push(fetch('example.com/2'));
@@ -68,7 +68,7 @@ promises.push(fetch('example.com/3'));
 
 Use this if the result of all promises are needed.
 
-```ts
+```typescript
 Promise.allSettled(promises).then((results) => {
   results.forEach((result) => {
     if (result.status === 'fulfilled') {
@@ -82,7 +82,7 @@ Promise.allSettled(promises).then((results) => {
 
 Or this to stop as soon an any promise fails.
 
-```ts
+```typescript
 Promise.all(promises).then((responses) => {
   // All promises resolved
 }).catch((error) => {

@@ -22,7 +22,7 @@ title: Queries
 
 ## Select
 
-```js
+```javascript
 db.groups.find({})                                           // All
 db.groups.find({name: 'party1'})                             // Query
 db.groups.find({name: 'party1'}, {type: 'party'})            // Query with AND
@@ -35,7 +35,7 @@ db.groups.find(query).pretty()                               // Prettify
 
 Automatically creates the collection if it does not exist.
 
-```js
+```javascript
 db.groups.insertOne({'name': 'party1', 'type': 'party'})
 db.groups.insertMany([
   {'name': 'party1', 'type': 'party'},
@@ -45,7 +45,7 @@ db.groups.insertMany([
 
 ## Update
 
-```js
+```javascript
 db.groups.update({_id: 'f43nm39f'}, {$set: {'name': 'cool_party'}})
 db.groups.update({_id: 'f43nm39f'}, {$set: {'member_count': NumberInt(2)}})
 db.groups.update({_id: 'f43nm39f'}, {$set: {'settings.type': 'party'}})    // Embedded object
@@ -58,19 +58,19 @@ db.groups.find({}).forEach(function(obj) {
 
 Rename a field:
 
-```js
+```javascript
 db.groups.updateMany({}, {$rename: {'type': 'category'}})
 ```
 
 Remove a field from one or multiple matches:
 
-```js
+```javascript
 db.groups.update({_id: 'f43nm39f'}, {$unset: {'member_count': ''}})               // One
 db.groups.update({'name': 'wat'}, {$unset: {'member_count': ''}}, {multi: true})  // Multiple
 ```
 
 ## Remove
 
-```js
+```javascript
 db.groups.remove({_id: 'f43nm39f'})
 ```

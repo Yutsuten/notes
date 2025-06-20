@@ -24,7 +24,7 @@ title: Install and setup
 
 ### canvas-draw.js
 
-```js
+```javascript
 var myPath = new Path();
 // Do something with the path
 ```

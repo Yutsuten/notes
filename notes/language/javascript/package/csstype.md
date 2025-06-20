@@ -13,7 +13,7 @@ pnpm add csstype --save-dev
 
 ## Usage
 
-```ts
+```typescript
 import type { Property } from 'csstype';
 
 interface CustomElement {

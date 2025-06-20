@@ -26,7 +26,7 @@ logging.critical('System is down')
 If adding handlers for both `logging.getLogger()` and `logging.getLogger(name)`,
 one may want to stop the propagation of the log to the root logger.
 
-```py
+```python
 custom_logger = logging.getLogger('custom')
 custom_logger.propagate = False
 ```

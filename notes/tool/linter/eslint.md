@@ -58,7 +58,7 @@ eslint --init
 
 ### Inline usage
 
-```js
+```javascript
 // Disable lint in a single line
 var a = 3; // eslint-disable-line no-unused-vars
 

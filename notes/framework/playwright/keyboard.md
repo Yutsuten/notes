@@ -11,7 +11,7 @@ See a full list of keyboard keys available [here](https://developer.mozilla.org/
 
 Moving the viewport:
 
-```js
+```javascript
 await page.keyboard.press('PageDown');
 await page.keyboard.press('Home');
 ```

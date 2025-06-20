@@ -7,7 +7,7 @@ ref: https://developer.mozilla.org/docs/Web/JavaScript/Reference
 
 ### ES6
 
-```js
+```javascript
 class MyCoolClass {
   constructor(param1, param2) {
     this.param1 = param1
@@ -31,7 +31,7 @@ let instance = new MyCoolClass()
 
 ### ES5
 
-```js
+```javascript
 // Superclass
 function Hero(name, level) {
   this.name = name;

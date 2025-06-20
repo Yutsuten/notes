@@ -29,7 +29,7 @@ mongo --port 27018
 
 Configure the replica set.
 
-```js
+```javascript
 rsconf = {
   _id: "rs0",
   members: [
@@ -53,13 +53,13 @@ rs.initiate(rsconf)
 
 Check the current configuration with the following command.
 
-```js
+```javascript
 rs.conf()
 ```
 
 ### Adjust priority
 
-```js
+```javascript
 cfg = rs.conf()
 cfg.members[0].priority = 2    // Primary
 cfg.members[1].priority = 0.5  // Secondary
@@ -72,7 +72,7 @@ rs.reconfig(cfg)
 
 Set this on every mongo instance
 
-```js
+```javascript
 db.getMongo().setReadPref('secondaryPreferred')
 db.getMongo().setSlaveOk()
 ```

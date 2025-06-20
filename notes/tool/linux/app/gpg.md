@@ -68,7 +68,7 @@ Use 0 to disable caching.
 gpg OPTIONS FILE
 ```
 
-::: info
+:::info
 If `FILE` or `-o` is not specified,
 `stdin` and `stout` will be used, respectively.
 :::

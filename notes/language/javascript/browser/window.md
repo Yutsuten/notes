@@ -6,7 +6,7 @@ title: Window
 
 On a `onclick` event handler:
 
-```js
+```javascript
 const newTab = window.open('http://example.com', '_blank');
 if (newTab) {
   newTab.focus();

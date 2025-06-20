@@ -12,6 +12,6 @@ or apply to all lines by starting the command with `%`.
 %sort i  " Case insensitive
 ```
 
-::: tip
+:::tip
 Check `:help :sort` for more.
 :::

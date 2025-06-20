@@ -6,7 +6,7 @@ title: Path manipulation
 
 ### canvas-draw.js
 
-```js
+```javascript
 var path = new Path();
 path.strokeColor = 'black';
 path.strokeWidth = 2;
@@ -27,7 +27,7 @@ path.insert(1, new Point(15, 40));
 
 `canvas-draw.js`
 
-```js
+```javascript
 path.segments[index].point
 ```
 
@@ -35,7 +35,7 @@ path.segments[index].point
 
 `canvas-draw.js`
 
-```js
+```javascript
 path.removeSegment(index);
 path.removeSegments();
 ```
@@ -44,7 +44,7 @@ path.removeSegments();
 
 `canvas-draw.js`
 
-```js
+```javascript
 var circle = new Path.Circle({
     center: new Point(50, 50),
     radius: 10,

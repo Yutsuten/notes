@@ -49,7 +49,7 @@ tsc --noEmit
 
 To check the type of a variable, use `typeof`:
 
-```ts
+```typescript
 typeof n === 'number'
 Array.isArray(a)
 ```
@@ -77,14 +77,14 @@ Array.isArray(a)
 Async functions don't have a primitive type.
 Declare one with:
 
-```ts
+```typescript
 type AsyncFunction = () => Promise<any>;
 ```
 
 Similarly, if you want to configure the arguments and the return type of a `Function`,
 don't use the generic, create a new type instead.
 
-```ts
+```typescript
 type SumFunction = (a: number, b: number) => number;
 ```
 
@@ -92,7 +92,7 @@ type SumFunction = (a: number, b: number) => number;
 
 Useful if you have an object and want to create a type from its keys.
 
-```ts
+```typescript
 const point = { x: 10, y: 20 };
 type CoordXY = keyof typeof point;  // CoordXP = 'x' | 'y'
 ```
@@ -101,7 +101,7 @@ type CoordXY = keyof typeof point;  // CoordXP = 'x' | 'y'
 
 For variables:
 
-```ts
+```typescript
 const hello: string = 'Hello World';
 const value: number = 10;
 const dict1: {[key: string]: string} = {};
@@ -111,7 +111,7 @@ const ids: number[] = [0, 1];
 
 For functions:
 
-```ts
+```typescript
 function getAdminUser(id: number): User {
   // Must return a value of type User
 }
@@ -122,7 +122,7 @@ const arrowFunction = (param: string): number => {
 
 For classes:
 
-```ts
+```typescript
 class UserAccount {
   id: number;
   name: string;
@@ -138,7 +138,7 @@ const newuser: User = new UserAccount(1, 'Kai');
 
 Expanding arguments:
 
-```ts
+```typescript
 function sum({ a, b }: {a: number, b: number} {
   return a + b;
 }
@@ -148,7 +148,7 @@ function sum({ a, b }: {a: number, b: number} {
 
 Decide which values are accepted:
 
-```ts
+```typescript
 type MyBool = true | false;
 type WindowStates = 'open' | 'closed' | 'minimized';
 type PositiveOddNumbersUnderTen = 1 | 3 | 5 | 7 | 9;
@@ -156,7 +156,7 @@ type PositiveOddNumbersUnderTen = 1 | 3 | 5 | 7 | 9;
 
 If the object is complex, an `interface` will be needed:
 
-```ts
+```typescript
 interface User {
   id: number;
   name: string;
@@ -170,7 +170,7 @@ const user: User = {
 
 If the key can be a whole type, use:
 
-```ts
+```typescript
 interface Parameters {
   [key: string]: any;
 }
@@ -178,14 +178,14 @@ interface Parameters {
 
 Generic types (like `Array`):
 
-```ts
+```typescript
 type NumberArray = Array<number>;
 type ObjectWithNameArray = Array<{ name: string }>;
 ```
 
 Create generic types using `Type`:
 
-```ts
+```typescript
 interface Backpack<Type> {
   add: (obj: Type) => void;
   get: () => Type;
@@ -197,7 +197,7 @@ backpack.add('Notebook');       // Must pass a string as parameter
 
 ### Exporting/importing types
 
-```ts
+```typescript
 export type { User };
 import type { User } from '../types/user';
 ```
@@ -206,7 +206,7 @@ import type { User } from '../types/user';
 
 Non-null assertion operator: `!`
 
-```ts
+```typescript
 stringOrNull!.toLowerCase();
 ```
 
@@ -218,13 +218,13 @@ If any other file type other than `.ts` or `.tsx` is imported,
 typescript does not recognize it.
 Ex:
 
-```ts
+```typescript
 import styles from './styles.module.css';
 ```
 
 To solve this, create a file `typings.d.ts` containing:
 
-```js
+```javascript
 declare module '*.module.css';
 ```
 
@@ -235,7 +235,7 @@ declare module '*.module.css';
 `Object.keys()` return value by default is `any`.
 To change it to its keys instead, use:
 
-```ts
+```typescript
 (Object.keys(mydict) as Array<keyof typeof mydict>).filter(key => ...);
 ```
 
@@ -247,7 +247,7 @@ By default its type is a generic `HTMLElement` (don't have `value` property),
 but usually we deal with `HTMLInputElement` (textfield, checkbox, etc).
 For that we need to cast to our desired type.
 
-```ts
+```typescript
 (event.target as HTMLInputElement).value
 ```
 
@@ -256,6 +256,6 @@ For that we need to cast to our desired type.
 Sometimes the default type for `accumulator` is incorrect,
 in such cases explicitly writing the type is the solution.
 
-```ts
+```typescript
 myarr.reduce((acc: Set<string>, cur) => acc.add(cur.name), new Set<string>());
 ```

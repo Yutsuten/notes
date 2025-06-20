@@ -6,7 +6,7 @@ arch: cryptsetup
 
 ## Encrypt removable data disk
 
-::: info ASSUMPTION
+:::info ASSUMPTION
 Disk is `/dev/disk/by-label/backup`. The whole disk will be used.
 We'll call the encrypted partition `encBackup`.
 :::
@@ -63,7 +63,7 @@ Useful links:
 - [Suspend and hibernate](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#Hibernation)
 - [Root partition wrongly assumed to be encrypted](https://bbs.archlinux.org/viewtopic.php?id=150850)
 
-::: info ASSUMPTION
+:::info ASSUMPTION
 Swap is on disk `/dev/nvme0n1` and partition `/dev/nvme0n1p2`.
 We'll call the encrypted partition `encSwap`.
 :::
@@ -109,7 +109,7 @@ Update the configuration `/etc/default/grub` by:
 GRUB_CMDLINE_LINUX_DEFAULT="audit=0 loglevel=3 quiet cryptdevice=/dev/disk/by-label/swap:encSwap resume=/dev/mapper/encSwap"
 ```
 
-::: tip
+:::tip
 For more details on the options used here, check `mkinitcpio -H encrypt`.
 :::
 
@@ -168,7 +168,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 Now create the `swap_keyfile` in your USB drive with the password on it.
 
-::: warning
+:::warning
 **Be careful to not put a new line at the end of the file!**
 Text editors usually put it automatically,
 so use `echo -n` or a password generator command.
@@ -176,12 +176,12 @@ so use `echo -n` or a password generator command.
 
 ## Encrypt home
 
-::: info ASSUMPTION
+:::info ASSUMPTION
 Home is on disk `/dev/nvme0n1` and partition `/dev/nvme0n1p4`.
 We'll call the encrypted partition `encHome`.
 :::
 
-::: warning
+:::warning
 When creating the home partition,
 do **not** set the flag `linux-home`,
 or else it will conflict with the configuration in `/etc/crypttab`.
@@ -212,12 +212,12 @@ encHome    /dev/disk/by-label/home   /home_keyfile:/dev/disk/by-label/USB_LOADER
 
 Now create the `home_keyfile` in your USB drive with the password on it.
 
-::: tip
+:::tip
 Syntax for password is `path:device`,
 the inverse of the setting `cryptkey` without *fstype* used to encrypt swap.
 :::
 
-::: warning
+:::warning
 **Be careful to not put a new line at the end of the file!**
 Text editors usually put it automatically,
 so use `echo -n` or a password generator command.

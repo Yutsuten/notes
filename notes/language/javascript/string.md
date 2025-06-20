@@ -5,7 +5,7 @@ ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Ob
 
 ## Usage
 
-```js
+```javascript
 const str1 = 'Some string';
 const str2 = `Value of a is ${a}`;  // Template string [ES6]
 const size = str1.length;
@@ -33,25 +33,25 @@ const size = str1.length;
 
 Split by lines:
 
-```js
+```javascript
 const lines = text.split(/\r?\n/);
 ```
 
 Replace all:
 
-```js
+```javascript
 text.replace(/-/g, '');  // Must have the g option
 text.split('-').join('');
 ```
 
 Capitalize:
 
-```js
+```javascript
 text.charAt(0).toUpperCase() + text.slice(1);
 ```
 
 Add zeros to the left of a number:
 
-```js
+```javascript
 String(1).padStart(2, '0');  // "01"
 ```

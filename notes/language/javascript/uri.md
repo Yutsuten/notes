@@ -7,14 +7,14 @@ ref: https://developer.mozilla.org/en-US/docs/Web/API/URL_API
 
 To URL encode a string:
 
-```js
+```javascript
 encodeURIComponent('hello world');
 // 'hello%20world'
 ```
 
 To URL encode multiple query parameters:
 
-```js
+```javascript
 const searchParams = URLSearchParams({ search: 'hello world', page: 1 });
 searchParams.toString();
 // 'search=hello+world&page=1'
@@ -22,7 +22,7 @@ searchParams.toString();
 
 Useful to update the URL for a request:
 
-```js
+```javascript
 const url = new URL('https://example.com/');
 url.searchParams.set('search', 'hello world');
 url.searchParams.set('page', 1);

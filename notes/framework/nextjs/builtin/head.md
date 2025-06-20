@@ -9,7 +9,7 @@ Append elements to the head of the page.
 
 ## Usage
 
-```js
+```javascript
 import Head from 'next/head'
 ```
 

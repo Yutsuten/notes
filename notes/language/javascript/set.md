@@ -7,14 +7,14 @@ ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Ob
 
 Creating `Set` instance:
 
-```js
+```javascript
 const myset = new Set();
 const myset = new Set([1, 2, 2]);
 ```
 
 Updating a `Set`:
 
-```js
+```javascript
 myset.add('cat');
 myset.delete('dog');
 myset.clear();
@@ -22,14 +22,14 @@ myset.clear();
 
 Convert `Set` instance to `Array`:
 
-```js
+```javascript
 const myarr = Array.from(myset);
 const myarr = myset.values().toArray();
 ```
 
 Get the number of elements in the set:
 
-```js
+```javascript
 myset.size
 ```
 
@@ -46,12 +46,12 @@ myset.size
 
 Check if the set contains a value:
 
-```js
+```javascript
 myset.has(element);
 ```
 
 Update values of all elements:
 
-```js
+```javascript
 myset.values().map((element) => element.toString());
 ```

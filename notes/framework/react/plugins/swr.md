@@ -7,7 +7,7 @@ ref: https://swr.vercel.app/docs/api
 
 Install the `swr` package.
 
-```js
+```javascript
 import useSWR from 'swr';
 import useSWRImmutable from 'swr/immutable';
 
@@ -37,7 +37,7 @@ It receives `key` as argument.
 
 The result:
 
-```js
+```javascript
 const { data, error, isLoading, isValidating, mutate } = dataQuery;
 ```
 
@@ -47,7 +47,7 @@ Detailed documentation [here](https://swr.vercel.app/docs/typescript).
 
 Explicitly specify the types for key and fetcher's arguments:
 
-```ts
+```typescript
 import useSWR, { Fetcher } from 'swr';
  
 const uid = 'user_id';
@@ -60,7 +60,7 @@ const { data } = useSWR(uid, fetcher);
 
 Explicitly specify the types of `data` and `error`, respectively:
 
-```ts
+```typescript
 const { data, error } = useSWR<User, Error>(uid, fetcher);
 // `data` is `User | undefined`
 // `error` is `Error | undefined`

@@ -8,7 +8,7 @@ ref: https://docs.python.org/3/library/re.html
 Use `match` or `fullmatch` to check for matches.
 It returns the match if succeeds, `None` on fail.
 
-```py
+```python
 is_match = re.fullmatch('[0-9]{4}-[0-9]{2}', text) is not None
 is_match = re.match('^[0-9]{4}-[0-9]{2}$', text) is not None
 ```
@@ -17,7 +17,7 @@ is_match = re.match('^[0-9]{4}-[0-9]{2}$', text) is not None
 
 Extract text from a string:
 
-```py
+```python
 import re
 
 iter_obj = re.finditer(r'<img.*?[^>]>', text)
@@ -29,7 +29,7 @@ match_obj.group(1)  # Capturing group 1
 
 ## Replace
 
-```py
+```python
 import re
 
 re.sub(r'regex', repl, text, count=0)

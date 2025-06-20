@@ -7,7 +7,7 @@ ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Ob
 
 To raise a generic error (exception):
 
-```js
+```javascript
 throw new Error('Something is wrong!');
 ```
 
@@ -18,7 +18,7 @@ See
 [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
 documentation.
 
-```js
+```javascript
 try {
   throw new Error('Something is wrong!');
 } catch (error) {

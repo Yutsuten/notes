@@ -7,6 +7,6 @@ ref: https://developer.mozilla.org/en-US/docs/Tools/Web_Console/Helpers
 
 Evaluates the XPath xpath expression in the context of element and returns an array of matching nodes.
 
-```js
+```javascript
 $x('//div')
 ```

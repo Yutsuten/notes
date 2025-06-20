@@ -7,19 +7,19 @@ ref: https://playwright.dev/docs/api/class-locatorassertions
 
 Check if element exist (or not):
 
-```js
+```javascript
 await expect(locator).toHaveCount(1); // YES exist
 await expect(locator).toHaveCount(0); // NO don't exist
 ```
 
 Using regex:
 
-```js
+```javascript
 await expect(locator).toHaveText(/There are \d+ unread messages./u);
 ```
 
 Take screenshot and expect it to be always the same:
 
-```js
+```javascript
 await expect(page).toHaveScreenshot('home-screen.png');
 ```

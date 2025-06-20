@@ -5,7 +5,7 @@ ref: https://wiki.archlinux.org/index.php/Installation_guide
 
 ## Preparation
 
-::: info
+:::info
 This installation guide is customized to my needs.
 :::
 
@@ -28,7 +28,7 @@ timedatectl set-ntp true
 timedatectl status  # Check
 ```
 
-::: tip
+:::tip
 To connect to a Wifi, use `iwd`.
 :::
 
@@ -49,7 +49,7 @@ I prefer using `parted`.
 parted /dev/nvme0n1  # fdisk /dev/nvme0n1
 ```
 
-::: tip
+:::tip
 Don't worry too much about filling the correct *fstype* in `parted`
 (*fat12* does not exist, use *fat32* and it still works).
 :::
@@ -99,7 +99,7 @@ parted -l
 lsblk -f
 ```
 
-::: info
+:::info
 If encrypting some partitions,
 check `dm-crypt` notes.
 :::

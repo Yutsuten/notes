@@ -7,7 +7,7 @@ ref: https://playwright.dev/docs/mock
 
 JSON response returning an empty array:
 
-```js
+```javascript
 await page.route('**/api/users', async (route) => {
     await route.fulfill({ json: [] });
 });

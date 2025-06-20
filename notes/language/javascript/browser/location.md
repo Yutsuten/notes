@@ -5,13 +5,13 @@ ref: https://developer.mozilla.org/en-US/docs/Web/API/Location
 
 ## Redirect
 
-```js
+```javascript
 location.replace('/')
 ```
 
 ## Reload
 
-```js
+```javascript
 location.reload();      // By default it reloads from cache
 location.reload(true);  // Force a new request to the server
 ```
@@ -23,7 +23,7 @@ location.reload(true);  // Force a new request to the server
 This will not work on complex queries.
 Add this:
 
-```js
+```javascript
 var searchQuery = {
     toObject: function(search) {
         var params = {};
@@ -52,7 +52,7 @@ var searchQuery = {
 
 And use like this:
 
-```js
+```javascript
 var query = searchQuery.toObject(location.search);
 query.hello = 'world';
 location.search = searchQuery.toString(query);
@@ -69,7 +69,7 @@ yarn add query-string
 
 Usage:
 
-```js
+```javascript
 const queryString = require('query-string');
 
 var query = queryString.parse(location.search);

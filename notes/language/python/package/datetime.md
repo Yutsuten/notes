@@ -7,13 +7,13 @@ ref: https://docs.python.org/3/library/datetime.html
 
 Import:
 
-```py
+```python
 from datetime import datetime, timedelta, timezone
 ```
 
 Create a copy of a `date` or `datetime` instance:
 
-```py
+```python
 date_copy = original.replace()
 
 import copy

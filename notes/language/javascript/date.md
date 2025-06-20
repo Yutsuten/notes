@@ -7,7 +7,7 @@ ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Ob
 
 Generating a date:
 
-```js
+```javascript
 const now = new Date();
 const copy = new Date(now);
 const fromString = new Date('2018-04-30'); // YYYY-MM-DDTHH:mm:ss.sssZ | YYYY-MM-DDTHH:mm:ss.sss+HH:mm
@@ -23,7 +23,7 @@ const yesterday = new Date(
 
 Updating a date:
 
-```js
+```javascript
 now.setFullYear(2024);
 now.setMonth(2); // Starts from 0
 now.setDate(14);
@@ -35,7 +35,7 @@ now.setMilliseconds(727);
 
 Check if a date is valid:
 
-```js
+```javascript
 if (date instanceof Date && !isNaN(date.getTime())) {
   console.log('Valid!');
 } else {
@@ -47,7 +47,7 @@ if (date instanceof Date && !isNaN(date.getTime())) {
 
 ISO standart:
 
-```js
+```javascript
 // UTC: YYYY-MM-DDTHH:mm:ss.sssZ
 now.toISOString();
 
@@ -57,14 +57,14 @@ now.toISOString();
 
 Localized:
 
-```js
+```javascript
 // YYYY/MM/DD HH:mm:ss
 now.toLocaleString();
 ```
 
 Custom:
 
-```js
+```javascript
 // YYYY-MM-DD (local timezone)
 function formatDate(d) {
   const year = d.getFullYear();
@@ -76,7 +76,7 @@ function formatDate(d) {
 
 ### Intl
 
-```js
+```javascript
 const date = new Date(Date.UTC(2020, 11, 20, 3, 23, 16, 738));
 const intl = new Intl.DateTimeFormat(locale, options);
 intl.format(date);

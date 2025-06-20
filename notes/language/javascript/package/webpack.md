@@ -18,7 +18,7 @@ yarn add babel-polyfill bootstrap-vue vue
 
 Edit `webpack.config.js`:
 
-```js
+```javascript
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
@@ -64,7 +64,7 @@ module.exports = {
 
 ### Javascript
 
-```js
+```javascript
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'

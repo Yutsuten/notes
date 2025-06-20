@@ -40,7 +40,7 @@ ref: https://developer.mozilla.org/en-US/docs/Web/API/Element
 
 Emulate a `Shift + Delete` keypress:
 
-```js
+```javascript
 function onClick(event) {
     const keydownEvent = new KeyboardEvent('keydown', {
         key: 'Delete',

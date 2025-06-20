@@ -5,7 +5,7 @@ ref: https://date-fns.org/docs/Getting-Started
 
 ## Usage
 
-```js
+```javascript
 import { addDays, subDays, format } from 'date-fns';
 
 const now = new Date();

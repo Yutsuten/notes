@@ -32,7 +32,7 @@ Edit `package.json`:
 
 Edit `gulpfile.js`:
 
-```js
+```javascript
 var gulp = require('gulp');
 var source = require('vinyl-source-stream');
 var log = require('gulplog');

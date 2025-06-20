@@ -7,7 +7,7 @@ ref: https://nodejs.org/api/timers.html
 
 Equivalent to `sleep` in other languages.
 
-```js
+```javascript
 import { setTimeout } from 'node:timers/promises';
 
 await setTimeout(1000);

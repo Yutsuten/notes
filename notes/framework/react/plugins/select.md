@@ -8,7 +8,7 @@ ref: https://react-select.com/home
 Example with empty value as default and fixed options.
 Use `clearSelection()` to clear the selection programatically.
 
-```ts
+```typescript
 import React from 'react';
 import Select, { SingleValue } from 'react-select';
 
@@ -44,7 +44,7 @@ return (
 
 Reducing the height requires some workaround.
 
-```ts
+```typescript
 import Select from 'react-select';
 import type { Theme } from 'react-select';
 

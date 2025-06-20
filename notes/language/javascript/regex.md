@@ -5,7 +5,7 @@ ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Ob
 
 ## Usage
 
-```js
+```javascript
 let reg1 = /[abc]/gu;
 let reg2 = new RegExp('[abc]', 'gu');
 ```

@@ -5,7 +5,7 @@ ref: https://api.jquery.com/jquery.ajax/
 
 ## Shorthands
 
-```js
+```javascript
 $.get(url, function (data) {
 }).fail(function (jqXHR) {
 });
@@ -17,7 +17,7 @@ $.post(url, data, function (data) {
 
 ## Low-level Interface
 
-```js
+```javascript
 $.ajax({
     method: 'GET',
     url: url

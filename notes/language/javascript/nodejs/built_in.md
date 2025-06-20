@@ -18,14 +18,14 @@ ref: https://nodejs.org/api/process.html
 
 Creating an async function (returns `Promise`) and waiting for the result:
 
-```js
+```javascript
 async function getUser() {}
 const user = await getUser();
 ```
 
 To continue the program meanwhile, use a callback:
 
-```js
+```javascript
 getUser().then((user) => {});
 ```
 
@@ -37,7 +37,7 @@ because it will wait for asynchronous code to finish,
 like writes to `stdout`.
 But you'll have to skip the remaining code if there is any:
 
-```js
+```javascript
 if (somethingBadHappened()) {
   printStuff();
   process.exitCode = 1;
@@ -51,7 +51,7 @@ if (process.exitCode !== undefined) {
 Usually it is much easier to just raise an error that
 will not be catched for the same result:
 
-```js
+```javascript
 if (somethingBadHappened()) {
   printStuff();
   throw new Error('Something bad happened');

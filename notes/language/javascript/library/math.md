@@ -5,7 +5,7 @@ ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Ob
 
 ## Common methods
 
-```js
+```javascript
 Math.floor(value)
 Math.abs(value)
 Math.min(val1, val2)

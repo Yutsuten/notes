@@ -7,13 +7,13 @@ ref: https://nodejs.org/api/fs.html
 
 Enable interaction with the file system.
 
-```js
+```javascript
 const fs = require('node:fs'); // CommonJS
 import fs from 'node:fs';      // ES module
 ```
 
 Read all contents of a file as string:
 
-```js
+```javascript
 const contents = fs.readFileSync('path/to/file.txt', 'utf8');
 ```

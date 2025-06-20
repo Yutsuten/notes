@@ -7,7 +7,7 @@ ref: https://playwright.dev/docs/api/class-browsercontext
 
 Check if a login session is properly encrypted:
 
-```js
+```javascript
 let cookieCheckCount = 0;
 const cookies = context.cookies();
 for (const cookie of cookies) {

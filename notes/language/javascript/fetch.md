@@ -10,7 +10,7 @@ is built of an `input` (URL) and `options`.
 
 Make a GET request:
 
-```js
+```javascript
 // Using callback
 fetch('https://example.com/').then((res) => {});
 
@@ -20,7 +20,7 @@ const res = await fetch('https://example.com/');
 
 Make a `application/json` POST request:
 
-```js
+```javascript
 const url = 'https://example.com/';
 const options = {
     headers: { 'Content-Type': 'application/json' },
@@ -38,7 +38,7 @@ const res = await fetch(url, options);
 Make a `multipart/form-data` POST request with a file and a string,
 sent as [a form](https://developer.mozilla.org/en-US/docs/Web/API/FormData):
 
-```js
+```javascript
 const url = 'https://example.com/';
 const formData = new FormData();
 formData.append('file', new Blob(['File Contents\n']), 'notes.txt');
@@ -56,7 +56,7 @@ const res = await fetch(url, options);
 A [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)
 object is returned.
 
-```js
+```javascript
 console.log(res.status);
 console.log(await res.text());
 if (!res.ok) {

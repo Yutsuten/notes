@@ -277,7 +277,7 @@ ffmpeg -i audio.m4a -af 'afade=in:0:d=1,afade=out:st=89:d=1' out.m4a
 
 You can use either `-ac 2` or a `-filter_complex`.
 
-::: info
+:::info
 In my tests, if the mono audio was recorded correctly (using `-ac 1`),
 you will hear it correctly (both sides) in your media player.
 :::

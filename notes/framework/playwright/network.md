@@ -8,7 +8,7 @@ ref: https://playwright.dev/docs/network#network-events
 Check if response has the expected status code,
 and count the number of responses.
 
-```js
+```javascript
 let responseCount = 0;
 page.on('response', response => {
     if (response.url().endsWith('/api/users')) {

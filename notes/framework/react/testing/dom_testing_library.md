@@ -42,7 +42,7 @@ When role is `generic` (like `div`).
 
 When role is `generic` and there is no text.
 
-::: info
+:::info
 `title` is a tooltip that appears to users on hover.
 :::
 
@@ -65,7 +65,7 @@ Probably should only be used to click icons.
 After getting an element, query from it instead of from `screen`.
 [Reference](https://testing-library.com/docs/dom-testing-library/api-within)
 
-```ts
+```typescript
 import { screen, within } from '@testing-library/react'
 
 const modal = screen.getByTestId('modal');
@@ -76,7 +76,7 @@ const button = within(modal).getByRole('button');
 
 Print the `screen` contents in HTML:
 
-```js
+```javascript
 screen.debug();
 ```
 

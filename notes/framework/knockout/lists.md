@@ -10,7 +10,7 @@ Update options of a select element.
 <select data-bind="options: names" multiple></select>
 ```
 
-```js
+```javascript
 function AppViewModel() {
     this.names = ko.observableArray();
 
@@ -48,7 +48,7 @@ ko.applyBindings(new AppViewModel());
 </h3>
 ```
 
-```js
+```javascript
 // Class to represent a row in the seat reservations grid
 function SeatReservation(name, initialMeal) {
     var self = this;

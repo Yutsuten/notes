@@ -7,7 +7,7 @@ ref: https://reactjs.org/tutorial/tutorial.html
 
 The most common way to create a component:
 
-```js
+```javascript
 import React from 'react';
 
 class Game extends React.Component {

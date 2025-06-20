@@ -37,7 +37,7 @@ ref: https://github.com/nathancahill/Split.js
 
 ### Javascript
 
-```js
+```javascript
 Split(['#one', '#two'], {
     direction: 'vertical'
 });

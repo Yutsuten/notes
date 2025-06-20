@@ -5,7 +5,7 @@ ref: https://nextjs.org/docs/api-reference/next/image
 
 ## Usage
 
-```js
+```javascript
 import Image from 'next/image'
 ```
 

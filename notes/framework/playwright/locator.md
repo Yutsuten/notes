@@ -7,24 +7,24 @@ ref: https://playwright.dev/docs/api/class-locator
 
 Simplest case, always prefer `getByRole`:
 
-```js
+```javascript
 await page.getByRole('button', { name: 'Submit' }).click();
 ```
 
 Get parent container:
 
-```js
+```javascript
 const parent = await page.getByText('Welcome', { exact: true }).locator('..');
 ```
 
 Get specific row of table and check its checkbox:
 
-```js
+```javascript
 await page.getByRole('row').filter({ hasText: 'example.com' }).getByRole('checkbox').check();
 ```
 
 Fill a textbox:
 
-```js
+```javascript
 await page.getByRole('textbox', { name: 'username' }).fill('testuser01');
 ```

@@ -20,7 +20,7 @@ title: Dropzone
 
 ### Javascript
 
-```js
+```javascript
 Dropzone.options.uploadcsv = {
     paramName: "csvfile", // The name that will be used to transfer the file
     maxFilesize: 2, // MB

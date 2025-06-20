@@ -4,7 +4,7 @@ title: Syntax
 
 ## Comment
 
-```py
+```python
 ## Single line comment
 
 '''
@@ -15,7 +15,7 @@ comment
 
 ## Variables
 
-```py
+```python
 my_int = 7
 my_float = 1.234
 my_bool = True
@@ -26,7 +26,7 @@ my_dict = {'name': 'John', 'age': 28}
 
 ## Simple operations
 
-```py
+```python
 addition = 72 + 23
 subtraction = 108 - 204
 multiplication = 108 * 0.5
@@ -37,7 +37,7 @@ modulo = 10 % 2
 
 ## Bool evaluations
 
-```py
+```python
 100 == (2 * 50) and 19 <= 19
 -22 >= -18 or 99 != (98 + 1)
 not False
@@ -46,7 +46,7 @@ not False
 Unlike other programming languages,
 comparison operations can be chained.
 
-```py
+```python
 1 < 2 < 3
 ```
 
@@ -54,7 +54,7 @@ comparison operations can be chained.
 
 Using `return`:
 
-```py
+```python
 def spam():
     eggs = 12
     return eggs
@@ -72,7 +72,7 @@ rather than all at once.
 The function's state between calls is retained and can resume execution from where it left off.
 :::
 
-```py
+```python
 # Flask / SQLAlchemy example
 result = session.execute(query.execution_options(yield_per=1000))
 
@@ -112,7 +112,7 @@ if __name__ == '__main__':
 
 Automatically close the object as soon as the `with` block finishes.
 
-```py
+```python
 with open('sound.mp3', 'wb') as audio_file:
     audio_file.write(data)
 ```
@@ -124,7 +124,7 @@ By sending the object as an argument to the function,
 it will be kept open until the function finishes
 (useful if using `yield` in the function).
 
-```py
+```python
 with open('sound.mp3', 'wb') as audio_file:
     return lazy_write_data(audio_file)
 ```

@@ -5,7 +5,7 @@ ref: https://docs.sqlalchemy.org/en/20/orm/quickstart.html
 
 ## Defining tables
 
-```py
+```python
 from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy import Column, Integer, String
 
@@ -29,7 +29,7 @@ alembic revision --autogenerate -m 'description of changes'
 
 ## Query
 
-```py
+```python
 from sqlalchemy import func, select
 ```
 
@@ -37,7 +37,7 @@ from sqlalchemy import func, select
 
 Generate a query:
 
-```py
+```python
 query = select(Model)
 ```
 
@@ -45,20 +45,20 @@ query = select(Model)
 
 Choose the columns (`Column` objects are accessed from the `Table.c` accessor):
 
-```py
+```python
 query = select(Model.id, Model.column)
 ```
 
 Apply some special functions to columns (MIN, MAX, COUNT):
 
-```py
+```python
 query = select(func.count(Model.id))
 query = select(func.max(Model.id))
 ```
 
 ### WHERE clause
 
-```py
+```python
 query = query.where(Model.id == 3)
 query = query.where(Model.column.in_(['first', 'second']))
 query = query.where(Model.column.contains('foo'))
@@ -67,13 +67,13 @@ query = query.where(Model.column.startswith('boo'))
 
 ### DISTINCT clause
 
-```py
+```python
 query = query.distinct()
 ```
 
 ### ORDER BY clause
 
-```py
+```python
 query = query.order_by(Model.column)
 query = query.order_by(Model.column.asc())
 query = query.order_by(Model.column.desc())
@@ -87,19 +87,19 @@ Don't forget to select the columns used by `group_by`.
 
 Single column example:
 
-```py
+```python
 query = select(Model.column, func.count(Model.id)).group_by(Model.column)
 ```
 
 Multiple columns example:
 
-```py
+```python
 query = select(Model.column1, Model.column2, func.count(Model.id)).group_by(Model.column1, Model.column2)
 ```
 
 ### JOIN
 
-```py
+```python
 query = query.join(Model.column)  # column is foreign key
 ```
 
@@ -109,7 +109,7 @@ Lazily process query result
 (be sure to not close the session by doing everything inside the `with` block,
 or by passing `session` as a parameter to the generator function):
 
-```py
+```python
 # Flask example
 def generate_csv(session):
     for row in session.execute(query.execution_options(yield_per=1000)):
@@ -127,7 +127,7 @@ return Response(
 Get [results](https://docs.sqlalchemy.org/en/20/core/connections.html#sqlalchemy.engine.Result)
 from a query:
 
-```py
+```python
 # Single column, single row
 session.execute(query).scalar_one()
 session.execute(query).scalar_one_or_none()
@@ -150,7 +150,7 @@ session.execute(query).fetchall()
 
 It is possible to iterate the result object directly:
 
-```py
+```python
 for row in session.execute(query):
     print(row)
 ```
@@ -159,7 +159,7 @@ for row in session.execute(query):
 
 Batch insert data (uses `dict` instead of Model's instances):
 
-```py
+```python
 session.execute(insert(Model), [dict, dict, dict, ...])
 session.commit()
 ```

@@ -9,7 +9,7 @@ ref: https://nextjs.org/docs/basic-features/data-fetching/get-server-side-props
 
 Create a `lib` with the common `getServerSideProps`:
 
-```js
+```javascript
 // lib/serverProps.js
 export default async function getServerSideProps(ctx) {
   mydata = await axios.get('...');
@@ -21,6 +21,6 @@ export default async function getServerSideProps(ctx) {
 
 Import it in all pages:
 
-```js
+```javascript
 export { default as getServerSideProps } from '../lib/serverProps';
 ```

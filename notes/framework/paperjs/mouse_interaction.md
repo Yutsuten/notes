@@ -5,7 +5,7 @@ ref: http://paperjs.org/tutorials/interaction/creating-mouse-tools/#click-drag-r
 
 #### canvas-draw.js
 
-```js
+```javascript
 var myPath;
 
 function onMouseDown(event) {

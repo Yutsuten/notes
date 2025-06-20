@@ -8,7 +8,7 @@ pypi: Flask-WebTest
 
 Initialization:
 
-```py
+```python
 from flask_webtest import TestApp
 from main import app
 
@@ -18,7 +18,7 @@ test_app = TestApp(app)
 
 Making a [GET request](https://docs.pylonsproject.org/projects/webtest/en/latest/api.html#webtest.app.TestApp.get):
 
-```py
+```python
 response = test_app.get(
     url,
     params={'param1': 'value1', 'param2': 'value2'}, # => ?param1=value1&param2=value2
@@ -33,7 +33,7 @@ response = test_app.get(
 The [response](https://docs.pylonsproject.org/projects/webtest/en/latest/api.html#webtest-response-testresponse)
 can be checked with:
 
-```py
+```python
 assert response.text == expected_body  # plain text
 assert response.json == expected_dict  # JSON
 ```

@@ -35,7 +35,7 @@ Check the full documentation [here](https://jestjs.io/docs/api#testeachtablename
 
 Using a list:
 
-```ts
+```typescript
 test.each([
   [1, 'expected output 1'],
   [2, 'expected output 2'],
@@ -46,7 +46,7 @@ test.each([
 
 Using a dict:
 
-```ts
+```typescript
 test.each([
   { inputNum: 1, expected: 'expected output 1' },
   { inputNum: 2, expected: 'expected output 2' },
@@ -59,14 +59,14 @@ test.each([
 
 If a call is [expected to throw an error](https://jestjs.io/docs/using-matchers#exceptions):
 
-```js
+```javascript
 expect(() => willThrow()).toThrow();
 ```
 
 The code changes slightly
 [if we are doing things asynchronously](https://jestjs.io/docs/expect#rejects):
 
-```js
+```javascript
 await expect(() => asyncWillThrow()).rejects.toThrow();
 ```
 
@@ -86,7 +86,7 @@ Example of mocking `import { useRouter } from 'next/router'`.
 
 To mock the same value for all tests:
 
-```ts
+```typescript
 jest.mock('next/router', () => ({
   useRouter() {
     return {
@@ -98,7 +98,7 @@ jest.mock('next/router', () => ({
 
 To mock different values for each test:
 
-```ts
+```typescript
 import { useRouter } from 'next/router';
 
 jest.mock('next/router', () => ({
@@ -118,7 +118,7 @@ To mock axios ([reference](https://www.csrhymes.com/2022/03/09/mocking-axios-wit
 
 Import:
 
-```ts
+```typescript
 import axios from 'axios';
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
@@ -126,13 +126,13 @@ const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 Without delay:
 
-```ts
+```typescript
 mockedAxios.get.mockResolvedValue({data: []});
 ```
 
 With delay:
 
-```ts
+```typescript
 mockedAxios.get.mockImplementation(() => {
   return new Promise((resolve) => {
     setTimeout(() => resolve({data: []}), 50);
@@ -147,7 +147,7 @@ Mocking `window` ([reference](https://stackoverflow.com/questions/41885841/how-c
 Suppose you have `window.open('http://example.com', '_blank').focus()`.
 You can use `jest.spyOn` to mock `window`.
 
-```ts
+```typescript
 let windowOpenSpy: jest.Mock;
 let windowOpenFocusMock: jest.Mock;
 
@@ -167,7 +167,7 @@ afterEach(() => {
 
 Then inside the test:
 
-```ts
+```typescript
 await act(async () => {
   fireEvent.click(screen.getAllByRole('button', { name: 'Open new window' }));
 });
@@ -179,7 +179,7 @@ Mocking `global`:
 
 Some (all?) global variables are not defined inside jest.
 
-```js
+```javascript
 global.URL.createObjectURL = jest.fn(() => '');
 global.URL.revokeObjectURL = jest.fn();
 ```
@@ -188,7 +188,7 @@ Mocking `console`:
 
 Validate logs and (optionally) prevent them from polluting test logs.
 
-```js
+```javascript
 const consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => {}); // Skip mockImplementation to keep logs
 functionToBeTested();
 expect(consoleWarnSpy).toHaveBeenCalledWith('something was not quite as expected');
@@ -198,7 +198,7 @@ expect(consoleWarnSpy).toHaveBeenCalledWith('something was not quite as expected
 
 Mocking `setTimeout`-like native functions ([reference](https://jestjs.io/docs/timer-mocks)):
 
-```ts
+```typescript
 jest.useFakeTimers();
 
 test('my test', () => {

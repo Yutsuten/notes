@@ -7,13 +7,13 @@ ref: https://datatables.net/reference/api/
 
 Initialize the table:
 
-```js
+```javascript
 let table = $('#table').DataTable();
 ```
 
 Update table's content:
 
-```js
+```javascript
 table.rows().every(function () {
    let data = this.data();
    data.counter += 1;
@@ -23,6 +23,6 @@ table.rows().every(function () {
 
 Redraw the table (use false to keep pagination).
 
-```js
+```javascript
 table.draw(false);
 ```

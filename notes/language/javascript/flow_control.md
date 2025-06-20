@@ -9,7 +9,7 @@ See
 [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
 documentation.
 
-```js
+```javascript
 if (10 < 20) {
   doSomething();
 } else if (10 > 20) {
@@ -27,7 +27,7 @@ See
 [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
 documentation.
 
-```js
+```javascript
 for (let i = 0; i < 10; i++) {
     console.log(i);
 }
@@ -48,7 +48,7 @@ See
 [while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
 documentation.
 
-```js
+```javascript
 let price = 5;
 while (price < 100) {
     if (price == 13) {
@@ -70,7 +70,7 @@ See
 [do...while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while)
 documentation.
 
-```js
+```javascript
 let price = 5;
 do {
     console.log(`I may buy it for \$${price}`);
@@ -85,7 +85,7 @@ See
 [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
 documentation.
 
-```js
+```javascript
 switch (myExpr) {
   case '1':
     doSomething();
