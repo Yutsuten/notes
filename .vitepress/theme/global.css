@@ -305,3 +305,10 @@ blockquote p {
 .yellow {
     color: darkgoldenrod;
 }
+
+span.sample {
+    padding: 2px 5px;
+    margin: 12px 3px;
+    user-select: none;
+    background-color: var(--separator);
+}

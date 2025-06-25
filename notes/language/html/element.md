@@ -3,14 +3,16 @@ title: Element
 ref: https://stackoverflow.com/questions/4781077/html5-best-practices-section-header-aside-article-elements/
 ---
 
-## Container
+## Categories
+
+### Container
 
 ```html
 <div></div>
 <span></span>
 ```
 
-## Content
+### Content
 
 ```html
 <h1></h1>
@@ -25,13 +27,13 @@ ref: https://stackoverflow.com/questions/4781077/html5-best-practices-section-he
 <a href="javascript:void(0)">Link</a>
 ```
 
-## Image
+### Image
 
 ```html
 <img alt="image" src="image.png" />
 ```
 
-## Empty
+### Empty
 
 Closing tag is not needed.
 
@@ -43,4 +45,15 @@ White space:
 
 ```html
 &nbsp;
+```
+
+## Attributes
+
+### Title
+
+For adding a tooltip.
+<span class="sample" title="This is a custom tooltip">Hover me</span>
+
+```html
+<span title="This is a custom tooltip">Hover me</span>
 ```

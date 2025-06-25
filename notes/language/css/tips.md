@@ -17,23 +17,23 @@ title: Tips
 ```css
 html,
 body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 .wrapper {
-  min-height: 100%;
-  position: relative;
+    min-height: 100%;
+    position: relative;
 }
 .header {}
 .body {
-  padding-bottom: 60px;
+    padding-bottom: 60px;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
 }
 ```
 
@@ -51,18 +51,18 @@ Similar, but using flexbox:
 
 ```css
 .contents {
-  display: contents;
+    display: contents;
 }
 .flex {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 .header {}
 .body {
-  flex-grow: 1;
+    flex-grow: 1;
 }
 .footer {
-  flex-basis: 60px;
+    flex-basis: 60px;
 }
 ```
 
@@ -85,50 +85,50 @@ A scroll-enabled div with a "fixed" container in it. [CodePen](https://codepen.i
 
 ```css
 .scrollable {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  background: skyblue;
-  overflow: auto;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: skyblue;
+    overflow: auto;
 }
 
 .sticky {
-  position: sticky;
-  top: 0;
-  left: 0;
-  height: calc(100% - 1px);
-  width: calc(100% - 1px);
-  float: left;  
-  margin-right: -100%;
-  pointer-events: none;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: calc(100% - 1px);
+    width: calc(100% - 1px);
+    float: left;
+    margin-right: -100%;
+    pointer-events: none;
 }
 
 .overlay {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  white-space: nowrap;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-  background: pink;
-  outline: none;
-  pointer-events: auto;
-  transition: background .3s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    white-space: nowrap;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: pink;
+    outline: none;
+    pointer-events: auto;
+    transition: background .3s;
 }
 
 .overlay:hover {
-  background: lightpink;
+    background: lightpink;
 }
 
 .overlay:active {
-  background: hotpink;
+    background: hotpink;
 }
 
 .paragraph {
-  padding: 12px;
-  width: 150%;
+    padding: 12px;
+    width: 150%;
 }
 ```
 
@@ -140,8 +140,8 @@ Remove space between cells:
 
 ```css
 table {
-  border-spacing: 0;
-  border-collapse: collapse;
+    border-spacing: 0;
+    border-collapse: collapse;
 }
 ```
 
@@ -149,9 +149,9 @@ Add horizontal scroll:
 
 ```css
 table {
-  display: block;
-  max-width: fit-content;
-  overflow-x: auto;
+    display: block;
+    max-width: fit-content;
+    overflow-x: auto;
 }
 ```
 
@@ -161,7 +161,7 @@ Removing button focus CSS:
 
 ```css
 button:focus {
-  outline: unset;
+    outline: unset;
 }
 ```
 
@@ -171,8 +171,8 @@ Change placeholder color
 
 ```css
 ::placeholder {
-  color: red;
-  opacity: 1;
+    color: red;
+    opacity: 1;
 }
 ```
 
@@ -182,10 +182,10 @@ Avatar (resize, crop, center):
 
 ```css
 img {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 15px;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 15px;
 }
 ```
