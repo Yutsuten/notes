@@ -30,8 +30,10 @@ except for the most recent three:
 sudo systemctl start/enable paccache.timer
 ```
 
-Remove all the cached packages that are not currently installed,
-and the unused sync database:
+Remove packages that are no longer installed from the cache
+as well as currently unused sync databases to free up disk space.
+Use one `--clean` switch to only remove packages that are no longer installed.
+Use two to remove all files from the cache.
 
 ```shell
 sudo pacman -Sc

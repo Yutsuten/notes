@@ -14,20 +14,29 @@ If the url used causes "invalid certificate" for some reason, use:
 mpv --ytdl-raw-options=no-check-certificates= URL
 ```
 
+To use an external audio file while playing
+(use `Ctrl +` `Ctrl -` to adjust audio delay):
+
+```shell
+mpv --audio-file=audio.flac video.mkv
+```
+
 ## Shortcuts
 
 For some shortcuts,
 extra configuration must be added to `~/.config/mpv/input.conf`.
 
-| Shortcut | Description | Extra configuration |
-| --- | --- | --- |
-| `>` | Next file in a playlist | - |
-| `<` | Previous file in a playlist | - |
-| `9` | Reduce volume | - |
-| `0` | Increase volume | - |
-| `s` | Shuffle | `s cycle shuffle` |
-| `l` | Loop playlist | `l cycle-values loop-playlist yes no` |
-| `#` | Next audio track | - |
+| Shortcut | Description                 | Extra configuration                   |
+| -------- | --------------------------- | ------------------------------------- |
+| `>`      | Next file in a playlist     | -                                     |
+| `<`      | Previous file in a playlist | -                                     |
+| `9`      | Reduce volume               | -                                     |
+| `0`      | Increase volume             | -                                     |
+| `s`      | Shuffle                     | `s cycle shuffle`                     |
+| `l`      | Loop playlist               | `l cycle-values loop-playlist yes no` |
+| `#`      | Next audio track            | -                                     |
+| `Ctrl +` | Increase audio delay        | -                                     |
+| `Ctrl -` | Decrease audio delay        | -                                     |
 
 ## Settings
 

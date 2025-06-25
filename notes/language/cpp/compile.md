@@ -55,18 +55,18 @@ Enable newer features by adding `-std=c++20` or `-std=c++23` into `CFLAGS`.
 :::
 
 ```make
-CC = g++
-CFLAGS = -Wall -Wextra -Werror $(EXTRA_CFLAGS)
+CXX = g++
+CXXFLAGS = -Wall -Wextra -Werror $(EXTRA_CFLAGS)
 OBJ = main.o
 TARGET = myapp
 
 .PHONY: build clean
 
 build: $(OBJ)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJ)
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(TARGET) $(OBJ)
@@ -74,5 +74,81 @@ clean:
 
 ## CMake
 
-[Learning CMake](https://cliutils.gitlab.io/modern-cmake/README.html)
-might be a good idea.
+- [An Introduction to Modern CMake](https://cliutils.gitlab.io/modern-cmake/README.html)
+
+There are two steps to set up a project for CMake usage.
+
+### Add files
+
+First you need to place (at least) two files to your project.
+
+```txt
+CMakeLists.txt
+src
+└── main.cpp
+```
+
+- `src/main.cpp` is a C++ program that compiles
+- `CMakeLists.txt` is the project's configuration
+
+A very simple `CMakeLists.txt`:
+
+```cmake
+cmake_minimum_required(VERSION 3.24)
+
+# Project structure
+project(myapp
+        VERSION 0.1.0
+        LANGUAGES CXX)
+add_executable(myapp src/main.cpp)
+
+# Dependencies
+find_package(fmt REQUIRED)
+target_link_libraries(myapp PRIVATE fmt::fmt)
+
+# Installation
+install(TARGETS myapp DESTINATION bin)
+```
+
+`myapp` here will be name of the binary generated.
+
+This example is also showing to add a library (fmt) as dependency.
+
+### Build
+
+Considering a build that will use:
+
+| Directory        | Purpose        |
+| ---------------- | -------------- |
+| `target/debug`   | Debug builds   |
+| `target/release` | Release builds |
+
+First we create the build directories
+that includes some build configuration like the compiler and a generator.
+These commands have to be run only once.
+
+```shell
+cmake -GNinja -DCMAKE_BUILD_TYPE:STRING=Debug -S. -Btarget/debug
+cmake -GNinja -DCMAKE_INSTALL_PREFIX:STRING=$HOME/.local -DCMAKE_BUILD_TYPE:STRING=Release -S. -Btarget/release
+```
+
+Then, for a debug build & run:
+
+```shell
+cmake --build target/debug
+./target/debug/myapp
+```
+
+For a release build & install
+(this will install the binary into `~/.local/bin` because we have `CMAKE_INSTALL_PREFIX` set):
+
+```shell
+cmake --build target/release
+cmake --install target/release --strip
+```
+
+To uninstall:
+
+```shell
+xargs -d '\n' rm -v <target/release/install_manifest.txt
+```

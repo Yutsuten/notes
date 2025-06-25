@@ -17,10 +17,11 @@ List, create or delete local branches.
 git branch OPTIONS BRANCH
 ```
 
-| Option | Description |
-| --- | --- |
-| `-d` `--delete` | Delete a branch. |
-| `-D` | Force delete a branch. |
+| Option          | Description            |
+| --------------- | ---------------------- |
+| `-d` `--delete` | Delete a branch.       |
+| `-D`            | Force delete a branch. |
+| `-m` `--move`   | Move/rename a branch.  |
 
 ## Examples
 

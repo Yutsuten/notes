@@ -9,9 +9,10 @@ man: git-add
 git add OPTIONS PATH
 ```
 
-| Option        | Description                          |
-| ------------- | ------------------------------------ |
-| `p` `--patch` | Interactively choose hunks of patch. |
+| Option         | Description                           |
+| -------------- | ------------------------------------- |
+| `-f` `--force` | Allow adding otherwise ignored files. |
+| `-p` `--patch` | Interactively choose hunks of patch.  |
 
 ### Patch
 
