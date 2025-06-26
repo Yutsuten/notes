@@ -43,20 +43,20 @@ Pseudo-elements.
 ```css
 /* Scrollbar css */
 ::-webkit-scrollbar {
-    width: 16px;
-    border-color: #79a1b7;
+  width: 16px;
+  border-color: #79a1b7;
 }
 
 ::-webkit-scrollbar-track {
-    border-radius: 4px;
-    background-color: #b2cede;
+  border-radius: 4px;
+  background-color: #b2cede;
 }
 
 ::-webkit-scrollbar-thumb {
-    width: 12px;
-    background-color: #f2fbff;
-    border-radius: 4px;
-    border: 2px solid #b2cede;
+  width: 12px;
+  background-color: #f2fbff;
+  border-radius: 4px;
+  border: 2px solid #b2cede;
 }
 ```
 
@@ -66,7 +66,7 @@ If the second child isn't a `div`, it won't select anything.
 
 ```css
 .parent > div:nth-child(2) {
-    background: blue;
+  background: blue;
 }
 ```
 
@@ -74,7 +74,7 @@ Select the second `div`.
 
 ```css
 .parent > div:nth-of-type(2) {
-    background: blue;
+  background: blue;
 }
 ```
 
@@ -82,7 +82,7 @@ Select a specific column in a table.
 
 ```css
 tr td:nth-child(3) {
-    background: blue;
+  background: blue;
 }
 ```
 
@@ -90,10 +90,10 @@ Select even or odd.
 
 ```css
 tr td:nth-child(even) {
-    background-color: #fff;
+  background-color: #fff;
 }
 tr td:nth-child(odd) {
-    background-color: #ebf4f9;
+  background-color: #ebf4f9;
 }
 ```
 
@@ -101,15 +101,15 @@ Pseudo-elements content.
 
 ```css
 h1::before {
-    content: '- ';
+  content: '- ';
 }
 a::after {  /* Using Font Awesome icon */
-    font-family: "Font Awesome 5 Free";
-    font-size: 0.8rem;
-    font-weight: 900;
-    display: inline-block;
-    padding-left: 3px;
-    vertical-align: middle;
-    content: '\f35d';
+  font-family: "Font Awesome 5 Free";
+  font-size: 0.8rem;
+  font-weight: 900;
+  display: inline-block;
+  padding-left: 3px;
+  vertical-align: middle;
+  content: '\f35d';
 }
 ```

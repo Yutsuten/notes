@@ -8,7 +8,7 @@ Setting variables globally.
 
 ```css
 :root {
-    --my-var: url('example.com/image.png');
+  --my-var: url('example.com/image.png');
 }
 ```
 
@@ -16,6 +16,6 @@ Using it.
 
 ```css
 .selector {
-    background-image: var(--my-var);
+  background-image: var(--my-var);
 }
 ```
