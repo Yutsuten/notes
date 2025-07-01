@@ -14,7 +14,7 @@ Loop through an iterator:
 
 ```python
 for element in iterator:
-  pass
+    pass
 ```
 
 Get the first (next) element of an iterator:

@@ -5,6 +5,19 @@ ref: https://helix-editor.com/
 
 ## Usage
 
+Useful [commands](https://docs.helix-editor.com/commands.html):
+
+| Command          | Description                                                     |
+| ---------------- | --------------------------------------------------------------- |
+| `:format` `:fmt` | Format the file using an external formatter or language server. |
+
+Useful [shortcuts](https://docs.helix-editor.com/keymap.html):
+
+| Shortcut | Description                                   |
+| -------- | --------------------------------------------- |
+| `Ctrl-x` | Open LSP's completion menu.                   |
+| `Ctrl-c` | (With completion menu open) Cancel selection. |
+
 ### Search
 
 The default search is smart, case insensitive if search pattern is all lower case,
