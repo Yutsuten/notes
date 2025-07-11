@@ -56,12 +56,15 @@ Array.isArray(a)
 
 ### Primitives
 
+List of [primitives](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
+and [utility types](https://www.typescriptlang.org/docs/handbook/utility-types.html).
+
 - Any: `any`
 - Number: `number` `bigint`
 - String: `string`
 - Boolean: `boolean`
 - List: `Array` `[]`
-- Dict: `Record<Type1, Type2>` `{}`
+- Dict: `Record<Type1, Type2>` `Partial<Record<Type1, Type2>>` `{}`
 - Set: -
 - Symbol: `symbol` [[1]](https://javascript.info/symbol)
 - Function: `Function`
