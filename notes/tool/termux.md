@@ -51,12 +51,9 @@ termux-media-player stop
 ## SFTP
 
 Sample configuration to enable sftp.
-
 Edit `$PREFIX/etc/ssh/sshd_config`:
 
-```ini
-PrintMotd yes
-
+```ssh-config
 # Security
 PermitRootLogin no
 PasswordAuthentication no
@@ -70,6 +67,37 @@ Match LocalAddress 192.168.0.*
     PubkeyAuthentication yes
     AuthenticationMethods publickey
     ForceCommand internal-sftp
+    # ForceCommand internal-sftp -d /storage/emulated/0/Share
 ```
 
-Run `sshd` to start the daemon.
+The default mounted directory will be the termux home directory.
+It is possible to change it,
+but Android does not allow using the root directory of a storage.
+
+If you plan to use `ssh-agent` or `sshd` it is recommended to run it as a service.
+To install the `runit` [service manager](https://wiki.termux.com/wiki/Termux-services):
+
+```shell
+pkg install termux-services
+```
+
+Then:
+
+- Enable and run `ssh-agent` service using `sv-enable ssh-agent`
+- Enable and run `sshd` to autostart using `sv-enable sshd`
+
+| Command      | Description                |
+| ------------ | -------------------------- |
+| `sv-enable`  | Enable and start a service |
+| `sv-disable` | Disable a service          |
+| `sv up`      | Start a service            |
+| `sv down`    | Stop a service             |
+
+From another machine, configure the connection to termux (adjust values as needed):
+
+```ssh-config
+Host android
+    HostName 192.168.0.100
+    User u0_a482
+    Port 8022
+```

@@ -25,12 +25,6 @@ run this command:
 gpg-connect-agent reloadagent /bye
 ```
 
-If for some reason, password prompt does not appear (i.e. because of `CTRL+c` in a prompt), try:
-
-```shell
-pkill -KILL gpg-agent
-```
-
 ### Pinentry
 
 Optionally set the dialog for inputting your password.
@@ -232,4 +226,24 @@ gpg --with-keygrip --list-key MASTERKEYID
 
 ## Securely delete it from .gnupg folder
 shred --remove ~/.gnupg/private-keys-v1.d/KEYGRIP.key
+```
+
+## Troubleshooting
+
+If for some reason, password prompt does not appear (i.e. because of `CTRL+c` in a prompt), try:
+
+```shell
+gpgconf --kill gpg-agent
+pkill pinentry # Try `-KILL` too
+pkill gpg-agent # Try `-KILL` too
+```
+
+As a last resort, kill and restart all GPG-related processes:
+
+```shell
+pkill scdaemon
+pkill gpg-agent
+gpg-connect-agent /bye
+gpg-connect-agent updatestartuptty /bye
+gpgconf --reload gpg-agent
 ```
