@@ -1,6 +1,6 @@
 ---
 title: Logging
-ref: https://docs.docker.com/compose/compose-file/compose-file-v3/#logging
+ref: https://docs.docker.com/reference/compose-file/services/#logging
 ---
 
 ## Configuration

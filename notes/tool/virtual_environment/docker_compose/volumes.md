@@ -1,6 +1,6 @@
 ---
 title: Volumes
-ref: https://docs.docker.com/compose/compose-file/compose-file-v3/#volumes
+ref: https://docs.docker.com/reference/compose-file/services/#volumes
 ---
 
 ## Configuration

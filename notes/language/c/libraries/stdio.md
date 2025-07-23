@@ -44,11 +44,11 @@ Functions to manipulate content of files:
 
 When opening a file, there are 3 basic open modes:
 
-| Mode | Use | Create file | Keep contents |
-| --- | --- | --- | --- |
-| `r` `rb` | Reading | <span class="red">✘</span> | <span class="green">✔</span> |
-| `w` `wb` | Writing | <span class="green">✔</span> | <span class="red">✘</span> |
-| `a` `ab` | Appending | <span class="green">✔</span> | <span class="green">✔</span> |
+| Mode     | Use       | Create file                         | Keep contents                       |
+| -------- | --------- | ----------------------------------- | ----------------------------------- |
+| `r` `rb` | Reading   | <span class="center red">✘</span>   | <span class="center green">✔</span> |
+| `w` `wb` | Writing   | <span class="center green">✔</span> | <span class="center red">✘</span>   |
+| `a` `ab` | Appending | <span class="center green">✔</span> | <span class="center green">✔</span> |
 
 You can also append a `+` (ex: `wb+`) so both read and write are available.
 The behavior of "Create file" and "Keep contents" is kept.

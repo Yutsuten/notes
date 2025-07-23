@@ -7,14 +7,14 @@ ref: https://docs.ruby-lang.org/en/3.4/File.html
 
 Append can only write to the end of the file.
 
-| Mode | Create                       | Truncate                     | Read                         | Write                         | Initial Pos |
-| ---- | ---------------------------- | ---------------------------- | ---------------------------- | ----------------------------- | ----------- |
-| `r`  | <span class="red">✘</span>   | <span class="red">✘</span>   | <span class="green">✔</span> | <span class="red">✘</span>    | Start       |
-| `r+` | <span class="red">✘</span>   | <span class="red">✘</span>   | <span class="green">✔</span> | <span class="green">✔</span>  | Start       |
-| `w`  | <span class="green">✔</span> | <span class="green">✔</span> | <span class="red">✘</span>   | <span class="green">✔</span>  | Start       |
-| `w+` | <span class="green">✔</span> | <span class="green">✔</span> | <span class="green">✔</span> | <span class="green">✔</span>  | Start       |
-| `a`  | <span class="green">✔</span> | <span class="red">✘</span>   | <span class="red">✘</span>   | <span class="yellow">▲</span> | End         |
-| `a+` | <span class="green">✔</span> | <span class="red">✘</span>   | <span class="green">✔</span> | <span class="yellow">▲</span> | End         |
+| Mode | Create                              | Truncate                            | Read                                | Write                                | Initial Pos |
+| ---- | ----------------------------------- | ----------------------------------- | ----------------------------------- | ------------------------------------ | ----------- |
+| `r`  | <span class="center red">✘</span>   | <span class="center red">✘</span>   | <span class="center green">✔</span> | <span class="center red">✘</span>    | Start       |
+| `r+` | <span class="center red">✘</span>   | <span class="center red">✘</span>   | <span class="center green">✔</span> | <span class="center green">✔</span>  | Start       |
+| `w`  | <span class="center green">✔</span> | <span class="center green">✔</span> | <span class="center red">✘</span>   | <span class="center green">✔</span>  | Start       |
+| `w+` | <span class="center green">✔</span> | <span class="center green">✔</span> | <span class="center green">✔</span> | <span class="center green">✔</span>  | Start       |
+| `a`  | <span class="center green">✔</span> | <span class="center red">✘</span>   | <span class="center red">✘</span>   | <span class="center yellow">▲</span> | End         |
+| `a+` | <span class="center green">✔</span> | <span class="center red">✘</span>   | <span class="center green">✔</span> | <span class="center yellow">▲</span> | End         |
 
 Append `b` to mode for binary data.
 

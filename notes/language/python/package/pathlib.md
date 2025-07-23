@@ -20,29 +20,66 @@ path = Path('/home/suguri/file.txt')
 str(path)  # '/home/suguri/file.txt'
 ```
 
+Joining paths:
+
+```python
+path1 / path2  # Same as os.path.join(path1, path2)
+```
+
 ### Path manipulation
 
 ```python
-path.parent    # PosixPath('/home/suguri')
-path.stem      # file
-path.suffix    # .txt
+path.name    # basename
+path.stem    # basename without suffix
+path.suffix  # .txt
+path.parent  # PosixPath('/home/suguri')
+```
 
-path1 / path2  # Same as os.path.join(path1, path2)
+Create a new directory:
+
+```python
+path.mkdir(exist_ok=True)
+```
+
+Create a new file:
+
+```python
+path.touch()
+```
+
+Iterate a directory:
+
+```python
+for node in Path('.').iterdir():
+    if node.is_dir():
+        pass
+    if node.is_file():
+        pass
 ```
 
 ### File manipulation
 
-| Mode | Description |
-| ---- | ----------- |
-| `r` | Open for reading (default). |
-| `w` | Open for writing, truncating the file first. |
-| `x` | Open for exclusive creation, failing if the file already exists. |
-| `a` | Open for writing, appending to the end of the file if it exists. |
-| `b` | Binary mode. |
-| `t` | Text mode (default). |
-| `+` | Open for updating (reading and writing). |
+| Mode | Use       | Create file                         | Keep contents                       |
+| ---- | --------- | ----------------------------------- | ----------------------------------- |
+| `r`  | Reading   | <span class="center red">✘</span>   | <span class="center green">✔</span> |
+| `w`  | Writing   | <span class="center green">✔</span> | <span class="center red">✘</span>   |
+| `a`  | Appending | <span class="center green">✔</span> | <span class="center green">✔</span> |
+| `x`  | X-Writing | <span class="center green">✔</span> | <span class="center">-</span>       |
 
-Line ending [reference](https://en.wikipedia.org/wiki/Newline):
+::: info
+Mode `x` stands for **exclusive creation**,
+and will always fail if the file already exists.
+:::
+
+Extra modes (append to the mode above):
+
+| Mode | Description                              |
+| ---- | ---------------------------------------- |
+| `t`  | Text mode (default).                     |
+| `b`  | Binary mode.                             |
+| `+`  | Open for updating (reading and writing). |
+
+Line ending ([reference](https://en.wikipedia.org/wiki/Newline)):
 
 | OS      | Line ending |
 | ------- | ----------- |
@@ -65,16 +102,6 @@ Create empty file (similar to `touch`)
 ```python
 with Path.open(path, 'a'):
     os.utime(path, None)
-```
-
-### Iterate directory
-
-```python
-for node in Path('.').iterdir():
-    if node.is_dir():
-        pass
-    if node.is_file():
-        pass
 ```
 
 ### Delete file

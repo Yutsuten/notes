@@ -1,6 +1,6 @@
 ---
 title: Network mode
-ref: https://docs.docker.com/compose/compose-file/compose-file-v3/#network_mode
+ref: https://docs.docker.com/reference/compose-file/services/#network_mode
 ---
 
 ## Configuration

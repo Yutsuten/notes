@@ -30,6 +30,17 @@ title: Properties
 }
 ```
 
+Make a `span` fill the parent's width,
+and horizontally center its text:
+
+```css
+span.center {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+```
+
 ### Colouring
 
 ```css

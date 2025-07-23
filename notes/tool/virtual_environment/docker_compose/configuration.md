@@ -1,6 +1,6 @@
 ---
 title: Configuration
-ref: https://docs.docker.com/compose/compose-file/compose-file-v3/
+ref: https://docs.docker.com/reference/compose-file/services/
 ---
 
 ## docker-compose.yml
@@ -11,8 +11,9 @@ services:
   app:
     build: .
     image: imagename
+    restart: unless-stopped
     ports:
-      - "4050:4000"  # HOST:CONTAINER
+      - "4050:4000"
     volumes:
       - /code/node_modules
     extra_hosts:
@@ -20,6 +21,11 @@ services:
       - "otherhost:50.31.209.229"
     working_dir: /code
 ```
+
+| Attribute | Allowed Values                                            |
+| --------- | --------------------------------------------------------- |
+| `restart` | `no` `always` `on-failure[:max-retries]` `unless-stopped` |
+| `ports`   | `HOST:CONTAINER`                                          |
 
 ## .env
 

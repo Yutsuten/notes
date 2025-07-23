@@ -106,11 +106,11 @@ fn main() {
 The lifetime of the arguments used inside the function argument
 must be defined by using a trait:
 
-| Trait | Read | Write | Delete | Description |
-| --- | --- | --- | --- | --- |
-| `Fn` | <span class="green">✔</span> | <span class="red">✘</span> | <span class="red">✘</span> | Use the captured value by immutable reference (`&T`). |
-| `FnMut` | <span class="green">✔</span> | <span class="green">✔</span> | <span class="red">✘</span> | Use the captured value by mutable reference (`&mut T`). |
-| `FnOnce` | <span class="green">✔</span> | <span class="green">✔</span> | <span class="green">✔</span> | Uses the captured value by value (`T`). |
+| Trait    | Read                                | Write                               | Delete                              | Description                                             |
+| -------- | ----------------------------------- | ----------------------------------- | ----------------------------------- | ------------------------------------------------------- |
+| `Fn`     | <span class="center green">✔</span> | <span class="center red">✘</span>   | <span class="center red">✘</span>   | Use the captured value by immutable reference (`&T`).   |
+| `FnMut`  | <span class="center green">✔</span> | <span class="center green">✔</span> | <span class="center red">✘</span>   | Use the captured value by mutable reference (`&mut T`). |
+| `FnOnce` | <span class="center green">✔</span> | <span class="center green">✔</span> | <span class="center green">✔</span> | Uses the captured value by value (`T`).                 |
 
 Both functions and closures can be used as argument in the same way.
 
