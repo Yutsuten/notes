@@ -33,7 +33,9 @@ These affect only one particular zone or policy.
 
 ### Direct options
 
-*Note: The direct interface has been deprecated.*
+:::warning
+The direct interface has been deprecated.
+:::
 
 | Option | Description |
 | --- | --- |

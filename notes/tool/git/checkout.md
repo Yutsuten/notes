@@ -1,5 +1,6 @@
 ---
 title: Checkout
+man: git-checkout
 ---
 
 ## Usage
@@ -16,8 +17,10 @@ git checkout OPTIONS BRANCH_NAME
 
 ### Restoring files
 
-*Note:* If using Git 2.23 or newer,
+:::info
+If using Git 2.23 or newer,
 `git restore` seems to be a more adequate command.
+:::
 
 ```shell
 git checkout -- .

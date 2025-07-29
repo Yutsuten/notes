@@ -49,4 +49,12 @@ Add-AppxPackage .\Ubuntu.appx
 ```
 
 The linux icon will appear on the menu.
-It may be necessary to restart your computer for WSL to work properly.
+It may be necessary to restart the computer for WSL to work properly.
+
+For newer versions, use:
+
+| Command         | Description                  |
+| --------------- | ---------------------------- |
+| `wsl -l -o`     | List available distributions |
+| `wsl -l`        | List usable distributions    |
+| `wsl --install` | Install distribution         |

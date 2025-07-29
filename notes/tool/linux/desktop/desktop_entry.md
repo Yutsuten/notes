@@ -30,7 +30,9 @@ Exec=/usr/local/games/osu.AppImage
 Terminal=false
 ```
 
-**Note:** Only `Type` and `Name` are required.
+:::tip
+Only `Type` and `Name` are required.
+:::
 
 One may install desktop menu entries with `xdg-desktop-menu`.
 

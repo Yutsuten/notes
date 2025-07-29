@@ -25,6 +25,12 @@ systemctl OPTION ACTION my.service
 | `enable`  | Enable automatic service startup on boot.  |
 | `disable` | Disable automatic service startup on boot. |
 
+To list all available services:
+
+```shell
+systemctl --user list-unit-files
+```
+
 ## Creation
 
 After any changes to a service, run:

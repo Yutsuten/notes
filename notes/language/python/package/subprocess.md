@@ -30,8 +30,10 @@ result.stderr
 
 ### Run in background
 
-*Note: This note was originally written for python 2,
-not sure if it still works.*
+:::warning
+This note was originally written for python 2,
+not sure if it still works.
+:::
 
 Instantiate `Popen`, wait with `popen.communicate()`,
 kill it with `popen.kill()`,

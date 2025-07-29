@@ -69,7 +69,9 @@ ffmpeg -i music.mp3 -i Cover.jpg \
 Use `-acodec copy` to copy audio as is.
 Image needs a different codec, so use `-vcodec theora -q:v 10`.
 
-**Note:** Most music players cannot recognize this cover art.
+:::info
+Most music players cannot recognize this cover art.
+:::
 
 ```shell
 ffmpeg -i music.opus -i Cover.jpg \

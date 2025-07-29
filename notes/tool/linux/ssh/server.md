@@ -42,5 +42,7 @@ Match LocalAddress 192.168.0.*
     ChrootDirectory /home
 ```
 
-**Note:** Directory set in `ChrootDirectory` must be owned by `root`.
+:::info
+Directory set in `ChrootDirectory` must be owned by `root`.
 For more info see [SFTP chroot](https://wiki.archlinux.org/title/SFTP_chroot).
+:::

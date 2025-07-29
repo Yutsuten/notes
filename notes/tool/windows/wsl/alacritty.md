@@ -55,7 +55,9 @@ with the only disvantage that there is no clipboard support.
 
 [GitHub issue](https://github.com/alacritty/alacritty/issues/2711)
 
-*Note: This "fix" is buggy and probably is better to leave the default.*
+:::info
+This "fix" is buggy and probably is better to leave the default.
+:::
 
 WSL defaults to `xterm-256color` without this configuration.
 

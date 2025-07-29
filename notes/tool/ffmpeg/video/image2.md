@@ -16,4 +16,6 @@ Default value is 0.
 ffmpeg -ss 00:09.500 -t 0.1 -i input.mp4 -f image2 -update 1 -frames:v 1 -y output.png
 ```
 
-*Note: If the output filename is an image, `-f image2` is automatically selected and thus, optional.*
+:::tip
+If the output filename is an image, `-f image2` is automatically selected and thus, optional.
+:::

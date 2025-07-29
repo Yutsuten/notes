@@ -66,7 +66,7 @@ for node in Path('.').iterdir():
 | `a`  | Appending | <span class="center green">✔</span> | <span class="center green">✔</span> |
 | `x`  | X-Writing | <span class="center green">✔</span> | <span class="center">-</span>       |
 
-::: info
+:::info
 Mode `x` stands for **exclusive creation**,
 and will always fail if the file already exists.
 :::

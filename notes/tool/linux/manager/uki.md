@@ -51,7 +51,9 @@ mkdir -p /efi/EFI/Linux
 mkinitcpio -p linux
 ```
 
-**Note:** Make sure to have enough space in the *efi* partition.
+:::info
+Make sure to have enough space in the *efi* partition.
+:::
 
 ```txt
 > du -ha /efi

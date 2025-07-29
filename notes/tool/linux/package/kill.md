@@ -1,5 +1,6 @@
 ---
 title: Kill
+man: kill
 ---
 
 ## Kill
@@ -35,9 +36,23 @@ kill -0 PID
 Kill processes by process name (pattern).
 Use `pgrep` for a preview of what processes will be killed.
 
+| Option             | Description                                             |
+| ------------------ | ------------------------------------------------------- |
+| `-f` `--full`      | Makes PATTERN match the full command line instead.      |
+| `-x` `--exact`     | Only match processes whose names exactly match PATTERN. |
+
 ```shell
-pkill PNAME
+pkill OPTIONS PATTERN
 ```
+
+### Pgrep
+
+Like `pkill`, but used to check what processes would be matched.
+
+| Option             | Description                                             |
+| ------------------ | ------------------------------------------------------- |
+| `-l` `--list-name` | Print PID and process name.                             |
+| `-a` `--list-full` | Print PID and the full command line.                    |
 
 ## Killall
 
