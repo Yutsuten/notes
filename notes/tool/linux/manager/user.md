@@ -27,6 +27,7 @@ To edit user:
 ```shell
 chfn USERNAME        # Change finger information
 passwd USERNAME      # Update password
+passwd -d USERNAME   # Delete password
 usermod -u 1001 USERNAME  # Update UID
 ```
 

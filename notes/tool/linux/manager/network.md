@@ -1,16 +1,18 @@
 ---
 title: Network
-ref: https://wiki.archlinux.org/index.php/NetworkManager
 ---
 
-## Install
+## NetworkManager
+
+[NetworkManager](https://wiki.archlinux.org/index.php/NetworkManager) requires installation.
+
+- For wired connection, just starting/enabling the service is enough.
+- For wireless connection, further configuration is needed.
 
 ```shell
 sudo pacman -S networkmanager
 sudo systemctl enable NetworkManager
 ```
-
-## Management
 
 ### Terminal
 
@@ -50,4 +52,26 @@ cat /etc/resolv.conf # Check if it is applied
 
 ```shell
 sudo pacman -S nm-connection-editor network-manager-applet
+```
+
+## systemd-networkd
+
+`systemd` is usually installed by default,
+and it includes [systemd-networkd](https://wiki.archlinux.org/title/Systemd-networkd).
+
+It works by adding configuration files into the `/etc/systemd/network/` folder.
+Samples can be found at `/usr/lib/systemd/network/`.
+
+### Wired configuration
+
+Copy or create a symbolic link of `89-ethernet.network.example`.
+
+```shell
+ln -s /usr/lib/systemd/network/89-ethernet.network.example /etc/systemd/network/89-ethernet.network
+```
+
+Start/enable `systemd-networkd` service.
+
+```shell
+sudo systemctl enable systemd-networkd
 ```

@@ -69,6 +69,18 @@ Fish uses base 1 for accessing values in a list.
 echo $fruits[1]  # => banana
 ```
 
+Use negative index to access from the end.
+
+```fish
+echo $fruits[-1]  # => melon
+```
+
+Get a slice with the `..` syntax (left/right defaults: `1..-1`)
+
+```fish
+echo $fruits[..-2]  # => banana orange
+```
+
 ### Escape and expand arrays
 
 Print an array with every element quoted with `'`

@@ -3,6 +3,25 @@ title: Waypipe
 ref: https://gitlab.freedesktop.org/mstoeckl/waypipe/
 ---
 
+## Usage
+
+```shell
+waypipe OPTIONS MODE
+```
+
+| Option      | Description                                        |
+| ----------- | -------------------------------------------------- |
+| `--display` | Set the `WAYLAND_DISPLAY` name. Random if not set. |
+
+Usually used with `ssh`.
+
+When keeping a running session (zellij) and reconnecting to it,
+using the same `WAYLAND_DISPLAY` is necessary to keep clipboard working.
+
+```shell
+waypipe --display wayland-ssh ssh user@host
+```
+
 ## Homebrew
 
 Install the requirements:

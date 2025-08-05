@@ -3,6 +3,20 @@ title: Sway
 man: swaymsg
 ---
 
+## Modifier key
+
+Available options as modifier keys:
+
+| Key       | Description |
+| --------- | ----------- |
+| `Mod1`    | Alt         |
+| `Mod4`    | Super Key   |
+| `Control` | Ctrl        |
+
+```shell
+set $mod Mod4
+```
+
 ## Get tree
 
 Gets a JSON-encoded layout tree of everything open.
