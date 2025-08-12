@@ -20,6 +20,7 @@ ssh OPTIONS HOST COMMAND
 | `-T`      | Disable pseudo-terminal allocation.                                        |
 | `-M`      | Places the ssh client into "master" mode for connection sharing.           |
 | `-S`      | Specifies the location of a control socket for connection sharing.         |
+| `-C`      | Enable compression of all data being transfered.                           |
 
 | Config Option           | Values                  | Description              |
 | ----------------------- | ----------------------- | ------------------------ |
