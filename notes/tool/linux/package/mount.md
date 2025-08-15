@@ -23,6 +23,16 @@ mount OPTIONS /dev/sdXN /home/user/Mount
 | --- | --- |
 | `-o` `--options` | Use the specified mount options. The argument is a comma-separated list. |
 
+| Mount option | Description                                                                                                       |
+| ------------ | ----------------------------------------------------------------------------------------------------------------- |
+| `nodev`      | Do not interpret character or block special devices on the filesystem.                                            |
+| `nosuid`     | Do not honor set-user-ID and set-group-ID bits or file capabilities when executing programs from this filesystem. |
+| `noexec`     | Do not permit direct execution of any binaries on the mounted filesystem.                                         |
+| `loop`       | Mount via the loop device.                                                                                        |
+| `uid=`       | Make all files in the filesystem belong to the given user.                                                        |
+| `gid=`       | Make all files in the filesystem belong to the given group.                                                       |
+| `fmask=`     | Set the `umask` applied to regular files.                                                                         |
+
 ### Examples
 
 File systems used for data may be mounted with lower permissions (for security).
@@ -43,10 +53,16 @@ Set `fmask` to remove execution permission from files:
 mount -o nodev,nosuid,noexec,fmask=111 /dev/sdc1 ~/Mount
 ```
 
+Mount a file that has a filesystem into it:
+
+```fish
+mount -o loop somefile ~/Mount
+```
+
 ## Unmount
 
 Unmount the device with:
 
 ```shell
-umount /dev/sdXN && sudo sync
+umount /dev/sdXN
 ```

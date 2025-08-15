@@ -104,12 +104,12 @@ If encrypting some partitions,
 check `dm-crypt` notes.
 :::
 
-| Filesystem | Format command |
-| ---------- | -------------- |
-| UEFI | `mkfs.fat -F32 -nEFI /dev/nvme0n1p1` |
-| Swap | `mkswap -L swap /dev/nvme0n1p2` |
-| Ext4 | `mkfs.ext4 -L root /dev/nvme0n1p3` |
-| NFTS | `mkfs.ntfs -Q -L data /dev/sdXY` |
+| Filesystem | Format command                       |
+| ---------- | ------------------------------------ |
+| UEFI       | `mkfs.fat -F32 -nEFI /dev/nvme0n1p1` |
+| Swap       | `mkswap -L swap /dev/nvme0n1p2`      |
+| Ext4       | `mkfs.ext4 -L root /dev/nvme0n1p3`   |
+| NTFS       | `mkfs.ntfs -Q -L data /dev/sdXY`     |
 
 ### Mount the file system
 
